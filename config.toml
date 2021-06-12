@@ -1,0 +1,17 @@
+baseURL = "https://vrops-guide.funkycloudmedina.com/"
+languageCode = "en-us"
+title = "VMware vRealize Operations Guide"
+theme = "hugo-theme-learn"
+
+[params]
+# Change default color scheme with a variant one. Can be "red", "blue", "green".
+  themeVariant = "green"
+
+[[menu.shortcuts]] 
+  name = "Iwan 'e1' Rahabok"
+  identifier = "ds"
+  url = "http://virtual-red-dot.info/iwan-rahabok/"
+  weight = 10
+
+[outputs]
+home = [ "HTML", "RSS", "JSON"]
