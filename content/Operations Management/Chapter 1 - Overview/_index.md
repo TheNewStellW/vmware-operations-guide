@@ -6,6 +6,8 @@ chapter: true
 toc: true
 ---
 
+# Chapter 1 - An Overview
+
 This first chapter gives a tour of operations management, starting with why a reactive and hectic operations is common, and the paradigm shift required to proactive & predictive operations.
 
 {{% children  %}}
