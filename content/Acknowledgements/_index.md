@@ -6,6 +6,11 @@ draft: true
 
 Behind an author, there are always many people involved to make a book possible. This is especially true for this 3rd edition, as five long years have passed since the 2nd edition. I am grateful for the feedback, help and encouragement provided by the following individuals. The book is a living document, so it will get regular updates over time. As IT professionals change title and companies, let’s stick with just name and photo.
 
+| Credit | 
+|:---:|:---:|:---:|:---:|:---:|
+| ![](sajal-debnath.jpg?width=120px&display=block&spacing=0px) **Sajal Debnath** | ![](mehmet-hakan-can.jpg?width=120px&display=block) **Mehmet Hakan Can** | ![](brock-peterson.jpg?width=120px&display=block) Brock Peterson | ![](varghese-philipose.jpg?width=120px&display=block) Varghese Philipose | ![](brandon-gordon.jpg?width=120px&display=block) Brandon Gordon | 
+| ![](andy-bidlen.jpg?width=120px&display=block&spacing=0px) **Andy Bidlen** | ![](thomas-kopton.jpg?width=120px&display=block) **Thomas Kopton** | ![](norman-goh.jpg?width=120px&display=block) **Norman Goh** | ![](sean-lambert.jpg?width=120px&display=block) **Sean Lambert** | ![](sunny-dua.jpg?width=120px&display=block) **Sunny Dua** | 
+
 A lot of engineers from Armenia, home of vRealize Operations and Log Insight, have made the product better and hence the book possible. The book cover photo is Jermuk. Too many folks to mention so allow me to list partially: Hakob Arakelyan, Felix Azizyan, Tigran Mkrtchyan, Anna Grigoryan, Anahit Serobyan, Artur Aghabekyan, Gagik Manukyan, Vahan Tadevosyan, Tigran Avagimyants, Tigran Matevosyan, Robert Mesropyan, and Arman Mkrtchyan.
 
 A product does not exist without UX magic touch. Kim Ramirez, Nareg Kirkian, Lusine Dashtoyan, Varun Gajjar, Abhishek Chouksey are my treasured partners.
