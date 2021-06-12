@@ -1,10 +1,10 @@
 ---
-title: "VMware vRealize Operations Management"
+title: "VMware Operations Management"
 date: 2021-06-11T11:31:22+10:00
 draft: true
 ---
 
-# VMware vRealize Operations Management
+# VMware Operations Management
 
 Five long years have passed since the 2nd edition of the book and you will find that this 3rd edition has been written from the ground up, with many new and expanded sections, as well as the removal of many parts that are now considered level 100. There are now 4 parts of the book. Part 3 has been brought forward to Part 2, as you need to know the metrics before using the dashboards. Also, compared to 5 years ago, creating your own dashboard is easier. Part 4 has been added for miscellaneous stuff that may expand in the future. 
 
@@ -18,4 +18,9 @@ The ability to customize vRealize to your operations has been the hall mark of t
 
 This book is the documentation of Operationalize Your World, a 2-day workshop that Kenon Owens and I created many years ago. Thank you Kenon for the leadership in the early days! 
 
+{{%attachments title="Downloads" style="green" pattern=".*(docx)"/%}}
+
+# Table of Contents
+
 {{% children  %}}
+
