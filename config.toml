@@ -13,5 +13,11 @@ theme = "hugo-theme-learn"
   url = "http://virtual-red-dot.info/iwan-rahabok/"
   weight = 10
 
+[[menu.shortcuts]] 
+  name = "Hosted on FunkyCloudMedina"
+  identifier = "fcm"
+  url = "https://www.funkycloudmedina.com/"
+  weight = 15
+
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
