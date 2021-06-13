@@ -5,6 +5,8 @@ draft: true
 chapter: true
 ---
 
+# Chapter 2 - Performance Management
+
 Performance is about ensuring workloads get the necessary resources. KPIs can be used to identify performance problems, giving early warnings before SLA is breached.
 
 {{% children  %}}
