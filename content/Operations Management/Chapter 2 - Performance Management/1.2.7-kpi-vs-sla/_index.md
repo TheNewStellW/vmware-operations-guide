@@ -2,6 +2,7 @@
 title: "7. KPI vs. SLA"
 date: 2021-06-13T15:12:21+10:00
 draft: true
+weight: 70
 ---
 
 I agree that a set of metrics that determine the health of complex object such as VM or application will never be accurate in 100% of the case. This is normal, just like in real life. We take annual health check, performing all sort of tests, and the results will be a series of metrics (e.g. your bad cholesterol level). Are they 100% accurate for you from young until you are old? Are the results 100% accurate for everyone in your city? No, but they are good enough, and certainly much better than nothing. Beside the absolute value, the relative movement of the value over time is also able to give you insight. For example, if the KPI drops on a quiet Sunday morning when the environment is not supposed to have known activities, perhaps there is bad going on?
