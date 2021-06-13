@@ -2,6 +2,7 @@
 title: "1. A Day In The Life of a Cloud Admin"
 date: 2021-06-11T11:31:22+10:00
 draft: true
+weight: 10
 ---
 
 To understand what Performance actually is, it is always good to begin with the customer. As shared earlier, what you bought from your vendor is SDDC, but what you sell to your customers is IaaS. We have seen this in almost all customers. Whether the Application Team or VM Owner pays for the service with a chargeback model or not, it is a service. VM Owners no longer own, hence care, about the underlying infrastructure. 
