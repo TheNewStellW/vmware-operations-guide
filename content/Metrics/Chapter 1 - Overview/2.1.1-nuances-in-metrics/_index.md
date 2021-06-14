@@ -2,6 +2,7 @@
 title: "1. Nuances in Metrics"
 date: 2021-06-14T14:47:20+10:00
 draft: true
+weight: 10
 ---
 
 ![](2.1.1-fig-1.png)
