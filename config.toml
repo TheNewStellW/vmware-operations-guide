@@ -21,3 +21,10 @@ theme = "hugo-theme-learn"
 
 [outputs]
 home = [ "HTML", "RSS", "JSON"]
+
+[markup]
+    defaultMarkdownHandler = "goldmark"
+	
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
