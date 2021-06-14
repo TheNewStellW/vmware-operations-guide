@@ -2,6 +2,7 @@
 title: "1. Guest OS"
 date: 2021-06-14T15:52:36+10:00
 draft: true
+weight: 10
 ---
 
 We start with the [contention type of metrics as that’s the primary metric for performance, followed by utilization type of metrics.
