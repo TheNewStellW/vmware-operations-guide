@@ -22,5 +22,4 @@ This book is the documentation of Operationalize Your World, a 2-day workshop th
 
 # Table of Contents
 
-{{% children  %}}
-
+{{% children depth="3" %}}
