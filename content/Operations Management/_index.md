@@ -2,6 +2,7 @@
 title: "Operations Management"
 date: 2021-06-11T11:31:22+10:00
 draft: true
+weight: 30
 ---
 
 The first part of the book explains the art of Operations Management in the context of VMware cloud architecture. It is a pre-requisite to Part 2.
