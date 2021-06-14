@@ -3,7 +3,6 @@ title: "2. VM"
 date: 2021-06-14T23:50:15+10:00
 draft: true
 weight: 20
-toc: true
 ---
 
 Counters is essentially an accounting of systems in operation. To understand the counter hence requires a knowledge of how the system works. Without internalizing the mechanics, you will have to rely on memorizing.
