@@ -22,7 +22,7 @@ Right off the bat, you will notice that popular counters such as Ready, CoStop, 
 
 When the VMkernel de-schedules a VM to process something else (e.g. other VM, kernel interrupt) on the same physical thread or core, the Guest OS does not know why it is interrupted. In fact, it experiences frozen time for that particular vCPU running on the physical core. Time jumps when it’s scheduled again. Because of this unique visibility, it’s important to use the correct metrics at the correct layers. Here is what the Guest OS can and cannot see:
 
-![](2.2-fig-3.png)
+![](2.2-fig-3.jpg)
 
 The different vantage points result in different counters. This creates complexity as you size based on what happens inside the VM, but reclaim based on what happens outside the VM footprint on the ESXi. In other words, you size the Guest OS andyou reclaim the VM.
 
