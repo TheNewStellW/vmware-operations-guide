@@ -9,3 +9,5 @@ chapter: true
 # Network Metrics
 
 Network monitoring is complex, especially in large data centers. Adding network virtualization takes the complexity of performance troubleshooting even higher.
+
+{{% children %}}
