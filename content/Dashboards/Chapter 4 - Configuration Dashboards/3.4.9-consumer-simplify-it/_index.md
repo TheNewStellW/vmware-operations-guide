@@ -1,5 +1,5 @@
 ---
-title: "9. Consumer \\ Simplify It"
+title: "9. Consumer \\ Simplify It?"
 date: 2021-06-15T22:08:41+10:00
 draft: true
 weight: 90
