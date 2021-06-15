@@ -122,5 +122,4 @@ Managed = the total amount of machine memory managed by VMKernel. VMKernel "mana
 | Swap Out |  | 
 | Swap Out Rate	|  | 
 | Swap Used | Sum of memory swapped of all powered on VMs and vSphere services on the host.|
-| Usage / Usable (%) | Memory Consumed by VMs / memory provisioned * 100%</br>
-It does not include memory overhead, while consumed (%) does.|
+| Usage / Usable (%) | Memory Consumed by VMs / memory provisioned * 100%<br />It does not include memory overhead, while consumed (%) does.|
