@@ -20,3 +20,11 @@ If you value the deep technical information on the counters, then send your than
 The VMware TAM community has been a great partner, giving me the opportunity to engage with many of our largest customers and get real world validation. Paul James, Tas Tareq, Sajag Chaturvedi, Jodi Shely, Julian Foo, Claud Antao, Jesús Velasco, Luciano Gomes, Lerpong Intaraworrapath and the METNA team under Shiv Diddee leadership.
 
 The 3rd edition is also made possible because of my role. Having a global role and being a part of product team enabled the development of the book. Folks like Mike Sumner, Kamau Wanguhu, Susan Aoki, Monica Sharma, Chandra Prathuri, Kameswaran Subramanian helped me in this life changing career move.  
+
+## Dedication
+
+![](dedication.jpg)
+
+The book is dedicated to the loving memory of Mama and Papa… 
+
+for your love and sacrifice in raising me in the old town of [Surabaya](https://www.youtube.com/watch?v=5KNb8r5mqNg).
