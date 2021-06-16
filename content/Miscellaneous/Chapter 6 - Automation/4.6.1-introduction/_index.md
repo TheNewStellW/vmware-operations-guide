@@ -55,7 +55,7 @@ How does this translate to an environment managed by vRealize Operations? Let us
 
 As you can see in the next figure, some parts are easy to be mapped to components that you will find in your SDDC.
 
-![](4.6.1-fig-2.png "vRealize Operations in an open-loop control system")
+![](4.6.1-fig-3.png "vRealize Operations in an open-loop control system")
 
 The *sensors* are our adapter instances collecting metrics and properties, the *controller* is vRealize Operations itself and the *plant* that we would like to control or automate is e.g., our vCenter instance managing ESXi hosts, VMs, Datastores etc.
 
