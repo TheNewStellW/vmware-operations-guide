@@ -9,6 +9,4 @@ weight: 20
 ### Chapter 2
 # Operational Maturity
 
-Throughout the book, I sprinkled some quizzes to help you pause and ponder. This section documents the answer.
-
 {{% children %}}
