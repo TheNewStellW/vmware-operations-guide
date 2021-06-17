@@ -6,6 +6,12 @@ This repo contains the contents of Iwan Rahabok's [VMware Operations Guide](http
 
 The entire site is static and built using the static site generator [Hugo](https://gohugo.io/). Hugo uses HTML/CSS, Markdown files, and a templating engine to generate a static site that can be hosted almost anywhere. This is a great model for an online book, as the Markdown files can be parsed by Pandoc and made into EPUB, MOBI and PDF files quite easily.
 
+# Table of Contents
+
+1. [Why Markdown?](#why-markdown)
+2. [Content Organisation](#content-organisation)
+3. [Contributing](#contributing)
+
 # Why Markdown?
 
 There's no point trying to improve on a great write up. Read this [Why Markdown?](https://learn.netlify.app/en/cont/markdown/) post to see why I selected this format.
@@ -66,7 +72,7 @@ If you do not want to submit a PR, you can always file an Issue for it to be add
 
 ## Getting Started
 
-If you'd like to work on this book on your local machine, you'll Hugo and a text editor. That's pretty much it! I use VS Code but you could use whatever you want.
+If you'd like to work on this book on your local machine, you'll need [Hugo](https://gohugo.io/) and a text editor. That's pretty much it! I use VS Code but you could use whatever you want.
 
 1. Install Hugo for [macOS](https://gohugo.io/getting-started/quick-start/#step-1-install-hugo) or [Windows](https://gohugo.io/getting-started/installing)
 1. Clone this repo: `git clone <to be included>`
@@ -110,6 +116,10 @@ This front matter specifies many attributes, but for this book, only the basics 
 
 All content is written in Markdown. See the [Why Markdown?](#why-markdown) section above.
 
+However, there are a lot of things that Markdown doesn’t support well. You could use pure HTML to expand possibilities. But this happens to be a bad idea. Everyone uses Markdown because it’s pure and simple to read even non-rendered. You should avoid HTML to keep it as simple as possible.
+
+To avoid this limitations, Hugo created shortcodes. A shortcode is a simple snippet inside a page. Some small details throughout the online book are achieved through shortcodes.
+
 ### Images and Attachments
 
 If you wish to include images or attachments, include the file in the Page Bundle you want to use it in (same directory as your page's `_index.md`) with a name that matches [the naming convention](#page-bundles). This will keep related content together. 
@@ -120,20 +130,22 @@ To reference an image in a page using Markdown: `![](filename.ext)`.
 
 #### Attachments
 
-This online book uses Hugo theme "Hugo Theme Learn" that provides additional Hugo markup (known as "Shortcodes") to extend the look of the site. One such shortcode is "Attachments". attachments should exist in a **page.files** folder within the Page Bundle:
+Attachments should exist in a **page.files** folder within a Page Bundle like so:
 
 > - content
 >   - _index.md
 >   - page
 >      - _index.md
->      - files
+>      - **page.files**
 >        - attachment.pdf
+
+To list the page bundle attachments on the page, use the Attachments shortcode:
 
 ```
 {{% attachments title="Related files" pattern=".*(pdf|mp4)" /%}}
 ```
 
-Renders to this:
+Which renders to something like this:
 
 ![](readme/attachments.png)
 
@@ -141,4 +153,4 @@ For more information on attachments, read the theme's [documentation on shortcod
 
 ## Writing Guide
 
-- [ ] To do
+TODO: Write a writing guide
