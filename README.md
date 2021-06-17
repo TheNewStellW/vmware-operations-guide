@@ -40,20 +40,20 @@ The structure on disk ends up looking like this:
 ```
 .
 └── content
-    └── Acknowledgements
+    ├── Acknowledgements
     |   └── _index.md  // <- https://example.com/content/acknowledgements/
     ├── Dashboards
     |   ├── _index_.md   // <- https://example.com/content/dashboards/
-    |   ├── Chapter 1 - Design Considerations
-    |   |   ├── _index.md  // <- https://example.com/dashboards/chapter-1-design-considerations/
-    |   |   └── 3.1.1-dashboard-alert-report
-    |   |       └── _index.md // <- https://example.com/dashboards/chapter-1-design-considerations/3.1.1-dashboard-alert-report/
-    ├── Metrics
-    |   ├── _index_.md   // <- https://example.com/content/metrics/
-    |   ├── Chapter 1 - Overview
-    |   |   ├── _index.md  // <- https://example.com/metrics/chapter-1-overview/
-    |   |   └── 2.1.1-nuances-in-metrics
-    |   |       └── _index.md // <- https://example.com/metrics/chapter-1-overview/2.1.1-nuances-in-metrics/
+    |   └── Chapter 1 - Design Considerations
+    |       ├── _index.md  // <- https://example.com/dashboards/chapter-1-design-considerations/
+    |       └── 3.1.1-dashboard-alert-report
+    |           └── _index.md // <- https://example.com/dashboards/chapter-1-design-considerations/3.1.1-dashboard-alert-report/
+    └── Metrics
+        ├── _index_.md   // <- https://example.com/content/metrics/
+        └── Chapter 1 - Overview
+            ├── _index.md  // <- https://example.com/metrics/chapter-1-overview/
+            └── 2.1.1-nuances-in-metrics
+                └── _index.md // <- https://example.com/metrics/chapter-1-overview/2.1.1-nuances-in-metrics/
 ```
 
 The result leaves us with appropriate folders for each and every page to contain not only the `_index.md` file but any supporting materials (documents, images, attachments, etc). 
