@@ -1,4 +1,4 @@
-baseURL = "https://vrops-guide.funkycloudmedina.com/"
+baseURL = "https://vrops.funkycloudmedina.com/"
 languageCode = "en-us"
 title = "VMware vRealize Operations Guide"
 theme = "hugo-theme-learn"
