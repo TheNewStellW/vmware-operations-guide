@@ -1,7 +1,7 @@
 ---
 title: "2. Purpose-Driven Architecture"
 date: 2021-06-11T11:31:22+10:00
-draft: true
+draft: false
 toc: true
 ---
 

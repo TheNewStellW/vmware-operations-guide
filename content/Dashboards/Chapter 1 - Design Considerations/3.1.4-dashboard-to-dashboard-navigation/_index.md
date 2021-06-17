@@ -1,7 +1,7 @@
 ---
 title: "4. Dashboard to Dashboard Navigation"
 date: 2021-06-15T14:32:23+10:00
-draft: true
+draft: false
 weight: 40
 ---
 

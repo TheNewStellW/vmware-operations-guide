@@ -1,7 +1,7 @@
 ---
 title: "5. ESXi Utilization"
 date: 2021-06-15T15:59:08+10:00
-draft: true
+draft: false
 weight: 50
 ---
 

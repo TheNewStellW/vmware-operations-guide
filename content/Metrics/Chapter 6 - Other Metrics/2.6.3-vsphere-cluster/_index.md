@@ -1,7 +1,7 @@
 ---
 title: "3. vSphere Cluster"
 date: 2021-06-15T13:50:29+10:00
-draft: true
+draft: false
 weight: 30
 ---
 

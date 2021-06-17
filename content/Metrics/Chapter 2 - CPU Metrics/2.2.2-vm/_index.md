@@ -1,7 +1,7 @@
 ---
 title: "2. VM"
 date: 2021-06-14T23:50:15+10:00
-draft: true
+draft: false
 weight: 20
 ---
 

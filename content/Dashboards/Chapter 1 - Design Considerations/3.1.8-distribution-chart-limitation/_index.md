@@ -1,7 +1,7 @@
 ---
 title: "8 Distribution Chart Limitation"
 date: 2021-06-15T14:44:26+10:00
-draft: true
+draft: false
 weight: 80
 ---
 

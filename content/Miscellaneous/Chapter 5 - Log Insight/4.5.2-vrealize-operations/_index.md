@@ -1,7 +1,7 @@
 ---
 title: "2. vRealize Operations"
 date: 2021-06-16T21:11:15+10:00
-draft: true
+draft: false
 weight: 20
 ---
 

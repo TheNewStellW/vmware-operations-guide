@@ -1,7 +1,7 @@
 ---
 title: "2. Live! Cluster Performance Dashboard"
 date: 2021-06-15T22:57:00+10:00
-draft: true
+draft: false
 weight: 20
 ---
 

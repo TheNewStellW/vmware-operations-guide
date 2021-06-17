@@ -1,7 +1,7 @@
 ---
 title: "2. VM Configuration"
 date: 2021-06-15T21:20:29+10:00
-draft: true
+draft: false
 weight: 20
 ---
 

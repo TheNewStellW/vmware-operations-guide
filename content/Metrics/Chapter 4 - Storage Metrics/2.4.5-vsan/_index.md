@@ -1,7 +1,7 @@
 ---
 title: "5. vSAN"
 date: 2021-06-15T13:02:24+10:00
-draft: true
+draft: false
 weight: 50
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "7. Availability"
 date: 2021-06-16T23:26:39+10:00
-draft: true
+draft: false
 weight: 70
 ---
 

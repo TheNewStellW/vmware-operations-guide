@@ -1,7 +1,7 @@
 ---
 title: "7. vSAN Contention"
 date: 2021-06-15T16:06:15+10:00
-draft: true
+draft: false
 weight: 70
 ---
 

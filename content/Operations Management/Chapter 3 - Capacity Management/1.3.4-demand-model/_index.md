@@ -1,7 +1,7 @@
 ---
 title: "4. Demand Model"
 date: 2021-06-14T10:54:46+10:00
-draft: true
+draft: false
 weight: 40
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "1. VM Availability"
 date: 2021-06-15T22:35:44+10:00
-draft: true
+draft: false
 weight: 10
 ---
 

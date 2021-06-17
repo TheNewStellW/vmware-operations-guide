@@ -1,7 +1,7 @@
 ---
 title: "2. Security Approach"
 date: 2021-06-14T13:43:12+10:00
-draft: true
+draft: false
 weight: 20
 ---
 

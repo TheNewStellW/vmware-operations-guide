@@ -1,7 +1,7 @@
 ---
 title: "2. Outgoing Communication"
 date: 2021-06-16T22:11:58+10:00
-draft: true
+draft: false
 weight: 20
 ---
 

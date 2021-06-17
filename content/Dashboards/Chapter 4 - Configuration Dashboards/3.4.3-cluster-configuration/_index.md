@@ -1,7 +1,7 @@
 ---
 title: "3. Cluster Configuration"
 date: 2021-06-15T21:31:50+10:00
-draft: true
+draft: false
 weight: 30
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "10. VM Contention"
 date: 2021-06-15T16:13:29+10:00
-draft: true
+draft: false
 weight: 100
 ---
 

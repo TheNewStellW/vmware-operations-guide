@@ -1,7 +1,7 @@
 ---
 title: "2. Multi Component System"
 date: 2021-06-14T14:19:28+10:00
-draft: true
+draft: false
 weight: 20
 ---
 

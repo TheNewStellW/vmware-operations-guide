@@ -1,7 +1,7 @@
 ---
 title: "12. Rightsizing"
 date: 2021-06-14T12:18:42+10:00
-draft: true
+draft: false
 weight: 120
 ---
 

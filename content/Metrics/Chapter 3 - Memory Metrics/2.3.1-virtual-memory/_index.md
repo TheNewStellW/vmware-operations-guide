@@ -1,7 +1,7 @@
 ---
 title: "1. Virtual Memory"
 date: 2021-06-15T10:26:09+10:00
-draft: true
+draft: false
 weight: 10
 ---
 

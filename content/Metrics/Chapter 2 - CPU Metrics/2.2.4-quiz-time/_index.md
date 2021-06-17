@@ -1,7 +1,7 @@
 ---
 title: "4. Quiz Time!"
 date: 2021-06-15T10:18:00+10:00
-draft: true
+draft: false
 weight: 40
 ---
 

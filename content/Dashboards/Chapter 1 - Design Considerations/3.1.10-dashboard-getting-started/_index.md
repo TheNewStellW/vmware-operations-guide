@@ -1,7 +1,7 @@
 ---
 title: "10. Dashboard Getting Started"
 date: 2021-06-15T14:47:31+10:00
-draft: true
+draft: false
 weight: 100
 ---
 

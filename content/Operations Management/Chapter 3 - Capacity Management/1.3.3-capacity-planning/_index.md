@@ -1,7 +1,7 @@
 ---
 title: "3. Capacity Planning"
 date: 2021-06-14T10:50:58+10:00
-draft: true
+draft: false
 weight: 30
 ---
 

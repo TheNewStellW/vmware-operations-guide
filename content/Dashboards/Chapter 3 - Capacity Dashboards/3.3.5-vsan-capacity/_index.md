@@ -1,7 +1,7 @@
 ---
 title: "5. vSAN Capacity"
 date: 2021-06-15T20:57:36+10:00
-draft: true
+draft: false
 weight: 50
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "8. Consumer \\ Update It?"
 date: 2021-06-15T22:05:55+10:00
-draft: true
+draft: false
 weight: 80
 ---
 

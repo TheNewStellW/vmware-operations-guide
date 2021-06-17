@@ -1,7 +1,7 @@
 ---
 title: "9. Horizon Inventory"
 date: 2021-06-16T23:33:07+10:00
-draft: true
+draft: false
 weight: 90
 ---
 

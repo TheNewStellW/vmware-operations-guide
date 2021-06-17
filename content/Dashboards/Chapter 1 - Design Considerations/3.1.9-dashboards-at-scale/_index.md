@@ -1,7 +1,7 @@
 ---
 title: "9. Dashboards at Scale"
 date: 2021-06-15T14:45:58+10:00
-draft: true
+draft: false
 weight: 90
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "6. Datastore Performance"
 date: 2021-06-15T16:02:40+10:00
-draft: true
+draft: false
 weight: 60
 ---
 

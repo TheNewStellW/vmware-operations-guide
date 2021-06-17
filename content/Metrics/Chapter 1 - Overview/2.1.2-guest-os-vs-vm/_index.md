@@ -1,7 +1,7 @@
 ---
 title: "2. Guest OS vs VM"
 date: 2021-06-14T15:06:50+10:00
-draft: true
+draft: false
 weight: 20
 ---
 

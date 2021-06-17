@@ -1,7 +1,7 @@
 ---
 title: "7. Bar Chart as Insight"
 date: 2021-06-15T14:40:19+10:00
-draft: true
+draft: false
 weight: 70
 ---
 

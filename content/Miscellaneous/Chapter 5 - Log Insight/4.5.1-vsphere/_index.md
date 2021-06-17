@@ -1,7 +1,7 @@
 ---
 title: "1. vSphere"
 date: 2021-06-16T20:55:25+10:00
-draft: true
+draft: false
 weight: 10
 ---
 

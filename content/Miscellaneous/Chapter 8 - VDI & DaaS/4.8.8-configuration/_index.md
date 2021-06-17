@@ -1,7 +1,7 @@
 ---
 title: "8. Configuration"
 date: 2021-06-16T23:28:32+10:00
-draft: true
+draft: false
 weight: 80
 ---
 

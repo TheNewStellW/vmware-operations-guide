@@ -1,7 +1,7 @@
 ---
 title: "1. Part 1 - Operations Management"
 date: 2021-06-16T14:09:36+10:00
-draft: true
+draft: false
 weight: 10
 ---
 

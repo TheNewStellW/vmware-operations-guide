@@ -1,7 +1,7 @@
 ---
 title: "1. Roles & Responsibilities"
 date: 2021-06-16T22:45:58+10:00
-draft: true
+draft: false
 weight: 10
 ---
 

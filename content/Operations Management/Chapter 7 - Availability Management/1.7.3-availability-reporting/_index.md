@@ -1,7 +1,7 @@
 ---
 title: "3. Availability Reporting"
 date: 2021-06-14T14:26:05+10:00
-draft: true
+draft: false
 weight: 30
 ---
 

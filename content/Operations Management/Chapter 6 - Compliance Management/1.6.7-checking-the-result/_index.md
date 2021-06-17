@@ -1,7 +1,7 @@
 ---
 title: "7. Checking the Result"
 date: 2021-06-14T14:05:40+10:00
-draft: true
+draft: false
 weight: 70
 ---
 

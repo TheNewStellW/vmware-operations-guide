@@ -1,7 +1,7 @@
 ---
 title: "5. Allocation Model"
 date: 2021-06-14T10:57:22+10:00
-draft: true
+draft: false
 weight: 50
 ---
 

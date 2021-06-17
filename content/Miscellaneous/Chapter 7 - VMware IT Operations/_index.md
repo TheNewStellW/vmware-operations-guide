@@ -1,7 +1,7 @@
 ---
 title: "Chapter 7 - VMware IT Operations"
 date: 2021-06-11T11:31:22+10:00
-draft: true
+draft: false
 chapter: true
 weight: 70
 ---

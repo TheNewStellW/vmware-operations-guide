@@ -1,7 +1,7 @@
 ---
 title: "3. NetApp Storage"
 date: 2021-06-15T23:45:24+10:00
-draft: true
+draft: false
 weight: 30
 ---
 

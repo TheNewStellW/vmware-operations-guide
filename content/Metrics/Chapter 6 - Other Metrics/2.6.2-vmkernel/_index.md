@@ -1,7 +1,7 @@
 ---
 title: "2. VMKernel"
 date: 2021-06-15T13:45:52+10:00
-draft: true
+draft: false
 weight: 20
 ---
 

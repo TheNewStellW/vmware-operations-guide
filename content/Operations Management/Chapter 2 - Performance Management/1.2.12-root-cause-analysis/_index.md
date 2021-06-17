@@ -1,7 +1,7 @@
 ---
 title: "12. Root Cause Analysis"
 date: 2021-06-14T10:35:58+10:00
-draft: true
+draft: false
 weight: 120
 ---
 

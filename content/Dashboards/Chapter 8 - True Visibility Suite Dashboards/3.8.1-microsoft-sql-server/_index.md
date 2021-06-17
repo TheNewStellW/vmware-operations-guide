@@ -1,7 +1,7 @@
 ---
 title: "1. Microsoft SQL Server"
 date: 2021-06-15T23:29:34+10:00
-draft: true
+draft: false
 weight: 10
 ---
 

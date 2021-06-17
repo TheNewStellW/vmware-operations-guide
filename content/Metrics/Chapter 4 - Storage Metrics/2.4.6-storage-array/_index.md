@@ -1,7 +1,7 @@
 ---
 title: "6. Storage Array"
 date: 2021-06-15T13:09:16+10:00
-draft: true
+draft: false
 weight: 60
 ---
 

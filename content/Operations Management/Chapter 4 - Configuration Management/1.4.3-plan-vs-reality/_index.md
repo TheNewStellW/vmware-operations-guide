@@ -1,7 +1,7 @@
 ---
 title: "3. Plan vs Reality"
 date: 2021-06-14T12:55:25+10:00
-draft: true
+draft: false
 weight: 30
 ---
 

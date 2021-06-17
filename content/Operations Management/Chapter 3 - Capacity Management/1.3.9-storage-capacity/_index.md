@@ -1,7 +1,7 @@
 ---
 title: "9. Storage Capacity"
 date: 2021-06-14T11:51:44+10:00
-draft: true
+draft: false
 weight: 90
 ---
 

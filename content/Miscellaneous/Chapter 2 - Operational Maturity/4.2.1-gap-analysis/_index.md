@@ -1,7 +1,7 @@
 ---
 title: "1. Gap Analysis"
 date: 2021-06-16T15:01:44+10:00
-draft: true
+draft: false
 weight: 10
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "4. ESXi Configuration"
 date: 2021-06-15T21:41:26+10:00
-draft: true
+draft: false
 weight: 40
 ---
 

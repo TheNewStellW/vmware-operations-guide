@@ -1,7 +1,7 @@
 ---
 title: "6. VM Capacity"
 date: 2021-06-15T20:59:53+10:00
-draft: true
+draft: false
 weight: 60
 ---
 

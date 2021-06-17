@@ -1,7 +1,7 @@
 ---
 title: "4. How the Policies Work"
 date: 2021-06-14T13:53:48+10:00
-draft: true
+draft: false
 weight: 40
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "4. ESXi Contention"
 date: 2021-06-15T15:53:46+10:00
-draft: true
+draft: false
 weight: 40
 ---
 

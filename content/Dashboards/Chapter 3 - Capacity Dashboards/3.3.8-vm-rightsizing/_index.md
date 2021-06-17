@@ -1,7 +1,7 @@
 ---
 title: "8. VM Rightsizing"
 date: 2021-06-15T21:10:09+10:00
-draft: true
+draft: false
 weight: 80
 ---
 

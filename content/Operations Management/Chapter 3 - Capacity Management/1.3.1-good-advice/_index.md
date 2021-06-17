@@ -1,7 +1,7 @@
 ---
 title: '1. "Good" Advice'
 date: 2021-06-14T10:43:13+10:00
-draft: true
+draft: false
 weight: 10
 ---
 

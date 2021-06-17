@@ -1,7 +1,7 @@
 ---
 title: "3. Object Model"
 date: 2021-06-16T22:52:04+10:00
-draft: true
+draft: false
 weight: 30
 ---
 

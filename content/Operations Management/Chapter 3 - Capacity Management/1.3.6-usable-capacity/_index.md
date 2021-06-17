@@ -1,7 +1,7 @@
 ---
 title: "6. Usable Capacity"
 date: 2021-06-14T10:59:22+10:00
-draft: true
+draft: false
 weight: 60
 ---
 

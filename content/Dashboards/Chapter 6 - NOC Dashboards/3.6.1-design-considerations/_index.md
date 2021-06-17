@@ -1,7 +1,7 @@
 ---
 title: "1. Design Considerations"
 date: 2021-06-15T22:48:57+10:00
-draft: true
+draft: false
 weight: 10
 ---
 

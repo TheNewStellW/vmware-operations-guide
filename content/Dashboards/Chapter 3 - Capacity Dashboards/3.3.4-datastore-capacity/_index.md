@@ -1,7 +1,7 @@
 ---
 title: "4. Datastore Capacity"
 date: 2021-06-15T20:49:41+10:00
-draft: true
+draft: false
 weight: 40
 ---
 

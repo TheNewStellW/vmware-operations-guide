@@ -1,7 +1,7 @@
 ---
 title: "3. Roll-Up vs Aggregation"
 date: 2021-06-14T15:25:08+10:00
-draft: true
+draft: false
 weight: 30
 ---
 

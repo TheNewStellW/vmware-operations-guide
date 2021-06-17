@@ -1,7 +1,7 @@
 ---
 title: "2. Price"
 date: 2021-06-14T13:05:42+10:00
-draft: true
+draft: false
 weight: 20
 ---
 

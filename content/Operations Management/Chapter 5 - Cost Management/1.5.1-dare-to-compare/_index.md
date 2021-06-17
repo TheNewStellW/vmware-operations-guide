@@ -1,7 +1,7 @@
 ---
 title: "1. Dare to Compare"
 date: 2021-06-14T12:58:36+10:00
-draft: true
+draft: false
 weight: 10
 ---
 

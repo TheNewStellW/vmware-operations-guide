@@ -1,7 +1,7 @@
 ---
 title: "10. Horizon Infrastructure"
 date: 2021-06-16T23:36:49+10:00
-draft: true
+draft: false
 weight: 100
 ---
 

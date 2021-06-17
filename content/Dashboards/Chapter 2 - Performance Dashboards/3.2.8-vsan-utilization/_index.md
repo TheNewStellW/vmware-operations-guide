@@ -1,7 +1,7 @@
 ---
 title: "8. vSAN Utilization"
 date: 2021-06-15T16:08:15+10:00
-draft: true
+draft: false
 weight: 80
 ---
 

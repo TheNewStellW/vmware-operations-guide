@@ -1,7 +1,7 @@
 ---
 title: "3. Live Cluster Utilization Dashboard"
 date: 2021-06-15T22:59:41+10:00
-draft: true
+draft: false
 weight: 30
 ---
 

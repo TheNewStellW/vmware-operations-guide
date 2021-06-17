@@ -1,7 +1,7 @@
 ---
 title: "6. The Restaurant Analogy"
 date: 2021-06-11T11:31:22+10:00
-draft: true
+draft: false
 ---
 
 We have covered how all aspects of data center management have changed. If you need details, refer to this chapter. These fundamental changes also change your IT business. You are now a service provider. While your engineering or technical knowledge is still important, your customer measures you on your business service level. While they care about your systems architecture and its capabilities, they measure you on your service quality.

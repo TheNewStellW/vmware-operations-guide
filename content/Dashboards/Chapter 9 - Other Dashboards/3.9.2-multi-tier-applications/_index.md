@@ -1,7 +1,7 @@
 ---
 title: "2. Multi-Tier Applications"
 date: 2021-06-16T12:24:36+10:00
-draft: true
+draft: false
 weight: 20
 ---
 

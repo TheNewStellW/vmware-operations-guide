@@ -1,7 +1,7 @@
 ---
 title: "5. ESXi Host"
 date: 2021-06-15T11:55:09+10:00
-draft: true
+draft: false
 weight: 50
 ---
 

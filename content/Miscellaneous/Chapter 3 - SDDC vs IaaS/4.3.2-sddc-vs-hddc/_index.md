@@ -1,7 +1,7 @@
 ---
 title: "2. SDDC vs HDDC"
 date: 2021-06-16T19:32:39+10:00
-draft: true
+draft: false
 weight: 20
 ---
 

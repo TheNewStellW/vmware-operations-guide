@@ -1,7 +1,7 @@
 ---
 title: "2. Cluster Capacity"
 date: 2021-06-15T20:22:58+10:00
-draft: true
+draft: false
 weight: 20
 ---
 

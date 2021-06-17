@@ -1,7 +1,7 @@
 ---
 title: "13. Provider \\ Simplify It?"
 date: 2021-06-15T22:24:32+10:00
-draft: true
+draft: false
 weight: 130
 ---
 

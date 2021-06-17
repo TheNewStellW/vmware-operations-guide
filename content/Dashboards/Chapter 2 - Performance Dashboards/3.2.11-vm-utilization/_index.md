@@ -1,7 +1,7 @@
 ---
 title: "11. VM Utilization"
 date: 2021-06-15T16:19:50+10:00
-draft: true
+draft: false
 weight: 110
 ---
 

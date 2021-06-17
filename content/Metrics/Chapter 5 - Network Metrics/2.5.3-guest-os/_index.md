@@ -1,7 +1,7 @@
 ---
 title: "3. Guest OS"
 date: 2021-06-15T13:29:37+10:00
-draft: true
+draft: false
 weight: 30
 ---
 

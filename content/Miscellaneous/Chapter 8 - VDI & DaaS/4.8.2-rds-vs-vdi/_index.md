@@ -1,7 +1,7 @@
 ---
 title: "2. RDS vs VDI"
 date: 2021-06-16T22:48:27+10:00
-draft: true
+draft: false
 weight: 20
 ---
 

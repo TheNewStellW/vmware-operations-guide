@@ -1,7 +1,7 @@
 ---
 title: "7. Consumer \\ Correct It?"
 date: 2021-06-15T21:49:56+10:00
-draft: true
+draft: false
 weight: 70
 ---
 

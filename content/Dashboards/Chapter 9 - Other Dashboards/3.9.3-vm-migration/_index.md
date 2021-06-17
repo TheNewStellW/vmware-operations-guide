@@ -1,7 +1,7 @@
 ---
 title: "3. VM Migration"
 date: 2021-06-16T13:57:04+10:00
-draft: true
+draft: false
 weight: 30
 ---
 

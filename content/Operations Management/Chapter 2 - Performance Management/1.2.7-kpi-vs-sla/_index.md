@@ -1,7 +1,7 @@
 ---
 title: "7. KPI vs. SLA"
 date: 2021-06-13T15:12:21+10:00
-draft: true
+draft: false
 weight: 70
 ---
 

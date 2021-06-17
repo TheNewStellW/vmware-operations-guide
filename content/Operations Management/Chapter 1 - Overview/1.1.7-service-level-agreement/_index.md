@@ -1,7 +1,7 @@
 ---
 title: "7. Service Level Agreement"
 date: 2021-06-11T11:31:22+10:00
-draft: true
+draft: false
 ---
 
 The difference between an enterprise grade Cloud and non-enterprise grade Cloud is the SLA. A cloud provider can state that they have the best technology, the most experienced professionals, the most innovative process, industry certifications, etc. to prove that they are the best. All those will not carry weight if they are afraid to back it up with the SLA in their contract. The SLA enables customers to hold the cloud provider accountable as it carries a financial penalty.

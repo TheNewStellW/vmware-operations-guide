@@ -1,7 +1,7 @@
 ---
 title: "5. ESXTOP"
 date: 2021-06-14T15:38:57+10:00
-draft: true
+draft: false
 weight: 50
 ---
 

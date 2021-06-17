@@ -1,7 +1,7 @@
 ---
 title: "5. Network Configuration"
 date: 2021-06-15T21:45:21+10:00
-draft: true
+draft: false
 weight: 50
 ---
 

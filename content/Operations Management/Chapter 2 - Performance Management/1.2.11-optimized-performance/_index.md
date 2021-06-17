@@ -1,7 +1,7 @@
 ---
 title: "11. Optimized Performance"
 date: 2021-06-14T10:26:52+10:00
-draft: true
+draft: false
 weight: 110
 ---
 

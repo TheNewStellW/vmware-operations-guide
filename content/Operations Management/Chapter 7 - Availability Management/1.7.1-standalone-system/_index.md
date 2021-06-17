@@ -1,7 +1,7 @@
 ---
 title: "1. Standalone System"
 date: 2021-06-14T14:13:20+10:00
-draft: true
+draft: false
 weight: 10
 ---
 

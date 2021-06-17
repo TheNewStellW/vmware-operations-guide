@@ -1,7 +1,7 @@
 ---
 title: "5. vSAN File Services"
 date: 2021-06-16T14:04:20+10:00
-draft: true
+draft: false
 weight: 50
 ---
 

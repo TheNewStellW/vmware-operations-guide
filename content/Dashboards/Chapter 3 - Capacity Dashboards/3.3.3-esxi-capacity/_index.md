@@ -1,7 +1,7 @@
 ---
 title: "3. ESXi Capacity"
 date: 2021-06-15T20:31:50+10:00
-draft: true
+draft: false
 weight: 30
 ---
 

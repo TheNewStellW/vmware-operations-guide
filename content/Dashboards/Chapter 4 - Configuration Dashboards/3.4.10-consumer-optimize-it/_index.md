@@ -1,7 +1,7 @@
 ---
 title: "10. Consumer \\ Optimize It?"
 date: 2021-06-15T22:13:11+10:00
-draft: true
+draft: false
 weight: 100
 ---
 

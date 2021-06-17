@@ -1,7 +1,7 @@
 ---
 title: "2. Monitoring"
 date: 2021-06-16T22:38:30+10:00
-draft: true
+draft: false
 weight: 20
 ---
 

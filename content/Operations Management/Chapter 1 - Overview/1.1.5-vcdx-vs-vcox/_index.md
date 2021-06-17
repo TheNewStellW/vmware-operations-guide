@@ -1,7 +1,7 @@
 ---
 title: "5. VCDX vs. VCOX"
 date: 2021-06-11T11:31:22+10:00
-draft: true
+draft: false
 ---
 
 ![](1.1.5-fig-1.png)

@@ -1,7 +1,7 @@
 ---
 title: "2. Cisco UCS Fabric Interconnect"
 date: 2021-06-15T23:37:44+10:00
-draft: true
+draft: false
 weight: 20
 ---
 

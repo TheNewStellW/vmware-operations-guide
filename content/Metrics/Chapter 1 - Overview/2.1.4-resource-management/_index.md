@@ -1,7 +1,7 @@
 ---
 title: "4. Resource Management"
 date: 2021-06-14T15:36:47+10:00
-draft: true
+draft: false
 weight: 40
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "3. Plan | Monitor | Troubleshoot | Optimize"
 date: 2021-06-12T23:58:38+10:00
-draft: true
+draft: false
 weight: 30
 ---
 

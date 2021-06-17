@@ -1,7 +1,7 @@
 ---
 title: "6. Distributed Switch"
 date: 2021-06-15T13:37:42+10:00
-draft: true
+draft: false
 weight: 60
 ---
 

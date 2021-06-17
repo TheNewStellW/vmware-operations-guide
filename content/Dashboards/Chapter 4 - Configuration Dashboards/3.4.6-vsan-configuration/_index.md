@@ -1,7 +1,7 @@
 ---
 title: "6. vSAN Configuration"
 date: 2021-06-15T21:48:12+10:00
-draft: true
+draft: false
 weight: 60
 ---
 

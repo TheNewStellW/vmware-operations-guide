@@ -1,7 +1,7 @@
 ---
 title: "6. Table as Insight"
 date: 2021-06-15T14:36:33+10:00
-draft: true
+draft: false
 weight: 60
 ---
 

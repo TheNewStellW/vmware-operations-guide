@@ -1,7 +1,7 @@
 ---
 title: "2. Inventory Summary"
 date: 2021-06-15T23:16:26+10:00
-draft: true
+draft: false
 weight: 20
 ---
 

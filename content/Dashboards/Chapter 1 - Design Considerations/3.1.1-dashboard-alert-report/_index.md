@@ -1,7 +1,7 @@
 ---
 title: "1. Dashboard | Alert | Report"
 date: 2021-06-15T14:16:12+10:00
-draft: true
+draft: false
 weight: 10
 ---
 

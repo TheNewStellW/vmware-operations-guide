@@ -1,7 +1,7 @@
 ---
 title: "7. VM Reclamation"
 date: 2021-06-15T21:07:00+10:00
-draft: true
+draft: false
 weight: 70
 ---
 

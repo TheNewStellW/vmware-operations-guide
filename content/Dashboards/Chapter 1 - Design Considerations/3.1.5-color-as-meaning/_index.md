@@ -1,7 +1,7 @@
 ---
 title: "5. Color as Meaning"
 date: 2021-06-15T14:34:05+10:00
-draft: true
+draft: false
 weight: 50
 ---
 

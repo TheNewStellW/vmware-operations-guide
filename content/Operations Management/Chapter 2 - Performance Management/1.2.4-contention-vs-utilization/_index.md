@@ -1,7 +1,7 @@
 ---
 title: "4. Contention vs Utilization"
 date: 2021-06-13T14:53:24+10:00
-draft: true
+draft: false
 weight: 40
 ---
 

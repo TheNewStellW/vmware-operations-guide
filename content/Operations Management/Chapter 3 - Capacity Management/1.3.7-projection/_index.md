@@ -1,7 +1,7 @@
 ---
 title: "7. Projection"
 date: 2021-06-14T11:43:43+10:00
-draft: true
+draft: false
 weight: 70
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "3. Cost"
 date: 2021-06-14T13:23:33+10:00
-draft: true
+draft: false
 weight: 30
 ---
 

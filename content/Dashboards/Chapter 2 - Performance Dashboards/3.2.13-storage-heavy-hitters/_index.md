@@ -1,7 +1,7 @@
 ---
 title: "13. Storage Heavy Hitters"
 date: 2021-06-15T16:25:53+10:00
-draft: true
+draft: false
 weight: 130
 ---
 

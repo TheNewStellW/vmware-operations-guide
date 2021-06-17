@@ -1,7 +1,7 @@
 ---
 title: "4. VMware Tools"
 date: 2021-06-15T13:58:38+10:00
-draft: true
+draft: false
 weight: 40
 ---
 

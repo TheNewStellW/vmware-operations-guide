@@ -1,7 +1,7 @@
 ---
 title: "9. Insight vs. Alert"
 date: 2021-06-11T11:31:22+10:00
-draft: true
+draft: false
 ---
 
 Many operations rely on alerts as the starting point. Actions are taken based on alerts, resulting in reactive day-to-day operations. To turn this situation around, vRealize Operations provides insight. Insights complement alerts, it does not replace it. Alerting misses the big picture, as it can only see what is already triggered. For one object that reached this threshold, there could be many just beneath the it. For one alert, there could many supporting metrics that have shown the potential root cause. Think of an iceberg. The small portion above sea level, the visible part, is an alert. The large, invisible part is insight. 

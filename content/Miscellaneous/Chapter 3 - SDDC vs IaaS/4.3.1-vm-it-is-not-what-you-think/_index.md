@@ -1,7 +1,7 @@
 ---
 title: "1. VM, it is not what you think!"
 date: 2021-06-16T16:52:42+10:00
-draft: true
+draft: false
 weight: 10
 ---
 

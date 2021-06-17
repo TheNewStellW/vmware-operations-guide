@@ -1,7 +1,7 @@
 ---
 title: "1. Green Operations"
 date: 2021-06-16T10:39:30+10:00
-draft: true
+draft: false
 weight: 10
 ---
 

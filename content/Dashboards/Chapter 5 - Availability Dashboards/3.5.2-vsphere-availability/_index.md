@@ -1,7 +1,7 @@
 ---
 title: "2. vSphere Availability"
 date: 2021-06-15T22:38:51+10:00
-draft: true
+draft: false
 weight: 20
 ---
 

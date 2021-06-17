@@ -1,7 +1,7 @@
 ---
 title: "8. Pillar vs. Process"
 date: 2021-06-11T11:31:22+10:00
-draft: true
+draft: false
 ---
 
 What do you manage, actually? What does your customers want you to take care? How do you manage what you need to manage?
