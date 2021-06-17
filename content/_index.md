@@ -1,7 +1,7 @@
 ---
 title: "VMware Operations Management"
 date: 2021-06-11T11:31:22+10:00
-draft: true
+draft: false
 ---
 
 # VMware Operations Management
@@ -20,6 +20,8 @@ Operations are like fingerprints. Two companies can have identical architecture,
 The ability to customize vRealize to your operations has been the hall mark of the product since it was released more than a decade ago. I was a pre-sales engineer when I first saw 1.0 many blue moons ago. The ability to slice and dice an environment was a godsend, as I spent a lot of time helping my customers troubleshooting and optimizing their environment. This 3rd edition continues the tradition of the book by showcasing what you can vrealize, not simply what’s out of the box. Until today, I see vRealize as a platform, not just a product.
 
 This book is the documentation of Operationalize Your World, a 2-day workshop that [Kenon Owens](https://www.linkedin.com/in/kenon-owens/) and I created many years ago. Thank you Kenon for the leadership in the early days! 
+
+![](_index.files/operationalize-your-world.png)
 
 {{%attachments title="Downloads" style="green" pattern=".*(docx)"/%}}
 
