@@ -3,7 +3,6 @@ title: "Chapter 1 - Overview"
 date: 2021-06-11T11:31:22+10:00
 draft: true
 chapter: true
-toc: true
 ---
 
 # Chapter 1 - An Overview
