@@ -1,6 +1,6 @@
 baseURL = "https://vrops.funkycloudmedina.com/"
 languageCode = "en-us"
-title = "VMware vRealize Operations Guide"
+title = "VMware Operations Guide"
 theme = "hugo-theme-learn"
 enableGitInfo = true
 
