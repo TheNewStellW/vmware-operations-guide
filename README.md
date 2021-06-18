@@ -151,6 +151,17 @@ Which renders to something like this:
 
 For more information on attachments, read the theme's [documentation on shortcodes](https://learn.netlify.app/en/shortcodes/attachments/). 
 
+## Style Guide
+
+> Placeholder
+
 ## Writing Guide
 
-TODO: Write a writing guide
+> Placeholder
+
+# To do 
+
+- [ ] Readme: Write style guide
+- [ ] Readme: Write writing guide
+- [ ] Book: Review all pages and return missing intra-document links
+- [ ] Book: Refactor Page Bundles that rely heavily on HTML to Markdown
