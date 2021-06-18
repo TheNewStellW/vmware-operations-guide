@@ -10,6 +10,7 @@ enableGitInfo = true
 [params]
 # Change default color scheme with a variant one. Can be "red", "blue", "green".
   themeVariant = "green"
+  editURL = "https://github.com/TheNewStellW/vmware-operations-guide/tree/main/content/"
 
 [[menu.shortcuts]] 
   name = "Iwan 'e1' Rahabok"
