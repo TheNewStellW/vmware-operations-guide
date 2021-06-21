@@ -4,15 +4,17 @@ date: 2021-06-11T11:31:22+10:00
 draft: false
 ---
 
-Many operations rely on alerts as the starting point. Actions are taken based on alerts, resulting in reactive day-to-day operations. To turn this situation around, vRealize Operations provides insight. Insights complement alerts, it does not replace it. Alerting misses the big picture, as it can only see what is already triggered. For one object that reached this threshold, there could be many just beneath the it. For one alert, there could many supporting metrics that have shown the potential root cause. Think of an iceberg. The small portion above sea level, the visible part, is an alert. The large, invisible part is insight. 
+Many operations rely on alerts as the starting point. Actions are taken based on alerts, resulting in reactive day-to-day operations. To turn this situation around, vRealize Operations provides insight. Insights complement alerts, it does not replace it. Alerting misses the big picture, as it can only see what is already triggered. For one object that reached this threshold, there could be many just beneath the it. For one alert, there could many supporting metrics that have shown the potential root cause. Think of an iceberg. The small portion above sea level, the visible part, is an alert. The large, invisible part is insight.
 
-![](1.1.9-fig-1.png)
+![alerts vs. insight iceberg illustration](1.1.9-fig-1.png)
 
-Alerts may auto close if the symptom disappears. This encourages “lazy operations” when no alert is associated with no problem. Insight does not have this “auto close” concept as it does not involve help desk ticket. It’s recording a fact that something has gone wrong, and that something could potentially cause an alert. Ideally, you want to detect and address that something before an alert is triggered. 
+Alerts may auto close if the symptom disappears. This encourages “lazy operations” when no alert is associated with no problem. Insight does not have this “auto close” concept as it does not involve help desk ticket. It’s recording a fact that something has gone wrong, and that something could potentially cause an alert. Ideally, you want to detect and address that something before an alert is triggered.
 
-There is a common misconception that Insight is simply alerts that use different threshold on the same metric. So insight is basically an alert with lower threshold. This is valid, but incomplete. Implementing insight this way can result in an alert storm and a lot of tickets. It is better for Insight to use different metrics than Alerts, so you get a different perspective. 
+There is a common misconception that Insight is simply alerts that use different threshold on the same metric. So insight is basically an alert with lower threshold. This is valid, but incomplete. Implementing insight this way can result in an alert storm and a lot of tickets. It is better for Insight to use different metrics than Alerts, so you get a different perspective.
 
-Insight should focus on the underlying problem. It also helps buy you time so you can address the problem before the user complains. In the following example, the alerts use the SLA metrics and threshold. The insights use more granular metrics and supporting metrics. For example, vMotion stun time is not part of your SLA. 
+Insight should focus on the underlying problem. It also helps buy you time so you can address the problem before the user complains. In the following example, the alerts use the SLA metrics and threshold. The insights use more granular metrics and supporting metrics. For example, vMotion stun time is not part of your SLA.
+
+![early warning, automatic remediation, complaint based operations flow illustration](1.1.9-fig-2.png)
 
 ## Alerts Planning
 
@@ -25,23 +27,23 @@ For each alert, ask yourself: what remediation action will be taken by the perso
 
 What areas do you want to monitor with alerts? There are 7 pillars of Operations Management, so it’s easy to confuse when designing the alerts definition.
 
-##### Availability
+#### Availability
 
-You can minimize reactive operations by tracking soft errors, having proactive hardware replacement and ensuring software stack compatibility. 
+You can minimize reactive operations by tracking soft errors, having proactive hardware replacement and ensuring software stack compatibility.
 
-##### Performance
+#### Performance
 
 You minimize reactive operations not by using lower threshold, but by tracking early warning metrics. See the above diagram for the example.
 
-##### Capacity
+#### Capacity
 
 This is often mistaken as performance problem, as high utilization is a common alert.
 
-##### Compliance
+#### Compliance
 
 This is a subset of configuration check, so limit is to formal security standard.
 
-##### Configuration
+#### Configuration
 
 Configuration is broader than compliance. Configuration mistakes can cause availability, performance, capacity and security. Examples:
 
@@ -49,11 +51,11 @@ Configuration is broader than compliance. Configuration mistakes can cause avail
 - Capacity. Disabling CPU SMT will reduce the number of logical processor.
 - Security. Outdated software may contain known security vulneratibility
 
-##### Cost
+#### Cost
 
 You don’t typically set an alert here as insight with dashboards is a better monitoring solution.
 
-##### Inventory
+#### Inventory
 
 You don’t typically set an alert here as inventory it’s merely an account of what you have. There is no good or bad.
 
