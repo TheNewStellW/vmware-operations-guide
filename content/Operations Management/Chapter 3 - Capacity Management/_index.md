@@ -5,7 +5,9 @@ draft: false
 chapter: true
 ---
 
-# Chapter 3 - Capacity Management
+### Chapter 3
+
+# Capacity Management
 
 At the heart of capacity management is balancing demand and supply. It is about meeting demand with the lowest possible cost.
 
