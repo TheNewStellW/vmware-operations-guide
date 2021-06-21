@@ -7,10 +7,10 @@ weight: 20
 
 Behind an author, there are always many people involved to make a book possible. This is especially true for this 3rd edition, as five long years have passed since the 2nd edition. I am grateful for the feedback, help and encouragement provided by the following individuals. The book is a living document, so it will get regular updates over time. As IT professionals change title and companies, let’s stick with just name and photo.
 
-| Credit | 
+| Credit |
 |:---:|:---:|:---:|:---:|:---:|
-| ![](sajal-debnath.jpg?width=120px&display=block&spacing=0px) **Sajal Debnath** | ![](mehmet-hakan-can.jpg?width=120px&display=block) **Mehmet Hakan Can** | ![](brock-peterson.jpg?width=120px&display=block) Brock Peterson | ![](varghese-philipose.jpg?width=120px&display=block) Varghese Philipose | ![](brandon-gordon.jpg?width=120px&display=block) Brandon Gordon | 
-| ![](andy-bidlen.jpg?width=120px&display=block&spacing=0px) **Andy Bidlen** | ![](thomas-kopton.jpg?width=120px&display=block) **Thomas Kopton** | ![](norman-goh.jpg?width=120px&display=block) **Norman Goh** | ![](sean-lambert.jpg?width=120px&display=block) **Sean Lambert** | ![](sunny-dua.jpg?width=120px&display=block) **Sunny Dua** | 
+| ![Sajal Debnath](sajal-debnath.jpg?width=120px&display=block&spacing=0px) **Sajal Debnath** | ![Mehmet Hakan Can](mehmet-hakan-can.jpg?width=120px&display=block) **Mehmet Hakan Can** | ![Brock Peterson](brock-peterson.jpg?width=120px&display=block) **Brock Peterson** | ![Varghese Philipose](varghese-philipose.jpg?width=120px&display=block) **Varghese Philipose** | ![Brandon Gordon](brandon-gordon.jpg?width=120px&display=block) **Brandon Gordon** |
+| ![Andy Bidlen](andy-bidlen.jpg?width=120px&display=block&spacing=0px) **Andy Bidlen** | ![Thomas Kopton](thomas-kopton.jpg?width=120px&display=block) **Thomas Kopton** | ![Norman Goh](norman-goh.jpg?width=120px&display=block) **Norman Goh** | ![Sean Lambert](sean-lambert.jpg?width=120px&display=block) **Sean Lambert** | ![Sunny Dua](sunny-dua.jpg?width=120px&display=block) **Sunny Dua** |
 
 A lot of engineers from Armenia, home of vRealize Operations and Log Insight, have made the product better and hence the book possible. The book cover photo is Jermuk. Too many folks to mention so allow me to list partially: Hakob Arakelyan, Felix Azizyan, Tigran Mkrtchyan, Anna Grigoryan, Anahit Serobyan, Artur Aghabekyan, Gagik Manukyan, Vahan Tadevosyan, Tigran Avagimyants, Tigran Matevosyan, Robert Mesropyan, and Arman Mkrtchyan.
 
@@ -23,8 +23,8 @@ The 3rd edition is also made possible because of my role. Having a global role a
 
 ## Dedication
 
-![](dedication.jpg)
+![Photo of Iwan's parents](dedication.jpg)
 
-The book is dedicated to the loving memory of Mama and Papa… 
+The book is dedicated to the loving memory of Mama and Papa…
 
 for your love and sacrifice in raising me in the old town of [Surabaya](https://www.youtube.com/watch?v=5KNb8r5mqNg).
