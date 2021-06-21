@@ -5,8 +5,10 @@ draft: false
 chapter: true
 ---
 
-# Chapter 5 - Cost Management
+### Chapter 5
 
-With hardware becoming commodity and infrastructure becoming invisible, price has become a common denominator among all IaaS providers. Applications can run spanning multiple cloud, so whichever cheaper gets the deal to run the applications. 
+# Cost Management
+
+With hardware becoming commodity and infrastructure becoming invisible, price has become a common denominator among all IaaS providers. Applications can run spanning multiple cloud, so whichever cheaper gets the deal to run the applications.
 
 {{% children %}}
