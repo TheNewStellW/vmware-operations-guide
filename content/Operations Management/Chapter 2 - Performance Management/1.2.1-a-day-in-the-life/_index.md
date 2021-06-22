@@ -5,7 +5,7 @@ draft: false
 weight: 10
 ---
 
-To understand what Performance actually is, it is always good to begin with the customer. As shared earlier, what you bought from your vendor is SDDC, but what you sell to your customers is IaaS. We have seen this in almost all customers. Whether the Application Team or VM Owner pays for the service with a chargeback model or not, it is a service. VM Owners no longer own, hence care, about the underlying infrastructure. 
+To understand what Performance actually is, it is always good to begin with the customer. As shared earlier, what you bought from your vendor is SDDC, but what you sell to your customers is IaaS. We have seen this in almost all customers. Whether the Application Team or VM Owner pays for the service with a chargeback model or not, it is a service. VM Owners no longer own, hence care, about the underlying infrastructure.
 
 Here is a common story often told in the virtualization community, which will resonate with you as an IaaS provider.
 
@@ -21,7 +21,7 @@ A VM Owner complains to you that her VM is slow. It was not slow yesterday. Her 
 
 She said your VMware environment is a shared environment, and perhaps an increase in the number of VMs and an increase in the workload of other VMs are straining your IaaS.
 
-She also said that her other VM, which was P2V recently, was performing much faster in physical.
+She also said that her other VM, which was [P2V](https://en.wikipedia.org/wiki/Disaster_recovery) recently, was performing much faster in physical.
 
 You are right. She is saying it’s your fault 😊
 
