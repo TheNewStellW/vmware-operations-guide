@@ -9,8 +9,8 @@ Optimized Capacity means you run utilization at 100%, without wastage or comprom
 
 In the consumer layer (process, guest OS, container, VM), you can optimize the following:
 
-![](1.3.10-fig-1.png)
+![Optimization - what to check](1.3.10-fig-1.png)
 
 In the provider layer (ESXi, cluster, datastore & datastore cluster, distributed switch and port group, hardware), you can optimize the following:
 
-![](1.3.10-fig-2.png)
+![Provider optimization - what to check](1.3.10-fig-2.png)

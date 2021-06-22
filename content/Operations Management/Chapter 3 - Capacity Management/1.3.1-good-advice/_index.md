@@ -5,14 +5,14 @@ draft: false
 weight: 10
 ---
 
-Can you figure out why the following statements are wrong? They are all well-meaning advice on the topic of Capacity Management. We’re sure you have heard them, or even given them. 
+Can you figure out why the following statements are wrong? They are all well-meaning advice on the topic of Capacity Management. We’re sure you have heard them, or even given them.
 
 Regarding Cluster RAM:
 
 - We recommend 1:2 overcommit ratio between physical RAM and virtual RAM. Going above this is risky.
 - Memory Usage on most of your clusters is high, around 90%. You should aim for 60% as you need to consider HA.
 - Memory Active should not exceed 50-60%. You need a buffer between Active Memory and Consumed Memory.
-- Memory should be running at high state on each host. 
+- Memory should be running at high state on each host.
 
 Regarding Cluster CPU:
 
@@ -26,4 +26,4 @@ The scope of the statements above is obviously about a VMware vSphere Cluster. F
 
 Can you figure out where the mistakes are?
 
-You should notice a trend by now. They have something in common. If not, answer at the Part 4: Quiz Answers!
+You should notice a trend by now. They have something in common. If not, answer at the [Part 4: Quiz Answers](/miscellaneous/chapter-1-quiz-answers/4.1.1-part-1-operations-management/)!

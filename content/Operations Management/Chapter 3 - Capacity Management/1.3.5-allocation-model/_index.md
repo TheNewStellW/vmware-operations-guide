@@ -13,14 +13,14 @@ Some customers like to do procurement planning based on overcommit ratios. A com
 
 The allocation model has 3 main limitations:
 
-##### VM Size
+#### VM Size
 
 VM size is not considered in the overcommit ratio. It assumes that scheduling two monster VMs is as easy as scheduling many small VMs. The ESXi scheduler can juggle more small VMs than a few large ones, especially if they peak at different times.
 
-##### Over-provisioned VM
+#### Over-provisioned VM
 
-It is common to have over-provisioned VM issue, especially among the large VMs. It is hard to solve this in production environment as it will involve downtime and the burden is on you to prove it will not have performance impact. Politically, it may make the team who sized the VM and justified the cost look bad. Your best bet is to prevent the problem from happening in the first place, by using progressive pricing. This is covered in the Pricing section of the book.
+It is common to have over-provisioned VM issue, especially among the large VMs. It is hard to solve this in production environment as it will involve downtime and the burden is on you to prove it will not have performance impact. Politically, it may make the team who sized the VM and justified the cost look bad. Your best bet is to prevent the problem from happening in the first place, by using progressive pricing. This is covered in the [Pricing](/operations-management/chapter-5-cost-management/1.5.2-price/) section of the book.
 
-##### IaaS Workload
+#### IaaS Workload
 
 IaaS workload that do not take the shape of VM is not considered. VMkernel, vSAN, NSX, vSphere Replication, and vMotion all need to be considered. On the other hand, Agent VM is included as it takes the shape of a VM, although it tends to use local datastore.
