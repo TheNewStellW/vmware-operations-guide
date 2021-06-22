@@ -5,20 +5,20 @@ draft: false
 weight: 70
 ---
 
-As depicted below, the default compliance page shows at a glance compliance status of the environment against different policies. The “Compliance cards” show the status of the environment against a compliance benchmark. 
+As depicted below, the default compliance page shows at a glance compliance status of the environment against different policies. The “Compliance cards” show the status of the environment against a compliance benchmark.
 
-![](1.6.7-fig-1.png)
+![Compliance dashboard](1.6.7-fig-1.png)
 
-To check further details of a topic, click on card for that topic. This gives us the detailed view of the environment. 
+To check further details of a topic, click on card for that topic. This gives us the detailed view of the environment.
 
-![](1.6.7-fig-2.png)
+![Alert details](1.6.7-fig-2.png)
 
 Note the links under “Compliance Alerts List”. This gives us the details of the non-compliance. Clicking on that link will take us to the particular alert details.
 
-![](1.6.7-fig-3.png)
+![Object details](1.6.7-fig-3.png)
 
-Also note, for any selected object we can check the compliance related to that object from “Compliance” tab. 
+Also note, for any selected object we can check the compliance related to that object from “Compliance” tab.
 
-![](1.6.7-fig-4.png)
+![Compliance details](1.6.7-fig-4.png)
 
 Based on the reports we need to further correct those issues and further run compliance.

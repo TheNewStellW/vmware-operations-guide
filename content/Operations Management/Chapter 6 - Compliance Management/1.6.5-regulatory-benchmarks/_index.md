@@ -11,18 +11,18 @@ Let’s talk about out-of-box regulatory benchmarks. As mentioned earlier, vReal
 - Defense Information Systems Agency (DISA) security standards
 - Federal Information Security Management Act (FISMA) security standards
 - Health Insurance Portability and Accountability Act 1996 (HIPAA) Compliance
-- ISO security tandards
+- ISO security standards
 - Payment Card Industry (PCI) security standards
 
 One interesting point to note, all of these benchmarks apply and work on the same set of objects, mostly vCenter, ESXi, VMs, Distributed Port Groups and Distributed Virtual Switch. You may ask if they work on the same environment with a similar security setting, then how are they different?
 
 These regulatory benchmarks are developed and certified by regulatory authorities aiming for specific use cases. Assume an ESXi host has 100 configurations to make. One of the benchmarks may need 60 of them to be configured, another may need another combination of 60 requirements. For example, assume one benchmark only requires the “root” password needs to be set with an expiry time. But another requires password complexity needs to be also set as per defined criteria.
 
-You can apply all of the suggestions from all of the benchmarks and comply to all of them. The purpose of the compliance check is to certify to a regulatory benchmark so that everyone can be sure that the requirements are met. Without the compliance and certification only word of mouth needs to be trusted. The compliance to the benchmark provides the trust and authenticity. 
+You can apply all of the suggestions from all of the benchmarks and comply to all of them. The purpose of the compliance check is to certify to a regulatory benchmark so that everyone can be sure that the requirements are met. Without the compliance and certification only word of mouth needs to be trusted. The compliance to the benchmark provides the trust and authenticity.
 
 ## CIS Security Standards
 
-Center for Internet Security (CIS) Controls and CIS Benchmarks provide global standards for internet security and are a recognized global standard for securing IT systems and data against attacks. vRealize Operations provides Alerts, Policies, and Reports to validate the vSphere resources against the CIS hardening guide . The following resources are validated using this content:
+Center for Internet Security (CIS) Controls and CIS Benchmarks provide global standards for internet security and are a recognized global standard for securing IT systems and data against attacks. vRealize Operations provides Alerts, Policies, and Reports to validate the vSphere resources against the CIS hardening guide[^1]. The following resources are validated using this content:
 
 - ESXi Host
 - VM
@@ -52,7 +52,6 @@ DISA is a part of the Department of Defense (DoD), and is a combat support agenc
 - Distributed Virtual Switch
 
 Source: [VMware Marketplace](https://marketplace.cloud.vmware.com/services/details/vrealize-operations-compliance-pack-for-disa?slug=true)
-
 
 ## FISMA Security Standards
 
@@ -101,3 +100,5 @@ The PCI security standards hardening guide addresses the growing threat to consu
 - Distributed Virtual Switch
 
 Source: [VMware Marketplace](https://marketplace.cloud.vmware.com/services/details/vrealize-operations-compliance-pack-for-pci?slug=true)
+
+[^1]: Source: [VMware Marketplace](https://marketplace.cloud.vmware.com/services/details/vrealize-operations-compliance-pack-for-cis/?slug=true#compliance)
