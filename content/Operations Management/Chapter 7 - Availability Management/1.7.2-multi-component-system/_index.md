@@ -5,7 +5,7 @@ draft: false
 weight: 20
 ---
 
-Nowadays we rarely deal with a standalone solution. Even the solutions we think are standalone consists of multiple smaller components. For example, a physical server consists of multiple smaller parts, such as power supply and disks. Calculating the availability of the server need to consider the availability of each components and the impact it has on the overall availability. 
+Nowadays we rarely deal with a standalone solution. Even the solutions we think are standalone consists of multiple smaller components. For example, a physical server consists of multiple smaller parts, such as power supply and disks. Calculating the availability of the server need to consider the availability of each components and the impact it has on the overall availability.
 
 ## Components in Series
 
@@ -13,11 +13,11 @@ A series is a serial connection. Think of web server -> application server -> da
 
 The availability of the overall system with multiple subcomponents in series is calculated as per the following formula:
 
-![](1.7.2-fig-1.png)
+![Availability overall system](1.7.2-fig-1.png)
 
-Let’s consider an example, in this scenario, we have three individual components in series with each other and has 99.9% availability each. The availability of overall system = 99.9 * 99.9 * 99.9 ≅ 99.7 %
+Let’s consider an example, in this scenario, we have three individual components in series with each other and has 99.9% availability each. The availability of overall system = `99.9 * 99.9 * 99.9 ≅ 99.7 %`
 
-![](1.7.2-fig-2.png)
+![Overall system flow](1.7.2-fig-2.png)
 
 In conclusion, we can see that for components in series, the overall availability reduces.
 
@@ -25,24 +25,24 @@ In conclusion, we can see that for components in series, the overall availabilit
 
 The availability of the overall system with multiple subcomponents in parallel is calculated as per the following formula:
 
-![](1.7.2-fig-3.png)
+![subcomponents](1.7.2-fig-3.png)
 
-where (1 – Availability of Component i) gives us the unavailability of the component.
+where `1 – Availability of Component i` gives us the unavailability of the component.
 
-Let’s consider an example, in this scenario, we have three individual components in parallel with each other and has 99.9% availability each. 
+Let’s consider an example, in this scenario, we have three individual components in parallel with each other and has 99.9% availability each.
 
-![](1.7.2-fig-4.png)
+![component contribution to availability](1.7.2-fig-4.png)
 
 Availability of the overall system:
 
-![](1.7.2-fig-5.png)
+![availability overall equation](1.7.2-fig-5.png)
 
 ## Mixed Components
 
 Let us consider a more practical system which has both serial and parallel components. For this example, let’s take a three tier application with 4 web servers, 2 application servers and 1 database servers. Let’s consider availability of all of them to be 99.9% and see what the overall availability will be.
 
-![](1.7.2-fig-5.png)
- 
+![multi-component availability](1.7.2-fig-5.png)
+
 First, we need to calculate the overall availability of the parallel components first. Using the above-mentioned formulas we see the overall availability of Application servers are 99.99% and Web Servers are 99.9999%.
 
 Next, we need to calculate the overall availability of the components in series. Applying the above-mentioned formula we get the overall availability as ≅ 99.89%.
