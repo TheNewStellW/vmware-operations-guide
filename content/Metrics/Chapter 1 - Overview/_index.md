@@ -6,6 +6,7 @@ chapter: true
 ---
 
 ### Chapter 1
+
 # Overview
 
 vSphere counters are more complex than physical machine counters because there are many components as well as inconsistencies that are caused by virtualization. When virtualized, the 4 elements of infrastructure (CPU, RAM, Disk, Network) behave ***differently***.
