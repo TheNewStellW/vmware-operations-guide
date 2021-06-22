@@ -3,6 +3,7 @@ title: "Operations Management"
 date: 2021-06-11T11:31:22+10:00
 draft: false
 chapter: false
+disabletoc: true
 weight: 30
 ---
 
