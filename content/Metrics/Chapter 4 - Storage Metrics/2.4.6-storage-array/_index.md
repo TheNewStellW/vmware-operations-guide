@@ -6,5 +6,5 @@ weight: 60
 ---
 
 {{% notice info %}}
-This page has no content right now. Contributors are welcome!
+This page has no content right now. Contributors are welcome! Use the "Edit this page" link.
 {{% /notice %}}
