@@ -7,7 +7,7 @@ weight: 20
 
 Guest OS and VM are 2 closely related but different entities. They are adjacent layers in SDDC stacks. The two layers are distinct, each provide unique visibility that the other layer may not be able to give. Resource consumed by Guest OS is not the same as resource consumed by the underlying VM. Other factors such as power management and CPU SMT also contribute to the differences.
 
-The following diagram uses the _English_ words "demand" and "usage" to explain the concept, where demand consists of usage and unmet demand. It does not mean the demand and usage counters in vSphere and vRealize Operations, meaning don’t assume these counters actually mean this. They were created for a different purpose.
+The following diagram uses the _English_ words "demand" and "usage" to explain the concept, where demand consists of usage and unmet demand. It does not mean the demand and usage counters in vSphere and vRealize Operations, meaning don't assume these counters actually mean this. They were created for a different purpose.
 
 ![guest os view and vm view](2.1.2-fig-1.png)
 
@@ -17,7 +17,7 @@ We can see from the above that area A is not visible to the hypervisor.
 
 #### Layer A
 
-Queue inside the Guest OS (CPU Run Queue, RAM Page File, Disk Queue Length, Driver Queue, network card ring buffer). These queues are not visible to the underlying hypervisor as they have not been sent down to the kernel. For example, if Oracle sends IO requests to Windows, and Windows storage subsystem is full, it won’t send this IO to the hypervisor. As a result, the disk IOPS counter at VM level will under report as it has not received this IO request yet.
+Queue inside the Guest OS (CPU Run Queue, RAM Page File, Disk Queue Length, Driver Queue, network card ring buffer). These queues are not visible to the underlying hypervisor as they have not been sent down to the kernel. For example, if Oracle sends IO requests to Windows, and Windows storage subsystem is full, it won't send this IO to the hypervisor. As a result, the disk IOPS counter at VM level will under report as it has not received this IO request yet.
 
 #### Layer B
 
@@ -39,10 +39,10 @@ If you want to see example of errors in the above process, review [this KB artic
 
 Unmet Demand (CPU Ready, CPU Co-Stop, CPU Overlap, CPU VM Wait, RAM Contention, VM Outstanding IO).
 
-The Guest OS experiences a frozen time or slowness. It’s unaware what it is, meaning it can’t account for it.
+The Guest OS experiences a frozen time or slowness. It's unaware what it is, meaning it can't account for it.
 
 ----
 
-I’ve covered the difference in simple terms, and do not do justice to the full difference. If you want to read a scientific paper, I recommend [this paper](https://link.springer.com/chapter/10.1007%2F978-3-642-29737-3_26) by Benjamin Serebrin and [Daniel Hecht](https://dblp.org/pid/73/11144.html).
+I've covered the difference in simple terms, and do not do justice to the full difference. If you want to read a scientific paper, I recommend [this paper](https://link.springer.com/chapter/10.1007%2F978-3-642-29737-3_26) by Benjamin Serebrin and [Daniel Hecht](https://dblp.org/pid/73/11144.html).
 
 As we cover the CPU, Memory, Disk, Network metrics in their respective sections later in the book, we will explain the differences in more detail. For now, we will provide some examples to drive the point.

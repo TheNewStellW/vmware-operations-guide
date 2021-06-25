@@ -37,7 +37,7 @@ Average of CPU Usage with all VMs in a custom group:
 
 `avg( ${ adaptertype=VMWARE, objecttype=VirtualMachine, metric=cpu|usage_average, depth=3 } )`
 
-## ‘Where’ Clause
+## ‘Where' Clause
 
 Things get more powerful and complex once you need to specify a condition.
 
@@ -99,7 +99,7 @@ count(
 )
 ```
 
-Notice the first comparison simply uses the variable **$value**, because it’s actually defined in the **metric=**.
+Notice the first comparison simply uses the variable **$value**, because it's actually defined in the **metric=**.
 
 **Use Case:** Count of all VMs which are not Windows based or Redhat based.
 
@@ -148,7 +148,7 @@ ${this, metric=summary|undersized|vcpus} == 0
 
 This formula uses the **$this**, a reference to the object itself. So the context is not other object.
 
-For completeness, let’s do the same for memory. Since the default unit is KB, we would like to convert into GB.
+For completeness, let's do the same for memory. Since the default unit is KB, we would like to convert into GB.
 
 **If** the value of Recommended Memory to add  is 0,
 

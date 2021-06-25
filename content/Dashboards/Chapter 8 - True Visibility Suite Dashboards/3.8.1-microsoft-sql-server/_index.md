@@ -15,13 +15,13 @@ This is a custom dashboard. You can download it [here](https://code.vmware.com/s
 
 The MS SQL Server Summary was designed to allow the user to select a MS SQL Instance, then be shown all child objects, their health, and metrics that could reflect problems. Once the MS SQL Instance is selected the user immediately sees Key Performance Indicators (KPIs) in the widgets below. The two Views in the sixth row of widgets have “Auto Select First Row” turned on, such that their respective Scoreboards are populated with data upon selection. 
 
-The design is simple, clean, and efficient, allowing DBAs to search for a database instance and work their way into the details. It’s designed to flow from top to bottom and left to right, which is reflected by the widget interaction canvas.
+The design is simple, clean, and efficient, allowing DBAs to search for a database instance and work their way into the details. It's designed to flow from top to bottom and left to right, which is reflected by the widget interaction canvas.
 
 ![](3.8.1-fig-2.png)
  
 ## How to Use
 
-Select a MS SQL Instance in the top View widget by single clicking it, which will populate all other widgets. We’ll explore the first five rows of the dashboard first, the Instance and its metrics.
+Select a MS SQL Instance in the top View widget by single clicking it, which will populate all other widgets. We'll explore the first five rows of the dashboard first, the Instance and its metrics.
 
 ![](3.8.1-fig-3.png)
  
@@ -49,17 +49,17 @@ The user now has the ability to use all of the Metric Chart Features: Show Dynam
 
 ![](3.8.1-fig-8.png)
  
-Moving to the bottom half of the dashboard, we see two child objects of the selected Instance: Databases and Queries. Jobs and Wait Types are also available child objects but aren’t quite as rich with metrics as Databases and Queries. The scoreboard widgets are driven from the Views and show object KPIs. At the bottom of the dashboard is an Object Relationship showing the original MS SQL Instance and all its children. 
+Moving to the bottom half of the dashboard, we see two child objects of the selected Instance: Databases and Queries. Jobs and Wait Types are also available child objects but aren't quite as rich with metrics as Databases and Queries. The scoreboard widgets are driven from the Views and show object KPIs. At the bottom of the dashboard is an Object Relationship showing the original MS SQL Instance and all its children. 
 
-Starting with the row of Views, we see two important child objects of our selected Instance, namely Databases and Queries. I’ve included navigation information in each widgets title so the user knows exactly what’s driving each View. I’ve included Health and a couple other KPIs for each object. 
+Starting with the row of Views, we see two important child objects of our selected Instance, namely Databases and Queries. I've included navigation information in each widgets title so the user knows exactly what's driving each View. I've included Health and a couple other KPIs for each object. 
 
-Using Views allowed me make 100% green and 25% or less Red. I’ve done something similar for Database Status and Job Last Run Status, to bring the users attention to OFFLINE/Failed statuses. All columns are sortable, giving the user the ability to see the least healthy object immediately.
+Using Views allowed me make 100% green and 25% or less Red. I've done something similar for Database Status and Job Last Run Status, to bring the users attention to OFFLINE/Failed statuses. All columns are sortable, giving the user the ability to see the least healthy object immediately.
 
 ![](3.8.1-fig-9.png)
  
 Auto Select First Row has been turned on such that the Scoreboard widgets are populated with data. All of the same Scoreboard features are available here as they were above. 
 
-The last widget in this dashboard is the Object Relationship, which is being driven from the original MS SQL Instance. It has been configured to show parents and children, and the health of each, represented by the green squares (healthy), yellow triangles (marginally healthy), or red circles (unhealthy). If an object doesn’t have any alerts against it, that doesn’t mean it’s necessarily healthy, but it does mean no Alert/Symptom combinations are active against it.
+The last widget in this dashboard is the Object Relationship, which is being driven from the original MS SQL Instance. It has been configured to show parents and children, and the health of each, represented by the green squares (healthy), yellow triangles (marginally healthy), or red circles (unhealthy). If an object doesn't have any alerts against it, that doesn't mean it's necessarily healthy, but it does mean no Alert/Symptom combinations are active against it.
 
 If you hover over an object, you are given some details: Type and Health. The user is also given an option to select Alerts or Details. If you double click the object the widget will re-center on that particular object, showing its parent and child objects. This can be quite useful during troubleshooting.
 

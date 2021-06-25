@@ -9,7 +9,7 @@ The “**Consumer \ Correct It?**” dashboard complements the main VM configura
 
 The dashboard is designed to focus on VMs that need attention. A list is used to keep it simple, and show actual objects. The list is easy to be tailored by filter and custom group. The list can also be exported for an offline discussion.
 
-It’s also designed to be extendable, reflecting the reality that different customers will have a different set of settings to verify. Since the dashboard layout is just a collection of tables (View List), you can extend it by simply adding more tables. Simply add more View List widget to check the VM configuration that your operations require.
+It's also designed to be extendable, reflecting the reality that different customers will have a different set of settings to verify. Since the dashboard layout is just a collection of tables (View List), you can extend it by simply adding more tables. Simply add more View List widget to check the VM configuration that your operations require.
 
 ## How to Use
 

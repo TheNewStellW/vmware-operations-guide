@@ -11,7 +11,7 @@ With the almost limitless capabilities of the vRealize Orchestrator adapter we a
 
 Of course, we can implement the actual workflow to execute other workflows and possibly include other systems to contribute to the overall automation process but how do we close the loop back to vRealize Operations? And yes, you are right if you now say: “Hold on Thomas, we closed the loop, the action may influence the behavior of a certain object in vCenter, which in turn has impact on metrics collected by the adapter instance.” This in fact may close the loop, but I would like to have something more tightly connected to the entity executing the action, something more powerful working really in context of my automated actions, giving me all options to quickly get back to vRealize Operations and immediately check the impact my actions have. Having the control over what objects I need to inspect, or retrieve additional data from to take more sophisticated actions.
 
-What options do we have to get back to vRealize Operations and retrieve more information? Can we extend what vRealize Operations is managing with custom object types and metrics? Let’s find out!
+What options do we have to get back to vRealize Operations and retrieve more information? Can we extend what vRealize Operations is managing with custom object types and metrics? Let's find out!
 
 ## REST API
 

@@ -5,13 +5,13 @@ draft: false
 weight: 30
 ---
 
-It’s important to calculate unit cost, despite the fact it does not actually exist. When you bought that cluster, you did not pay $1 per GHz of CPU. You paid $100,000 for the entire thing, including installation. The $1 is just for ease of calculation so you do not end up with a loss.
+It's important to calculate unit cost, despite the fact it does not actually exist. When you bought that cluster, you did not pay $1 per GHz of CPU. You paid $100,000 for the entire thing, including installation. The $1 is just for ease of calculation so you do not end up with a loss.
 
 ![cost input and unit pricing](1.5.3-fig-1.png)
 
 The Unit cost per VM depends on Overcommit Ratio, since the hardware cost is identical. If cluster A has 2x overcommit ratio, then the cost per VM is 2x cheaper, all else being equal.
 
-Overcommit Ratio is the way you justify a higher price, hence it’s imperative to disclose upfront to your customers.
+Overcommit Ratio is the way you justify a higher price, hence it's imperative to disclose upfront to your customers.
 
 Unit Cost has to be associated with VM, not ESXi. It is expressed in vCPU, not per physical core or GHz. How many vCPU you plan to pack determines the cost per vCPU.
 
@@ -21,16 +21,16 @@ Unit Price should remain the same within the same class of service. Back to the 
 
 ## Cost Savings
 
-From finance point of view, real cost savings is only realized when new purchase is deferred. You can’t save on what you’ve already spent, accounting wise. Cost Savings is actually Cost Avoidance.
+From finance point of view, real cost savings is only realized when new purchase is deferred. You can't save on what you've already spent, accounting wise. Cost Savings is actually Cost Avoidance.
 
-Let’s take a simple example:
+Let's take a simple example:
 
 - You spend $2 million on a hyper-converged infrastructure (HCI) solution 3 years ago.
 - It has been used well, and capacity remaining is now 0%, so you need to buy a new HCI. This will cost you only $1 million as the cost of HCI solution has gone down by half in the last 3 years.
 - Via a diligent and arduous reclamation process, you manage to free up capacity. As a result, you do not need to spend the $1 million. You can defer this purchase to the next fiscal year.
-- What’s your cost savings from this reclamation: $2 million or $1 million?
+- What's your cost savings from this reclamation: $2 million or $1 million?
 
-Accounting wise, it’s $1 million only. While that HCI cost you $2 million three years ago, a brand new set with equivalent capacity will only cost you $1 million. In accounting rules, you should not mix numbers from different date, let alone from different fiscal years. Depreciation is not relevant here as the cost is based on replacement cost.
+Accounting wise, it's $1 million only. While that HCI cost you $2 million three years ago, a brand new set with equivalent capacity will only cost you $1 million. In accounting rules, you should not mix numbers from different date, let alone from different fiscal years. Depreciation is not relevant here as the cost is based on replacement cost.
 
 The $1 million is certainly an ***estimation***. The actual cost avoided or to be spent depends on vendor quotation, and your negotiation skills. Take note that the actual is much more than the HCI cost. Additional costs can exceed the hardware cost. You need to include the full loaded cost, such as data center facility, implementation service, back up storage, administration service, software licence, management, etc.
 
@@ -50,7 +50,7 @@ For large organization with a large infrastructure footprint, tech refresh is a 
 
 IT needs to be ahead of business. When calculating the cost savings, includes committed projects and future growth. You should also take into account undersized VMs, as the application team may demand that they are upsized.
 
-Calculate CPU, RAM and Disk. If possible, include network too. It is harder to calculate, as by nature it’s just interconnect. For each of these three IaaS resources, calculate both the demand and the reclamation. For the demand, don’t forget to include the full cost. When a VM needs 100 GB, it translates into a lot more as you factor is DR, back up, snapshot, etc.
+Calculate CPU, RAM and Disk. If possible, include network too. It is harder to calculate, as by nature it's just interconnect. For each of these three IaaS resources, calculate both the demand and the reclamation. For the demand, don't forget to include the full cost. When a VM needs 100 GB, it translates into a lot more as you factor is DR, back up, snapshot, etc.
 
 The following table provides an example.
 

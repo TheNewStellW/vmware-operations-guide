@@ -17,7 +17,7 @@ VM CPU Used in vCPU level does not include System time but at the VM level it do
 
 Counters with the same name do not always have the same formula in different vSphere objects.
 
-Memory Usage: in VM this is mapped to Active, while in ESXi Host this is mapped to Consumed. In Cluster, this is Consumed + Overhead[^1]. vRealize Operations uses Guest OS data for Usage, and falls back to Active if it’s not available.
+Memory Usage: in VM this is mapped to Active, while in ESXi Host this is mapped to Consumed. In Cluster, this is Consumed + Overhead[^1]. vRealize Operations uses Guest OS data for Usage, and falls back to Active if it's not available.
 
 Memory Consumed: in ESXi this includes memory consumed by ESXi, while in Cluster it only includes memory consumed by VM.
 
@@ -32,7 +32,7 @@ Counters with the same name, yet different meaning. Be careful as you may misint
 
 VM CPU Usage (%) shows 62.5% when ESXi CPU Usage (%) shows 100%. This happens since VM CPU Usage considers Hyper Threading, while ESXi CPU Usage does not. It happens when the ESXi core that the VM vCPU runs is also running another thread.
 
-Another example is Latency. Disk Latency and Memory Latency indicate a performance problem. They are in fact the primary counter for how well the VM is being served by the underlying IaaS. But CPU Latency does not ***always*** indicate a performance problem. Its value is affected by Hyper-Threading and CPU Frequency, which can go up or down. Sure, the VM is running at a higher or lower CPU speed, or run less efficiently, but it is not waiting to be served. It’s the equivalent on running on older CPU.
+Another example is Latency. Disk Latency and Memory Latency indicate a performance problem. They are in fact the primary counter for how well the VM is being served by the underlying IaaS. But CPU Latency does not ***always*** indicate a performance problem. Its value is affected by Hyper-Threading and CPU Frequency, which can go up or down. Sure, the VM is running at a higher or lower CPU speed, or run less efficiently, but it is not waiting to be served. It's the equivalent on running on older CPU.
 
 #### Same name, different behaviour
 
@@ -56,7 +56,7 @@ What vCenter calls Logical Processor (in the client UI) is what ESXi calls Physi
 
 The name of the counter may not be clear.
 
-VM CPU Wait counter includes Idle time. Since many VMs do not run at 100%, you will see CPU Wait counter to be high. You may think it’s waiting for something (e.g. Disk or Memory) but it’s just idle.
+VM CPU Wait counter includes Idle time. Since many VMs do not run at 100%, you will see CPU Wait counter to be high. You may think it's waiting for something (e.g. Disk or Memory) but it's just idle.
 
 In Microsoft Windows, the CPU queue only counts the queue size, while the disk queue excludes the IO commands being processed.
 
@@ -70,7 +70,7 @@ Why are CPU counters expressed in milliseconds instead of percentage or GHz? How
 
 #### “Missing” Counters
 
-You will find VM CPU Demand, but not VM Memory Demand. Demand does not apply to memory as it’s a form of storage, just as there is no such thing as a Demand metric for your laptop disk space.
+You will find VM CPU Demand, but not VM Memory Demand. Demand does not apply to memory as it's a form of storage, just as there is no such thing as a Demand metric for your laptop disk space.
 
 #### Too many choices
 
@@ -84,7 +84,7 @@ You must remember that the counters are not just created for vSphere administrat
 
 #### ESXi vs vCenter
 
-While ESXi is the source of counters, vCenter may add its own counters and the formula don’t always match 100% in all scenarios, such as Used vs Usage.
+While ESXi is the source of counters, vCenter may add its own counters and the formula don't always match 100% in all scenarios, such as Used vs Usage.
 
 ESXi provides Run (ms), Used (ms), Demand (MHz) for VM CPU. vCenter adds Usage (MHz) and Usage (%), which create confusion as there are now 5 choices.
 
@@ -92,7 +92,7 @@ ESXi shows Used (%), while vCenter shows Used (ms). The first one affected by CP
 
 #### ESXi ≠ VMs + VMkernel
 
-The counters at ESXi is more complex than the sum of its VM + VMkernel. The reason is there are additional parameters that must be taken into account. For example, the impact of CPU SMP (or Hyper Threading as Intel calls it) is not measured at the VM level. Be careful when summing VM counters and assume it’s ESXi counter.
+The counters at ESXi is more complex than the sum of its VM + VMkernel. The reason is there are additional parameters that must be taken into account. For example, the impact of CPU SMP (or Hyper Threading as Intel calls it) is not measured at the VM level. Be careful when summing VM counters and assume it's ESXi counter.
 
 #### M:N relationship
 
@@ -104,11 +104,11 @@ Windows CPU queue excludes the running thread, Linux includes the threads being 
 
 ----
 
-Complicated stuff, isn’t it? And we have not added AWS, Google, Azure, applications, network, etc 😊
+Complicated stuff, isn't it? And we have not added AWS, Google, Azure, applications, network, etc 😊
 
 Not all vSphere-specific characteristics are well understood by management tools that are not purpose-built for it. Partial understanding can lead to misunderstanding as wrong interpretation of counters can result in wrong action taken.
 
-There is also a scalability concern. In vCenter, there are 17 CPU counters available at the VM level, and 12 of them are available at a vCPU level too. In addition, each VM comes with 28 memory counters. That means a VM with 4 vCPUs will have 93 counters (17 + 4 x 12 + 28). A vSphere environment with 1,000 VMs with 4 vCPUs as the average VM size will have process 93K counters each time it collects. If you do that every minute, you will collect almost 134 million metrics per day. Since many customers like to keep for at least 6 months, that’s 24+ billion metrics!
+There is also a scalability concern. In vCenter, there are 17 CPU counters available at the VM level, and 12 of them are available at a vCPU level too. In addition, each VM comes with 28 memory counters. That means a VM with 4 vCPUs will have 93 counters (17 + 4 x 12 + 28). A vSphere environment with 1,000 VMs with 4 vCPUs as the average VM size will have process 93K counters each time it collects. If you do that every minute, you will collect almost 134 million metrics per day. Since many customers like to keep for at least 6 months, that's 24+ billion metrics!
 
 With so many metrics, the amount of business value received becomes a valid concern.
 

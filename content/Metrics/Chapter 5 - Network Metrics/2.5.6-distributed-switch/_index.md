@@ -7,7 +7,7 @@ weight: 60
 
 ![](2.5.6-fig-1.png)
 
-vSphere network is by nature distributed. Each ESXi contributes to the physical NIC. This represents the physical capacity as each NIC cards have a limit, such as 25 Gbps full duplex. Distributed switch and its port groups span across these independent network cards, and dynamically share the cards. This distributed and dynamic nature makes it practically impossible to define and measure network capacity and performance. Unbalanced can happen among ESXi or physical NIC. In a sense, it’s like distributed storage (e.g. vSAN). 
+vSphere network is by nature distributed. Each ESXi contributes to the physical NIC. This represents the physical capacity as each NIC cards have a limit, such as 25 Gbps full duplex. Distributed switch and its port groups span across these independent network cards, and dynamically share the cards. This distributed and dynamic nature makes it practically impossible to define and measure network capacity and performance. Unbalanced can happen among ESXi or physical NIC. In a sense, it's like distributed storage (e.g. vSAN). 
 
 vCenter does not provide information at the individual port group level. This makes monitoring difficult, as you cannot slice the data from the switch point of view. vRealize Operations addresses that by providing the necessary counters at the Distributed Switch level and its Port Groups. It shows a relationship between ESXi, the port group and the switch.
 

@@ -9,7 +9,7 @@ The simplest representation of availability is a ratio of the value of the uptim
 
 ![availability ratio](1.7.1-fig-1.png)
 
-Let’s take an example. In a year (defined as 365.25 days) a solution has a single downtime lasting 24 hours on a busy working day.
+Let's take an example. In a year (defined as 365.25 days) a solution has a single downtime lasting 24 hours on a busy working day.
 
 So, the availability can be calculated as:
 

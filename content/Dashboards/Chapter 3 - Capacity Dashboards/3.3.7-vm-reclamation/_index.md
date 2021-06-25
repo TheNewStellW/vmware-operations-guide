@@ -18,10 +18,10 @@ Select a data center from the table.
 - The summary information will be automatically shown. To show from all clusters, select vSphere World. This object covers all clusters. Take note that the charts will take longer due to refresh due to higher amount of data.
 - The reclamation potentials are presented as 3 bar charts, each corresponds to an area you can reclaim:
   - Snapshot. Especially those more than a few days old as snapshot is meant to be temporary.
-  - Powered off VM. Assuming they are already backed up, it’s safe to delete them from vSphere.
+  - Powered off VM. Assuming they are already backed up, it's safe to delete them from vSphere.
   - Idle VM. You get to reclaim memory, not CPU. Idle VM memory still occupies ESXi physical memory.
 - The Idle VM does not display any CPU as there is practically nothing to reclaim as the overhead of idle CPU is being used. The primary benefit for CPU is capacity, especially the overcommit ratio.
-- Memory reclamation is based on the memory footprint at the parent ESXi. The value inside the Guest is not what is being reclaimed, and so it is irrelevant. That’s why the VM consumed memory is chosen.
+- Memory reclamation is based on the memory footprint at the parent ESXi. The value inside the Guest is not what is being reclaimed, and so it is irrelevant. That's why the VM consumed memory is chosen.
 - Adjust the bucket size in the charts to suit your operational requirements.
 Review each of the 3 tables
 - They are sorted by the largest reclamation opportunities. 

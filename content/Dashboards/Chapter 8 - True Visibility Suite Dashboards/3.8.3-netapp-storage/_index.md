@@ -37,7 +37,7 @@ Next is a row of Metric Chart widgets showing IOPS, Latency, and Throughput for 
 
 ![](3.8.3-fig-7.png)
  
-In the top right of each Metric Chart widget there are two buttons, one graph icon and the ellipses (three vertical dots) for more detail. Hovering over the graph indicates that it’s for Correlation.
+In the top right of each Metric Chart widget there are two buttons, one graph icon and the ellipses (three vertical dots) for more detail. Hovering over the graph indicates that it's for Correlation.
 
 ![](3.8.3-fig-8.png)
  

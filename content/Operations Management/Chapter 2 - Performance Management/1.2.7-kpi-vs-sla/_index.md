@@ -13,29 +13,29 @@ Broader definition of KPI that includes non-performance is not used in this book
 
 For KPI to support SLA, the thresholds that it uses must be the same that SLA uses.
 
-Let’s say you have three classes of service, with Gold being the highest and most expensive.
+Let's say you have three classes of service, with Gold being the highest and most expensive.
 
-The Gold class should be performing better than Bronze. That’s the expectation, so we need to reflect that in the reality in production. The Gold _absolute_ performance should be better as it was designed to be better. There’s a reason why it’s priced higher to begin with.
+The Gold class should be performing better than Bronze. That's the expectation, so we need to reflect that in the reality in production. The Gold _absolute_ performance should be better as it was designed to be better. There's a reason why it's priced higher to begin with.
 
 #### KPI
 
-This absolute performance is measured in range of 0 - 100% so it’s easy to understand, with 100% being the best. Mathematically, KPI is actually unitless. I could have chosen another range, such as 0 – 4, and it won’t make any difference. Using percentage and 0 – 100 just makes it easier to remember.
+This absolute performance is measured in range of 0 - 100% so it's easy to understand, with 100% being the best. Mathematically, KPI is actually unitless. I could have chosen another range, such as 0 – 4, and it won't make any difference. Using percentage and 0 – 100 just makes it easier to remember.
 
 **KPI** reports the raw performance as it is.
 
 Majority of KPIs are internal. They are used as the starting point to troubleshoot.
 
-For each type of object, aim to consolidate all the performance metrics into a single KPI. Say you have 1000 AWS EC2 to be monitored. You have a bunch of metrics and you considated them into 2 KPIs. How would you know which EC2 has issues? You need to show 2 sets of heat map or table. That means you need to manually corelated the first table with the second. It’s not scalable.
+For each type of object, aim to consolidate all the performance metrics into a single KPI. Say you have 1000 AWS EC2 to be monitored. You have a bunch of metrics and you considated them into 2 KPIs. How would you know which EC2 has issues? You need to show 2 sets of heat map or table. That means you need to manually corelated the first table with the second. It's not scalable.
 
 The above also presents challenge as you roll up to higher level object.
 
 #### SLA
 
-While Gold should perform better than Silver, it may not be good enough for the Gold SLA. Gold can fail its own SLA even though it’s faster than Bronze in the absolute term. Relative is measured in binary. Pass or Fail. Because it is a binary, it can’t measure how good it passes or how bad it fails. This is one area where KPI complements it.
+While Gold should perform better than Silver, it may not be good enough for the Gold SLA. Gold can fail its own SLA even though it's faster than Bronze in the absolute term. Relative is measured in binary. Pass or Fail. Because it is a binary, it can't measure how good it passes or how bad it fails. This is one area where KPI complements it.
 
 **SLA** is typically measured over one calendar month, meaning a one time failure of 5-minute does not constitute formal SLA failure.
 
-SLA is external as it’s written in the contract.
+SLA is external as it's written in the contract.
 
 -----
 
@@ -51,14 +51,14 @@ All three Class of Services share the same set of KPIs, which are absolute. Fast
 - Expect Bronze to be in the Orange range. If they are in Green to Yellow range, you over delivering.
 - None should in the Red range. This is where your critical alerts are triggered. Since the very purpose of KPI is to enable proactive operations, you want to minimize being in the red zone.
 
-In the preceding example, the Silver range is given a wide band. While this is mathematically possible, operationally it creates unnecessary complexity. It’s so much easier to map one color to each class of service. Also, having more than 3 class of service complicates your operation and increase your cost.
+In the preceding example, the Silver range is given a wide band. While this is mathematically possible, operationally it creates unnecessary complexity. It's so much easier to map one color to each class of service. Also, having more than 3 class of service complicates your operation and increase your cost.
 
-Let’s look at an example to illustrate:
+Let's look at an example to illustrate:
 
 - The Gold SLA for VM Disk Latency is 8 ms, Bronze is 26 ms.
 - A Gold VM 007 has 9 ms disk latency. A Bronze VM 747 has 25 ms disk latency. Gold class delivered better performance in absolute terms. However, in relative terms, Gold failed the SLA while Bronze class passed its SLA.
 
-If you have a free Tier, where there is no SLA, then it’s fine for them to be in the red zone. Commercial cloud providers provide free tier. They are intentionally designed to be slower and less reliable, because they want you to upgrade and pay.
+If you have a free Tier, where there is no SLA, then it's fine for them to be in the red zone. Commercial cloud providers provide free tier. They are intentionally designed to be slower and less reliable, because they want you to upgrade and pay.
 
 ## Internal SLA
 
@@ -76,7 +76,7 @@ A single threshold is used to keep the operations simple. This means the perform
 
 The above four elements of IaaS (CPU, Memory, Disk, Network) are evaluated on every collection cycle. The default collection cycle is 5 minutes, which is an appropriate balance for SLA monitoring. An SLA that is based on a 1-minute collection cycle will be too tight and result in either a cost increase or a reduction in threshold.
 
-The following example, taken on vRealize Operations 8.2, shows that this VM was served well by the IaaS. It’s getting the four IaaS resources it asked for in the last 24 hours with only one exception. The chart counts each time a VM is not getting a resource. A VM that is not served on all four will register a value of 4 in the chart.
+The following example, taken on vRealize Operations 8.2, shows that this VM was served well by the IaaS. It's getting the four IaaS resources it asked for in the last 24 hours with only one exception. The chart counts each time a VM is not getting a resource. A VM that is not served on all four will register a value of 4 in the chart.
 
 ![VM not served example](1.2.7-fig-3.png)
 
@@ -84,7 +84,7 @@ The following example shows the opposite. There are many instances where the VM 
 
 ![Spike pattern](1.2.7-fig-4.png)
 
-Now that we can measure for every single VM, we can roll up the metric at the ESXi Host or Cluster level. The following formula averages all the running VMs in the cluster. You expect to see a number near 100%, as the expectation is that the cluster is serving all the VMs well, and not just 99% of them. 99% in a cluster with 1000 VMs can mean 10 VMs aren’t being served well. All it takes for a complaint can be just one VM!
+Now that we can measure for every single VM, we can roll up the metric at the ESXi Host or Cluster level. The following formula averages all the running VMs in the cluster. You expect to see a number near 100%, as the expectation is that the cluster is serving all the VMs well, and not just 99% of them. 99% in a cluster with 1000 VMs can mean 10 VMs aren't being served well. All it takes for a complaint can be just one VM!
 
 ![KPI breached](1.2.7-fig-5.png)
 
@@ -108,7 +108,7 @@ Now that we have the threshold for each metric, we can convert each metric into 
 
 How do we translate?
 
-Let’s use an example. Take the Disk Latency (%) metric . It has range from 0 to 40 ms, which maps into the 0 – 100% using the following mapping table.
+Let's use an example. Take the Disk Latency (%) metric . It has range from 0 to 40 ms, which maps into the 0 – 100% using the following mapping table.
 
 ![VM disk latency](1.2.7-fig-9.png)
 
@@ -123,4 +123,4 @@ We repeat the calculation for each metric. The KPI is simply the average of the 
 
 In future, we can add _weighted average_, so you get a better leading indicator. The problem with a simple average is a single red can be outnumbered by many green, and the KPI will not show a problem.
 
-[^1]: You see, I’m not opposed to jargons 😊 so long they are actually used in live operations. If it’s just a goal, then no need to label with jargon, else we have to create jargon for every single type of goals.
+[^1]: You see, I'm not opposed to jargons 😊 so long they are actually used in live operations. If it's just a goal, then no need to label with jargon, else we have to create jargon for every single type of goals.

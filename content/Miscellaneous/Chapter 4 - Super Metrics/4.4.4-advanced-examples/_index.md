@@ -5,13 +5,13 @@ draft: false
 weight: 40
 ---
 
-This is where you vrealize the full capability of super metric. It’s actually a programming language that gets executed as a straight line. That means it can’t loop.
+This is where you vrealize the full capability of super metric. It's actually a programming language that gets executed as a straight line. That means it can't loop.
 
 ## Tools Status
 
 **Use Case:** check the VM Tools running status. If it is running, return the value of OS uptime, else return the value zero.
 
-In this example, we’re combining **where** clause and **If Then Else**.
+In this example, we're combining **where** clause and **If Then Else**.
 
 ```text
 count( ${this, metric=summary|guest|toolsRunningStatus, where= (!($value contains 'Not Running'))}) != 0
@@ -27,20 +27,20 @@ count( ${this, metric=summary|guest|toolsRunningStatus, where= (!($value contain
 
 Recall in the KPI that you typically have metrics with different units and range. To combine them into a single metric, you need to convert them into the same unit-less range.
 
-Let’s say you have the following metrics that you want to combine into a single KPI
+Let's say you have the following metrics that you want to combine into a single KPI
 
 ![](4.4.4-fig-1.png)
 
 For each metric, you have established the range for each color.
 
-Take **IO Wait** for example. The green range is only from 0% - 1%, where 0% IO Wait equals to 100%, while 1% IO Wait becomes 75%. That means 0.8% IO Wait is 80%. The yellow range is wider, so 2% IO Wait gets translated into 62.5% as it’s in between 50% and 75%.
+Take **IO Wait** for example. The green range is only from 0% - 1%, where 0% IO Wait equals to 100%, while 1% IO Wait becomes 75%. That means 0.8% IO Wait is 80%. The yellow range is wider, so 2% IO Wait gets translated into 62.5% as it's in between 50% and 75%.
 
 Super metric does not have a Case statement, so we have to use nested IF. The logic looks something like this
 
 ```text
-If it’s in the green range
+If it's in the green range
 then calculate for green range
-else if it’s in the yellow range
+else if it's in the yellow range
 then calculate for yellow range
 else if in the orange range
 then calculate for orange range
@@ -91,17 +91,17 @@ Sum ([
 ])
 ```
 
-Once you have the above 2 sets, it’s a matter of dividing one over the other. The following shows part of the logic, as I want to focus on the 2 sum statements.
+Once you have the above 2 sets, it's a matter of dividing one over the other. The following shows part of the logic, as I want to focus on the 2 sum statements.
 
 ![](4.4.4-fig-2.png)
 
-Pretty cool isn’t it? If you agree, send your thanks to [Gautam Kumar](https://www.linkedin.com/in/gautam-kumar-b4036867/) and [Artavazd Amirkhanyan](https://www.linkedin.com/in/artavazdamirkhanyan/).
+Pretty cool isn't it? If you agree, send your thanks to [Gautam Kumar](https://www.linkedin.com/in/gautam-kumar-b4036867/) and [Artavazd Amirkhanyan](https://www.linkedin.com/in/artavazdamirkhanyan/).
 
 ## VM Uptime
 
 **Use Case:** calculate the VM uptime within the 5-minute collection cycle.
 
-This particular super metric wasn’t fully implemented in the product due to the false positive from the raw vCenter counter that was discovered during validation. So I’m providing as an example of what you can do with super metric.
+This particular super metric wasn't fully implemented in the product due to the false positive from the raw vCenter counter that was discovered during validation. So I'm providing as an example of what you can do with super metric.
 
 The up time of a VM is more complex than that of a physical machine. Just because the VM is powered on, does not mean the Guest OS is up and running. The VM could be stuck at BIOS, Windows hits BSOD or Guest OS simply hang. This means we need to check the Guest OS. If we have VMware Tools, we can check for heartbeat. But what if VMware Tools is not running or not even installed? Then we need to check for sign of life. Does the VM generate network packets, issue disk IOPS, consume RAM?
 
@@ -115,11 +115,11 @@ Else Calculate up time within the 300 seconds period.
 
 In the above logic, to calculate the up time, we need first to decide if the Guest OS is indeed up, since the VM is powered on.
 
-We can deduce that Guest OS is up is it’s showing any sign of life. We can take Heartbeat from Tools. What if there no Tools or Tools not returning heartbeat? We need to have fail back plan. So we check memory usage, network usage and Disk IOPS.
+We can deduce that Guest OS is up is it's showing any sign of life. We can take Heartbeat from Tools. What if there no Tools or Tools not returning heartbeat? We need to have fail back plan. So we check memory usage, network usage and Disk IOPS.
 
-Can you guess why we can’t use CPU Usage?
+Can you guess why we can't use CPU Usage?
 
-VM does generate CPU even though it’s stuck at BIOS. We need a counter that shows 0, and not a very low number. An idle VM is up, not down.
+VM does generate CPU even though it's stuck at BIOS. We need a counter that shows 0, and not a very low number. An idle VM is up, not down.
 
 So we need to know if the Guest OS is up or down. We are expecting binary, 1 or 0. Can you see the challenge here?
 
@@ -127,7 +127,7 @@ Yes, none of the counters above is giving you binary. Disk IOPS for example, can
 
 We need to convert them into 0 or 1. 0 is the easy part, as they will be 0 if they are down.
 
-I’d take Network Usage as example.
+I'd take Network Usage as example.
 
 -   What if Network Usage is >1? We can use Min (Network Usage, 1) to return 1.
 
@@ -139,16 +139,16 @@ The last part is to account for partial up time, when the VM was rebooted within
 
 If the up time is >300 seconds then return 300 else return it as it is.
 
-Let’s now put the formula together. Here is the logical formula:
+Let's now put the formula together. Here is the logical formula:
 
 ![](4.4.4-fig-3.png)
 
-Can you write the above formula differently? Yes, you can use If Then Else. I do not use it as it makes the formula harder to read. It’s also more resource intensive.
+Can you write the above formula differently? Yes, you can use If Then Else. I do not use it as it makes the formula harder to read. It's also more resource intensive.
 
-Let’s translate the above into a pseudcode.
+Let's translate the above into a pseudcode.
 
 ![](4.4.4-fig-4.png)
 
-Lastly, here is what it looks like in actual code. I’ve optimized the last bit to **/3**. No point multiply by 100 then divide by 300.
+Lastly, here is what it looks like in actual code. I've optimized the last bit to **/3**. No point multiply by 100 then divide by 300.
 
 ![](4.4.4-fig-5.png)

@@ -53,21 +53,21 @@ To implement the above requirements, we need to see 3 aspects of **Sustainable O
   - On-Demand scaling. Some customers like GIC in Singapore implemented on-demand scaling for VDI. On the weekend it's reset back to original size.
   - Correct utilization counters. Current counters are legacy of Virtual Center 1.0, have not changed in 17 years. Virtualization has matured but we still use the highly conservative counters, resulting in excess hardware. By using the correct counters for the correct use case, customers can run higher utilization.
 
-Total Carbon Emissions footprint or CO2 Avoidance have become two important data center KPIs for all organisations of all sizes. vRealize Operations helps by providing the observability required to calculate and understand what an organisation’s CO2 footprint looks like when the power metrics of vSphere and SDDC objects monitored are calculated and visualised. 
+Total Carbon Emissions footprint or CO2 Avoidance have become two important data center KPIs for all organisations of all sizes. vRealize Operations helps by providing the observability required to calculate and understand what an organisation's CO2 footprint looks like when the power metrics of vSphere and SDDC objects monitored are calculated and visualised. 
 
 vRealize Operations collects power consumption metrics (Energy in Joules and Power in Watts) for ESXi Host and VM objects. These metrics can be used to calculate power savings and CO2 emissions using super metrics. 
 
 ![](3.9.1-fig-1.png)
  
-ESXi has an extra metric called Cap. I’ve not seen it used, and how its impacts on performance is measured. If you know, let me know.
+ESXi has an extra metric called Cap. I've not seen it used, and how its impacts on performance is measured. If you know, let me know.
 
-Energy Usage is the total consumption over a period of time. It’s expressed in Joule or Watt-hour, where 1 Wh = 3600 J. Using car analogy, think of it as distance covered in 1 hour.
+Energy Usage is the total consumption over a period of time. It's expressed in Joule or Watt-hour, where 1 Wh = 3600 J. Using car analogy, think of it as distance covered in 1 hour.
 
-Usage is the rate. It’s the consumption at any given second. So if you consume 1 W non stop for 10 hour, you consume 10 Wh. If you consume 1 W non stop for 0.5 hour, you consume 0.5 Wh. 
+Usage is the rate. It's the consumption at any given second. So if you consume 1 W non stop for 10 hour, you consume 10 Wh. If you consume 1 W non stop for 0.5 hour, you consume 0.5 Wh. 
 
-Take note that Energy Usage is not carried forward to the next collection cycle. It gets reset to 0. So if you want to know the total power consumed in the last 1 hour (as the chart below covers 1 hour), you need to sum all the data points. You can’t take the average. 
+Take note that Energy Usage is not carried forward to the next collection cycle. It gets reset to 0. So if you want to know the total power consumed in the last 1 hour (as the chart below covers 1 hour), you need to sum all the data points. You can't take the average. 
 
-For Energy, you can take average, min and max of the data points. You don’t sum them up.
+For Energy, you can take average, min and max of the data points. You don't sum them up.
 
 ![](3.9.1-fig-2.png)
  
@@ -121,7 +121,7 @@ Lastly, the views on the right represent a current state view of the inventory v
  
 ## Identify Green Options to Run Workload Dashboard
 
-This dashboard is designed to be an interactive way to allow users to identify which VM’s, ESXi hosts and Compute Clusters are consuming the most power (Watts). The Geographical dashboard view allows representation of the various Green Data Center objects based on their “green score” KPI. ESXi hosts that are tagged by host hardware model details identified from object native metrics are also categorised on the bottom to help identify and compare power efficiencies for all hardware models in use.
+This dashboard is designed to be an interactive way to allow users to identify which VM's, ESXi hosts and Compute Clusters are consuming the most power (Watts). The Geographical dashboard view allows representation of the various Green Data Center objects based on their “green score” KPI. ESXi hosts that are tagged by host hardware model details identified from object native metrics are also categorised on the bottom to help identify and compare power efficiencies for all hardware models in use.
 
 {{% notice note %}}
 Additional configuration will be required after importing the dashboard package to assign geographical tag against the ESXi hosts and editing their respective vendor model details. Refer to the import instructions for additional detail.

@@ -29,19 +29,19 @@ The main counters for performance are IOPS and latency. The rest is supporting c
 
 For Storage, the counter for contention is clear. First, ensure that you do not have packet loss for your IP Storage, dropped FC frames for FC protocol, or SCSI commands aborted for your block storage. They are a sign of contention as the datastore (VMFS or NFS) is shared. The counters Bus Resets and Commands Aborted should be 0 all the time. As a result, it should be fine to track them at higher level objects. Create a super metric that tracks the maximum or summation of both, and you should expect a flat line.
 
-Once you have ensured that you do not have packet loss on IP Storage or aborted commands on block storage, use the latency counter and outstanding IO for monitoring. For troubleshooting, you will need to check both read latency and write latency, as they tend to have different patterns and value. It’s common to only have read or write issue, and not both.
+Once you have ensured that you do not have packet loss on IP Storage or aborted commands on block storage, use the latency counter and outstanding IO for monitoring. For troubleshooting, you will need to check both read latency and write latency, as they tend to have different patterns and value. It's common to only have read or write issue, and not both.
 
 Total Latency is not Read Latency + Write Latency, because it is not a simple summation. In a given second, a VM issues many IOPS. For example, the VM issues 100 reads and 10 writes in a second. Each of these 110 commands will have their own latency. The “total” latency is the average of these 110 commands. In this example, the total latency will be more influenced by the read latency, as the workload is read dominated.
 
 ## Guest OS Disk Queue
 
-This counter tracks the queue inside Linux or Windows storage subsystem. It’s not the queue at SCSI driver level, such as LSI Logic or PVSCSI. If this is high then the IO from applications did not reach the underlying OS SCSI driver, let alone the VM. If you are running VMware storage driver, such as PVSCSI, then discuss with VMware Support.
+This counter tracks the queue inside Linux or Windows storage subsystem. It's not the queue at SCSI driver level, such as LSI Logic or PVSCSI. If this is high then the IO from applications did not reach the underlying OS SCSI driver, let alone the VM. If you are running VMware storage driver, such as PVSCSI, then discuss with VMware Support.
 
-For Windows, the number is the snapshot at the collection period. For example, if the collection is every 5 minute, then it’s number on the 300th second, not the average of 300 numbers.
+For Windows, the number is the snapshot at the collection period. For example, if the collection is every 5 minute, then it's number on the 300th second, not the average of 300 numbers.
 
 Interestingly, Window documentation said that “Multispindle disk devices can have multiple requests active at one time, but other concurrent requests await service. Requests experience delays proportional to the length of the queue minus the number of spindles on the disks. This difference should average less than two for good performance.”
 
-I plot the disk queue among ~1K VMs. It’s interesting to see see some are very high.
+I plot the disk queue among ~1K VMs. It's interesting to see see some are very high.
 
 ![Disk queue plot](2.4.1-fig-2.png)
 
@@ -53,7 +53,7 @@ The following shows the spike. A few of these VM exceeded 1000 IO in the queue.
 
 ![Disk queue spike](2.4.1-fig-4.png)
 
-Let’s take one of the VMs and drill down. This VM has regular spikes, with the last one exceeding 1000.
+Let's take one of the VMs and drill down. This VM has regular spikes, with the last one exceeding 1000.
 
 ![Regular queue spikes](2.4.1-fig-5.png)
 
@@ -69,6 +69,6 @@ Finally, it would manifest in latency. Can you explain why the latency is actual
 
 ![Latency](2.4.1-fig-8.png)
 
-It’s because that’s from the IO that reaches the hypervisor. The IO that was stuck inside Windows is not included here.
+It's because that's from the IO that reaches the hypervisor. The IO that was stuck inside Windows is not included here.
 
 The application feels latency is high, but the VM does not show it as the IO is stuck in between.

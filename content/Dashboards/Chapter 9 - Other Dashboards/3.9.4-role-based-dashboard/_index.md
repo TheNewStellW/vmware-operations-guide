@@ -11,11 +11,11 @@ Ask any Storage Team and Platform Team whether the collaboration between them ca
 
 vRealize Operations and Log Insight can bridge that providing a set of read-only, purpose-built dashboards, that answer common questions such as:
 
-- When a VM Owner complains, can we agree if it’s a storage issue within 1 minute? This will help reducing the ping pong game between VM Owner, vSphere Admin, and Storage Admin.
+- When a VM Owner complains, can we agree if it's a storage issue within 1 minute? This will help reducing the ping pong game between VM Owner, vSphere Admin, and Storage Admin.
 
 - Is the Storage serving all the VMs well? If not, who are affected, when and how bad? Read or Write? The answer has to be tier based, as Tier 1 VM expects lower latency than Tier 3.
 
-- What’s the total demand hitting the array? Are they growing fast and becoming a risk? Who are the heavy hitters among the VMs?
+- What's the total demand hitting the array? Are they growing fast and becoming a risk? Who are the heavy hitters among the VMs?
 
 - When & where are we running out of capacity? How much disk space can be reclaimed? From which VMs?
 
@@ -67,7 +67,7 @@ Once Network Admin know what they are facing, they are in better position to ana
 
     -   Is any VM or ESXi near its peak in network? Which VXLAN is the busiest?
 
-    -   Who are the top consumer for each physical data center? What’s their workload pattern?
+    -   Who are the top consumer for each physical data center? What's their workload pattern?
 
     -   How is the workload distributed in this shared environment?
 
@@ -85,26 +85,26 @@ Once Network Admin know what they are facing, they are in better position to ana
 
 A common request among VMware Admin is to give their customers a self-service access to their own VMs. The VM Owners should be given a simple portal, where they can easily see all their VMs and its performance. You can use the dashboard sharing feature of vRealize Operations for a login-less access.
 
-But what if you have many tenants? You don’t want to create a dashboard for each of them one by one. The challenge here is how to use the same dashboard for multiple applications teams, assuming they are not allowed to see one another VMs. This requires a security mapping. Each tenant needs to have a login ID, which must be mapped to their VM.
+But what if you have many tenants? You don't want to create a dashboard for each of them one by one. The challenge here is how to use the same dashboard for multiple applications teams, assuming they are not allowed to see one another VMs. This requires a security mapping. Each tenant needs to have a login ID, which must be mapped to their VM.
 
 | **Role**      | The first step is to create a role and give it limited access. All tenants user accounts will be mapped to this role. This role should not be able to browse the inventory. Its only access is to the group of tenants. |
 |---------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Dashboard** | Create a common dashboard and map to the role. This role can’t see any other dashboards                                                                                                                                 |
+| **Dashboard** | Create a common dashboard and map to the role. This role can't see any other dashboards                                                                                                                                 |
 | **Tenant**    | For each tenant, you need to create a user ID. This ID is then mapped to a group. The group has the tenant VMs. In this way, the tenant ID will not be able to see other VMs.                                           |
 
 #### Small Team
 
 The Small Medium Business segment is a world of its own. There are roles and process that are mandatory in Enterprise segment, but not relevant in SMB segment. As a result, products should be tailored for that market segment. You can create a set of consolidated dashboards for this market, as the environment is much smaller.
 
-Let’s look at some unique characteristics of operations in this small environment:
+Let's look at some unique characteristics of operations in this small environment:
 
 -   1-2 guys doing everything. No siloes in the team. You and your best friends take care of the whole darn IT.
 
 -   You only have a few clusters. Each cluster only has a few ESXi Host.
 
--   You know your environment very well because it’s small. They all fit into 1 rack. Architecture is simple. You have a mental picture of it in your head.
+-   You know your environment very well because it's small. They all fit into 1 rack. Architecture is simple. You have a mental picture of it in your head.
 
--   You don’t buy hardware or VMware every quarter. In fact, it’s more like every 3 years. Capacity planning and monitoring become simple as you can do it manually using a simple spreadsheet.
+-   You don't buy hardware or VMware every quarter. In fact, it's more like every 3 years. Capacity planning and monitoring become simple as you can do it manually using a simple spreadsheet.
 
 -   The workload is quite stable. You are not adding/removing/changing VM every day.
 
@@ -112,4 +112,4 @@ Let’s look at some unique characteristics of operations in this small environm
 
 You still need to cover all the key areas of operations, from availability to performance to compliance. As self-service is expected, you need to provide a dashboard for application team.
 
-[^1]: The book is freely available, and that’s part of the reason why I decided to make mine free.
+[^1]: The book is freely available, and that's part of the reason why I decided to make mine free.

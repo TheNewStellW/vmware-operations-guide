@@ -27,9 +27,9 @@ The following heat maps are designed to work as one set. Notice the arrangement 
  
 Unlike the heat maps in the Live! Cluster Performance dashboard, the 3 heat maps in this dashboard has a different scale, reflecting the different nature of the counters. 
 
-Logically, memory is a form of storage. It acts as a cache to disk as it’s much faster. Hence a high utilization is better, as that means more data is being cached. The ideal situation is when ESXi Consumed metric is red but ESXi Ballooned metric is green. When Ballooned is red and Consumed is grey, it means it was likely high in the past but not anymore. The reason the ballooned stays red because the ballooned pages were never requested back. 
+Logically, memory is a form of storage. It acts as a cache to disk as it's much faster. Hence a high utilization is better, as that means more data is being cached. The ideal situation is when ESXi Consumed metric is red but ESXi Ballooned metric is green. When Ballooned is red and Consumed is grey, it means it was likely high in the past but not anymore. The reason the ballooned stays red because the ballooned pages were never requested back. 
 
-Ballooned memory counter was chosen over the swapped or compressed memory counters as it’s a better leading indicator. Because all 3 can co-exist at the same time, all 3 are shown in the line chart. Ballooned is shown in absolute amount and not percentage, as the higher the size the higher the chance it might impact a VM. If you feel using percentage is easier for your operations, create a super metric to translates the value.
+Ballooned memory counter was chosen over the swapped or compressed memory counters as it's a better leading indicator. Because all 3 can co-exist at the same time, all 3 are shown in the line chart. Ballooned is shown in absolute amount and not percentage, as the higher the size the higher the chance it might impact a VM. If you feel using percentage is easier for your operations, create a super metric to translates the value.
 
 Quiz Time: why is the heat map showing grey and light grey?
 

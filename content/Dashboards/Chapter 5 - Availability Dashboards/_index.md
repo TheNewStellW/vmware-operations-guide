@@ -9,6 +9,6 @@ chapter: true
 
 # Availability Dashboards
 
-The availability dashboards aims to implement the capacity concept covered in Availability Management chapter. They are rather limited, hence if you have something let’s collaborate!
+The availability dashboards aims to implement the capacity concept covered in Availability Management chapter. They are rather limited, hence if you have something let's collaborate!
 
 {{% children %}}

@@ -19,7 +19,7 @@ VMs in the same datastores can experience different latency. The following heat 
 
 ![Differing latency](2.4.4-fig-2.png)
 
-There are more counters available via vCenter API than what’s presented in the UI. Just to recap, this is what you get in the UI.
+There are more counters available via vCenter API than what's presented in the UI. Just to recap, this is what you get in the UI.
 
 ![vCenter Metrics](2.4.4-fig-3.png)
 

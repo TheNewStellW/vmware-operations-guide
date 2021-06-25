@@ -32,4 +32,4 @@ Because you overcommit, you run the risk of contention. To minimize it, one way 
 
 ![Tiering breakdown](1.3.3-fig-3.png)
 
-For comparison, [AWS free tier](https://aws.amazon.com/free/) for EC2 VM is only 1-2 vCPU, 1 GB RAM as it’s based on t2.micro and t3.micro.
+For comparison, [AWS free tier](https://aws.amazon.com/free/) for EC2 VM is only 1-2 vCPU, 1 GB RAM as it's based on t2.micro and t3.micro.

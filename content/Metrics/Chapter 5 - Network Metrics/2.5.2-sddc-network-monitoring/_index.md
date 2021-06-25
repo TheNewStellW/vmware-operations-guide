@@ -17,7 +17,7 @@ In a single ESXi host, there are 4 areas that need to be monitored for a complet
 
 In the preceding example, we have 3 VMs running in the host. VM 1 and VM 2 are connected to the same VXLAN (or VLAN). VM 3 is on a different VXLAN (or VLAN), hence it is on a different port group. Monitoring at port group level complements monitoring at VM level and ESXi level.
 
-Traffic at Distributed Switch level carries more than VM traffic. It also carries VMkernel traffic, such as vMotion and VSAN. Both VMkernel network and VM network tend to share the same physical uplinks (ESXi vmnic). As a result, it’s easier to monitor at port group level. 
+Traffic at Distributed Switch level carries more than VM traffic. It also carries VMkernel traffic, such as vMotion and VSAN. Both VMkernel network and VM network tend to share the same physical uplinks (ESXi vmnic). As a result, it's easier to monitor at port group level. 
 
 Sounds good so far. What is the limitation of monitoring at distributed port group level?
 
@@ -33,7 +33,7 @@ The 4th area we need to monitor is Agent VM. An Agent VM is mapped to 1 ESXi Hos
 
 The above example shows an ESXi host with 3 agent VMs. The first VM provides a storage service (an example is Nutanix CVM), the second VM provides Network service, and the 3rd VM provides a Security VM.
 
-Let’s use the Security service as an example. A popular example here is Trend Micro Deep Security virtual appliance. It is in the data path. If the Business VMs are accessing files on a fileserver on another network, the files have to be checked by the security virtual appliance first. If the agent VM is slow (and it could be due to factor that is not network related), it will look like a network or storage issue as far as the business VMs are concerned. The Business VMs do not know that their files have been intercepted for security clearance, as it is not done at the network level. It is done at the hypervisor level.
+Let's use the Security service as an example. A popular example here is Trend Micro Deep Security virtual appliance. It is in the data path. If the Business VMs are accessing files on a fileserver on another network, the files have to be checked by the security virtual appliance first. If the agent VM is slow (and it could be due to factor that is not network related), it will look like a network or storage issue as far as the business VMs are concerned. The Business VMs do not know that their files have been intercepted for security clearance, as it is not done at the network level. It is done at the hypervisor level.
 
 ## Source of Data
 
@@ -45,15 +45,15 @@ The following shows a simplified stack. It shows the five sources of data and th
 
 The network packet analysis comes in 2 main approaches: Header analysis and full packet analysis. The header analysis is certainly much lighter but lack the depth of full analysis. You use this to provide overall visibility as it does not impose heavy load on your environment.
 
-The impact of virtualization on network monitoring goes beyond what we have covered. Let’s add NSX Edge into the above, so you can see the traffic flow when the edge services are also virtualized. You will see that a network problem experienced by a VM on one ESXi could be caused by another VM running on another ESXi. The following diagram is a simplified setup, showing a single NSX Edge residing on another cluster.
+The impact of virtualization on network monitoring goes beyond what we have covered. Let's add NSX Edge into the above, so you can see the traffic flow when the edge services are also virtualized. You will see that a network problem experienced by a VM on one ESXi could be caused by another VM running on another ESXi. The following diagram is a simplified setup, showing a single NSX Edge residing on another cluster.
 
 ![](2.5.2-fig-4.png)
 
-In the above example, let’s say VM 1 needs to talk to outside world. An NSX Edge VM provides that connectivity, so every TCP/IP packet has to go through it. The Edge VM has 2 virtual NICs, one for each network. If the NSX Edge VM has CPU issue, or the underlying ESXi has RAM issue, it can impact the network performance of VM 1.
+In the above example, let's say VM 1 needs to talk to outside world. An NSX Edge VM provides that connectivity, so every TCP/IP packet has to go through it. The Edge VM has 2 virtual NICs, one for each network. If the NSX Edge VM has CPU issue, or the underlying ESXi has RAM issue, it can impact the network performance of VM 1.
 
 ## NSX Edge
 
-You may be wondering if an Edge VM does a lot of processing. Let’s look at a real example. How much traffic do you think this Edge VM is doing? The number is kilobytes not kilobit, so don’t forget to multiply by 8.
+You may be wondering if an Edge VM does a lot of processing. Let's look at a real example. How much traffic do you think this Edge VM is doing? The number is kilobytes not kilobit, so don't forget to multiply by 8.
 
 ![](2.5.2-fig-5.png)
 

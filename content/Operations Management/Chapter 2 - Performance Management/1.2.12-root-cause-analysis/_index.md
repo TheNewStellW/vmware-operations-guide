@@ -7,7 +7,7 @@ weight: 120
 
 There are many things that can go wrong, especially in production and on the eve before you take a vacation. On the other hand, what settings you can change is relatively limited.
 
-I’m assuming you have followed the configuration best practice, as that’s a big topic on its own. You will need to review and apply Windows, Linux, vSphere, NSX, vSAN, server hardware, and network hardware performance best practices. If you use Horizon, then you will need to apply its best practice too, alongside the 3rd party technology used in your VDI architecture. In a large environment with multiple versions and vendors, it can be difficult to ensure the entire stack is compatible. It is a never-ending job as you need to keep up with the versions and product end of life.
+I'm assuming you have followed the configuration best practice, as that's a big topic on its own. You will need to review and apply Windows, Linux, vSphere, NSX, vSAN, server hardware, and network hardware performance best practices. If you use Horizon, then you will need to apply its best practice too, alongside the 3rd party technology used in your VDI architecture. In a large environment with multiple versions and vendors, it can be difficult to ensure the entire stack is compatible. It is a never-ending job as you need to keep up with the versions and product end of life.
 
 Assuming you have done all the configuration check, then the remaining of what you can do is rather limited. For a performance problem, it basically boils down to capacity, either VM capacity or infrastructure capacity.
 
@@ -23,7 +23,7 @@ There is a good chance that the root cause is different than the symptom. It may
 
 You need to ensure that the alert is valid. That means it should not result in false positive.
 
-Let’s take an example. This was a [VDI](https://www.vmware.com/topics/glossary/content/virtual-desktop-infrastructure-vdi) mass disconnect issue, where >100 users had their sessions disconnected at the same time. The analysis concludes that the problem started with the “resuming traffic on DV port”, so we need to trap this message when it appears again.
+Let's take an example. This was a [VDI](https://www.vmware.com/topics/glossary/content/virtual-desktop-infrastructure-vdi) mass disconnect issue, where >100 users had their sessions disconnected at the same time. The analysis concludes that the problem started with the “resuming traffic on DV port”, so we need to trap this message when it appears again.
 
 ![Disconnection logs](1.2.12-fig-2.png)
 

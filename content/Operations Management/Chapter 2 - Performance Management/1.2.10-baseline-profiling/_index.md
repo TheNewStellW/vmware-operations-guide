@@ -5,11 +5,11 @@ draft: false
 weight: 100
 ---
 
-How do you profile your environment in order to set a threshold? How do you determine what’s acceptable? What’s the actual value in the last few months?
+How do you profile your environment in order to set a threshold? How do you determine what's acceptable? What's the actual value in the last few months?
 
 All the above can be answered via profiling your environment.
 
-Let’s say you have 5000 VM across 10 clusters. All these clusters provide the same class of service. You want to prove if 5% CPU Ready for VM is a good threshold, or you want to know the actual CPU Ready experienced by these VMs in the last 3 months.
+Let's say you have 5000 VM across 10 clusters. All these clusters provide the same class of service. You want to prove if 5% CPU Ready for VM is a good threshold, or you want to know the actual CPU Ready experienced by these VMs in the last 3 months.
 
 You want to profile at least the last 3 months of data, so that any peak within that period is not excluded. Since vRealize Operations stores this counter every 5 minutes, you will have 288 datapoints in a day and 26,298 datapoints in 3 months.
 
@@ -49,7 +49,7 @@ Once you do the above for all the clusters, you may end up with something like t
 
 ![Cluster percentile breakdown](1.2.10-fig-1.png)
 
-What if you want to see the actual distribution of VM CPU Ready in the last 3 months? You can do so by creating a bar chart and specifying the distribution buckets. In the following example, I specify 0% – 1%, 1% – 2%, until 5% as those are the range that I’m interested.
+What if you want to see the actual distribution of VM CPU Ready in the last 3 months? You can do so by creating a bar chart and specifying the distribution buckets. In the following example, I specify 0% – 1%, 1% – 2%, until 5% as those are the range that I'm interested.
 
 ![99th Percentile breakdown](1.2.10-fig-2.png)
 

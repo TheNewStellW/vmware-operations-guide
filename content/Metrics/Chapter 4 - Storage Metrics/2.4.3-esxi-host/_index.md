@@ -15,13 +15,13 @@ How do they work in distributed storage such as vSAN?
 
 The following diagram explains the relationship. The green boxes are what you are likely to be familiar with. You have your ESXi host, and it can have NFS Datastore, VMFS Datastore, vSAN Datastore, vVOL datastore or RDM objects. vSAN & vVOL present themselves as a VMFS datastore, but the underlying architecture is different. The _blue_ boxes represent the metric groups you see in vCenter performance charts.
 
-Storage at ESXi is a lot more complex than storage at VM level. Reason is ESXi virtualizes the different storage, and VM consumes it as local SCSI drive. The counter at ESXi level contains data from all VMs. There is no breakdown. For example, the counter at vmnic, storage adapter and storage path are all aggregate counters. It’s not broken down by VM. The same with vSAN objects (cache tier, capacity disk, disk group). None of them shows details per VM.
+Storage at ESXi is a lot more complex than storage at VM level. Reason is ESXi virtualizes the different storage, and VM consumes it as local SCSI drive. The counter at ESXi level contains data from all VMs. There is no breakdown. For example, the counter at vmnic, storage adapter and storage path are all aggregate counters. It's not broken down by VM. The same with vSAN objects (cache tier, capacity disk, disk group). None of them shows details per VM.
 
 ![ESXi storage perspective](2.4.3-fig-2.png)
 
 Can you figure out why there is no path to the VSAN Datastore?
 
-We’ll do a comparison, and hopefully you will realize how difference distributed storage and central storage is from performance monitoring point of view.
+We'll do a comparison, and hopefully you will realize how difference distributed storage and central storage is from performance monitoring point of view.
 
 In the central storage architecture, NFS and VMFS datastores differ drastically in terms of counters, as NFS is file-based while VMFS is block-based.
 
@@ -56,7 +56,7 @@ We know vSAN is not part of Storage Fabric, so there is no need for Identifier, 
 
 vRealize Operations provide the `Storage Adapter|Outstanding Requests` metric, which is required to track if the adapter is struggling to meet demands.
 
-Let’s expand the **Paths** tab. We can see the LUN ID here. This is important. The fact that the hypervisor can see the device is important. That means the VMkernel can report if there is an issue, be it performance or availability. This is different if the disk is directly passed through to the VM. The hypervisor loses visibility.
+Let's expand the **Paths** tab. We can see the LUN ID here. This is important. The fact that the hypervisor can see the device is important. That means the VMkernel can report if there is an issue, be it performance or availability. This is different if the disk is directly passed through to the VM. The hypervisor loses visibility.
 
 ![LUN ID](2.4.3-fig-8.png)
 

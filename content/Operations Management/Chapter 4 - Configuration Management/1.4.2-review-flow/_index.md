@@ -15,7 +15,7 @@ This is typically the most urgent step.
 
 #### Step 2
 
-The settings are correct, but on older version. It’s hard to keep up with all the vendors releases, so you should prioritize those oldest versions, especially those no longer supported.
+The settings are correct, but on older version. It's hard to keep up with all the vendors releases, so you should prioritize those oldest versions, especially those no longer supported.
 
 A typical SDDC or EUC architecture spans many components. While each can run the latest version, they may not be compatible or supported.
 
@@ -25,7 +25,7 @@ The settings are correct and up to date, but they complicate your IaaS operation
 
 #### Step 4
 
-The last step is about cost and capacity, as there is nothing wrong already. You want to maximize the usage of your resources while minimizing your cost. It’s a balancing act!
+The last step is about cost and capacity, as there is nothing wrong already. You want to maximize the usage of your resources while minimizing your cost. It's a balancing act!
 
 -----
 

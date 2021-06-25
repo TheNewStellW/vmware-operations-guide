@@ -5,11 +5,11 @@ draft: false
 weight: 80
 ---
 
-Consistent configuration is important in DaaS, which is made of many softwares (Horizon, vSphere, NSX, vSAN, physical network, client, etc.). We’re following the configuration dashboard best practices set in [Part 3 Chapter 1 Design Consideration](#design-consideration).
+Consistent configuration is important in DaaS, which is made of many softwares (Horizon, vSphere, NSX, vSAN, physical network, client, etc.). We're following the configuration dashboard best practices set in [Part 3 Chapter 1 Design Consideration](#design-consideration).
 
 | **Incorrect Configuration**   | Address settings that are incorrect, insecure, not following your corporate standards or against Horizon best practice.                                                                   |
 |-------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Outdated Configuration**    | The settings are correct, but on older version. It’s hard to keep up with all the vendors releases, so you should prioritize those oldest versions, especially those no longer supported. |
+| **Outdated Configuration**    | The settings are correct, but on older version. It's hard to keep up with all the vendors releases, so you should prioritize those oldest versions, especially those no longer supported. |
 | **Complex Configuration**     | The settings are correct and up to date, but they complicates your DaaS operations.                                                                                                       |
 | **Inefficient Configuration** | The last step is about cost and capacity, as there is nothing wrong already. You want to maximize the usage of your resources while minimizing your cost.                                 |
 
@@ -21,9 +21,9 @@ At the server-side, ensure your Horizon agents software are up to date.
 
 ![](4.8.8-fig-2.png)
 
-The agents reporting version 0 – 0 could be test agent. Don’t worry about them.
+The agents reporting version 0 – 0 could be test agent. Don't worry about them.
 
-The simplest form of configuration widget is a table that lists the settings you’re interested. The following shows an example for VDI Pool.
+The simplest form of configuration widget is a table that lists the settings you're interested. The following shows an example for VDI Pool.
 
 ![](4.8.8-fig-3.png)
 

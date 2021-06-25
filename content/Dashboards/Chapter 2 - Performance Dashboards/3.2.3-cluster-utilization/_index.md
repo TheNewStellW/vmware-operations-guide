@@ -21,7 +21,7 @@ Review the 2 distribution charts
 - They give an overview of all the clusters CPU utilization and memory utilization. 
 - The highest metric in the last 1 week is used. Average or 95thpercentile is not used as this is utilization, not contention. High utilization does not mean bad performance. 
 - 1 week is used instead of 1 day to give you a longer time horizon and cover the weekend. Adjust the timeline as you deem fit for your operations. 
-- Expect memory to be higher than CPU, as it’s a form of cache. The Memory Consumed counter is used, as it’s more appropriate than the Memory Active counter. 
+- Expect memory to be higher than CPU, as it's a form of cache. The Memory Consumed counter is used, as it's more appropriate than the Memory Active counter. 
 - Low utilization can actually indicate bad performance, as not much of real work got done. The chart uses the color dark grey for low utilization. 
 
 Review the Clusters Utilization table
@@ -34,7 +34,7 @@ Review the Clusters Utilization table
 Select a cluster from the table
 
 - All the utilization charts will automatically show the key utilization metrics of the selected cluster.
-- For memory, the high utilization counters are explicitly shown. Balloon, Compressed, Swapped. Notice they exist even though utilization is not even 90%, indicating high pressure in the past. If you look at only utilization, you’d think you are safe!
+- For memory, the high utilization counters are explicitly shown. Balloon, Compressed, Swapped. Notice they exist even though utilization is not even 90%, indicating high pressure in the past. If you look at only utilization, you'd think you are safe!
 - The line charts shows both average and highest among ESXi host in the cluster. The reason is **unbalanced** is not rare. There are many settings that can contribute to it (e.g. DRS settings, VM Reservation, VM – Host Affinity, Resource Pool, Stretched Cluster, Large VM). So check all these as unbalanced cluster is quite common, especially in large clusters. 
 ![](3.2.3-fig-3.png)
 - The disk IOPS is split into read & write to gain insight into the behaviour. Some workloads are read-oriented, while others are write-oriented. 
@@ -46,4 +46,4 @@ Select a cluster from the table
 - If your operations team has a standard that utilization should not exceed a certain threshold, you can add that threshold value into the line chart. The threshold line will help less technical teams as they can see how the real value compares with the threshold.
 - See the Points to Note section of Cluster Contention dashboard as this dashboard is designed to complement it.
 - Consider adding a 3rd distribution chart. Show the balloon counter in this 3rd chart, as it complements the consumed counter. As long as there is no ballooning, a very high consumed value is in fact better than a lower value.
-- The Workload metric can exceed 100% because it’s demand / usable capacity * 100. So this could happen if you have 4 hosts in a cluster with each host running at 100% demand and admission control is set to 50%.
+- The Workload metric can exceed 100% because it's demand / usable capacity * 100. So this could happen if you have 4 hosts in a cluster with each host running at 100% demand and admission control is set to 50%.

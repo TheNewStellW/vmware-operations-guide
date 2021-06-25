@@ -21,7 +21,7 @@ The above system has 3 tiers: web, application and database.
 
 The web tier is sized with 8 VM, plus 2 additional VM added for resilience. The application tier is designed with 3+1 server farm. The database uses active/passive design.
 
-Let’s step through the time to show how difference scenarios impact availability.
+Let's step through the time to show how difference scenarios impact availability.
 
 #### 9:00 – 9:05 am
 
@@ -29,7 +29,7 @@ Let’s step through the time to show how difference scenarios impact availabili
 - The uptime of the web tier become 9/10 = 90%.
 - Overall, the system uptime is 90%.
 - SLA is not impacted as the web tier has been designed to handle 2 failures.
-- While SLA not impacted, it’s important to record the fact that the uptime is not perfect.
+- While SLA not impacted, it's important to record the fact that the uptime is not perfect.
 
 #### 9:05 – 9:10 am
 
@@ -47,10 +47,10 @@ Let’s step through the time to show how difference scenarios impact availabili
 
 #### 9:15 – 9:20 am
 
-- As previous, but 1 application server is down. It’s important to reflect this deteriotation, hence the uptime drops from 70% -> 53%.
-- SLA does not care about it, as it focuses on fail or not. It’s binary within that 5 minutes.
+- As previous, but 1 application server is down. It's important to reflect this deteriotation, hence the uptime drops from 70% -> 53%.
+- SLA does not care about it, as it focuses on fail or not. It's binary within that 5 minutes.
 
-We can now continue the timeline for entire month. I’m modifying the example a bit to drive the point that SLA and reality can differ.
+We can now continue the timeline for entire month. I'm modifying the example a bit to drive the point that SLA and reality can differ.
 
 From 9:00 am – 9:30 am, the system never has 100% uptime. For the rest of the month, it has a perfect 100% uptime.
 

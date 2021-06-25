@@ -26,7 +26,7 @@ If they ask for a self-service portal, then make it easy to access. They may not
 
 ![](3.7.1-fig-1.png)
  
-That’s what ***they*** want from you. You also need to think of what you want from them.
+That's what ***they*** want from you. You also need to think of what you want from them.
 
 You also want to show them problems that you can get help, which is budget and resource. You do this by showing data. By giving visibility into **live** environment to senior management, you prove that you do need additional hardware. If there is wastage to be reclaim, you also prove on where and how large the wastage is. 
 

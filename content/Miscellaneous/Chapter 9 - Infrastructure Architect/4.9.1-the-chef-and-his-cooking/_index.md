@@ -5,7 +5,7 @@ draft: false
 weight: 10
 ---
 
-I see myself as an Infrastructure Architect. After almost a decade in application world, I entered the weird and wonderful world of enterprise IT infrastructure, starting as a presales with Sun Microsystems in 2003. My job titles, roles and departments have changed many times since then, but fundamentally it’s about architecting enterprise infrastructure. My official role is a Product Manager for an operations management product, but I still see myself as the engineer doing the performance troubleshooting and reading logs.
+I see myself as an Infrastructure Architect. After almost a decade in application world, I entered the weird and wonderful world of enterprise IT infrastructure, starting as a presales with Sun Microsystems in 2003. My job titles, roles and departments have changed many times since then, but fundamentally it's about architecting enterprise infrastructure. My official role is a Product Manager for an operations management product, but I still see myself as the engineer doing the performance troubleshooting and reading logs.
 
 ### The Chef and His Cooking
 
@@ -19,9 +19,9 @@ You do not sell hardware nor software; you charge your customers per VM. In fact
 
 As the Architect, we are the best person to determine how much to charge for these. We built this environment. We know the costs, and we know the capacity. Not convinced? Put it this way, would you rather someone else determine how much your creation is worth?
 
-We all know that IT exists because of Business. It starts with the Business. Some of the issues we have are caused by unsuitable chargeback models and incorrect Service Tiering. The VM in Tier 1 (mission critical) platform cannot cost the same as the VM in Tier 3 (non-production). I’d make sure there is distinct difference in quality between Tier 1, Tier 2 and Tier 3, so it’s easy for business to choose. Need a good example? Review this.
+We all know that IT exists because of Business. It starts with the Business. Some of the issues we have are caused by unsuitable chargeback models and incorrect Service Tiering. The VM in Tier 1 (mission critical) platform cannot cost the same as the VM in Tier 3 (non-production). I'd make sure there is distinct difference in quality between Tier 1, Tier 2 and Tier 3, so it's easy for business to choose. Need a good example? Review this.
 
-Using the restaurant analogy, say you cook fried rice. It’s your dish. You need to determine the price of the fried rice. You also need to be able to justify why you have normal fried rice and special fried rice, and why the special one costs a lot more for the same amount of food.
+Using the restaurant analogy, say you cook fried rice. It's your dish. You need to determine the price of the fried rice. You also need to be able to justify why you have normal fried rice and special fried rice, and why the special one costs a lot more for the same amount of food.
 
 To me, the Chargeback model and the Service Tiering serve as Key Drivers to our Architecture. I will not consider my architecture complete unless I include these 2 in my design. We are architecting to meet the business requirements, which are “defined” in the chargeback model (e.g. the business wants a $100 VM per month, not a $100K VM per month), and service tiering (e.g. the business wants 99.999% and 3% CPU Contention).
 
@@ -33,7 +33,7 @@ As shared, I see a chance for us to **step up** and **step out**.
 
 The good thing about pricing is…. your benchmark is already set.
 
-Azure, AWS, Google, and many Service Providers have already set the benchmark. Your private cloud cannot be too far from it. Too low and you will likely make a loss (it’s almost impossible to beat their efficiency). Too high and you will get a complain. Another source of benchmark is to consider what it would cost to run the same applications on physical servers
+Azure, AWS, Google, and many Service Providers have already set the benchmark. Your private cloud cannot be too far from it. Too low and you will likely make a loss (it's almost impossible to beat their efficiency). Too high and you will get a complain. Another source of benchmark is to consider what it would cost to run the same applications on physical servers
 
 If you are pricing your VDI, the cost of a PC sets your benchmark. You can be higher, but not by a huge gap. A PC costs $800 with Windows + 3 year warranty + 17” monitor. Add your IT Desktop cost, and you meet your benchmark.
 

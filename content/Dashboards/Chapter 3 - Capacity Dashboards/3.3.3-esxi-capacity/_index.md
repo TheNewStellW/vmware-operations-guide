@@ -19,7 +19,7 @@ The **Summary** heat map provides an overall view of ESXi Hosts capacity, groupe
 About the ESXi Hosts Capacity table 
 - The table lists all the ESXi hosts in your environment, grouped by their parent cluster. Standalone ESXi will be shown at the bottom under “No Group” 
 - In a large environment with many data centers, you can zoom into specific vCenter or Data center. You can also filter or search for specific ESXi hosts matching certain names. 
-- The 99th percentile Performance column takes the 99th percentile value of the ESXi Performance (%) metric. The reason we’re not taking the worst performance (which is equivalent to 100thpercentile) is to rule out outlier. In addition, the performance threshold has been set to be stringent.
+- The 99th percentile Performance column takes the 99th percentile value of the ESXi Performance (%) metric. The reason we're not taking the worst performance (which is equivalent to 100thpercentile) is to rule out outlier. In addition, the performance threshold has been set to be stringent.
 
 Select one of the ESXi
 - All the 3 line charts will automatically show the trend of selected ESXi Host. 

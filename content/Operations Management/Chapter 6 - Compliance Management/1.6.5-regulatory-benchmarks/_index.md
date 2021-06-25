@@ -5,7 +5,7 @@ draft: false
 weight: 50
 ---
 
-Let’s talk about out-of-box regulatory benchmarks. As mentioned earlier, vRealize Operations provides the following mentioned benchmarks:
+Let's talk about out-of-box regulatory benchmarks. As mentioned earlier, vRealize Operations provides the following mentioned benchmarks:
 
 - Center for Internet Security (CIS) security standards
 - Defense Information Systems Agency (DISA) security standards

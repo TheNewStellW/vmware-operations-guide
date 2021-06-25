@@ -5,7 +5,7 @@ draft: false
 weight: 40
 ---
 
-Demand reflects the reality in production, as it’s based on the actual demand for resources in a cluster and datastore. It is enabled by default without any configuration and cannot be disabled.
+Demand reflects the reality in production, as it's based on the actual demand for resources in a cluster and datastore. It is enabled by default without any configuration and cannot be disabled.
 
 Demand is more than the active load that is consuming your capacity. Active load is the visible demand, which you can monitor with the utilization metrics. There are demand that are not visible, because it has no utilization at present.
 
@@ -17,7 +17,7 @@ This can wreak havoc in a shared environment. A group of highly demanding VMs ca
 
 #### Latent Demand
 
-Many critical VMs are protected with Disaster Recovery. During a DR drill or actual disaster, this load will ‘wake up’ and consume. You should consider the Site Recovery Manager plans into your capacity.
+Many critical VMs are protected with Disaster Recovery. During a DR drill or actual disaster, this load will ‘wake up' and consume. You should consider the Site Recovery Manager plans into your capacity.
 
 #### Potential Demand
 
@@ -42,4 +42,4 @@ Reservation that is not yet consumed impacts capacity but not performance. Using
 
 CPU and Memory behave differently as CPU reservation does not take effect when the reservation holder does not use it.
 
-Limit needs to be considered as the demand can’t exceed the enforced limit. The good part is the demand counter already takes that into account.
+Limit needs to be considered as the demand can't exceed the enforced limit. The good part is the demand counter already takes that into account.

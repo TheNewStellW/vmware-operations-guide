@@ -5,7 +5,7 @@ draft: false
 weight: 100
 ---
 
-The VM Contention Dashboard is the primary dashboard for VM performance. It’s designed for VMware Administrators or Architects, and can be used in both monitoring and troubleshooting. Once you determine there is performance issue, use the VM Utilization dashboard to see if the contention is caused by very high utilization. 
+The VM Contention Dashboard is the primary dashboard for VM performance. It's designed for VMware Administrators or Architects, and can be used in both monitoring and troubleshooting. Once you determine there is performance issue, use the VM Utilization dashboard to see if the contention is caused by very high utilization. 
 
 The dashboards answer these questions:
 - Are the VMs performing well? If not, which VMs are affected by what problems (CPU, Disk, RAM, Network)?
@@ -57,7 +57,7 @@ Choose a VM from the table. All the health charts are automatically shown, showi
 
 Each of the health charts is color coded according to the best practice of that counter. You can change it by simply editing the widget. The chart also displays the last value, lowest value and the peak value of the monitoring period. Expect that the peak is within your threshold. 
 
-Going back to the table, I’ve circled the first VM disk latency. It’s showing 79.48 ms latency, hence shown in red. That number corresponds to the peak shown in the Disk Latency health chart below.
+Going back to the table, I've circled the first VM disk latency. It's showing 79.48 ms latency, hence shown in red. That number corresponds to the peak shown in the Disk Latency health chart below.
 
 ![](3.2.10-fig-3.png)
 

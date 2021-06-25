@@ -7,7 +7,7 @@ weight: 50
 
 The **vSAN Capacity** dashboard complements the vSphere **Cluster Capacity** dashboard by showing vSAN related capacity. To manage vSAN capacity, use both dashboards.
 
-As this dashboard is designed to complement the vSphere **Cluster Capacity** dashboard, it shares the same design consideration. It focuses on the storage and vSAN specific metrics, and does not repeat what’s already covered. It does not list non vSAN cluster.
+As this dashboard is designed to complement the vSphere **Cluster Capacity** dashboard, it shares the same design consideration. It focuses on the storage and vSAN specific metrics, and does not repeat what's already covered. It does not list non vSAN cluster.
 
 See the Capacity Dashboards page for common design consideration among all the dashboards for capacity management. 
 

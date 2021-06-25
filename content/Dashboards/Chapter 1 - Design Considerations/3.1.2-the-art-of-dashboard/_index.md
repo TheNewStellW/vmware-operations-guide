@@ -5,7 +5,7 @@ draft: false
 weight: 20
 ---
 
-To a few of us who love visualizing information with vRealize Operations, we see the dashboard as a canvas. Granted, the widgets have limitation but that’s part of the art 😊
+To a few of us who love visualizing information with vRealize Operations, we see the dashboard as a canvas. Granted, the widgets have limitation but that's part of the art 😊
 
 Creating dashboards is an art as you need to balance many conflicting requirements, such as:
 
@@ -47,7 +47,7 @@ When we create dashboards that are used by others in our team we have to conside
 - Why (outcome) do they need the dashboard? 
 - Also list down outcomes from the dashboard usage. What is the usefulness of using the dashboard and what goals or outcomes the user is likely to achieve. 
 
-Once we get this information we can better design dashboards based on the needs of the users. One way could be to plot it on a grid to understand the impact better. Let’s start with a grid like this one.
+Once we get this information we can better design dashboards based on the needs of the users. One way could be to plot it on a grid to understand the impact better. Let's start with a grid like this one.
 
 Now if take the example of Who from different roles/personas 
 
@@ -77,4 +77,4 @@ The past is harder to visualize as it has >1 data points. Ideally, you show the 
 
 If you need to show a lot of objects or metris, then you need to summarize. As covered in Leading Indicator, you may need to show 2 numbers, especially if one of them is an average. 
 
-[^1]: Credit belongs to the Blue Medora team. Can’t recall who gave this to me. Brock or Mike?
+[^1]: Credit belongs to the Blue Medora team. Can't recall who gave this to me. Brock or Mike?

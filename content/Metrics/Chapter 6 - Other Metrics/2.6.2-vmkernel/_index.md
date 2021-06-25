@@ -7,7 +7,7 @@ weight: 20
 
 There are two types of counters here: reservation and actual consumption.
 
-What you’re interested is the actual utilization, unless you use a lot of reservation in your cluster. We discussed earlier that reservation will directly impact your ability to overcommit.
+What you're interested is the actual utilization, unless you use a lot of reservation in your cluster. We discussed earlier that reservation will directly impact your ability to overcommit.
 
 All these counters are grouped by their respective resource pool, because each process running on ESXi belongs to one these four **top-level** resource pools:
 - System (host/system resource pool)
@@ -31,13 +31,13 @@ If you are curious about the actual values, they sort of map to the actual size 
 
 ![](2.6.2-fig-2.png)
 
-Their values tend to be stable over days, although from time to time I see fluctuating counters. I’m unsure why they are fluctuating so frequently as it’s a reservation, so if you know let me know. The following chart shows both the fluctuating pattern and steady pattern (most common).
+Their values tend to be stable over days, although from time to time I see fluctuating counters. I'm unsure why they are fluctuating so frequently as it's a reservation, so if you know let me know. The following chart shows both the fluctuating pattern and steady pattern (most common).
 
 ![](2.6.2-fig-3.png)
 
 ## Consumption
 
-What if you want to know the actual consumption? vCenter provides visibility into the VMkernel utilization. It’s available under **System**, and you can get CPU and memory usage and reservation (allocation).
+What if you want to know the actual consumption? vCenter provides visibility into the VMkernel utilization. It's available under **System**, and you can get CPU and memory usage and reservation (allocation).
 
 ![](2.6.2-fig-4.png)
 

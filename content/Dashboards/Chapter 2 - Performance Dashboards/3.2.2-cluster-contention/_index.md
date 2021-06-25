@@ -5,7 +5,7 @@ draft: false
 weight: 20
 ---
 
-The Cluster Contention Dashboard is the ***primary*** dashboard for vSphere Cluster performance. It’s designed for VMware Architects, and can be used in both monitoring and troubleshooting. Once you determine there is a performance issue, use the Cluster Utilization dashboard to see if the contention is caused by utilization near 100%. 
+The Cluster Contention Dashboard is the ***primary*** dashboard for vSphere Cluster performance. It's designed for VMware Architects, and can be used in both monitoring and troubleshooting. Once you determine there is a performance issue, use the Cluster Utilization dashboard to see if the contention is caused by utilization near 100%. 
 
 ## Design Consideration
 
@@ -33,7 +33,7 @@ On the other hand, if the clusters are unable to serve the VMs well, you will se
 
 The average among all the clusters is no longer green, with a few occurrences of reds. The good part is the value does not trend downwards. 
 
-As this KPI takes into account every single running VM in your environment, the number should be steady, especially in a large environment. The analogy in real life is the stock market index. While individual stocks can be volatile on a 5 minute by 5 minute basis, the overall index should be relatively steady. A big drop is called a market crash and that’s not something you want in your environment.
+As this KPI takes into account every single running VM in your environment, the number should be steady, especially in a large environment. The analogy in real life is the stock market index. While individual stocks can be volatile on a 5 minute by 5 minute basis, the overall index should be relatively steady. A big drop is called a market crash and that's not something you want in your environment.
 
 The **relative** movement of the metric is as important as the **absolute** value of the metric. Your absolute number may not be as high you wish it to be, but if there have been no complaints for a long time, then perhaps there is no urgent business justification to improve it.
 
@@ -45,11 +45,11 @@ The actual metric used is **Performance \ Clusters Performance (%)**, as shown i
 
 The metric itself is simply the average of **Cluster KPI \ Performance (%)** metric. This performance metric in turn averages the **VM Performance \ Number of KPIs Breached** metric from all running VMs in the cluster. Hence a value of 100% indicates that every single running VM in the cluster is served well. Based on this formula, when do you want the cluster performance to turn red?
 
-Let’s take an example of a cluster with 500 VM. Each VM consumes 4 IaaS resource (CPU, Memory, Disk, Network), hence there are 500 x 4 = 2000 KPI instances that the cluster must deliver. As a result, the counter will turn yellow if one of these two happens:
-- It can’t serve 1% of the VM population, which is 5 VMs. None of these VMs get the 4 IaaS resource within the KPI threshold. In mission critical environment, You are expected to serve all the VMs well. In development environment, you may be able to get away with lower service level. 
+Let's take an example of a cluster with 500 VM. Each VM consumes 4 IaaS resource (CPU, Memory, Disk, Network), hence there are 500 x 4 = 2000 KPI instances that the cluster must deliver. As a result, the counter will turn yellow if one of these two happens:
+- It can't serve 1% of the VM population, which is 5 VMs. None of these VMs get the 4 IaaS resource within the KPI threshold. In mission critical environment, You are expected to serve all the VMs well. In development environment, you may be able to get away with lower service level. 
 - It fails to deliver one of the IaaS resources (CPU, Memory, Disk, Network) to 20 VM. 
 
-More details on the formula were covered earlier here as it’s an important foundation of IaaS performance KPI.
+More details on the formula were covered earlier here as it's an important foundation of IaaS performance KPI.
 
 The counter will turn orange if one of these two happens:
 - 3% of the VM population, which is 15 VMs, do not get any of the 4 IaaS resource within the threshold. 
@@ -62,7 +62,7 @@ If the chart is showing green, then all is good. If not, you want to know which 
 
 ![](3.2.2-fig-4.png)
 
-The table lists all the clusters, starting with the lowest performance. By default, it’s showing data from the last 24 hours as this dashboard is designed to be part of your daily SOP.
+The table lists all the clusters, starting with the lowest performance. By default, it's showing data from the last 24 hours as this dashboard is designed to be part of your daily SOP.
 
 The **Worst Performance** column shows the lowest performance in the last period, specified under Time Settings.
 
@@ -70,15 +70,15 @@ The **Worst Performance** column shows the lowest performance in the last period
 
 The problem with functions like Minimum() and Maximum() is their value can be extreme. All it takes is a single 5 –minute collection to show bad data and the entire 24 hours (which is 288 data points) becomes bad. This is where the Percentile() function comes in. It tells you if the Worst Performance is something you should look further into or not. 
 
-Can you figure out why we don’t show average instead?
+Can you figure out why we don't show average instead?
 
-Average() is too late. It’s covered previously here. 
+Average() is too late. It's covered previously here. 
 
 Select a row (not the cluster name) to see the trend over time. All the health charts will automatically show the KPIs of the selected cluster. 
 
 ![](3.2.2-fig-6.png)
 
-For performance, it’s important to show both the depth and breadth of the performance problem, as explained here. A problem that impacts 1-2 VMs requires a different troubleshooting process than a problem that impacts all VMs in the cluster. 
+For performance, it's important to show both the depth and breadth of the performance problem, as explained here. A problem that impacts 1-2 VMs requires a different troubleshooting process than a problem that impacts all VMs in the cluster. 
 
 The depth is shown by reporting the worst among any VM counter. So the highest value of VM CPU Ready, VM Memory contention, VM Disk Latency among all the running VMs are shown. If the worst number is good, then you do not need to look at the rest of the VM.
 
@@ -96,7 +96,7 @@ Here is an example where the performance problem is clearly shown. You can see t
 
 ![](3.2.2-fig-9.png)
 
-What’s the problem?
+What's the problem?
 
 The next 2 widgets show that CPU is a problem.
 

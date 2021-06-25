@@ -8,7 +8,7 @@ Many operations rely on alerts as the starting point. Actions are taken based on
 
 ![alerts vs. insight iceberg illustration](1.1.9-fig-1.png)
 
-Alerts may auto close if the symptom disappears. This encourages “lazy operations” when no alert is associated with no problem. Insight does not have this “auto close” concept as it does not involve help desk ticket. It’s recording a fact that something has gone wrong, and that something could potentially cause an alert. Ideally, you want to detect and address that something before an alert is triggered.
+Alerts may auto close if the symptom disappears. This encourages “lazy operations” when no alert is associated with no problem. Insight does not have this “auto close” concept as it does not involve help desk ticket. It's recording a fact that something has gone wrong, and that something could potentially cause an alert. Ideally, you want to detect and address that something before an alert is triggered.
 
 There is a common misconception that Insight is simply alerts that use different threshold on the same metric. So insight is basically an alert with lower threshold. This is valid, but incomplete. Implementing insight this way can result in an alert storm and a lot of tickets. It is better for Insight to use different metrics than Alerts, so you get a different perspective.
 
@@ -25,7 +25,7 @@ For each alert, ask yourself: what remediation action will be taken by the perso
 - If the answer is something, can that be automated? Be careful of simplified logic as computer has no common sense.
 - If the answer is escalating to the next level (e.g. Level 2 support), then ask the team in the next level if they prefer alert or dashboard. If their answer is they need to see a context, then a dashboard makes more sense.
 
-What areas do you want to monitor with alerts? There are 7 pillars of Operations Management, so it’s easy to confuse when designing the alerts definition.
+What areas do you want to monitor with alerts? There are 7 pillars of Operations Management, so it's easy to confuse when designing the alerts definition.
 
 #### Availability
 
@@ -53,16 +53,16 @@ Configuration is broader than compliance. Configuration mistakes can cause avail
 
 #### Cost
 
-You don’t typically set an alert here as insight with dashboards is a better monitoring solution.
+You don't typically set an alert here as insight with dashboards is a better monitoring solution.
 
 #### Inventory
 
-You don’t typically set an alert here as inventory it’s merely an account of what you have. There is no good or bad.
+You don't typically set an alert here as inventory it's merely an account of what you have. There is no good or bad.
 
 ------
 
 Managing Alerts is not the same as minimizing Alerts. Managing is dealing with alerts that are already triggered. Minimizing takes us towards preventing alerts to begin with. Use insight to minimize alert definition, as alert should be reserved for urgent and important issue.
 
-In cases where you can’t minimize the alert, you can reduce its severity. You do this not by lowering the threshold, but by monitoring early warning events. For example, CPU and network have early warning that something have gone wrong at hardware level. You track this soft errors and perform proactive replacement.
+In cases where you can't minimize the alert, you can reduce its severity. You do this not by lowering the threshold, but by monitoring early warning events. For example, CPU and network have early warning that something have gone wrong at hardware level. You track this soft errors and perform proactive replacement.
 
-In cases where you can’t reduce the severity, you can reduce the occurance of the alert happening in production. You do this by proactive replacement, taken as part of scheduled downtime during green zone. For example, Solid State Drive (SSD) does not have infinite life span in terms of number of writes. The manufacturer has a number in mind for the endurance. If you have thousands of disks, you create a dashboard just to track this limit and schedule proactive replacement for those disks nearing their limit.
+In cases where you can't reduce the severity, you can reduce the occurance of the alert happening in production. You do this by proactive replacement, taken as part of scheduled downtime during green zone. For example, Solid State Drive (SSD) does not have infinite life span in terms of number of writes. The manufacturer has a number in mind for the endurance. If you have thousands of disks, you create a dashboard just to track this limit and schedule proactive replacement for those disks nearing their limit.

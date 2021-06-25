@@ -20,8 +20,8 @@ Select a data center from the Data centers table
 ![](3.2.6-fig-1.png)
 
 Review the Datastore Performance table
-- Read and Write latency are shown separately for a better insight. The nature of read and write problem may not be the same so it’s useful to see the difference. 
-- Both the worst (peak) performance and 95thpercentile are shown. If the later is close to the peak and it’s also high, then it’s a sustained problem. If the later is low, then it’s a short duration.
+- Read and Write latency are shown separately for a better insight. The nature of read and write problem may not be the same so it's useful to see the difference. 
+- Both the worst (peak) performance and 95thpercentile are shown. If the later is close to the peak and it's also high, then it's a sustained problem. If the later is low, then it's a short duration.
 - The table is color coded. If your operations require a different threshold, edit the widget to adjust accordingly. 
 ![](3.2.6-fig-2.png)
 

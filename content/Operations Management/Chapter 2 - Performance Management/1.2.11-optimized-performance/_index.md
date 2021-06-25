@@ -17,11 +17,11 @@ The four elements of IaaS are not standalone. When CPU is paused, RAM & Disk wil
 
 #### Flow dependency
 
-A problem in your NSX Edge VM on the NSX Edge Cluster can impact a business VM sitting on another cluster, because of the traffic flow. If you don’t understand the flow, you can waste time troubleshooting at the wrong cluster.
+A problem in your NSX Edge VM on the NSX Edge Cluster can impact a business VM sitting on another cluster, because of the traffic flow. If you don't understand the flow, you can waste time troubleshooting at the wrong cluster.
 
 #### Version dependency
 
-There are valid reasons behind "What Works With What". It’s a known problem that not all versions of all components work well together. Drivers, Firmware, etc. can cause interoperability problem, which can manifest itself as performance.
+There are valid reasons behind "What Works With What". It's a known problem that not all versions of all components work well together. Drivers, Firmware, etc. can cause interoperability problem, which can manifest itself as performance.
 
 ## Consumer Layer
 
@@ -41,7 +41,7 @@ We have better visibility at vSphere VM level due to the various counters provid
 
 I do not put AWS EC2 or Azure VM here as the visibility is rather limited.
 
-Let’s now put together all the counters from Guest OS and VM. For completeness, I added the utilization counters too because the 5-minute average may be too long.
+Let's now put together all the counters from Guest OS and VM. For completeness, I added the utilization counters too because the 5-minute average may be too long.
 
 ![Resource demarcation](1.2.11-fig-4.png)
 
@@ -51,7 +51,7 @@ The KPI counters maybe too technical for some users, so vRealize Operations 8.2 
 
 ## Provider Layer
 
-At any given moment, a running VM always resides on an ESXi Host. Due to DRS and HA, it’s easier to monitor at cluster level. Since a cluster can have hundreds of VMs, you need consolidated metrics that can represent the experience of all the running VMs in the cluster. vRealize Operations 8.2 provides the following metrics:
+At any given moment, a running VM always resides on an ESXi Host. Due to DRS and HA, it's easier to monitor at cluster level. Since a cluster can have hundreds of VMs, you need consolidated metrics that can represent the experience of all the running VMs in the cluster. vRealize Operations 8.2 provides the following metrics:
 
 ![performance and remediation table](1.2.11-fig-6.png)
 

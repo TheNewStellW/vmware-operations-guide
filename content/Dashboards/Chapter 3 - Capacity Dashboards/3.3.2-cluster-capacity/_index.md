@@ -17,7 +17,7 @@ The dashboard considers all factors that impact capacity:
 - Reclamation
 - Contention
 
-Utilization is the primary counter for capacity, as it reflects the actual, live usage of the resources. If utilization is high, it does not matter if the overcommit ratio is far below your target, the cluster is full. On the other hand, if utilization is very low, that is not a good thing either. Unless it’s a newly provisioned cluster, that could indicates wastage.
+Utilization is the primary counter for capacity, as it reflects the actual, live usage of the resources. If utilization is high, it does not matter if the overcommit ratio is far below your target, the cluster is full. On the other hand, if utilization is very low, that is not a good thing either. Unless it's a newly provisioned cluster, that could indicates wastage.
 
 Allocation complements utilization as not all workload is real. This is covered in the Capacity chapter, under Allocation Model.
 
@@ -25,7 +25,7 @@ Reclamation is included as that can impact your decision, and wastage is pretty 
 
 Wastage is shown by a new color. Dark grey indicates wastage as capacity is not used. In fact, there can be performance problem is the low utilization was caused by bottleneck somewhere else. 
 
-Contention is included as it directly measures performance. If your cluster is unable to serve its existing workload, then it is unwise to add new workload. By definition, if the cluster does not have room for new workload, then its capacity is full. The ideal scenario is the cluster is running at 100% utilization but 0% contention, because it’s working as productively as possible. You get your investment well used.
+Contention is included as it directly measures performance. If your cluster is unable to serve its existing workload, then it is unwise to add new workload. By definition, if the cluster does not have room for new workload, then its capacity is full. The ideal scenario is the cluster is running at 100% utilization but 0% contention, because it's working as productively as possible. You get your investment well used.
 
 ## How to Use
 

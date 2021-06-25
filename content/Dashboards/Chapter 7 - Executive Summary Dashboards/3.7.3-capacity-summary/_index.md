@@ -27,7 +27,7 @@ The bottom part of the dashboard is split into 2 columns:
 - compute 
 - storage
 
-Network is not added due to its nature. It’s an interconnect, not nodes, so capacity is much harder to compute.
+Network is not added due to its nature. It's an interconnect, not nodes, so capacity is much harder to compute.
 
 The dashboard uses the term compute (and not vSphere Cluster) and storage (and not vSphere datastore) to keep the visual simple. 
 

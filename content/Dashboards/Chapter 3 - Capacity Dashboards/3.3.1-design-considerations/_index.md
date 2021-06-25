@@ -9,7 +9,7 @@ Capacity Management dashboards share the same design principles. They are intent
 
 The dashboard is designed “top down”. It has 2 sections: summary and detail.
 - The summary section is typically placed at the top of the dashboard. It gives the big picture. 
-- The detail section is placed below the summary section. It lets you drill down into a specific object. For example, if it’s a VM capacity, you can get the detail capacity of a specific VM. 
+- The detail section is placed below the summary section. It lets you drill down into a specific object. For example, if it's a VM capacity, you can get the detail capacity of a specific VM. 
 
 Not all objects lend themselves for capacity management. Take the data center object for example. It can contain clusters of different purpose, with different performance characteristic. It might not make sense to combine the metrics into a single data center Capacity (%) metric, if the member clusters are not interchangeable.
 

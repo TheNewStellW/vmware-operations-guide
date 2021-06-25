@@ -40,6 +40,6 @@ About the 8 pie charts
 ## Points to Note
 - Be aware of the relationship hierarchy in vSphere. For example, Compute (Cluster) is not a parent of Storage (Datastore), so logically it is not possible to display Datastores in a Cluster. Data centers consist of Compute (Cluster), Network (Distributed Switch), and Storage (Datastore).
 - If you have screen real estate, add Network. 
-- Datastores do not drive the pie chart Widgets. This is a known limitation in the View Widget as it can’t handle multiple traversal spec.
+- Datastores do not drive the pie chart Widgets. This is a known limitation in the View Widget as it can't handle multiple traversal spec.
 - If your senior management wants to see the largest VM in a given environment, add a Top-N widget to list Top 10 largest consumers so that CPU, Memory, Disk details are highlighted.
 - If required, you can drill down into specific cluster or datastore for performance. You need to build the dashboard to dashboard navigation.

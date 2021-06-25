@@ -5,11 +5,11 @@ draft: false
 weight: 10
 ---
 
-Before we talk about memory counter, we need to cover virtual memory, as it’s an integral part of memory management. The following shows how Windows or Linux masks the underlying physical memory from processes running on the OS.
+Before we talk about memory counter, we need to cover virtual memory, as it's an integral part of memory management. The following shows how Windows or Linux masks the underlying physical memory from processes running on the OS.
 
 ![Memory allocation](2.3.1-fig-1.png)
 
-From the process’ point of view, this technique provides a contiguous address space, which makes memory management easier. It also provides isolation, meaning process A can’t see the memory of process B. This isolation provides some level of security.
+From the process' point of view, this technique provides a contiguous address space, which makes memory management easier. It also provides isolation, meaning process A can't see the memory of process B. This isolation provides some level of security.
 
 Virtual Memory abstraction provides the possibility to overcommit. Linux may have 16 GB of physical RAM, but by using pagefile the total memory available to its processes can exceed 16 GB. The process is unaware what is backing its virtual address. It does not know whether a page is backed by Physical Memory or Swap File.
 
@@ -17,7 +17,7 @@ With virtualization, VM adds another layer. So we actually have 4 layers from Pr
 
 ![Memory allocation in hypervisor](2.3.1-fig-2.png)
 
-From the VMs point of view, it provides a contiguous address space and isolation (which is security). The underlying physical pages at ESXi layer may not be contiguous, as it’s managed differently. The [VM Monitor](/metrics/chapter-1-overview/2.1.2-guest-os-vs-vm/) for each VM maps the VM pages to the ESXi pages[^1]. This page mapping is not always 1:1. Multiple VM pages may point to the same ESXi pages due to transparent page sharing. On the other hand, VM page may not map to ESXi page due to balloon and swapped. The net effect is the VM pages and ESXi pages (for that VM) will not be the same, hence we need two sets of counters.
+From the VMs point of view, it provides a contiguous address space and isolation (which is security). The underlying physical pages at ESXi layer may not be contiguous, as it's managed differently. The [VM Monitor](/metrics/chapter-1-overview/2.1.2-guest-os-vs-vm/) for each VM maps the VM pages to the ESXi pages[^1]. This page mapping is not always 1:1. Multiple VM pages may point to the same ESXi pages due to transparent page sharing. On the other hand, VM page may not map to ESXi page due to balloon and swapped. The net effect is the VM pages and ESXi pages (for that VM) will not be the same, hence we need two sets of counters.
 
 #### VM Memory
 

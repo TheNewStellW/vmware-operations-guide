@@ -19,7 +19,7 @@ There are 4 areas where a monster VM can impact its neighbours.
 - Disk Throughput. Apps with large block size (e.g. 4 MB) can consume bandwidth without generating high IOPS
 - Network. 
 
-Memory is not needed as it’s rare for Guest OS to actively read/write from DIMM. It’s mostly cache. Think of it like disk space (passive).
+Memory is not needed as it's rare for Guest OS to actively read/write from DIMM. It's mostly cache. Think of it like disk space (passive).
 
 Remediation Action you should take: Check why the VMs are generating excessive load.
 
@@ -39,5 +39,5 @@ All the 4 line charts are automatically showing, enabling you to get a more comp
 
 ## Points to Note
 
-- Memory is not shown as it’s a form of storage. The memory counters are space utilization, not speed. Think of disk space instead of IOPS. It can cause capacity problem on the shared ESXi host, but not performance problem to other VMs. 
+- Memory is not shown as it's a form of storage. The memory counters are space utilization, not speed. Think of disk space instead of IOPS. It can cause capacity problem on the shared ESXi host, but not performance problem to other VMs. 
 - In a large environment, it might be difficult to view a small victim VM. Consider having multiple dashboards and rotate among them.

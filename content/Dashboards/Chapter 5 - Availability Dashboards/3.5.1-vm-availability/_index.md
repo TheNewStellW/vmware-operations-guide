@@ -30,10 +30,10 @@ About the VMs in the Selected Data center table
 
 Select a VM from the above table. 
 - The remaining widgets will automatically show the detail of the selected VM.
-- Selected VM Uptime Trend displays the selected VM’s Guest Tool Uptime (%) across the last 30 days.
+- Selected VM Uptime Trend displays the selected VM's Guest Tool Uptime (%) across the last 30 days.
 
 Expand the 2 collapsed widgets 
-- If Guest OS services or processes are discovered inside a VM, their availability is analyzed. Service ‘state’ over time is displayed in Guest OS: Services.
+- If Guest OS services or processes are discovered inside a VM, their availability is analyzed. Service ‘state' over time is displayed in Guest OS: Services.
 - The dashboard displays the process or services running inside the Guest OS. This requires the Service Discovery Management Pack.
 - The ESXi Host where the VM has run widget can show historical migration of the VM. This can be useful in determining the cause of a VM downtime. 
 

@@ -9,7 +9,7 @@ The allocation model is ***not*** enabled by default as the overcommit ratio var
 
 The next use case for allocation is showback and reporting. There are typically restrictions such as contractual obligations or SLAs that mandate capacity not be overcommitted beyond an agreed upon ratio. Note these restrictions are usually non-technical.
 
-Some customers like to do procurement planning based on overcommit ratios. A comfortable overcommit ratio is determined, and that’s what is used to project utilization into the future. The overcommit ratio is intended to be a rough estimate of utilization, e.g. 4:1 CPU overcommit ratio means that on average each vCPU will only run 25% utilization.
+Some customers like to do procurement planning based on overcommit ratios. A comfortable overcommit ratio is determined, and that's what is used to project utilization into the future. The overcommit ratio is intended to be a rough estimate of utilization, e.g. 4:1 CPU overcommit ratio means that on average each vCPU will only run 25% utilization.
 
 The allocation model has 3 main limitations:
 

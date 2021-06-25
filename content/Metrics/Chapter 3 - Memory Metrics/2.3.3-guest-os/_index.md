@@ -28,13 +28,13 @@ A popular tool for Windows monitoring is SysInternal. In addition to the above, 
 
 ## In Use
 
-This is the main counter used by Windows, as it’s featured prominently in Task Manager.
+This is the main counter used by Windows, as it's featured prominently in Task Manager.
 
 ![Windows Memory](2.3.3-fig-4.png)
 
-This is often thought as the **minimum** that Windows needs to operate. This is not true. If you notice on the preceding screenshot, it has compressed 457 MB of the 6.8 GB In Use pages, indicating they are not actively used. Windows compresses its in-use RAM, even though it has plenty of Free RAM available (8.9 GB available). This is a different behaviour to ESXi, which do not compress unless it’s running low on Free.
+This is often thought as the **minimum** that Windows needs to operate. This is not true. If you notice on the preceding screenshot, it has compressed 457 MB of the 6.8 GB In Use pages, indicating they are not actively used. Windows compresses its in-use RAM, even though it has plenty of Free RAM available (8.9 GB available). This is a different behaviour to ESXi, which do not compress unless it's running low on Free.
 
-Look at the chart of Memory Usage above. It’s sustaining for the entire 60 seconds. We know this as the amount is too high to sustain for 60 seconds if they are truly active, let alone for hours.
+Look at the chart of Memory Usage above. It's sustaining for the entire 60 seconds. We know this as the amount is too high to sustain for 60 seconds if they are truly active, let alone for hours.
 
 Formula:
 
@@ -42,7 +42,7 @@ Formula:
 
 ## Modified
 
-Page that was modified but **no longer** used, hence it’s available for other usage but requires to be saved to disk first. It’s not counted as part of Available, but counted as part of Cache.
+Page that was modified but **no longer** used, hence it's available for other usage but requires to be saved to disk first. It's not counted as part of Available, but counted as part of Cache.
 
 ## Standby
 
@@ -54,21 +54,21 @@ Windows has 3 levels of standby. As reported by VMware Tools, their names are:
 
 Different applications use the memory differently, resulting in different behaviour of the metrics. As a result, determining what Windows actually use is difficult.
 
-The Standby Normal counter can be fluctuating wildly, resulting in a wide difference if it’s included in rightsizing. The following VM is a Microsoft Exchange 2013 server mailbox utility.
+The Standby Normal counter can be fluctuating wildly, resulting in a wide difference if it's included in rightsizing. The following VM is a Microsoft Exchange 2013 server mailbox utility.
 
 ![Exchange usage](2.3.3-fig-5.png)
 
 Notice the Standby Normal fluctuates wildly, reaching as high at 90%. The other 2 cache remains constantly negligible. The chart above is based on >26000 samples, so there is plenty of chance for each 3 counters to fluctuate.
 
-Now let’s look at another example. This is a Windows Server 2016. I think it was running Business Intelligence software Tableau.
+Now let's look at another example. This is a Windows Server 2016. I think it was running Business Intelligence software Tableau.
 
 ![Tableau usage](2.3.3-fig-6.png)
 
-Notice the VM usable memory was increased 2x in the last 3 months. Standby Normal hardly move, but Standby Reserve took advantage of the increments. It simply went up accordingly, although again it’s fluctuating wildly.
+Notice the VM usable memory was increased 2x in the last 3 months. Standby Normal hardly move, but Standby Reserve took advantage of the increments. It simply went up accordingly, although again it's fluctuating wildly.
 
 ## Cache
 
-Cache is an integral part of memory management, as the more you cache, the lower your chance of hitting a cache miss. This makes sense. RAM is much faster than Disk, so if you have it, why not use it? Remember when Windows XP introduced pre-fetch, and subsequently Windows SuperFetch? It’s a clue that Memory Management is a complex topic. There are many techniques involved. Unfortunately, this is simplified in the UI. All you see is something like this:
+Cache is an integral part of memory management, as the more you cache, the lower your chance of hitting a cache miss. This makes sense. RAM is much faster than Disk, so if you have it, why not use it? Remember when Windows XP introduced pre-fetch, and subsequently Windows SuperFetch? It's a clue that Memory Management is a complex topic. There are many techniques involved. Unfortunately, this is simplified in the UI. All you see is something like this:
 
 ![Resource Monitor](2.3.3-fig-7.png)
 
@@ -76,7 +76,7 @@ Linux and VMkernel also has its fair share of simplifying this information. This
 
 ## Free
 
-As the name implies, this is a block of pages that is immediately available for usage. This excludes the cached memory. A low free memory does not mean a problem if the Standby value is high. This number can reach below <100 MB, and even touch 0 MB momentarily. It’s fine so long there is plenty of cached. I’d generally keep this number > 500 MB for server VM and >100 MB for VDI VM. I set a lower number for VDI because they add up. If you have 10K users, that’s 1 TB of RAM.
+As the name implies, this is a block of pages that is immediately available for usage. This excludes the cached memory. A low free memory does not mean a problem if the Standby value is high. This number can reach below <100 MB, and even touch 0 MB momentarily. It's fine so long there is plenty of cached. I'd generally keep this number > 500 MB for server VM and >100 MB for VDI VM. I set a lower number for VDI because they add up. If you have 10K users, that's 1 TB of RAM.
 
 When a Guest OS frees up a memory page, it normally just updates its list of free memory; it does not release it. This list is not exposed to the hypervisor, and so the physical page remains claimed by the VM. This is why the Consumed counter in vCenter remains high when the Active counter has long dropped. Because the hypervisor has no visibility into the Guest OS, you may need to deploy an agent to get visibility into your application. You should monitor both at the Guest OS level (for example, Windows and Red Hat) and at the application level (for example, MS SQL Server and Oracle). Check whether there is excessive paging or the Guest OS experiences a hard [page fault](https://en.wikipedia.org/wiki/Page_fault). For Windows, you can use tools such as *pfmon*, a page fault monitor.
 
@@ -92,7 +92,7 @@ Let Windows manages the pagefile size. This is the default setting, so you likel
 
 The size of Page File is not a perfect indicator of the RAM usage, because they contain pages that are never demanded by the App. Windows does SuperFetch, where it predicts what pages will be used and prefetch them in advance. Some of these pages are never demanded by the application. Couple with the nature that Guest OS treats RAM as cache, including the page file will result in oversized recommendation. Paging rate is more realistic as it only considers the recent time period (300 seconds in vRealize Operations case).
 
-A page would be used as cache if it was paged out at some point due to memory pressure and it hasn’t been needed since. The OS will reuse that page as cache. That means that at some point the OS was constrained on memory enough to force the page out to happen.
+A page would be used as cache if it was paged out at some point due to memory pressure and it hasn't been needed since. The OS will reuse that page as cache. That means that at some point the OS was constrained on memory enough to force the page out to happen.
 
 A page that was paged out earlier, has to be brought back first before it can be used. This creates performance issue as the application is waiting longer, as disk is much slower than RAM.
 
@@ -101,13 +101,13 @@ There are 2 types of page operations:
 - **Page In**: This is a potential indicator for performance.
 - **Page-out**: This is a potential indicator for capacity.
 
-While Paging impacts performance, the correlation between the paging counters and performance varies per application. You can’t set a threshold and use it to monitor many VMs. The reason is paging is not always used when Guest OS runs out of memory. There are a few reasons why paging may not correlate to memory performance:
+While Paging impacts performance, the correlation between the paging counters and performance varies per application. You can't set a threshold and use it to monitor many VMs. The reason is paging is not always used when Guest OS runs out of memory. There are a few reasons why paging may not correlate to memory performance:
 
 - Memory mapped files. This is essentially a file that has a mapping to memory. Processes use this to exchange data. It also allows the process to access a very large file (think of database) without having to load the entire database into memory.
-- Proactive pre-fetch. It predicts the usage of memory and pre-emptively reads the page and bring it in. This is no different to disk where the storage array will read subsequent blocks even though it’s not being asked. This especially happens when a large application starts. Page-in will go up even though there is no memory pressure (page out is low or 0).
+- Proactive pre-fetch. It predicts the usage of memory and pre-emptively reads the page and bring it in. This is no different to disk where the storage array will read subsequent blocks even though it's not being asked. This especially happens when a large application starts. Page-in will go up even though there is no memory pressure (page out is low or 0).
 - Windows performs memory capacity optimization in the background. It will move idle processes out into the page file.
 
-If you see both Page-in and Page-out having high value, and the disk queue is also high, there is a good chance it’s memory performance issue.
+If you see both Page-in and Page-out having high value, and the disk queue is also high, there is a good chance it's memory performance issue.
 
 The counter `%pagefile` tracks how much of the pagefile is used, meaning the value 100% indicate the pagefile is fully utilized. While the lower the number the better, there is no universal guidance. If you know, let me know!
 
@@ -117,19 +117,19 @@ Reference: [this](https://docs.microsoft.com/en-US/troubleshoot/windows-server/p
 
 There are 2 metrics. Page-in and Page-out.
 
-The unit is in number of pages, not MB. It's not possible to convert due to mix use of Large Page (2 MB) and Page (4 KB). A process can have concurrent mixed usage of large and non-large page in Windows. The page size isn’t a system-wide setting that all processes use. The same is likely true for Linux Huge Pages.
+The unit is in number of pages, not MB. It's not possible to convert due to mix use of Large Page (2 MB) and Page (4 KB). A process can have concurrent mixed usage of large and non-large page in Windows. The page size isn't a system-wide setting that all processes use. The same is likely true for Linux Huge Pages.
 
-The page-in rate metric tracks the rate OS brings memory back from disk to DIMM per second. Another word, the rate of reads going through paging/cache system. It includes not just swap file I/O, but cacheable reads as well (so it’s double pages/s).
+The page-in rate metric tracks the rate OS brings memory back from disk to DIMM per second. Another word, the rate of reads going through paging/cache system. It includes not just swap file I/O, but cacheable reads as well (so it's double pages/s).
 
 Page Out is the opposite of the above process. It is not as important as Page In. Just because a block of memory is moved to disk that does not mean the application experiences memory problem. In many cases, the page that was moved out is the idle page. Windows does not page out any Large Pages.
 
 The block size is likely 4 KB. Some applications like Java and databases use 2MB pages.
 
-You can profile your environment to see which VMs are experiencing high paging. Create a view, and convert the paging rate into MB/second, by assuming the page size is 4 KB. I’d say > 1 GB/second is high.
+You can profile your environment to see which VMs are experiencing high paging. Create a view, and convert the paging rate into MB/second, by assuming the page size is 4 KB. I'd say > 1 GB/second is high.
 
 ![Page in and page out rates](2.3.3-fig-9.png)
 
-From the above table, it’s interesting to note the page-in dwarf page-out. I plotted one of the VM and page-in far exceed page-out consistently over 7 days.
+From the above table, it's interesting to note the page-in dwarf page-out. I plotted one of the VM and page-in far exceed page-out consistently over 7 days.
 
 ![Page in and page out over 7 days](2.3.3-fig-10.png)
 
@@ -137,19 +137,19 @@ From the above table, it’s interesting to note the page-in dwarf page-out. I p
 
 This tracks the currently committed virtual memory, although not all of them are written to the pagefile yet. It measures the demand, so commit can go up without In Use going up, as Brandon Paddock shares [here](http://brandonlive.com/2010/02/21/measuring-memory-usage-in-windows-7/). If Committed exceeds the available memory, paging activity will increase. This can impact performance.
 
-**Commit Limit**: Commit Limit is physical RAM + size of the page file. Since the pagefile is normally configured to map the physical RAM, the Commit Limit tends to be 2x. Commit Limit is important as a **growing** value is an **early warning sign**. The reason is Windows proactively increases its **pagefile.sys** if it’s under memory pressure.
+**Commit Limit**: Commit Limit is physical RAM + size of the page file. Since the pagefile is normally configured to map the physical RAM, the Commit Limit tends to be 2x. Commit Limit is important as a **growing** value is an **early warning sign**. The reason is Windows proactively increases its **pagefile.sys** if it's under memory pressure.
 
 The pagefile is an integral part of Windows total memory, as explained by [Mark Russinovich](https://blogs.technet.microsoft.com/markrussinovich/2008/11/17/pushing-the-limits-of-windows-virtual-memory/) explains here. There is Reserved Memory, and then there is Committed Memory. Some applications like to have its committed memory in 1 long contiguous block, so it reserves a large chunk up front. Databases and JVM belong in this category. This reserved memory does not actually store meaningful application data or executable. Only when the application commits the page that it becomes used. Mark explains that “when a process commits a region of virtual memory, the OS guarantees that it can maintain all the data the process stores in the memory either in physical memory or on disk”.
 
-Notice the word **on disk**. Yes, that’s where the pagefile.sys comes in. Windows will use either the physical memory or the pagefile.sys.
+Notice the word **on disk**. Yes, that's where the pagefile.sys comes in. Windows will use either the physical memory or the pagefile.sys.
 
 So how do we track this committed memory?
 
 The metric you need to track is the Committed Byte. The % Committed metric should not hit 80%. Performance drops when it hits 90%, as if this is a hard threshold used by Windows. We disabled the pagefile to verify the impact on Windows. We noticed a visibly slower performance even though Windows 7 showing >1 GB of Free memory. In fact, Windows gave error message, and some applications crashed. If you use a pagefile, you will not hit this limit.
 
-We have covered Free Memory and Committed Memory. Do they always move in tandem? If a memory is committed by Windows, does it mean it’s no longer free and available?
+We have covered Free Memory and Committed Memory. Do they always move in tandem? If a memory is committed by Windows, does it mean it's no longer free and available?
 
-The answer is **no**. Brandon Paddock demonstrated [here](http://brandonlive.com/2010/02/21/measuring-memory-usage-in-windows-7/) that you can increase the committed page without increasing the memory usage. He wrote a small program and explained how it’s done. The result is Windows committed page is double that of memory usage. The Free Memory & Cached Memory did not change.
+The answer is **no**. Brandon Paddock demonstrated [here](http://brandonlive.com/2010/02/21/measuring-memory-usage-in-windows-7/) that you can increase the committed page without increasing the memory usage. He wrote a small program and explained how it's done. The result is Windows committed page is double that of memory usage. The Free Memory & Cached Memory did not change.
 
 ## Active File Cache Memory
 
@@ -170,7 +170,7 @@ For further reading, refer to [Linux](https://stackoverflow.com/questions/454875
 
 ## Linux Memory Metrics
 
-As you can guess from above, Linux does it differently. These are the counters that we’re interested from right sizing use case.
+As you can guess from above, Linux does it differently. These are the counters that we're interested from right sizing use case.
 
 Linux has 2 types of cache: Slab Reclaim and Cached.
 
@@ -195,13 +195,13 @@ I notice the above was committed by Linus himself, on Jan 2014. Hats off for doi
 
 ## Guest OS Free Memory
 
-This is one the 3 major counters for capacity monitoring. The other 2 counters are Page-in Rate and Commit Ratio. These 3 are not contention counters, they are utilization counters. Bad values can contribute to bad performance, but they can’t measure the severity of the performance. Windows and Linux do not have a counter that measures how long or how often a CPU waits for memory.
+This is one the 3 major counters for capacity monitoring. The other 2 counters are Page-in Rate and Commit Ratio. These 3 are not contention counters, they are utilization counters. Bad values can contribute to bad performance, but they can't measure the severity of the performance. Windows and Linux do not have a counter that measures how long or how often a CPU waits for memory.
 
-In Windows, this is the Free Memory counter. This excludes the cached memory. If this number drops to a low number, Windows is running out of Free RAM. While that number varies per application and use case, generally keep this number > 500 MB for server VM and >100 MB for VDI VM. The reason you should set a lower number for VDI because they add up quickly. If you have 10K users, that’s 1 TB of RAM.
+In Windows, this is the Free Memory counter. This excludes the cached memory. If this number drops to a low number, Windows is running out of Free RAM. While that number varies per application and use case, generally keep this number > 500 MB for server VM and >100 MB for VDI VM. The reason you should set a lower number for VDI because they add up quickly. If you have 10K users, that's 1 TB of RAM.
 
 Further reading for Linux, read [this](http://www.chrisjohnston.org/ubuntu/why-on-linux-am-i-seeing-so-much-ram-usage).
 
-It’s okay for this counter to be low, so long other memory counters are fine. The following table shows VMs with near 0 free memory. Notice none of them are needing more memory. This is the perfect situation as there is no wastage.
+It's okay for this counter to be low, so long other memory counters are fine. The following table shows VMs with near 0 free memory. Notice none of them are needing more memory. This is the perfect situation as there is no wastage.
 
 ![Free memory](2.3.3-fig-12.png)
 
@@ -211,7 +211,7 @@ We shared earlier that the purpose of memory is to act as disk cache. So you wan
 
 ![Memory heatmap](2.3.3-fig-13.png)
 
-This is not a raw counter from Windows or Linux. This is a derived counter provided by VMware Tools to estimate the memory needed to run with minimum swapping. It’s a more conservative estimate as it includes some of the cache.
+This is not a raw counter from Windows or Linux. This is a derived counter provided by VMware Tools to estimate the memory needed to run with minimum swapping. It's a more conservative estimate as it includes some of the cache.
 
 The counter Memory Needed tracks the amount of memory needed by the Guest OS. It has 5% buffer for spike, based on the general guidance from Microsoft. Below this amount, the Guest OS may swap.
 
@@ -238,7 +238,7 @@ Tools will calculate Memory Needed as
 = 10 GB
 ```
 
-Memory Needed is the same as it’s already maxed.
+Memory Needed is the same as it's already maxed.
 
 ### Situation 2: High Memory Utilization
 
@@ -269,7 +269,7 @@ Tools will calculate Memory Needed as
 
 Again, Tools adds around 5%.
 
-We’ve covered that you need to look at more than 1 metric before you decide to add more memory. I’m afraid it is case by case, as shown in the following table. All these VMs are low on free memory, but other than VM on row no 3, the rest has sufficient memory.
+We've covered that you need to look at more than 1 metric before you decide to add more memory. I'm afraid it is case by case, as shown in the following table. All these VMs are low on free memory, but other than VM on row no 3, the rest has sufficient memory.
 
 ![Multiple memory metrics](2.3.3-fig-14.png)
 
@@ -279,7 +279,7 @@ We’ve covered that you need to look at more than 1 metric before you decide to
 
 **Paged pool**: this is a part of Cache Bytes. Based on [this](http://www.appadmintools.com/documents/windows-performance-counters-explained/) great article, it includes Pool Paged Resident Bytes, the System Cache Resident Bytes, the System Code Resident Bytes and the System Driver Resident Bytes.
 
-**Non-paged pool**: this is kernel RAM. It cannot be paged out. It’s part of In Use.
+**Non-paged pool**: this is kernel RAM. It cannot be paged out. It's part of In Use.
 
 **Working Set**: this measures the active usage by all processes. If this number exceeds the available memory, Windows decreases the working set of processes to minimize paging.
 

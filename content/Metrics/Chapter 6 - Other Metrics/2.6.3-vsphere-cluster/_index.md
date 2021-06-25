@@ -73,7 +73,7 @@ Memory Usable Capacity (KB)
 
 **Capacity Remaining** = Usable Capacity - (MAX Value of upper confidence interval of Long Term Forecast within a user defined Planning Window)
 
-**Long Term Forecast** = Forecast of (Usage and Contention (aka Demand) + Overhead (if applicable). Forecast is based on ARIMA, DFT, Spike and Plateau models. A year's worth daily aggregated (currently average) data is used, with more weight given to more recent data (this feature is called exponential decay). A limitation is it won’t handle workload with annual cycle.
+**Long Term Forecast** = Forecast of (Usage and Contention (aka Demand) + Overhead (if applicable). Forecast is based on ARIMA, DFT, Spike and Plateau models. A year's worth daily aggregated (currently average) data is used, with more weight given to more recent data (this feature is called exponential decay). A limitation is it won't handle workload with annual cycle.
 
 Note that the value of will be set to 0 if during the given collection cycle the demand breaches the usable capacity. This is because at that moment there is really no capacity. This can cause fluctuating value of Capacity Remaining metric if the load regularly touches the usable capacity threshold.
 
@@ -81,7 +81,7 @@ Note that the value of will be set to 0 if during the given collection cycle the
 Time from now to when the upper confidence interval of Long Term Forecast intersects/crosses Usable Capacity. If no intersection is seen, then the value is set to 366 days
 
 ##### Cluster Demand
-Cluster CPU Demand contain only limits, Memory utilization contains limits and reservations. CPU Reservation is excluded as it’s on demand.
+Cluster CPU Demand contain only limits, Memory utilization contains limits and reservations. CPU Reservation is excluded as it's on demand.
 
 ##### ESXi CPU overhead
 

@@ -21,10 +21,10 @@ If everything runs smoothly in the dining area, customers are being served on ti
 
 We use the analogy to drive the message that you need to focus on the customers first, and your IaaS second. If you take care of your customers well, and they are happy with your service, the problem you have in your IaaS is a secondary and internal matter.
 
-- The “dining area” is the Consumer layer. Look at the diagram below. It is where your customers’ VMs live.
+- The “dining area” is the Consumer layer. Look at the diagram below. It is where your customers' VMs live.
 - The “kitchen” is the Provider Layer. This is your infrastructure layer, where VMware and the hardware reside.
 
-Public cloud is part of the kitchen. Just because you no longer owns the infrastructure does not mean you can’t take management responsibility. The structure of enterprise IT means the infrastructure team end up being held accountable.
+Public cloud is part of the kitchen. Just because you no longer owns the infrastructure does not mean you can't take management responsibility. The structure of enterprise IT means the infrastructure team end up being held accountable.
 
 ![consumer vs provider layer demarcation](1.1.6-fig-1.png)
 
@@ -34,6 +34,6 @@ The application team becomes a consumer of a shared service—the cloud platform
 
 ![app team to platform team translation](1.1.6-fig-2.png)
 
-Let’s zoom into the kitchen area, as that’s also undergoing a transformation. The Server team or Windows team or Linux team typically took the ownership of the shared platform and evolved to become the platform team. With the evolution of [Hyper Converged Infrastructure](https://en.wikipedia.org/wiki/Hyper-converged_infrastructure), the storage is being absorbed into the platform. The boundary with the Network team is also becoming blurry with network virtualization. Many network services such a Firewall and Load Balancers are virtualized.
+Let's zoom into the kitchen area, as that's also undergoing a transformation. The Server team or Windows team or Linux team typically took the ownership of the shared platform and evolved to become the platform team. With the evolution of [Hyper Converged Infrastructure](https://en.wikipedia.org/wiki/Hyper-converged_infrastructure), the storage is being absorbed into the platform. The boundary with the Network team is also becoming blurry with network virtualization. Many network services such a Firewall and Load Balancers are virtualized.
 
 [^1]: Sunny and I went back a long way. We both came from the field and eventually became Product Managers.

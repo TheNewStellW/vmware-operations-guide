@@ -5,7 +5,7 @@ draft: false
 weight: 40
 ---
 
-The ESXi Contention Dashboard is the primary dashboard for ESXi host performance. It’s designed for VMware Administrators or Architects, and can be used in both monitoring and troubleshooting. Once you determine there is performance issue, use the **ESXi Utilization** dashboard to see if the contention is caused by very high utilization. 
+The ESXi Contention Dashboard is the primary dashboard for ESXi host performance. It's designed for VMware Administrators or Architects, and can be used in both monitoring and troubleshooting. Once you determine there is performance issue, use the **ESXi Utilization** dashboard to see if the contention is caused by very high utilization. 
 
 ## Design Consideration
 
@@ -34,9 +34,9 @@ Review the ESXi Hosts Performance table
 - You can change the time period to the period of your interest. The maximum number will be reflected accordingly. 
 Select an ESXi Host from the table
 - All the health charts will automatically show the KPI of selected cluster.
-- For performance, it’s important to show both depth and breadth of performance problem. A problem that impacts 1-2 VM requires a different troubleshooting that a problem that impacts all VMs in the cluster. 
+- For performance, it's important to show both depth and breadth of performance problem. A problem that impacts 1-2 VM requires a different troubleshooting that a problem that impacts all VMs in the cluster. 
 - Worst CPU Overlap among VM in the host is included as it indicates a lot of interrupts. A running VM was interrupted because VMkernel needs the physical core to run something else. A high and frequent number of interruptions is not healthy. This can also impact the VM performance. 
-- Expect the network error 1% and dropped packet to be 0 most of the times, if not always. If it’s not, analyze to see if there is any patterns across all ESXi Hosts, and bring it up to your network team. 
+- Expect the network error 1% and dropped packet to be 0 most of the times, if not always. If it's not, analyze to see if there is any patterns across all ESXi Hosts, and bring it up to your network team. 
 
 ## Points to Note
 

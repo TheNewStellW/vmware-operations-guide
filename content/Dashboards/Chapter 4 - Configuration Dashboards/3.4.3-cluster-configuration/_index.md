@@ -52,6 +52,6 @@ The fourth section of the dashboard lets you drill down into individual cluster.
 
 - The number of buckets on the pie chart or bar chart are balanced between the available screen estate, ease of use and functionality. Modify the buckets to either reflect your current situation or your desired ideal state. 
 - In a large environment, create a filter for this dashboard. Group by the class of services such as, Gold, silver, and bronze. Default the selection to Gold. In this way, your monitoring is not cluttered with less critical workloads.
-- You might notice that the **DRS Migration Threshold** widget is using the property **DRS vMotion Rate**. This is the correct property. We will correct the property name so it’s less confusing. 
+- You might notice that the **DRS Migration Threshold** widget is using the property **DRS vMotion Rate**. This is the correct property. We will correct the property name so it's less confusing. 
 - The **HA Memory Failover Shares** widget should be named **HA Memory Failover percentage**. This is a known typo.
 - The **HA CPU Failover Shares** widget should be named **HA CPU Failover percentage**. This is a known typo.

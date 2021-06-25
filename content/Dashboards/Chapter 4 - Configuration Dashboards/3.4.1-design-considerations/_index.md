@@ -19,4 +19,4 @@ Some ideas are:
 - Check for standalone ESXi. It will have no parent cluster
 - Check for missing Telegraf agent in critical VM
 
-Anything else? Let’s collaborate to enhance the configuration dashboards!
+Anything else? Let's collaborate to enhance the configuration dashboards!

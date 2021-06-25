@@ -17,7 +17,7 @@ To eliminate this operational over ahead, the team introduced additional functio
 
 ## Daily Operational Dashboard
 
-With over 250+ applications and services, and 4000+ components, it is indeed challenging for the Operations teams to have a ‘birds-eye’ view of the health of all applications/services. vRealize Operations made it seamless with the logical grouping functionality.
+With over 250+ applications and services, and 4000+ components, it is indeed challenging for the Operations teams to have a ‘birds-eye' view of the health of all applications/services. vRealize Operations made it seamless with the logical grouping functionality.
 
 We grouped devices based on service and application component with the help of applications owners. We used these groups to custom health and operations dashboard. This will help to know the health and deeper data analysis to troubleshoot the issue. If this dashboard was not made available, the Operations teams would have to view multiple dashboards in order to ascertain the overall health of the Applications/Services.
 
@@ -25,7 +25,7 @@ We grouped devices based on service and application component with the help of a
 
 ## Object Inventory Dashboard
 
-We have configured multiple object types per object and it’s very difficult to know what was configured and what is the data value for relational objects. Also this page will help to compare the multiple objects type value during single object troubleshooting. If this dashboard is not available, one would have to click through different sections to know the child and parent objects data values.
+We have configured multiple object types per object and it's very difficult to know what was configured and what is the data value for relational objects. Also this page will help to compare the multiple objects type value during single object troubleshooting. If this dashboard is not available, one would have to click through different sections to know the child and parent objects data values.
 
 ![](4.7.2-fig-3.png)
 
@@ -41,4 +41,4 @@ Our main goal was to provide an end-to-end monitoring solution to service owners
 
 ## Service Monitoring
 
-We have some application using shared services and database instances. We used corresponding service management packs to auto-discover all KPI’s and segregate KPI’s based on Applications. For instance, RabbitMQ management pack was leveraged to discover all virtual host and queues. We grouped the queues based on applications to support overall health and operational dashboards.
+We have some application using shared services and database instances. We used corresponding service management packs to auto-discover all KPI's and segregate KPI's based on Applications. For instance, RabbitMQ management pack was leveraged to discover all virtual host and queues. We grouped the queues based on applications to support overall health and operational dashboards.

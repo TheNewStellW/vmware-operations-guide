@@ -16,7 +16,7 @@ From performance and capacity management point of view, network has different fu
 | Upper Limit| Yes | No|
 | Monitoring | Simpler | Harder|
 
-Let’s explain the above in more detail, starting from the first difference.
+Let's explain the above in more detail, starting from the first difference.
 
 At the end of the day, the net available resources to the VMs arewhat we care about. What the IaaS platform used is considered an overhead. The more ESXi VMkernel, NSX, vSAN, vSphere Replication use, the lesser you have left for the business workload.
 

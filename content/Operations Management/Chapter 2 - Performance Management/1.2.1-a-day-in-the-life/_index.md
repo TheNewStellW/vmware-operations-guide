@@ -23,7 +23,7 @@ She said your VMware environment is a shared environment, and perhaps an increas
 
 She also said that her other VM, which was [P2V](https://en.wikipedia.org/wiki/Disaster_recovery) recently, was performing much faster in physical.
 
-You are right. She is saying it’s your fault 😊
+You are right. She is saying it's your fault 😊
 
 What do you do? 
 

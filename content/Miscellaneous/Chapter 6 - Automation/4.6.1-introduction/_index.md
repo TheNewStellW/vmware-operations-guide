@@ -5,11 +5,11 @@ draft: false
 weight: 10
 ---
 
-I bet you still remember that part “Yes, I did not cover **Automation**. For me, that’s part of Architecture. You should not automate what you cannot operate.”
+I bet you still remember that part “Yes, I did not cover **Automation**. For me, that's part of Architecture. You should not automate what you cannot operate.”
 
 In other words, what you can operate should be automated.
 
-And “Using an analogy, it’s like a plane with many automation features. That’s a feature of the plane.” The times where pilots had to do everything manually while flying a plane are long gone. Nowadays a modern plane is supporting the crew through automation – think of the autopilot.
+And “Using an analogy, it's like a plane with many automation features. That's a feature of the plane.” The times where pilots had to do everything manually while flying a plane are long gone. Nowadays a modern plane is supporting the crew through automation – think of the autopilot.
 
 **vRealize Operations** is doing automation out of the box in form of automated control routines; it is “automatically” monitoring the environment thorough pre-defined or custom **Symptoms**, **Alert Definitions** and **Compliance Packs**. These routines control the creation of **Alarms** and provides information presented through **Dashboards** and **Reports**.
 

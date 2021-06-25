@@ -11,10 +11,10 @@ Capacity Management requires an end-to-end plan and adjustment, because at the e
 
 ![Demand vs Supply](1.3.2-fig-1.png)
 
-Unlike Performance Management, this pillar of operations does not require deep technical knowledge. Let’s check your technical skills if you don’t trust me.
+Unlike Performance Management, this pillar of operations does not require deep technical knowledge. Let's check your technical skills if you don't trust me.
 
 - Can you architect a cluster where the performance matches physical?
-  - Easy, just don’t overcommit, or put 100% reservation for that VM.
+  - Easy, just don't overcommit, or put 100% reservation for that VM.
 - Can you architect a cluster that can handle monster VMs?
   - Easy, just get lots of cores per socket.
   - Easy, just get lots of core in the box.

@@ -16,7 +16,7 @@ The object model introduces a new super parent object called Horizon World, to m
 Because of the revamped object model, there is *no migration* from the old adapter (V4H) to this new adapter.
 
 {{% notice tip %}}
-Take note of a special object called Application Session. This object can be RDS or VDI. If it’s RDS, naturally it has less metrics.
+Take note of a special object called Application Session. This object can be RDS or VDI. If it's RDS, naturally it has less metrics.
 {{% /notice %}}
 
 ## Horizon + vSphere
@@ -29,6 +29,6 @@ The interwoven hierarchy is required for summarizing information.
 
 Notice the farm name Site02-Fram. Why is it directly under a Pod?
 
-The answer is it’s a manual farm. The hierarchy is aware that you can have manual pool across vCenter and will show it accordingly.
+The answer is it's a manual farm. The hierarchy is aware that you can have manual pool across vCenter and will show it accordingly.
 
 ![](4.8.3-fig-3.png)

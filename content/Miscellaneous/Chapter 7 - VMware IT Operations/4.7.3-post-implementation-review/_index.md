@@ -23,6 +23,6 @@ In addition to eliminating the cost for a third-party monitoring tool, vRealize 
 
 -   Ease of plugging in objects for auto-discovery by using various adaptors and API suites to automate operational work
 
-Overall, we’re providing an improved monitoring solution to our service owners. It is customized to meet their specific application requirements, including when to generate system alerts and notifications.
+Overall, we're providing an improved monitoring solution to our service owners. It is customized to meet their specific application requirements, including when to generate system alerts and notifications.
 
 Our new monitoring posture enables us to accommodate future growth requirements and prepares us to embrace migration from on-prem to cloud monitoring solutions such as vRealize Operations Cloud.

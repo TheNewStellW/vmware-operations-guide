@@ -7,7 +7,7 @@ weight: 20
 
 There are two layers of Availability, that is, the Consumer layer and the Provider layer. The vSphere Availability dashboard covers the Provider layer. This dashboard includes a cluster and not an ESXi host because the cluster is operationally a single compute provider. This dashboard considers the N+1 design, where the cluster can withstand one host failure. Logically, a cluster with fewer hosts has a higher risk.
 
-The dashboard is designed to help you analyze and report the uptime, as availability is typically part of official business SLA. It’s also often required in the monthly operational summary report.
+The dashboard is designed to help you analyze and report the uptime, as availability is typically part of official business SLA. It's also often required in the monthly operational summary report.
 
 The dashboard is not designed for live monitoring of the uptime. An NOC style of dashboard is better suited for that use case. Tools such as vRealize Log Insight should also be leveraged as fault is typically preceded with soft errors. 
 
@@ -36,7 +36,7 @@ The cluster failover percentage columns map to the following values in vCenter c
 ![](3.5.2-fig-2.png)
 
 Select a cluster from the above
-- The cluster uptime will be automatically plotted. It’s using 25%, 50%, and 75% as the threshold for red, orange and yellow respectively. The reason for low threshold is the 5 minute window. A complete 5 minute downtime is only 0.0116% when measured against a 30-day SLA. If the uptime was 100%, it will only go down to 99.9884%
+- The cluster uptime will be automatically plotted. It's using 25%, 50%, and 75% as the threshold for red, orange and yellow respectively. The reason for low threshold is the 5 minute window. A complete 5 minute downtime is only 0.0116% when measured against a 30-day SLA. If the uptime was 100%, it will only go down to 99.9884%
 - The ESXi in the selected cluster table will be automatically filled up. For more context, you can add a property widget that lists the selected ESXi Host properties. 
 - The 'Connected to vCenter' and 'Maintenance State' columns are not the average values, as both are string. However, they display the last state in the selected period. This allows you to go back to a specific point in time and view availability at that point.
 

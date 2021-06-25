@@ -5,13 +5,13 @@ draft: false
 weight: 40
 ---
 
-Performance ranks high in VDI operations so let’s start with it. Horizon is a complex architecture with many components and layer. How do you know Horizon is performing?
+Performance ranks high in VDI operations so let's start with it. Horizon is a complex architecture with many components and layer. How do you know Horizon is performing?
 
 One good way to answer is to begin with the end in mind. The purpose of DaaS is to provide acceptable user experience. To deliver that, there are 3 components (Edge, Network, Data Center) that must work well. Horizon is a client/server architecture, meaning it has a Horizon Client software that runs at the edge, talking via the network to a server agent software residing in the data center.
 
 ![](4.8.4-fig-1.png)
 
-The client software does the screen rendering. Due to lack of contention and utilization metrics, we can’t measure its performance. Some thin client or zero client has a tiny OS that support syslog.
+The client software does the screen rendering. Due to lack of contention and utilization metrics, we can't measure its performance. Some thin client or zero client has a tiny OS that support syslog.
 
 The network consists of the protocol and the physical network. Typically, the physical network carries more than Horizon protocol. For example, you have IP telephony system, security cameras or remote servers in your branches. You need to have visibility at the consumer (Horizon protocol) level and provider (physical network) level. In most cases, the network is not owned by the EUC team, so EUC team is consuming a shared service. Because of this, the physical network metrics play the supporting role. They are not primary metrics used in the KPI.
 
@@ -31,19 +31,19 @@ This is easier to measure as it has fewer metrics and only has 1 type of resourc
 
 The latency is measured at PCoIP or Blast protocol layer, not TCP/UDP layer. Upper layer is more accurate as we can have packet loss at application-layer but Windows sees no dropped packet. The reason was the packet arrives out of order and hence unusable from Horizon viewpoint.
 
-We’ve set the threshold value to be conservative yet realistic. If your users are accessing over the WAN or unreliable connection, then you may not see green. This is acceptable so long user actual productivity is not impacted.
+We've set the threshold value to be conservative yet realistic. If your users are accessing over the WAN or unreliable connection, then you may not see green. This is acceptable so long user actual productivity is not impacted.
 
 Time taken to load the user profile and time taken to logon are not included in the KPI because they are one time value. KPI needs to be a metric that can be evaluated regularly.
 
 At this moment, we do not include variance in the latency. If you think we should, do recommend the value for each threshold.
 
-The session network utilization is not part of the KPI as we can’t put the value into the range. The [Blast Extreme](https://techzone.vmware.com/resource/blast-extreme-display-protocol-vmware-horizon-7) protocol may be doing minimal work at that time for that user, so a low network throughput may not indicate poor user experience.
+The session network utilization is not part of the KPI as we can't put the value into the range. The [Blast Extreme](https://techzone.vmware.com/resource/blast-extreme-display-protocol-vmware-horizon-7) protocol may be doing minimal work at that time for that user, so a low network throughput may not indicate poor user experience.
 
 ## Data Center KPI
 
 The DC KPI depends on the types of object. A user can have VDI Session or RDS Session, served by VDI Pool and RDS Farm respectively.
 
-<table><colgroup><col style="width: 14%" /><col style="width: 85%" /></colgroup><thead><tr class="header"><th><strong>VDI Session</strong></th><th>It has contention metrics. As it’s Windows OS running on a vSphere VM, it has metrics from both layers.</th></tr></thead><tbody><tr class="odd"><td><strong>RDS Session</strong></td><td><p>It does not have contention metrics. It only has utilization metrics and they cannot be used to determine if a user experience degrades.</p><p>This applies to both application session and desktop session. As a result, the KPI is taken from the RDS Host, which is a server VM serving many users concurrently. The drawback is RDS Host does not provide visibility into the performance of each session.</p></td></tr></tbody></table>
+<table><colgroup><col style="width: 14%" /><col style="width: 85%" /></colgroup><thead><tr class="header"><th><strong>VDI Session</strong></th><th>It has contention metrics. As it's Windows OS running on a vSphere VM, it has metrics from both layers.</th></tr></thead><tbody><tr class="odd"><td><strong>RDS Session</strong></td><td><p>It does not have contention metrics. It only has utilization metrics and they cannot be used to determine if a user experience degrades.</p><p>This applies to both application session and desktop session. As a result, the KPI is taken from the RDS Host, which is a server VM serving many users concurrently. The drawback is RDS Host does not provide visibility into the performance of each session.</p></td></tr></tbody></table>
 
 Since both RDS Host and VDI Session is basically a Window VM, we are using the same KPI. Other than RDSH specific counter such as [this one](https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/rds-rdsh-performance-counters), there is no application level specific counters to measure contention. vRealize Operations uses the following counters and threshold to form the KPI.
 
@@ -55,7 +55,7 @@ We provide the threshold as they reflect Horizon best practice, which should wor
 
 The CPU Queue Length is the total queue length. In future, we may convert it into per vCPU. Same with disk latency, as read and write can move independantly.
 
-We do not include CPU Context Switch and Disk Outstanding IO, as I’m not yet convinced on the threshold, based on the profiling data. The numbers vary too wide. Send me your profiling result so I can consider it too.
+We do not include CPU Context Switch and Disk Outstanding IO, as I'm not yet convinced on the threshold, based on the profiling data. The numbers vary too wide. Send me your profiling result so I can consider it too.
 
 We do not include CPU Overlap as the value is negligible most of the time. It will be green most of the time, hence inflating the value unnecessarily.
 
@@ -63,7 +63,7 @@ Do you know why we include Page-in but not Page-out? How about balloon, swapped 
 
 We do not include Memory In Use as we have Free Memory. In Use is better for capacity, while Free is better for performance.
 
-VM CPU utilization is included because it’s possible that we have a runaway process that it’s impacting user performance. A runaway process typically consumes 1 vCPU so if the VM has 4 CPU the increase is only 25%.
+VM CPU utilization is included because it's possible that we have a runaway process that it's impacting user performance. A runaway process typically consumes 1 vCPU so if the VM has 4 CPU the increase is only 25%.
 
 Now that we have the DC KPI and Network KPI at the smallest object, we can roll up to higher level object. For that, we need a correct hierarchy. The hierarchy is also required by other pillar of operations management.
 
@@ -79,7 +79,7 @@ The VDI Pool Network KPI is simply the average of all its VDI Session Network KP
 
 The VDI Pool DC KPI is also the average of its session DC KPI. Because these 2 KPIs operate independantly, we do *not* combine them.
 
-For RDS, the correponding object is RDS Farm, not RDS Host. It’s more logical to monitor at this level, just like we monitor at vSphere cluster level and not the individual ESXi. Just like a VM moves within a cluster, a user does not always get the same RDS host in the next session. We take the network KPI from RDS sessions and DC KPI from RDS hosts.
+For RDS, the correponding object is RDS Farm, not RDS Host. It's more logical to monitor at this level, just like we monitor at vSphere cluster level and not the individual ESXi. Just like a VM moves within a cluster, a user does not always get the same RDS host in the next session. We take the network KPI from RDS sessions and DC KPI from RDS hosts.
 
 We combine both the VDI and RDS KPI at the Pod level. Again, we simply take the average of both. If you have more VDI Pools than RDS Farms, then the Pod KPI value will be driven by the VDI part of your architecture.
 
@@ -91,7 +91,7 @@ The KPI for higher level objects cannot be the average of Pod KPI, as Pod is bas
 
 `Horizon World DC KPI = Average (VDI Pool DC KPI, RDS Farm DC KPI)`
 
-We do not include the Horizon server infrastructure at the KPI level. The reason is they are supporting metrics. They do *not* directly measure the user experience as none of their counters are session-specific. This is an example where we’re being careful in choosing KPI. Each KPI is ideally a primary metric, directly measuring the session performance. If you include supporting metrics, you can get false positive or false negative.
+We do not include the Horizon server infrastructure at the KPI level. The reason is they are supporting metrics. They do *not* directly measure the user experience as none of their counters are session-specific. This is an example where we're being careful in choosing KPI. Each KPI is ideally a primary metric, directly measuring the session performance. If you include supporting metrics, you can get false positive or false negative.
 
 ## Leading Indicator
 
@@ -117,9 +117,9 @@ Using the above, here are the KPI metrics we have at the top level
 
 -   95th Percentile World Network KPI. You got the idea.
 
-Yes, just 2 each for Pod and World, and 2 each for DC and Network. You need to keep it minimum so it’s easier to see over time.
+Yes, just 2 each for Pod and World, and 2 each for DC and Network. You need to keep it minimum so it's easier to see over time.
 
-At the Farm and Pool level, it’s the same approach.
+At the Farm and Pool level, it's the same approach.
 
 -   95th Percentile Farm DC KPI = 95th Percentile of all its RDS Hosts DC KPI values
 
@@ -129,13 +129,13 @@ At the Farm and Pool level, it’s the same approach.
 
 -   95th Percentile Pod Network KPI. You got the idea.
 
-Now that we have the KPI, let’s look at the Horizon objects one by one, starting with the smallest/lowest one. We will also include all other performance metrics to complete the picture. To keep the list short and topic manageable, we will not include non performance metrics and properties. We will cover them separately.
+Now that we have the KPI, let's look at the Horizon objects one by one, starting with the smallest/lowest one. We will also include all other performance metrics to complete the picture. To keep the list short and topic manageable, we will not include non performance metrics and properties. We will cover them separately.
 
 ## Baseline Profiling
 
-Horizon is one of the largest applications in a company, as it can span thousands of VMs and locations. It’s important to profile so you know what to expect. Different deployments can have a different performance characteristics, making it hard to establish best practice threshold. In a large scale deployment, different pools or farms can have different numbers. If your design expects a different performance for certain farm or pool, then profile them separately.
+Horizon is one of the largest applications in a company, as it can span thousands of VMs and locations. It's important to profile so you know what to expect. Different deployments can have a different performance characteristics, making it hard to establish best practice threshold. In a large scale deployment, different pools or farms can have different numbers. If your design expects a different performance for certain farm or pool, then profile them separately.
 
-Take time to profile your actual environment while it’s healthy so you have a baseline.
+Take time to profile your actual environment while it's healthy so you have a baseline.
 
 We cover the profiling technique earlier in [Part 1 Chapter 2](#baseline-profiling). Specific for Horizon, you should profile the following counters.
 
@@ -145,7 +145,7 @@ As part of the baselining, you will know the typical size of a session, a user, 
 
 ## RDS Session
 
-Compared with VDI Session, RDS Session has less metric as it’s not the whole VM. An RDS Session is sharing one Windows OS with many other sessions. Windows do not provide detail breakdown for each session, and mostly report the metric at Windows level.
+Compared with VDI Session, RDS Session has less metric as it's not the whole VM. An RDS Session is sharing one Windows OS with many other sessions. Windows do not provide detail breakdown for each session, and mostly report the metric at Windows level.
 
 ### Contention Metrics
 
@@ -155,19 +155,19 @@ The following contention metrics are provided to troubleshoot further if the Net
 
 While the following metrics only impact at the initial stage, they are important to user experience.
 
-<table><colgroup><col style="width: 28%" /><col style="width: 71%" /></colgroup><tbody><tr class="odd"><td>Time taken to load profile</td><td><p>The time starts after user has been fuly authenticated, when Windows begins the profile loading process and ends when the profile is fully loaded.</p><p>The guidance for performance is</p><ul><li><p>Green = below 5 seconds</p></li><li><p>Yellow = 5 - 15 seconds</p></li><li><p>Orange = 15 - 25 seconds</p></li><li><p>Red = Above 25 seconds</p></li></ul><p>The guidance is lower than VDI because RDS sessions share the same Windows. The first user logging into Windows takes the biggest performance hit because Windows has to load all GPO policies, system settings, and services that load at login. The subsequent users don’t suffer the same time penalty, because those items have already been loaded. </p><p>There are features like “Session Pre-Launch” to mask the initial login time delay</p></td></tr><tr class="even"><td>Time taken to logon</td><td><p>The time starts when the user ID and password is submitted to Windows, and ends when the session is fully authenticated. It does not include the time taken to load the profile and launch start up application.</p><p>The guidance for performance is</p><ul><li><p>Green = below 30 seconds</p></li><li><p>Yellow = 30 - 45 seconds</p></li><li><p>Orange = 45 - 60 seconds</p></li><li><p>Red = above 60 seconds</p></li></ul></td></tr></tbody></table>
+<table><colgroup><col style="width: 28%" /><col style="width: 71%" /></colgroup><tbody><tr class="odd"><td>Time taken to load profile</td><td><p>The time starts after user has been fuly authenticated, when Windows begins the profile loading process and ends when the profile is fully loaded.</p><p>The guidance for performance is</p><ul><li><p>Green = below 5 seconds</p></li><li><p>Yellow = 5 - 15 seconds</p></li><li><p>Orange = 15 - 25 seconds</p></li><li><p>Red = Above 25 seconds</p></li></ul><p>The guidance is lower than VDI because RDS sessions share the same Windows. The first user logging into Windows takes the biggest performance hit because Windows has to load all GPO policies, system settings, and services that load at login. The subsequent users don't suffer the same time penalty, because those items have already been loaded. </p><p>There are features like “Session Pre-Launch” to mask the initial login time delay</p></td></tr><tr class="even"><td>Time taken to logon</td><td><p>The time starts when the user ID and password is submitted to Windows, and ends when the session is fully authenticated. It does not include the time taken to load the profile and launch start up application.</p><p>The guidance for performance is</p><ul><li><p>Green = below 30 seconds</p></li><li><p>Yellow = 30 - 45 seconds</p></li><li><p>Orange = 45 - 60 seconds</p></li><li><p>Red = above 60 seconds</p></li></ul></td></tr></tbody></table>
 
 ### Utilization Metrics
 
-Once you determine there is a problem, the next step is to narrow down if it’s CPU, Memory, Disk or Network
+Once you determine there is a problem, the next step is to narrow down if it's CPU, Memory, Disk or Network
 
 One common reason behind contention is high utilization. Not all usage metrics are relevant to performance, so the the following only lists the relevant ones.
 
-<table><colgroup><col style="width: 28%" /><col style="width: 71%" /></colgroup><tbody><tr class="odd"><td><p>CPU Usage (%)</p><p>Memory Usage (%)</p></td><td><p>These values are coming from Windows, not VM. They track the relative consumption of a session againts the RDS Host total capacity.</p><p>Make sure this number is below than expected average. For example, if you size for 20 concurrent users, then each session should be around 5%.</p></td></tr><tr class="even"><td>Disk IOPS</td><td>Unlike a server workload, users don’t generally generate high IOPS or sustained IOPS. They open file, save file, but should not be sustaining for say 1 hour.</td></tr></tbody></table>
+<table><colgroup><col style="width: 28%" /><col style="width: 71%" /></colgroup><tbody><tr class="odd"><td><p>CPU Usage (%)</p><p>Memory Usage (%)</p></td><td><p>These values are coming from Windows, not VM. They track the relative consumption of a session againts the RDS Host total capacity.</p><p>Make sure this number is below than expected average. For example, if you size for 20 concurrent users, then each session should be around 5%.</p></td></tr><tr class="even"><td>Disk IOPS</td><td>Unlike a server workload, users don't generally generate high IOPS or sustained IOPS. They open file, save file, but should not be sustaining for say 1 hour.</td></tr></tbody></table>
 
 If the network is over the WAN or mobile network, monitor the following metrics closely.
 
-<table><colgroup><col style="width: 28%" /><col style="width: 71%" /></colgroup><tbody><tr class="odd"><td>Frame Rate</td><td>See <a href="https://en.wikipedia.org/wiki/Frame_rate">this</a> for explanation. A low frame rate result in inferior user experience. While occasional low is fine, a prolonged low could lead to degraded user experience</td></tr><tr class="even"><td>Bandwidth Utilization (Mbps)</td><td><p>Total bandwidth, although in VDI is mostly the agent sending data. Received metric typically covers users input like typing.</p><p>Note it’s megabit, unlike kilobyte that vSphere uses. You’re welcome.</p></td></tr></tbody></table>
+<table><colgroup><col style="width: 28%" /><col style="width: 71%" /></colgroup><tbody><tr class="odd"><td>Frame Rate</td><td>See <a href="https://en.wikipedia.org/wiki/Frame_rate">this</a> for explanation. A low frame rate result in inferior user experience. While occasional low is fine, a prolonged low could lead to degraded user experience</td></tr><tr class="even"><td>Bandwidth Utilization (Mbps)</td><td><p>Total bandwidth, although in VDI is mostly the agent sending data. Received metric typically covers users input like typing.</p><p>Note it's megabit, unlike kilobyte that vSphere uses. You're welcome.</p></td></tr></tbody></table>
 
 ## RDS Host
 
@@ -177,11 +177,11 @@ All the vSphere counters are explained in [Part 2](#overview-3) of the book.
 
 ### Contention Metrics
 
-Use the contention metrics to troubleshoot further if the DC KPI (%) metric shows bad value. Once you determine there is a problem, the next step is to narrow down if it’s CPU, Memory, Disk or Network
+Use the contention metrics to troubleshoot further if the DC KPI (%) metric shows bad value. Once you determine there is a problem, the next step is to narrow down if it's CPU, Memory, Disk or Network
 
 The metrics can be grouped into 2: inside Guest OS and outside.
 
-For the metrics inside, a major spike at the time of the incident could be the root cause as it’s not coming from outside (e.g. shared infrastructure)
+For the metrics inside, a major spike at the time of the incident could be the root cause as it's not coming from outside (e.g. shared infrastructure)
 
 <table><colgroup><col style="width: 28%" /><col style="width: 71%" /></colgroup><tbody><tr class="odd"><td>CPU Queue</td><td>High CPU queue is the primary counter that Windows needs more CPU. Either increase the number of vCPU or add more RDS host into the farm</td></tr><tr class="even"><td><p>CPU Context Switch</p><p>Memory Page-in Rate</p><p>Disk Queue</p></td><td><p>Compare them against your baseline.</p><p>The CPU Context Switch metric will be added in future.</p></td></tr></tbody></table>
 
@@ -209,7 +209,7 @@ One common reason behind contention is high utilization. Not all usage metrics a
 
 Disk utilization is less useful in performance troubleshooting as the limit is high. A very high utilization may in fact deliver a good experience to the user, albeit at the expense of other users.
 
-<table><colgroup><col style="width: 28%" /><col style="width: 71%" /></colgroup><tbody><tr class="odd"><td><p>Read IOPS</p><p>Write IOPS</p><p>Read Throughput</p><p>Write Throughput</p></td><td><p>If any of these is higher than normal, investigate why. It could be security agents scanning all files.</p><p>Compare read and write to your expectation.</p><p>Compare IOPS and Throughput. A large increase in IOPS but not in throughput indicate the block size has increased. Is that what you’re expecting?</p></td></tr></tbody></table>
+<table><colgroup><col style="width: 28%" /><col style="width: 71%" /></colgroup><tbody><tr class="odd"><td><p>Read IOPS</p><p>Write IOPS</p><p>Read Throughput</p><p>Write Throughput</p></td><td><p>If any of these is higher than normal, investigate why. It could be security agents scanning all files.</p><p>Compare read and write to your expectation.</p><p>Compare IOPS and Throughput. A large increase in IOPS but not in throughput indicate the block size has increased. Is that what you're expecting?</p></td></tr></tbody></table>
 
 ## RDS Farm
 
@@ -231,9 +231,9 @@ The above is what you need to monitor. If the number is bad, then check the foll
 
 ### Contention Metrics
 
-KPI metrics are suitable for monitoring, not troubleshooting, as it’s an aggregate of metrics. To troubleshoot, you need contention metric-type.
+KPI metrics are suitable for monitoring, not troubleshooting, as it's an aggregate of metrics. To troubleshoot, you need contention metric-type.
 
-It’s easier to troubleshoot at Farm level than individual host or session, as you can see the larger picture. There is no point troubleshooting a particular host or session if the whole farm is on fire. Different hosts and sessions can have different problems, and these metrics will capture them all as it’s worst among all members.
+It's easier to troubleshoot at Farm level than individual host or session, as you can see the larger picture. There is no point troubleshooting a particular host or session if the whole farm is on fire. Different hosts and sessions can have different problems, and these metrics will capture them all as it's worst among all members.
 
 Use the Worst() metrics-type as they are the leading indicators. It shows the worst value among the RDS Hosts or RDS Sessions in the farm. They show the *depth* of a problem. If they show good value, no need to troubleshoot further as the worst is good.
 
@@ -291,7 +291,7 @@ VDI Session is a VM with Horizon protocol, so the metrics are basically Windows 
 
 ### Contention Metrics
 
-We included KPI (%) if you need a single metric for ease of reporting or monitoring. It’s the average of DC KPI and Network KPI as both are equally important to the user experience.
+We included KPI (%) if you need a single metric for ease of reporting or monitoring. It's the average of DC KPI and Network KPI as both are equally important to the user experience.
 
 VDI Session has the same set of contention metrics as RDS Host object & RDS Session object. So refer to them for the metric description.
 
@@ -365,7 +365,7 @@ Now that we have the KPIs for all key objects, we can roll up. A pod is simply a
 
 If the above is bad, then you dive into the individual farm or pool. If you want to see how bad the situation, use the following
 
-<table><colgroup><col style="width: 46%" /><col style="width: 53%" /></colgroup><tbody><tr class="odd"><td><p>Farms or Pools with Red DC KPI</p><p>Farms or Pools with Red Network KPI</p></td><td>Aim for this number to be 0 as the farm KPI or pool KPI is the average of all their members. It’s a lagging indicator.</td></tr><tr class="even"><td><p>Network KPI (%)</p><p>DC KPI (%)</p></td><td>While it’s a lagging indicators, it gives the full picture.</td></tr></tbody></table>
+<table><colgroup><col style="width: 46%" /><col style="width: 53%" /></colgroup><tbody><tr class="odd"><td><p>Farms or Pools with Red DC KPI</p><p>Farms or Pools with Red Network KPI</p></td><td>Aim for this number to be 0 as the farm KPI or pool KPI is the average of all their members. It's a lagging indicator.</td></tr><tr class="even"><td><p>Network KPI (%)</p><p>DC KPI (%)</p></td><td>While it's a lagging indicators, it gives the full picture.</td></tr></tbody></table>
 
 Since Pod contain Horizon servers, we add **95th Percentile Connection Servers DC KPI (%)** metric to help in monitoring. From here, you dive into the individual servers.
 
@@ -375,7 +375,7 @@ Horizon Pod is too large an object to perform troubleshooting. You need to zoom 
 
 At the pod level, the following is provided as the number of data points is a lot less.
 
-<table><colgroup><col style="width: 46%" /><col style="width: 53%" /></colgroup><tbody><tr class="odd"><td><p>Worst time taken to load profile</p><p>Worst time taken to logon</p></td><td>We use the worst instead of 95th percentile as it’s an event, not metric. It does not happen every 5 minutes so the number of data points is a lot less.</td></tr></tbody></table>
+<table><colgroup><col style="width: 46%" /><col style="width: 53%" /></colgroup><tbody><tr class="odd"><td><p>Worst time taken to load profile</p><p>Worst time taken to logon</p></td><td>We use the worst instead of 95th percentile as it's an event, not metric. It does not happen every 5 minutes so the number of data points is a lot less.</td></tr></tbody></table>
 
 If you have a problem that impacts the entire pod, check at vSphere clusters and DC level as it could be something common.
 
@@ -383,9 +383,9 @@ If you have a problem that impacts the entire pod, check at vSphere clusters and
 
 One common reason behind contention is high utilization. As Pod is a large object, its utilization can potentially exceed what the infrastructure is able to deliver. Start with the total utilization:
 
-<table><colgroup><col style="width: 28%" /><col style="width: 71%" /></colgroup><tbody><tr class="odd"><td>CPU Utilization</td><td>Memory is not included as it’s actually disk space. Disk space impact capacity, not performance. Memory usage matters in resource provider, such as ESXi.</td></tr><tr class="even"><td><p>Disk IOPS</p><p>Disk Throughput</p></td><td>If the number is higher than what you expect, then drill down to read and write.</td></tr></tbody></table>
+<table><colgroup><col style="width: 28%" /><col style="width: 71%" /></colgroup><tbody><tr class="odd"><td>CPU Utilization</td><td>Memory is not included as it's actually disk space. Disk space impact capacity, not performance. Memory usage matters in resource provider, such as ESXi.</td></tr><tr class="even"><td><p>Disk IOPS</p><p>Disk Throughput</p></td><td>If the number is higher than what you expect, then drill down to read and write.</td></tr></tbody></table>
 
-The problem could also be caused by high utilization within the VDI VM or RDS Host. You did profile your environment, didn’t you?
+The problem could also be caused by high utilization within the VDI VM or RDS Host. You did profile your environment, didn't you?
 
 Since Pod contain Horizon servers, we add the following metric to help in monitoring. From here, you dive into the individual servers.
 

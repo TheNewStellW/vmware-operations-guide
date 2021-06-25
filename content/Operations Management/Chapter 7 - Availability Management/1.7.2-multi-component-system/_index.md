@@ -15,7 +15,7 @@ The availability of the overall system with multiple subcomponents in series is 
 
 ![Availability overall system](1.7.2-fig-1.png)
 
-Let’s consider an example, in this scenario, we have three individual components in series with each other and has 99.9% availability each. The availability of overall system = `99.9 * 99.9 * 99.9 ≅ 99.7 %`
+Let's consider an example, in this scenario, we have three individual components in series with each other and has 99.9% availability each. The availability of overall system = `99.9 * 99.9 * 99.9 ≅ 99.7 %`
 
 ![Overall system flow](1.7.2-fig-2.png)
 
@@ -29,7 +29,7 @@ The availability of the overall system with multiple subcomponents in parallel i
 
 where `1 – Availability of Component i` gives us the unavailability of the component.
 
-Let’s consider an example, in this scenario, we have three individual components in parallel with each other and has 99.9% availability each.
+Let's consider an example, in this scenario, we have three individual components in parallel with each other and has 99.9% availability each.
 
 ![component contribution to availability](1.7.2-fig-4.png)
 
@@ -39,7 +39,7 @@ Availability of the overall system:
 
 ## Mixed Components
 
-Let us consider a more practical system which has both serial and parallel components. For this example, let’s take a three tier application with 4 web servers, 2 application servers and 1 database servers. Let’s consider availability of all of them to be 99.9% and see what the overall availability will be.
+Let us consider a more practical system which has both serial and parallel components. For this example, let's take a three tier application with 4 web servers, 2 application servers and 1 database servers. Let's consider availability of all of them to be 99.9% and see what the overall availability will be.
 
 ![multi-component availability](1.7.2-fig-5.png)
 

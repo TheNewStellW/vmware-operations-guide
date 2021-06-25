@@ -5,11 +5,11 @@ draft: false
 weight: 30
 ---
 
-As an infrastructure architect, I get to present a lot. It can be public speaking in large events such as VMworld, or presenting to a small group. Certainly, all of us who have been working with VMware for a long time can just stand up and present, especially if it’s a technical topic. After all, the content is all in the brain.
+As an infrastructure architect, I get to present a lot. It can be public speaking in large events such as VMworld, or presenting to a small group. Certainly, all of us who have been working with VMware for a long time can just stand up and present, especially if it's a technical topic. After all, the content is all in the brain.
 
 However, I learned that the difference between a great presentation and a good presentation is much larger than what I thought. Much larger than the different between a good presentation and an average presentation.
 
-A great presentation has that lasting impact. It goes beyond educating. It changes the listener’s paradigm. They remember the key message long after they have forgotten the specific content. It gets put deep into their heart. Another word, you’ve calibrated their thinking with yours.
+A great presentation has that lasting impact. It goes beyond educating. It changes the listener's paradigm. They remember the key message long after they have forgotten the specific content. It gets put deep into their heart. Another word, you've calibrated their thinking with yours.
 
 So what makes a great presentation?
 

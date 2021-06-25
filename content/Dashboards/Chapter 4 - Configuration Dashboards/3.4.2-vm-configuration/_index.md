@@ -26,7 +26,7 @@ The first section covers limit, share and reservation
  
 - Shares should be mapped to a service level, to provide a larger proportion of shared resources to those VMs who pay more. This means that you should only have as many shares as your service levels. If your IaaS provides Gold, silver, and bronze, then you should have only three types of shares. 
 - The value of share is relative. If you move a VM from one cluster to another (be it in the same or different vCenter Server), you may have to adjust the shares. 
-- Reservation impacts your capacity. Memory reservation works differently from CPU reservation, it’s more permanent.
+- Reservation impacts your capacity. Memory reservation works differently from CPU reservation, it's more permanent.
 ![](3.4.2-fig-3.png)
 
 The second section covers VMware Tools

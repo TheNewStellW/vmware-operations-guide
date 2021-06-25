@@ -22,7 +22,7 @@ Select a vSAN cluster from the table
 - All the health charts will automatically show the KPI of selected cluster.
 - Both IOPS and Throughput as large block size can result in high throughput in relatively low IOPS. If you are seeing large block size when You are not expecting it, investigate which applications are the using it.
 - Read and Write are split as they tend to have different patterns. 
-- Health chart is not used as utilization can’t be color coded. 
+- Health chart is not used as utilization can't be color coded. 
 - Max IOPS among capacity disk is shown as a disk has a limit, especially magnetic disk. A typical magnetic disk delivers ~200 IOPS, and this can be easily saturated.
 Review the Disk Groups table
 - It lists all the vSAN clusters, sorted by the least performing. 

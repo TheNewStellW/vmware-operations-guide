@@ -15,13 +15,13 @@ Log Insight sports out of the box dashboards that visualizes security-related ac
 
 ![](4.5.2-fig-2.png)
 
-Let’s go through some of its contents in-depth.
+Let's go through some of its contents in-depth.
 
 There are two privileged login ID that customers have access that audit requires compliance reporting: root and admin. Other privileged account such as MaintenanceAdmin is not accessible. How many times do admin ID login with the wrong passwords in a specific period? The following chart counts each time a login failure happens.
 
 ![](4.5.2-fig-3.png)
 
-The count is possible because Log Insights create a field out of the log entries. The field is named `vmw_vr_ops_admin_attempt` and that’s what plotted over time. I’m showing two examples of actual log entries, with value added context by Log Insight.
+The count is possible because Log Insights create a field out of the log entries. The field is named `vmw_vr_ops_admin_attempt` and that's what plotted over time. I'm showing two examples of actual log entries, with value added context by Log Insight.
 
 ![](4.5.2-fig-4.png)
 
@@ -29,9 +29,9 @@ The log entries themselves are in turn filtered using the following query. Log I
 
 ![](4.5.2-fig-5.png)
 
-vRealize Operations has 2 UI that are accessed via separate URLs. The Admin UI is for platform administration such as upgrading vRealize Operations, so it’s important to track login activities. How many failed login attempts made in the Admin UI is also provided out of the box.
+vRealize Operations has 2 UI that are accessed via separate URLs. The Admin UI is for platform administration such as upgrading vRealize Operations, so it's important to track login activities. How many failed login attempts made in the Admin UI is also provided out of the box.
 
-We’ve covered admin. How about root? As this is a Linux account as opposed to vRealize Opertions account, check the Linux content pack. The concept is the same.
+We've covered admin. How about root? As this is a Linux account as opposed to vRealize Opertions account, check the Linux content pack. The concept is the same.
 
 What IP address do they login from? This helps you trace the location of the user who used the account. The following chart shows 6 different users and when they log in. We can drill down to any of them to see the exact time and the IP address used.
 
@@ -43,11 +43,11 @@ Alternatively, you can present in table format to show the IP address informatio
 
 Users addition, especially unexpected ones, can be a cause of security concern. Audit team may ask for the lists of users added in certain period. Users deletion is typically not an audit concern, but could be useful in troubleshooting. You can figure who deleted the user account and when.
 
-The widgets in the third row of the dashboard covers users creation, import and deletion. By now you can guess that we can plot this event over time too. The following shows the list of user accounts that got deleted and when. I cut the fullname as that’s part of actual product validation.
+The widgets in the third row of the dashboard covers users creation, import and deletion. By now you can guess that we can plot this event over time too. The following shows the list of user accounts that got deleted and when. I cut the fullname as that's part of actual product validation.
 
 ![](4.5.2-fig-8.png)
 
-The query that produces the above chart is the following. To some extend, it’s actually human-readable!
+The query that produces the above chart is the following. To some extend, it's actually human-readable!
 
 ![](4.5.2-fig-9.png)
 
@@ -71,7 +71,7 @@ How was the above achieved? The following shows the actual query. Log Insight au
 
 ![](4.5.2-fig-13.png)
 
-Use this dashboard to select a user and audit that user’s actions. The type of actions you can audit are
+Use this dashboard to select a user and audit that user's actions. The type of actions you can audit are
 
 -   Dashboards, Views and Reports. This covers creation, update, deletion, import, schedule (report) and generate (report).
 
@@ -85,27 +85,27 @@ Use this dashboard to select a user and audit that user’s actions. The type of
 
 The widgets are separated as in the menu of vRealize Operations Manager UI, so you can easily to orientate.
 
-Let’s go through some of its contents in-depth.
+Let's go through some of its contents in-depth.
 
 ![](4.5.2-fig-14.png)
 
-The query that produces the above chart is the following. I’ve excluded “dashboard_add_tab” from the category as it dominates the chart.
+The query that produces the above chart is the following. I've excluded “dashboard_add_tab” from the category as it dominates the chart.
 
 ![](4.5.2-fig-15.png)
 
-Let’s drill down into a specific task. Let’s say we have some views deleted and we need to know who deleted them and when. For that, we select the view_definition_delete and add it. Log Insight will automatically add the field name and operator. No need to manually type!
+Let's drill down into a specific task. Let's say we have some views deleted and we need to know who deleted them and when. For that, we select the view_definition_delete and add it. Log Insight will automatically add the field name and operator. No need to manually type!
 
 ![](4.5.2-fig-16.png)
 
-Since we’re down into a single activity, we can now plot the chart over time, grouped by the user. We can see here that the user is the system account **maintenanceadmin**.
+Since we're down into a single activity, we can now plot the chart over time, grouped by the user. We can see here that the user is the system account **maintenanceadmin**.
 
 ![](4.5.2-fig-17.png)
 
-Let’s take another example from the dashboard. This time we will take user management, where you can track things like user deletion, role creation, user password change and many others. The following shows some of those activities.
+Let's take another example from the dashboard. This time we will take user management, where you can track things like user deletion, role creation, user password change and many others. The following shows some of those activities.
 
 ![](4.5.2-fig-18.png)
 
-I’ve filtered out **user_archive** event as its value dominates the chart. As mentioned earlier, no need to manually type. Simply click on one of the log entries, choose a filter from the pop-up menu and that’s it!
+I've filtered out **user_archive** event as its value dominates the chart. As mentioned earlier, no need to manually type. Simply click on one of the log entries, choose a filter from the pop-up menu and that's it!
 
 ![](4.5.2-fig-19.png)
 
@@ -113,15 +113,15 @@ As usual, you can have a table of who did what when.
 
 ![](4.5.2-fig-20.png)
 
-Let’s take one last example. I will take the configuration activity as it shows a range of interesting events. As usual, I started with a bar chart as it lets me see the activity name. We can see that changes in global settings dominate the result.
+Let's take one last example. I will take the configuration activity as it shows a range of interesting events. As usual, I started with a bar chart as it lets me see the activity name. We can see that changes in global settings dominate the result.
 
 ![](4.5.2-fig-21.png)
 
-We already know how to filter it, so I’ll show you another way. Go to the Event Types. You’ll see the log entries grouped by type of events. To filter out, simply click on the **X** icon.
+We already know how to filter it, so I'll show you another way. Go to the Event Types. You'll see the log entries grouped by type of events. To filter out, simply click on the **X** icon.
 
 ![](4.5.2-fig-22.png)
 
-Once filtered out, the following is what I get. Let us know if there are events that you need to be logged that’s not trapped.
+Once filtered out, the following is what I get. Let us know if there are events that you need to be logged that's not trapped.
 
 ![](4.5.2-fig-23.png)
 
@@ -137,22 +137,22 @@ The query to get the above is complex
 
 ![](4.5.2-fig-25.png)
 
-Let’s dive into “Deletion activity per resource” widget by opening it in **Interactive Analytics** page. You get the same information shown on the widget, but this time you can adjust it. I’ve made each time block to be 10 minute instead of 1 hour so I can see the changes better.
+Let's dive into “Deletion activity per resource” widget by opening it in **Interactive Analytics** page. You get the same information shown on the widget, but this time you can adjust it. I've made each time block to be 10 minute instead of 1 hour so I can see the changes better.
 
 ![](4.5.2-fig-26.png)
 
-Note that not all activities show the actual resource name being added/modified/deleted. In the following screenshot, I’ve highlighted in green where the affected resource name being shown, and in orange where it is not captured.
+Note that not all activities show the actual resource name being added/modified/deleted. In the following screenshot, I've highlighted in green where the affected resource name being shown, and in orange where it is not captured.
 
 ![](4.5.2-fig-27.png)
 
-All the columns above are Log Insight field, a type of variable. Each extracted field has its own rules for extraction. Log Insight scans events and extracts fields whenever predefined patterns get matched. Let’s take vmw_vr_ops_username as an example, and shows its extraction formula.
+All the columns above are Log Insight field, a type of variable. Each extracted field has its own rules for extraction. Log Insight scans events and extracts fields whenever predefined patterns get matched. Let's take vmw_vr_ops_username as an example, and shows its extraction formula.
 
 | ![](4.5.2-fig-28.png) | ![](4.5.2-fig-29.png) |
 |-----------------------|-----------------------|
 
 All the VMware extracted fields are prefixed with **vmw_** followed by the product name.
 
-We’re now ready to evaluate the filters used in the preceding chart. It requires three filters working together, meaning they all must be true. It’s an AND operator, not an OR operator.
+We're now ready to evaluate the filters used in the preceding chart. It requires three filters working together, meaning they all must be true. It's an AND operator, not an OR operator.
 
 ![](4.5.2-fig-30.png)
 
@@ -168,7 +168,7 @@ You can monitor the above stages as they progress via Log Insight. Yup, pretty m
 
 ![](4.5.2-fig-31.png)
 
-The “**Upgrade Range**” widget shows when the upgrade started and when it completed. It covers the time range of the upgrade process. If the process was successful, you’ll see two columns, one marking the start and one marking the end, as shown in the following.
+The “**Upgrade Range**” widget shows when the upgrade started and when it completed. It covers the time range of the upgrade process. If the process was successful, you'll see two columns, one marking the start and one marking the end, as shown in the following.
 
 ![](4.5.2-fig-32.png)
 

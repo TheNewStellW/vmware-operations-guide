@@ -14,9 +14,9 @@ The following five principals are used to design the predefined Network Operatio
 ![](3.6.1-fig-1.png)
 
 **Color Coded**: All the information is color coded to classify the severity of the issue.
-- Color is easier to digest than text, as you don’t even need to read. Lots of text can confuse viewers. Text can be hard to read from afar. 
+- Color is easier to digest than text, as you don't even need to read. Lots of text can confuse viewers. Text can be hard to read from afar. 
 - Use key colors (green, yellow, amber, and red). 
-- By default all green. Can’t have red staying for hours (use alerts for something less urgent)
+- By default all green. Can't have red staying for hours (use alerts for something less urgent)
 
 No interaction on the projected screen
 - 0 interaction, because there is no mouse and keyboard. 
@@ -24,7 +24,7 @@ No interaction on the projected screen
 - Most widgets are not suitable as a result. 
 [KISS](https://en.wikipedia.org/wiki/KISS_principle) (Keep It Simple Show)
 - sThese dashboards are designed to show you minimal & critical information only. It should follow the KISS principle.
-- Don’t show detailed charts as that is hard to read from afar. Be aware of how far the info needs to be displayed. 9 point Calibri at laptop is clear, but not at the projector screen.
+- Don't show detailed charts as that is hard to read from afar. Be aware of how far the info needs to be displayed. 9 point Calibri at laptop is clear, but not at the projector screen.
 - Ideally, all the numbers are in %, with 0 being bad and 100 being perfect.
 - In cases like Utilization, you should use the following marker. 
   - 50% = good, balanced utilization. Ideally, this should be 75%.
@@ -35,11 +35,11 @@ Remember the 5-second test
 - All NOC dashboards should be easy to interpret, user friendly and do not require an explanation.
 
 Choose content that drives immediate **Actions**
-- Focuses on immediate remediation. Remediation action has to be immediate (within the same hours). If something can’t be fixed within the same day, why show it live? Remediation that takes >1 day should not be shown, as the dashboard will be red for hours. It is better to use alerts for longer remediation window. 
+- Focuses on immediate remediation. Remediation action has to be immediate (within the same hours). If something can't be fixed within the same day, why show it live? Remediation that takes >1 day should not be shown, as the dashboard will be red for hours. It is better to use alerts for longer remediation window. 
 - If you display something that is red most of the time, after a while the viewer will ignore it. This defeats the very purpose of displaying on the big screen.
-- When something on the big screen is red, you want action to be taken. And it’s immediate, not tomorrow.
-- It’s showing 5 minute data. Live! The history not so relevant, because it focuses on urgent remediation. 
-- Problems that don’t require immediate attention should be avoided, as they are distraction.
+- When something on the big screen is red, you want action to be taken. And it's immediate, not tomorrow.
+- It's showing 5 minute data. Live! The history not so relevant, because it focuses on urgent remediation. 
+- Problems that don't require immediate attention should be avoided, as they are distraction.
 - Examples of suitable actions: stop provisioning of new VM, take action on VMs that abuse the shared infrastructure.
 - Examples of not suitable actions: Increase supply of infrastructure, such as adding hardware.
 

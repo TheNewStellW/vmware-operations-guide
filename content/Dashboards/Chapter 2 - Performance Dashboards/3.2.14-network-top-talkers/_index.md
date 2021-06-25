@@ -49,4 +49,4 @@ You can identify the villain VM and compare their demands with the capabilities 
 After identifying the villain VM, talk to the VM owners if the numbers are excessive during peak hours and identify the reasons behind the excessive usage. You must ensure that they do not create a hot spot, for example, vSAN cluster with >100 disk can handle numerous IOPS but if the VM objects are only on a few disks, those disks can become a hot spot. 
 
 ## Points to Note
-- A heat map would enable us to visualize the data easier. However, it can’t show the past data, hence it’s not used. If you want see in heat map form, see the Live! Heavy Hitters dashboard.
+- A heat map would enable us to visualize the data easier. However, it can't show the past data, hence it's not used. If you want see in heat map form, see the Live! Heavy Hitters dashboard.

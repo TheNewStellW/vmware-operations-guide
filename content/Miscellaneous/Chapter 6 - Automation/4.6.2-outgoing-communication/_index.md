@@ -25,7 +25,7 @@ Automated Actions, as the name implies, can be used to automate execution of tas
 
 The first step towards a Self-Healing SDDC is to automate such actions. Of course, in a SDDC it needs more than just enabling automation. For example, we need to be compliant with change management processes, involve owners of the managed VMs or get approval. How to be compliant with such requirements is not part of this chapter but you will learn what options you have to get there.
 
-Before I give you a short recipe how to enable action automation based on an easy example, let’s quickly recall the Alert Definition concept in a simplified form.
+Before I give you a short recipe how to enable action automation based on an easy example, let's quickly recall the Alert Definition concept in a simplified form.
 
 The following picture shows the relationships between the involved objects. An Alert Definition may have one or multiple Recommendations. A Recommendation may include an Action. This Action will be available within the Recommendation and can be executed manually from the details view on an alert.
 
@@ -63,7 +63,7 @@ The new Webhook Outbound Plugin provides a generic way to integrate any REST API
 
 ![](4.6.2-fig-9.png "Payload configuration for Webhook Outbound Plugin")
 
-John Dias, one of our great Tech Marketing Architects, created a sample Webhook for MS Teams integration. To integrate MS Teams as target for vRealize Operations Notifications, first you need to create an incoming Webhook connector for your Teams channel. The configuration of the Webhook in MS Teams is not part of this chapter, but it is very well described in John’s post. To use the MS Teams connector in vRealize Operations, simply create an outbound plugin instance in vRealize Operations with the complete URL of the MS Teams incoming webhook as parameter as shown in the next picture:
+John Dias, one of our great Tech Marketing Architects, created a sample Webhook for MS Teams integration. To integrate MS Teams as target for vRealize Operations Notifications, first you need to create an incoming Webhook connector for your Teams channel. The configuration of the Webhook in MS Teams is not part of this chapter, but it is very well described in John's post. To use the MS Teams connector in vRealize Operations, simply create an outbound plugin instance in vRealize Operations with the complete URL of the MS Teams incoming webhook as parameter as shown in the next picture:
 
 ![](4.6.2-fig-10.png "Webhook Output Plugin instance for MS Teams")
 

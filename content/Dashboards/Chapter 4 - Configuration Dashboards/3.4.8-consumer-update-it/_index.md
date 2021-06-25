@@ -25,7 +25,7 @@ About the outdated Windows and Red Hat
 - It lists all Microsoft Windows client version that are not version 10
 - It lists all Microsoft Windows server version that are not version 2016 and 2019.
 - It lists all Red Hat Enterprise Linux version that are not version 7 or 8.
-- If you run other Operating Systems like Ubuntu, clone the widget. Or repurpose the widget if you don’t run RHEL and MS Windows
+- If you run other Operating Systems like Ubuntu, clone the widget. Or repurpose the widget if you don't run RHEL and MS Windows
 
 ## Points to Note
 

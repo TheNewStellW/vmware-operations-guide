@@ -15,15 +15,15 @@ When you architect that vSAN, how many milliseconds of disk latency did you have
 
 #### Monitor
 
-This is where you compare Plan vs Actual. That’s why the goal must be clearly defined. Does the reality match what your architecture was supposed to deliver? If not, then you need to fix it.
+This is where you compare Plan vs Actual. That's why the goal must be clearly defined. Does the reality match what your architecture was supposed to deliver? If not, then you need to fix it.
 
 #### Troubleshoot
 
-You do this when reality is worse than plan, or something amiss, not when there is a complaint. You want to take time in troubleshooting, so it’s best done proactively. And quietly with no one rushing you for results 😊
+You do this when reality is worse than plan, or something amiss, not when there is a complaint. You want to take time in troubleshooting, so it's best done proactively. And quietly with no one rushing you for results 😊
 
 #### Optimize
 
-As part your monitoring, you may not discover problem, but you spot opportunity to make performance even better. It’s common for new version to deliver performance improvement. Again, you do this proactively, not waiting for complaint to happen.
+As part your monitoring, you may not discover problem, but you spot opportunity to make performance even better. It's common for new version to deliver performance improvement. Again, you do this proactively, not waiting for complaint to happen.
 
 ------
 

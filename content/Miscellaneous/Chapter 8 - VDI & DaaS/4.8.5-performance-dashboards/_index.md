@@ -7,9 +7,9 @@ weight: 50
 
 ### Performance Dashboards
 
-Now that you’ve seen what the performance metrics are and how they are meant to be used together, designing the dashboards become easier. Armed with knowledge of vRealize Operations, creating all the dashboards can be done within a day.
+Now that you've seen what the performance metrics are and how they are meant to be used together, designing the dashboards become easier. Armed with knowledge of vRealize Operations, creating all the dashboards can be done within a day.
 
-In DaaS, you’re outnumbered by your users. There are users than administrators, and problems can also come from non users. As a result, there is a good chance that by the time you look into the problem, 5 minute have passed or the problem no longer happens. This means the performance dashboard should show you a trend, not just the present time or a point in time in the past.
+In DaaS, you're outnumbered by your users. There are users than administrators, and problems can also come from non users. As a result, there is a good chance that by the time you look into the problem, 5 minute have passed or the problem no longer happens. This means the performance dashboard should show you a trend, not just the present time or a point in time in the past.
 
 The dashboard needs to cover
 
@@ -39,7 +39,7 @@ This dashboard acts as the overall dashboard for all DC related performance.
 
 -   Finally, selecting a pod, a pool or a farm should give its key information so you have better context.
 
-The dashboard is designed to provide a quick overview, enabling convenient access to cycle among pods, farms and pools as you try to establish the performance issue. It’s not suitable when you already know the farm or pool with problem. If you already know the specific, then simply go direct to the VDI dashboard or RDS dashboard.
+The dashboard is designed to provide a quick overview, enabling convenient access to cycle among pods, farms and pools as you try to establish the performance issue. It's not suitable when you already know the farm or pool with problem. If you already know the specific, then simply go direct to the VDI dashboard or RDS dashboard.
 
 We can visualize the overall performance over time using a health chart and pick the KPI metric at the Horizon World object.
 
@@ -63,7 +63,7 @@ From the Pod, you can drill down into its RDS Farms or VDI Pools. The navigation
 
 The table has a blue border as you can drill down into the RDS Farm dashboard.
 
-The column Sessions show the numbers at present. It’s not the highest number of sessions in the last 24 hours.
+The column Sessions show the numbers at present. It's not the highest number of sessions in the last 24 hours.
 
 You can select any of the farm, and its KPI will be shown over time
 
@@ -87,7 +87,7 @@ The RDS Performance dashboard has more details, all the way down to hosts and se
 
 ![](4.8.5-fig-8.png)
 
-The partially visible line, marked with green, is a drill down from RDS Host into the underlying VM. You’ll in the following screenshot that the line starts from the host.
+The partially visible line, marked with green, is a drill down from RDS Host into the underlying VM. You'll in the following screenshot that the line starts from the host.
 
 From the Farm, you can drill down into the hosts and the sessions in the farm. The following shows the host section of the dashboard.
 
@@ -109,7 +109,7 @@ The last part if the host status. This scoreboard focuses on the host status tha
 
 ![](4.8.5-fig-13.png)
 
-The dashboard is kept simple so it’s easy to use. Add necessary widgets to tailor to your need. For example, if you think the performance is caused by high utilization, add the utilization metrics. Do not color coded as high utilization can be healthy (productive).
+The dashboard is kept simple so it's easy to use. Add necessary widgets to tailor to your need. For example, if you think the performance is caused by high utilization, add the utilization metrics. Do not color coded as high utilization can be healthy (productive).
 
 ![](4.8.5-fig-14.png)
 
@@ -121,7 +121,7 @@ As you can expect, selecting a host shows you the host performance over time.
 
 ![](4.8.5-fig-16.png)
 
-You get the usual raw detail metrics associated with the host. I’m showing CPU as an example below.
+You get the usual raw detail metrics associated with the host. I'm showing CPU as an example below.
 
 ![](4.8.5-fig-17.png)
 

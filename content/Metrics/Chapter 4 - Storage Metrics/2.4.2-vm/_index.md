@@ -13,15 +13,15 @@ At the VM level, you can look at counters at the individual virtual disk level, 
 
 ![Virtual disk counters](2.4.2-fig-2.png)
 
-Use the **virtual disk** counters to see VMFS vmdk files, NFS vmdk files, and RDMs. However, you don’t get data below the virtual disk. For example, if the VM has snapshot, the data does not know about it. Also, a VM typically has multiple virtual disks (OS drive, swap drive, data drive), so you need to add them manually if you use vCenter. In vRealize Operations, you use the “aggregate of all instances”.
+Use the **virtual disk** counters to see VMFS vmdk files, NFS vmdk files, and RDMs. However, you don't get data below the virtual disk. For example, if the VM has snapshot, the data does not know about it. Also, a VM typically has multiple virtual disks (OS drive, swap drive, data drive), so you need to add them manually if you use vCenter. In vRealize Operations, you use the “aggregate of all instances”.
 
-Use the **datastore** counters to see VMFS and NFS, but not RDM. Because snapshots happen at Datastore level, the counter will include it. Datastore figures will be higher if your VM has a snapshot. You don’t have to add the data from each virtual disk together as the data presented is already at the VM level. It also has the Highest Latency counter, which is useful in tracking peak latency.
+Use the **datastore** counters to see VMFS and NFS, but not RDM. Because snapshots happen at Datastore level, the counter will include it. Datastore figures will be higher if your VM has a snapshot. You don't have to add the data from each virtual disk together as the data presented is already at the VM level. It also has the Highest Latency counter, which is useful in tracking peak latency.
 
 Use the **disk** counters to see VMFS and RDM, but not NFS. The data at this level should be the same as at Datastore level because your blocks should be aligned; you should have a 1:1 mapping between Datastore and LUN, without extents. It also has the Highest Latency counter, which is useful in tracking peak latency.
 
 VMs consume storage in 3 different ways:
 
-- Virtual disk. This can be VMFS, vSAN, vVOL, NFS, RDM. If it’s vmdk files, they can reside in different datastores and/or RDM
+- Virtual disk. This can be VMFS, vSAN, vVOL, NFS, RDM. If it's vmdk files, they can reside in different datastores and/or RDM
 - Network mount point, from inside Windows or Linux. This is not feasible by the hypervisor. Both the space, and the IO are not visible. It goes out as network throughput.
 - Overhead. This is not visible to the Guest OS. They are shown in blue in the following diagram.
 
@@ -43,7 +43,7 @@ The range varies widely. Use the profiling technique to establish the threshold 
 
 ## Snapshot Impact
 
-Snapshot requires additional read operations, as the reads have to be performed on all the snapshots. The impact on write is less. I’m not sure why it goes up so high, my guess is there are many files involves. Based on the manual, a snapshot operation creates .vmdk, -delta.vmdk, .vmsd, and .vmsn files. Read more [here](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.vm_admin.doc/GUID-38F4D574-ADE7-4B80-AEAB-7EC502A379F4.html).
+Snapshot requires additional read operations, as the reads have to be performed on all the snapshots. The impact on write is less. I'm not sure why it goes up so high, my guess is there are many files involves. Based on the manual, a snapshot operation creates .vmdk, -delta.vmdk, .vmsd, and .vmsn files. Read more [here](https://docs.vmware.com/en/VMware-vSphere/7.0/com.vmware.vsphere.vm_admin.doc/GUID-38F4D574-ADE7-4B80-AEAB-7EC502A379F4.html).
 
 For Write, ESXi just need to write into the newest file.
 
@@ -53,11 +53,11 @@ The pattern is actually identical. I take one of the VM and show it over 7 days.
 
 ![Read IOPS datastore](2.4.2-fig-6.png)
 
-You can validate if snapshot causes the problem by comparing before and after snapshot. That’s exactly what I did below. Notice initially there was no snapshot. There was a snapshot briefly and you could see the effect immediately. When the snapshot was removed, the 2 lines overlaps 100% hence you only see 1 line. When we took the snapshot again, the read IOPS at datastore level is ***consistently*** higher.
+You can validate if snapshot causes the problem by comparing before and after snapshot. That's exactly what I did below. Notice initially there was no snapshot. There was a snapshot briefly and you could see the effect immediately. When the snapshot was removed, the 2 lines overlaps 100% hence you only see 1 line. When we took the snapshot again, the read IOPS at datastore level is ***consistently*** higher.
 
 ![Read IOPS](2.4.2-fig-7.png)
 
-How I know that’s IOPS effect as the throughput is identical. The additional reads do not bring back any data. Using the same VM but at different time period, notice the throughput at both levels are identical.
+How I know that's IOPS effect as the throughput is identical. The additional reads do not bring back any data. Using the same VM but at different time period, notice the throughput at both levels are identical.
 
 ![Reads IOPS - different time period](2.4.2-fig-8.png)
 

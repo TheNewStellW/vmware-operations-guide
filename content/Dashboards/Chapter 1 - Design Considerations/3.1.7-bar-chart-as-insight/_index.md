@@ -9,4 +9,4 @@ Distribution Charts comes in many shapes, with bar chart being one of most famil
 
 ![](3.1.7-fig-1.png)
 
-The reason has to do with the reason you bought the capacity in the first place. It’s to be consumed. If the capacity is not well used after months or even years, it’s a wastage. You overbought capacity.
+The reason has to do with the reason you bought the capacity in the first place. It's to be consumed. If the capacity is not well used after months or even years, it's a wastage. You overbought capacity.

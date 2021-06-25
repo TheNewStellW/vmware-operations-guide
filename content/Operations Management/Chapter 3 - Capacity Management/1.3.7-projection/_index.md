@@ -17,15 +17,15 @@ Periodic peaks exhibit cyclical patterns or waves. For example hourly, daily, we
 
 If you do not have 3 months and just need an overall sizing, consider using the 97th percentile value. Why 97th percentile? It's based on standard deviation principle. Two [Standard Deviation](https://en.wikipedia.org/wiki/Standard_deviation) away from the midpoint equals to 95%, and 3 Standard Deviation = 99.7%. 97th percentile hence provides a good balance between 2 SD and 3 SD. By and large, it captures just the right amount of peak and outlier.
 
-**Capacity Remaining (%)** uses a projected value, 3 days into the future, hence it might differ with currently used capacity. As it’s future value, there is confidence band. You can choose between aggressive (based on the upper limit of the band) and conservative (based on the actual trajectory). On the other hand, if the present utilization exceeds the usable capacity, vRealize Operations sets the value of Capacity Remaining to 0%.
+**Capacity Remaining (%)** uses a projected value, 3 days into the future, hence it might differ with currently used capacity. As it's future value, there is confidence band. You can choose between aggressive (based on the upper limit of the band) and conservative (based on the actual trajectory). On the other hand, if the present utilization exceeds the usable capacity, vRealize Operations sets the value of Capacity Remaining to 0%.
 
-Take note that CPU Capacity Remaining (%) and Memory Capacity Remaining (%) appear in the policy as enabled but cannot be used. That’s an internal metric which should have been hidden.
+Take note that CPU Capacity Remaining (%) and Memory Capacity Remaining (%) appear in the policy as enabled but cannot be used. That's an internal metric which should have been hidden.
 
 ![buffer and HA capacity](1.3.7-fig-2.png)
 
 **Time Remaining** measures the number of days before capacity runs out. The projection is up to 1 year, with time remaining above 1 year is simply shown as 1 year. The conservative is based on the upper bound of the capacity remaining projection.
 
-**VM Remaining** measures the number VM with average size that can fit into the cluster. The average VM size calculated automatically, so it varies across time and across clusters. VM Remaining at vSphere Data Center and vCenter levels are simply the sum of the children clusters. There is no calculation of average VM size at these levels, so you like have mixed sizes. Also, the VM Remaining value does not fall below 0. It’s possible for a data center to show positive VM Remaining value even though there is short fall in one of its member clusters.
+**VM Remaining** measures the number VM with average size that can fit into the cluster. The average VM size calculated automatically, so it varies across time and across clusters. VM Remaining at vSphere Data Center and vCenter levels are simply the sum of the children clusters. There is no calculation of average VM size at these levels, so you like have mixed sizes. Also, the VM Remaining value does not fall below 0. It's possible for a data center to show positive VM Remaining value even though there is short fall in one of its member clusters.
 
 **Recommended Size** is based on the highest projected value within the planning window, not the value of projection at the end of the window. By default, the planning window is 60 days for VM. This comes from 30 days provisioning buffer + 30 days (the default threshold for Time Remaining to be in the green zone, as shown in the screenshot).
 

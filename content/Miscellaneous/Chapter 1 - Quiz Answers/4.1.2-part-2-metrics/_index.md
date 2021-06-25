@@ -24,11 +24,11 @@ From the chart you can see that the formula for VM CPU Contention \> Demand – 
 
 - So at this point, all 3 counters of VM CPU are 50%.
 
-- The counter at ESXi tells a different story. The ESXi Core Utilization (%) immediately went up to 100% while Utilization went up to only 50%. The reason is Core Utilization measures whether the core is used or not. It’s unaware of HT.
+- The counter at ESXi tells a different story. The ESXi Core Utilization (%) immediately went up to 100% while Utilization went up to only 50%. The reason is Core Utilization measures whether the core is used or not. It's unaware of HT.
 
 - Usage (%) is identical to Core Utilization in this case.
 
-- On the other hand, ESXi Utilization (%) looks at if each thread HT is running or not. It does not care about the fact that the 2 threads share a core, and simply roll up to ESXi level directly from thread level. This is why it’s showing 50% as it only cares whether a thread is running or not, at any point in time.
+- On the other hand, ESXi Utilization (%) looks at if each thread HT is running or not. It does not care about the fact that the 2 threads share a core, and simply roll up to ESXi level directly from thread level. This is why it's showing 50% as it only cares whether a thread is running or not, at any point in time.
 
 ##### During Ramp Up period
 
@@ -36,7 +36,7 @@ From the chart you can see that the formula for VM CPU Contention \> Demand – 
 
 - VM CPU Run (ms) ramps up from 240K to 480K. All 24 vCPU has 20K ms value, which equals to 100%.
 
-- VM CPU Used (ms) barely moved. From 240K to 300K. That’s 1.25x, demonstrating that Used understands HT only delivers 1.25x throughput.
+- VM CPU Used (ms) barely moved. From 240K to 300K. That's 1.25x, demonstrating that Used understands HT only delivers 1.25x throughput.
 
 - VM CPU Usage (%) ramp up from 50% to 62.5%, also demonstrating awareness of contention due to HT.
 
@@ -52,7 +52,7 @@ From the chart you can see that the formula for VM CPU Contention \> Demand – 
 
 - VM CPU Used is at 300K milliseconds, which is 62.5%
 
-- VM CPU Usage (%) is at 62.5%. On average, each of the VM vCPU only gets 62.5%. If you use this for your VM capacity, you will get the wrong conclusion as it’s already running 100%
+- VM CPU Usage (%) is at 62.5%. On average, each of the VM vCPU only gets 62.5%. If you use this for your VM capacity, you will get the wrong conclusion as it's already running 100%
 
 - ESXi CPU Usage (%) is at 100%. This makes it suitable from Capacity viewpoint, albet too conservative. It is not suitable from Performance, as you can not tell if there is still room.
 
@@ -66,7 +66,7 @@ Active is lower than Consumed and Guest OS In Use counters because they do not a
 
 ## ESXi CPU Contention vs Utilization
 
-These are the reasons why they don’t match:
+These are the reasons why they don't match:
 
 -   One looks at physical CPU, the other the virtual CPU. One looks at ESXi, while the other looks at VM.
 

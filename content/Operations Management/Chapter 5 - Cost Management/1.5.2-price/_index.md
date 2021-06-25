@@ -27,7 +27,7 @@ Keep your pricing model simple. The more complex your bill, the more you have to
 
 ![service to resource charge mapping](1.5.2-fig-4.png)
 
-Overly simplified pricing could be unfair to customers, but that’s common in other industries. Take the airline industry, where my favourite airline is Singapore Airlines. I notice they have at least 4 generations of planes. The new plane is more efficient, costs less to operate and is more enjoyable to customers. On the other hand, if you take into account depreciation, the old plane is already fully depreciated. And yet, the price is the same across all generations.
+Overly simplified pricing could be unfair to customers, but that's common in other industries. Take the airline industry, where my favourite airline is Singapore Airlines. I notice they have at least 4 generations of planes. The new plane is more efficient, costs less to operate and is more enjoyable to customers. On the other hand, if you take into account depreciation, the old plane is already fully depreciated. And yet, the price is the same across all generations.
 
 ## Break Even
 

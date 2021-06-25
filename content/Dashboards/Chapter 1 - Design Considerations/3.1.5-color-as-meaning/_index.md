@@ -5,7 +5,7 @@ draft: false
 weight: 50
 ---
 
-It’s easier to see color than read numbers, if the color has meaning. There are many occasions in operations that you just need to know if things are good or bad first, before diving into the actual raw value. Color is also easier at a glance, especially if you have read hundreds of numbers inside a large table.
+It's easier to see color than read numbers, if the color has meaning. There are many occasions in operations that you just need to know if things are good or bad first, before diving into the actual raw value. Color is also easier at a glance, especially if you have read hundreds of numbers inside a large table.
 
 Here is the color I recommend:
 
@@ -15,7 +15,7 @@ Green means good, and gradually getting worse as it moves toward red.
 Typically used in performance monitoring and compliance.
 
 ##### Dark Grey –> Green … Red
-We use dark grey in Capacity as wastage (unused) is a bigger issue than over utilization. It’s critical to show wastage as it can also impact performance.
+We use dark grey in Capacity as wastage (unused) is a bigger issue than over utilization. It's critical to show wastage as it can also impact performance.
 
 For performance dashboard, you should consider using red to convey that oversized is bad for performance.
 

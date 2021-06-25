@@ -34,15 +34,15 @@ The timeline matters. In the following table, notice 99.999% in a year is actual
 
 ![SLA downtime duration comparison](1.1.7-fig-1.png)
 
-Each additional “9” shrinks your downtime window by 10x. That’s why each decimal can cost a lot more money, as a different architecture may be required.
+Each additional “9” shrinks your downtime window by 10x. That's why each decimal can cost a lot more money, as a different architecture may be required.
 
 Even if you measure the SLA once a month, it can still be very difficult to meet. Take a look at the following table. For simplicity, we will use Availability SLA and not Performance SLA, because up or down is a simple binary.
 
 ![SLA downtime in minutes comparison](1.1.7-fig-2.png)
 
-If you promise 99.99%, you only have 4.0 minutes – 4.5 minutes of downtime per calendar month. That means your architecture must be able to detect the issue and then complete proper remediation in just a few minutes. That’s a tight space to manoeuvre.
+If you promise 99.99%, you only have 4.0 minutes – 4.5 minutes of downtime per calendar month. That means your architecture must be able to detect the issue and then complete proper remediation in just a few minutes. That's a tight space to manoeuvre.
 
-A unique saving grace that applies to Availability but not Performance is scheduled downtime. There is no such thing as scheduled downtime in performance. Specific to IaaS, you can propose that scheduled downtime is not included in the SLA, so long it’s done quickly and rarely. Planned activities such as VM hardware upgrade, Tools upgrade and Windows upgrade can be included in scheduled downtime activities. Downtime caused by customer is not included, be it intentional or not. This is why you need two counters: one for SLA and one for actual. The actual will record every downtime, be it a part of SLA or not.
+A unique saving grace that applies to Availability but not Performance is scheduled downtime. There is no such thing as scheduled downtime in performance. Specific to IaaS, you can propose that scheduled downtime is not included in the SLA, so long it's done quickly and rarely. Planned activities such as VM hardware upgrade, Tools upgrade and Windows upgrade can be included in scheduled downtime activities. Downtime caused by customer is not included, be it intentional or not. This is why you need two counters: one for SLA and one for actual. The actual will record every downtime, be it a part of SLA or not.
 
 A challenge that impact Availability but not Performance is recovery time. Your system may detect the VM is down within 1 minute, but the reboot process until the entire OS is properly up and running takes 5 minutes, as it needs to perform filesystem consistency check.
 
@@ -50,7 +50,7 @@ KPI complements SLA as it tracks at much higher intensity and it covers more cou
 
 ![explaination of availability and performance SLAs and KPIs](1.1.7-fig-3.png)
 
-From the preceding table, note that Guest OS counters are not included as that’s part of “application KPI” or VM KPI, not IaaS KPI. They impact the VM performance, but nothing the IaaS can do, meaning the remediation is at the Guest OS layer.
+From the preceding table, note that Guest OS counters are not included as that's part of “application KPI” or VM KPI, not IaaS KPI. They impact the VM performance, but nothing the IaaS can do, meaning the remediation is at the Guest OS layer.
 
 KPI also complements SLA by providing the stepping stone in your operations transformation. It is a necessary step towards operations with real business SLA.
 
@@ -77,7 +77,7 @@ A Gold class has higher SLA than Silver. For that to happens, that means they ar
 
 ### Performance SLA
 
-Let’s elaborate Performance SLA a bit, as it is more complex than the other two.
+Let's elaborate Performance SLA a bit, as it is more complex than the other two.
 
 Following the above, diagram, you offer 99.9% for Gold, and 99% for Silver as the respective SLA.
 
@@ -90,7 +90,7 @@ This approach is easier than setting up a different performance threshold for ea
 
 You notice the problem already?
 
-It is hard to explain the delta or gaps between the class of services. Why is Silver 3x the value if it is only half the price? Shouldn’t it be proportionate?
+It is hard to explain the delta or gaps between the class of services. Why is Silver 3x the value if it is only half the price? Shouldn't it be proportionate?
 
 There is a 2nd problem. If you set _different_ standards, it is possible that Silver will perform better than Gold, because it has lower standard. This can create confusion.
 

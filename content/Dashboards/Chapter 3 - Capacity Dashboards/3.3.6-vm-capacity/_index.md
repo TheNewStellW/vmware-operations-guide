@@ -39,7 +39,7 @@ Right-sizing recommendation is also shown for both CPU and Memory. Unlike physic
 
 For CPU, the CPU Usage counter is used instead of Demand. Use the knowledge you learned here to figure out why.
 
-For disk, it’s showing at the Guest OS partition level. There is no overall capacity at VM level because different partitions have different capacity.
+For disk, it's showing at the Guest OS partition level. There is no overall capacity at VM level because different partitions have different capacity.
 
 ## Points to Note
 

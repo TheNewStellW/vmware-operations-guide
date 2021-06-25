@@ -19,7 +19,7 @@ We can see actual event names by changing into a table. We can sort it to show t
 
 ![](4.5.1-fig-2.png)
 
-We are interested in events impacting our consumer (VMs), so let’s filter it out. The filter is vim25.vm\* as that is what vCenter shows in its log as we can see from the above table. I did not know that vCenter uses **vim25.vm**\*, but looking at the table above I could make an educated guess.
+We are interested in events impacting our consumer (VMs), so let's filter it out. The filter is vim25.vm\* as that is what vCenter shows in its log as we can see from the above table. I did not know that vCenter uses **vim25.vm**\*, but looking at the table above I could make an educated guess.
 
 ![](4.5.1-fig-3.png)
 
@@ -27,11 +27,11 @@ Once the above filter is set, I rerun the search and get all events impacting VM
 
 ![](4.5.1-fig-4.png)
 
-Let’s zoom into one of the events. Let’s say we’re interested in VM configuration event and want to know what exactly was changed. So let’s zoom into that event and group it by the user who changed it. We get the following chart, showing the user in the legend.
+Let's zoom into one of the events. Let's say we're interested in VM configuration event and want to know what exactly was changed. So let's zoom into that event and group it by the user who changed it. We get the following chart, showing the user in the legend.
 
 ![](4.5.1-fig-5.png)
 
-You can group the data by VM name to see which VM were changed when. I’ve cropped the VM name in the legend.
+You can group the data by VM name to see which VM were changed when. I've cropped the VM name in the legend.
 
 ![](4.5.1-fig-6.png)
 
@@ -53,7 +53,7 @@ We can see that there is a regular stream of events throughout the day. The patt
 
 ![](4.5.1-fig-10.png)
 
-Let’s show the top tasks by showing the result in table format.
+Let's show the top tasks by showing the result in table format.
 
 ![](4.5.1-fig-11.png)
 
@@ -91,7 +91,7 @@ How do you prove to auditor that your templates have not been modified by unauth
 
 The good thing is there are only a few things you can change to a template. You can rename the template, change the permission, and convert it into a VM. All other changes require the template to be converted into a VM first. That means we can focus on this conversion.
 
-The vCenter logs the entry as “mark virtual machine as template” when you convert a VM into a template. When it is converted back to, it writes “mark as virtual machine”. So it’s a matter of tracking these 2 entries.
+The vCenter logs the entry as “mark virtual machine as template” when you convert a VM into a template. When it is converted back to, it writes “mark as virtual machine”. So it's a matter of tracking these 2 entries.
 
 ![](4.5.1-fig-18.png)
 
@@ -109,13 +109,13 @@ Your first stop should be the General Problems dashboard in Log Insight. This da
 
 ![](4.5.1-fig-19.png)
 
-Let’s look at some of the queries that Log Insight runs. The SCSI latency is based on 1 second, which is 1,000,000 microseconds. Here is what the query looks like:
+Let's look at some of the queries that Log Insight runs. The SCSI latency is based on 1 second, which is 1,000,000 microseconds. Here is what the query looks like:
 
 ![](4.5.1-fig-20.png)
 
-1 second is on the high side; you can change it to a lower number. Do note that this is from VMkernel viewpoint and it’s taking 1 SCSI operation (1 read or 1 write), so the number will be much higher than vCenter average. I’ve seen 12 ms value in vCenter (from the real time chart, so it is a 20 second average) became 600 ms. For details, see [this](http://virtual-red-dot.info/vsphere-storage-latency-view-from-the-vmkernel/).
+1 second is on the high side; you can change it to a lower number. Do note that this is from VMkernel viewpoint and it's taking 1 SCSI operation (1 read or 1 write), so the number will be much higher than vCenter average. I've seen 12 ms value in vCenter (from the real time chart, so it is a 20 second average) became 600 ms. For details, see [this](http://virtual-red-dot.info/vsphere-storage-latency-view-from-the-vmkernel/).
 
-The above query is pretty simple, as it’s looking for a specific item. Here is a much broader health check.
+The above query is pretty simple, as it's looking for a specific item. Here is a much broader health check.
 
 ![](4.5.1-fig-21.png)
 

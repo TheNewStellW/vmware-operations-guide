@@ -17,7 +17,7 @@ While CPU discards instructions as they leave the CPU pipeline, memory keeps inf
 
 Keeping this concept in mind is critical as you review the memory counters. Memory has a very different nature compared to CPU, and the storage nature of memory is the reason why memory monitoring is more challenging than CPU monitoring. Unlike CPU, memory has 2 dimensions: Speed and Space
 
-- **Speed** is measured in nanoseconds. The only counter ESXi has is Memory Latency. This counter increases when the time to read from the RAM is longer than usual. The counter tracks the percentage of memory space that’s taking longer than expected. It’s not tracking the actual latency in nanosecond. This is the opposite of Disk, where we track the actual latency, but not the percentage of amount of space that is facing latency. Both are storage, but “server people” and “storage people” measure them differently!
+- **Speed** is measured in nanoseconds. The only counter ESXi has is Memory Latency. This counter increases when the time to read from the RAM is longer than usual. The counter tracks the percentage of memory space that's taking longer than expected. It's not tracking the actual latency in nanosecond. This is the opposite of Disk, where we track the actual latency, but not the percentage of amount of space that is facing latency. Both are storage, but “server people” and “storage people” measure them differently!
 - **Space** is measured in GB. This is the bulk of the counters.
 
 {{% children %}}

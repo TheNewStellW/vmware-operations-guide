@@ -5,7 +5,7 @@ draft: false
 weight: 30
 ---
 
-When you are migrating your customers workload to another infrastructure, the onus is on you to prove that You are not causing problems to the VMs or Applications. This is especially true if it’s your idea to migrate, and You are not giving them a choice.
+When you are migrating your customers workload to another infrastructure, the onus is on you to prove that You are not causing problems to the VMs or Applications. This is especially true if it's your idea to migrate, and You are not giving them a choice.
 
 There are many examples of migration. Popular ones are:
 
@@ -15,9 +15,9 @@ There are many examples of migration. Popular ones are:
 
 In the above, you typically change all infrastructure. New server, new network, new storage, new vSphere. You may virtualize network by adding NSX. You may also virtualize storage by going vSAN.
 
-Regardless, your Application Team do not and should not care. It’s transparent to them. In fact, it should be better as You are using **faster & bigger hardware**. You have more CPU cores, faster RAM, faster storage, bigger network, less network hops, etc.
+Regardless, your Application Team do not and should not care. It's transparent to them. In fact, it should be better as You are using **faster & bigger hardware**. You have more CPU cores, faster RAM, faster storage, bigger network, less network hops, etc.
 
-And that’s exactly where the problem might start.
+And that's exactly where the problem might start.
 
 A VM that takes 8 hours to complete its batch job may now take 2 hours, all else being equal. So it completes the same amount of work, doing as many disk, network, CPU, memory operations in 4x shorter duration.
 
@@ -27,7 +27,7 @@ What happens to VM CPU Usage? It also went up by 400%. It has to, as it complete
 
 All the above is fine, if not for the next factor. Can you guess what is it?
 
-Hint: it’s how you justify the budget to your management.
+Hint: it's how you justify the budget to your management.
 
 Yes, you promise higher consolidation. You have more CPU cores, more RAM, so logically you use higher [over-commit ratio](https://blogs.vmware.com/vsphere/2015/11/vcpu-to-pcpu-ratios-are-they-still-relevant.html). As [Mark Achtemichuk](https://blogs.vmware.com/vsphere/author/mark_achtemichuk) said in [this article](https://blogs.vmware.com/vsphere/2015/11/vcpu-to-pcpu-ratios-are-they-still-relevant.html), use it carefully.
 

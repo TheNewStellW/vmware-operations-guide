@@ -21,8 +21,8 @@ Review the ESXi Hosts Utilization table
 
 Select an ESXi Host from the table
 - All the utilization charts will automatically show the key utilization metrics of selected cluster.
-- For memory, the high utilization counters are explicitly shown. Balloon, Compressed, Swapped. Notice they exist even though utilization is not even 90%, indicating high pressure in the past. If you look at only utilization, you’d think You are safe! 
-- For memory, both Consumed and Active are shown. If active is low, no need to upgrade RAM as Consumed contains disk cache. For me, it’s fine for Consumed to be 95% so long RAM Contention is 0.
+- For memory, the high utilization counters are explicitly shown. Balloon, Compressed, Swapped. Notice they exist even though utilization is not even 90%, indicating high pressure in the past. If you look at only utilization, you'd think You are safe! 
+- For memory, both Consumed and Active are shown. If active is low, no need to upgrade RAM as Consumed contains disk cache. For me, it's fine for Consumed to be 95% so long RAM Contention is 0.
 ![](3.2.5-fig-1.png)
 
 - The disk IOPS and the disk throughput are split into read & write to gain insight into the behaviour. Some workload is read oriented, while others are write oriented.
