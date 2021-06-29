@@ -9,7 +9,7 @@ weight: 20
 
 The reason why Demand metric jumps while Usage drops is contention. The VM experiences contention, which includes hyperthreading sharing. I should have included the screenshot of CPU Ready, CoStop, Overlap, VM Wait and Swap Wait.
 
-From the chart you can see that the formula for VM CPU Contention \> Demand – Usage. Contention (%) is around 20% when Demand is 25% and Usage is 15%. The reason is Contention accounts for both CPU frequency and hyper threading, while the difference between Demand and Usage is hyper-threading.
+From the chart you can see that the formula for VM CPU Contention \> Demand - Usage. Contention (%) is around 20% when Demand is 25% and Usage is 15%. The reason is Contention accounts for both CPU frequency and hyper threading, while the difference between Demand and Usage is hyper-threading.
 
 ## VM CPU vs ESXi CPU Metrics
 

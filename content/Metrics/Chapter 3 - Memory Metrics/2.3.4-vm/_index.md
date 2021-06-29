@@ -93,7 +93,7 @@ The answer always goes back to: when you see the value, what are you going to do
 
 ## Consumed
 
-Consumed = Granted – Saving from Sharing
+Consumed = Granted - Saving from Sharing
 
 Consumed does not include overhead memory, although this number is practically negligible.
 

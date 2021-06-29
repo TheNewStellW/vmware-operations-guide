@@ -51,7 +51,7 @@ The rest of the columns show performance counters. Because the goal is proactive
 
 The table is sorted by **KPI Breached** column, directing your attention to the VMs that are not served well by the IaaS.
 
-The column KPI Breached counts the number of SLA breaches in any given 5 minute period. As a VM consumes 4 resources of IaaS (CPU, Memory, Disk, Network), the counter varies from 0 – 4, with 0 being the ideal. The value 4 indicates that all 4 IaaS services are not delivered. Note that the same threshold is used regardless of class of service, as this is an internal KPI, not an external SLA. Your internal threshold should be more stringent, so you have reaction time. 
+The column KPI Breached counts the number of SLA breaches in any given 5 minute period. As a VM consumes 4 resources of IaaS (CPU, Memory, Disk, Network), the counter varies from 0 - 4, with 0 being the ideal. The value 4 indicates that all 4 IaaS services are not delivered. Note that the same threshold is used regardless of class of service, as this is an internal KPI, not an external SLA. Your internal threshold should be more stringent, so you have reaction time. 
 
 Choose a VM from the table. All the health charts are automatically shown, showing KPIs of that VM.
 

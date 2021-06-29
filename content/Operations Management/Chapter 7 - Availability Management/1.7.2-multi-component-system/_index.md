@@ -27,7 +27,7 @@ The availability of the overall system with multiple subcomponents in parallel i
 
 ![subcomponents](1.7.2-fig-3.png)
 
-where `1 – Availability of Component i` gives us the unavailability of the component.
+where `1 - Availability of Component i` gives us the unavailability of the component.
 
 Let's consider an example, in this scenario, we have three individual components in parallel with each other and has 99.9% availability each.
 

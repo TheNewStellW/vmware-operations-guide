@@ -105,15 +105,15 @@ The generic **recipe** from use case to auto-remediation is almost always applic
 
 3.  Discover or re-discover vRealize Orchestrator package that includes our workflows in vRealize Operations.
 
-4.  Optional – Configure workflow in vRealize Operations – in our case it is mandatory.
+4.  Optional - Configure workflow in vRealize Operations - in our case it is mandatory.
 
 5.  Create or edit vRealize Operations recommendation.
 
 6.  Add vRealize Operations recommendation to an alert definition.
 
-7.  Optional – Manual remediation.
+7.  Optional - Manual remediation.
 
-8.  Optional – Enable automatic remediation.
+8.  Optional - Enable automatic remediation.
 
 I am not going to describe the content of the workflow itself or how to code in vRealize Orchestrator. The focus is how to integrate any given workflow in vRealize Operations and let it execute automatically as part of the alert remediation.
 

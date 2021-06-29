@@ -35,7 +35,7 @@ Select a cluster from the table
 
 - All the utilization charts will automatically show the key utilization metrics of the selected cluster.
 - For memory, the high utilization counters are explicitly shown. Balloon, Compressed, Swapped. Notice they exist even though utilization is not even 90%, indicating high pressure in the past. If you look at only utilization, you'd think you are safe!
-- The line charts shows both average and highest among ESXi host in the cluster. The reason is **unbalanced** is not rare. There are many settings that can contribute to it (e.g. DRS settings, VM Reservation, VM – Host Affinity, Resource Pool, Stretched Cluster, Large VM). So check all these as unbalanced cluster is quite common, especially in large clusters. 
+- The line charts shows both average and highest among ESXi host in the cluster. The reason is **unbalanced** is not rare. There are many settings that can contribute to it (e.g. DRS settings, VM Reservation, VM - Host Affinity, Resource Pool, Stretched Cluster, Large VM). So check all these as unbalanced cluster is quite common, especially in large clusters. 
 ![](3.2.3-fig-3.png)
 - The disk IOPS is split into read & write to gain insight into the behaviour. Some workloads are read-oriented, while others are write-oriented. 
 - The disk throughput is not shown as it sums all the traffic. In reality, each ESXi has its own limit.

@@ -53,7 +53,7 @@ This logic sounds reasonable. But is it correct?
 
 It is not actually. This is not about Availability. This is about Performance. All web servers are still up, but if node no 4 is slower than usual, user experience will be affected.
 
-The VM KPI is turn an aggregation of its key performance metrics. As each metric has their own units, we need to convert them into a unit-less range. I picked 0 – 100 range as that's easier to understand.
+The VM KPI is turn an aggregation of its key performance metrics. As each metric has their own units, we need to convert them into a unit-less range. I picked 0 - 100 range as that's easier to understand.
 
 ![](3.9.2-fig-3.png)
 

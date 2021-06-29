@@ -75,7 +75,7 @@ Calculations for these dashboards are aimed to be conservative, hence your actua
 
 We are not including the following in the above savings calculation:
 - Physical buildings and land. With virtualization, you consume less footprint. This means less physical rack.
-- Network equipment – Less physical servers mean less network ports. Because firewall, load balancers, IDS, IPS can be VM, you have less equipment.
+- Network equipment - Less physical servers mean less network ports. Because firewall, load balancers, IDS, IPS can be VM, you have less equipment.
 - Other components like UPS, facilities, lighting, cooling and labour.
 
 Assumptions and references:
@@ -90,7 +90,7 @@ This dashboard compares physical vs virtual workloads. Physical means every sing
 
 ![](3.9.1-fig-3.png)
  
-The calculations applied to the Sustainability supermetrics are detailed below and can all be modified as required through vRealize Operations under the respective calculations to reflect regional factors that are at different values for each customer environment (e.g. Power cost per KWh – set to 0.106 in this dashboard):
+The calculations applied to the Sustainability supermetrics are detailed below and can all be modified as required through vRealize Operations under the respective calculations to reflect regional factors that are at different values for each customer environment (e.g. Power cost per KWh - set to 0.106 in this dashboard):
 - Power Consumed before Virtualization = Number of VMs x 0.1 in KW 
 - Power Consumed after Virtualization = Power Consumed by all ESXi hosts in KW 
 - Monthly savings ($) = Power Savings in a month in KWh x 0.106 
@@ -103,7 +103,7 @@ The Dashboard identifies the Idle VMs and Power savings that could be achieved b
 
 ![](3.9.1-fig-4.png)
  
-Idle workloads (VMs) are quantified here with the potential power savings that could be achieved by decommissioning the workloads. The dashboard also provides CO2 emissions amount calculated from this group of VMs. While each VM only consumes a tiny amount of power (approximately 0.x – 2 Watts), collectively and over time they can add up depending on how efficiently you have been right-sizing your environment on a regular basis. Additionally, the cluster view helps to aggregate the number of idle VMs per cluster, so identifying which clusters have a lot of Idle VMs is easier. Finally, by leveraging published [EPA](https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator) multipliers, your are able to calculate using super metric, the number of trees to plant that can help compensate CO2 emissions from these idle VMs.
+Idle workloads (VMs) are quantified here with the potential power savings that could be achieved by decommissioning the workloads. The dashboard also provides CO2 emissions amount calculated from this group of VMs. While each VM only consumes a tiny amount of power (approximately 0.x - 2 Watts), collectively and over time they can add up depending on how efficiently you have been right-sizing your environment on a regular basis. Additionally, the cluster view helps to aggregate the number of idle VMs per cluster, so identifying which clusters have a lot of Idle VMs is easier. Finally, by leveraging published [EPA](https://www.epa.gov/energy/greenhouse-gas-equivalencies-calculator) multipliers, your are able to calculate using super metric, the number of trees to plant that can help compensate CO2 emissions from these idle VMs.
 
 CO2 emission from Idle VMs = Power Consumed by Idle VMs x 0.744 Kg.
 

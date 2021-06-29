@@ -35,7 +35,7 @@ You record this as the worst CPU ready for that cluster in the last 3 months.
 
 #### Step 4
 
-You repeat Step 1 – 3 for each cluster.
+You repeat Step 1 - 3 for each cluster.
 
 ------
 
@@ -49,7 +49,7 @@ Once you do the above for all the clusters, you may end up with something like t
 
 ![Cluster percentile breakdown](1.2.10-fig-1.png)
 
-What if you want to see the actual distribution of VM CPU Ready in the last 3 months? You can do so by creating a bar chart and specifying the distribution buckets. In the following example, I specify 0% – 1%, 1% – 2%, until 5% as those are the range that I'm interested.
+What if you want to see the actual distribution of VM CPU Ready in the last 3 months? You can do so by creating a bar chart and specifying the distribution buckets. In the following example, I specify 0% - 1%, 1% - 2%, until 5% as those are the range that I'm interested.
 
 ![99th Percentile breakdown](1.2.10-fig-2.png)
 

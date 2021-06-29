@@ -24,7 +24,7 @@ Sizing what a user needs is challenging as each users work differently. Corporat
 
 VDI Pool has Utilization (GHz), which is the total utilization not average.
 
-Total – Unavailable – Bad State = Usable Capacity
+Total - Unavailable - Bad State = Usable Capacity
 
 -   Unavailable (nothing wrong. Intentional or will fix by itself)  
     = Provisioned + In progress + Already used + Provisioning + Customizing + Deleting + Waiting for Agent + Maintenance mode + Startup + Agent needs reboot

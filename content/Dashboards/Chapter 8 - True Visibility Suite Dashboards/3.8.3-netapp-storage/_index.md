@@ -21,7 +21,7 @@ Select an Aggregate in the top left View widget, which will drive all other widg
 
 ![](3.8.3-fig-3.png)
 
-Once an Aggregate has been chosen, all other widgets will be populated. Just below the list of Aggregates you will see Aggregate state and status. To the right you will see all Alerts. The vRTVS management pack for NetApp FAS & AFF consumes all NetApp OCUM/AIQUM generated alerts. The Alert List widget here shows all Alerts (both active and inactive) for the Aggregate and any child objects, but this is configurable. If you only want to see active alerts, edit the widget, go to Output Filter – Alert Related, and select the Active box.
+Once an Aggregate has been chosen, all other widgets will be populated. Just below the list of Aggregates you will see Aggregate state and status. To the right you will see all Alerts. The vRTVS management pack for NetApp FAS & AFF consumes all NetApp OCUM/AIQUM generated alerts. The Alert List widget here shows all Alerts (both active and inactive) for the Aggregate and any child objects, but this is configurable. If you only want to see active alerts, edit the widget, go to Output Filter - Alert Related, and select the Active box.
 
 ![](3.8.3-fig-4.png)
  

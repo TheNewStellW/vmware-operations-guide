@@ -83,11 +83,11 @@ Let's drill down to see the first VM. This CentOS VM sporting only 4 vCPU consta
 
 ![Context switch correlation to usage and queue](2.2.1-fig-9.png)
 
-On the other hand, majority of Guest OS spends well below 10K. I profiled around 2200 production VMs and here is the distribution of their CPU Context Switch. You can see that the values between 0 – 12000 accounts for 80%.
+On the other hand, majority of Guest OS spends well below 10K. I profiled around 2200 production VMs and here is the distribution of their CPU Context Switch. You can see that the values between 0 - 12000 accounts for 80%.
 
 ![CPU Context distribution](2.2.1-fig-10.png)
 
-In your environment, you can profile it further. In the following example, I adjusted the bucket threshold by grouping all the values above 10K as one bucket, and splitting 0 – 10K bucket into multiple buckets. You can see more than half has less than 1K CPU Context Switch Rate.
+In your environment, you can profile it further. In the following example, I adjusted the bucket threshold by grouping all the values above 10K as one bucket, and splitting 0 - 10K bucket into multiple buckets. You can see more than half has less than 1K CPU Context Switch Rate.
 
 ![CPU context switch distribution](2.2.1-fig-11.png)
 

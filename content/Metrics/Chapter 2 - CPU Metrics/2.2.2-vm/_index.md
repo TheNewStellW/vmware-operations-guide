@@ -358,7 +358,7 @@ Notice Demand jump while Usage dropped. VM CPU Contention (%) jumped even more. 
 
 ![Demand jump vs usage drop](2.2.2-fig-32.png)
 
-And why is that Contention is much more than Demand – Usage?
+And why is that Contention is much more than Demand - Usage?
 
 Answer at the end of the book!
 

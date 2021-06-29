@@ -23,7 +23,7 @@ Swagger UI makes it easy to try out the available methods before the actual impl
 
 ![](4.6.3-fig-3.png "Acquire token POST method in the Swagger UI")
 
-The Swagger UI provides an easy way to find the appropriate method – just type in your search term and see what is available. In the next picture you can see the available methods around Alerts (shortened).
+The Swagger UI provides an easy way to find the appropriate method - just type in your search term and see what is available. In the next picture you can see the available methods around Alerts (shortened).
 
 ![](4.6.3-fig-4.png "Swagger UI - search bar")
 

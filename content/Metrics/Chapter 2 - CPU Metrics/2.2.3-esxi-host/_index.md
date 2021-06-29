@@ -122,7 +122,7 @@ In a simplistic example, the above is how Used considers both hyperthreading and
 
 With this knowledge, now the screen on vCenter client UI will be clearer.
 
-You see both the Capacity of 35.18 GHz and Used of 11.3 GHz. There is no concept of Usable Capacity in vSphere, so the Free amount is basically Capacity – Used.
+You see both the Capacity of 35.18 GHz and Used of 11.3 GHz. There is no concept of Usable Capacity in vSphere, so the Free amount is basically Capacity - Used.
 
 ![CPU capacity](2.2.3-fig-9.png)
 

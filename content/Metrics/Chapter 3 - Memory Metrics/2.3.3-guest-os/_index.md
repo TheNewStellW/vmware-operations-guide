@@ -38,7 +38,7 @@ Look at the chart of Memory Usage above. It's sustaining for the entire 60 secon
 
 Formula:
 
-`In use = Total – (Modified + Standby + Free`
+`In use = Total - (Modified + Standby + Free`
 
 ## Modified
 
@@ -216,7 +216,7 @@ This is not a raw counter from Windows or Linux. This is a derived counter provi
 The counter Memory Needed tracks the amount of memory needed by the Guest OS. It has 5% buffer for spike, based on the general guidance from Microsoft. Below this amount, the Guest OS may swap.
 
 ```text
-Formula for Linux   = physical memory – Maximum of (0, ( Available - 5 % of physical ))
+Formula for Linux   = physical memory - Maximum of (0, ( Available - 5 % of physical ))
 Formula for Windows = physical memory - Maximum of (0, ( Unneeded  - 5 % of physical )) 
 where Unneeded = Free + Reserve Cache + Normal Priority Cache
 ```
@@ -232,7 +232,7 @@ Memory Available = 0 GB.
 Tools will calculate Memory Needed as
 
 ```text
-= 10 GB - Maximum (0, 0 – 0.5)
+= 10 GB - Maximum (0, 0 - 0.5)
 = 10 - Maximum (0, -0.5)
 = 10 - 0 GB
 = 10 GB
@@ -247,7 +247,7 @@ Memory Available = 2 GB.
 Tools will calculate Memory Needed as
 
 ```text
-= 10 GB - Maximum (0, 2 – 0.5)
+= 10 GB - Maximum (0, 2 - 0.5)
 = 10 - Maximum (0, 1.5 GB)
 = 10 - 1.5 GB
 = 8.5 GB
@@ -261,7 +261,7 @@ Memory Available = 8 GB.
 
 Tools will calculate Memory Needed as
 ```text
-= 10 GB - Maximum (0, 8 – 0.5)
+= 10 GB - Maximum (0, 8 - 0.5)
 = 10 - Maximum (0, 7.5 GB)
 = 10 - 7.5 GB
 = 2.5 GB

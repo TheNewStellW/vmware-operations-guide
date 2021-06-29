@@ -78,7 +78,7 @@ The above code has extra logic to handle corner cases at the edge of the spectru
 
 Can you spot a missing logic in the above?
 
-Yes, the multiplier creates a problem. When you multiply by 2x, 4x, 8x, you need to normalize it back to the values fall within 0 – 100%.
+Yes, the multiplier creates a problem. When you multiply by 2x, 4x, 8x, you need to normalize it back to the values fall within 0 - 100%.
 
 But how do you normalize, since each metric can have their own multiplier?
 

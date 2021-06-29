@@ -21,7 +21,7 @@ At the server-side, ensure your Horizon agents software are up to date.
 
 ![](4.8.8-fig-2.png)
 
-The agents reporting version 0 – 0 could be test agent. Don't worry about them.
+The agents reporting version 0 - 0 could be test agent. Don't worry about them.
 
 The simplest form of configuration widget is a table that lists the settings you're interested. The following shows an example for VDI Pool.
 

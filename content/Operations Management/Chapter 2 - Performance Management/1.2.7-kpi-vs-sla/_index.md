@@ -19,7 +19,7 @@ The Gold class should be performing better than Bronze. That's the expectation, 
 
 #### KPI
 
-This absolute performance is measured in range of 0 - 100% so it's easy to understand, with 100% being the best. Mathematically, KPI is actually unitless. I could have chosen another range, such as 0 – 4, and it won't make any difference. Using percentage and 0 – 100 just makes it easier to remember.
+This absolute performance is measured in range of 0 - 100% so it's easy to understand, with 100% being the best. Mathematically, KPI is actually unitless. I could have chosen another range, such as 0 - 4, and it won't make any difference. Using percentage and 0 - 100 just makes it easier to remember.
 
 **KPI** reports the raw performance as it is.
 
@@ -96,7 +96,7 @@ The following example shows that the cluster is struggling to serve all its VMs.
 
 We shared earlier that SLA only accounts for pass or fail. It does not measure how good you pass or how bad you fail. This is where KPI complements SLA. KPI is implemented in VMware Horizon monitoring, so I will use it as the example.
 
-KPI is defined as 0 – 100%. As we use 4 colors, we divide them equally. So Green is simply 75% - 100% and Red is simply 0% - 25%. If you create an unequal distribution, some bands will have to be narrower than others. With uneven bands, you also need to be extra careful when defining the threshold for each metric that make up the KPI.
+KPI is defined as 0 - 100%. As we use 4 colors, we divide them equally. So Green is simply 75% - 100% and Red is simply 0% - 25%. If you create an unequal distribution, some bands will have to be narrower than others. With uneven bands, you also need to be extra careful when defining the threshold for each metric that make up the KPI.
 
 ![KPI color code](1.2.7-fig-7.png)
 
@@ -104,11 +104,11 @@ The following KPI uses 4 metrics as its input. Each metric has a set of threshol
 
 ![4-metric KPI coloring](1.2.7-fig-8.png)
 
-Now that we have the threshold for each metric, we can convert each metric into Green – Red. Horizon adapter is also able to handle when the entire range is defined by a single number. This is useful when you want to define green = 0. That means a single packet loss will put the metric into the yellow range already.
+Now that we have the threshold for each metric, we can convert each metric into Green - Red. Horizon adapter is also able to handle when the entire range is defined by a single number. This is useful when you want to define green = 0. That means a single packet loss will put the metric into the yellow range already.
 
 How do we translate?
 
-Let's use an example. Take the Disk Latency (%) metric . It has range from 0 to 40 ms, which maps into the 0 – 100% using the following mapping table.
+Let's use an example. Take the Disk Latency (%) metric . It has range from 0 to 40 ms, which maps into the 0 - 100% using the following mapping table.
 
 ![VM disk latency](1.2.7-fig-9.png)
 

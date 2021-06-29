@@ -63,7 +63,7 @@ Capacity buffers defined in vRealize Operations policy (default 0%).
 
 ```text
 = CPU \ Demand \ Usable Capacity after HA and Buffer (GHz) 
-= Sum ( ESXi CPU \ Capacity Available to VMs ) * ( 100 – Cluster HA CPU Failover ) % 
+= Sum ( ESXi CPU \ Capacity Available to VMs ) * ( 100 - Cluster HA CPU Failover ) % 
 Memory Usable Capacity (KB) 
 = Memory \ Demand \ Usable Capacity after HA and Buffer (GB)
 = ( Sum ESXi Memory | Capacity Available to VMs ) * ( 100 - Cluster HA Memory Failover) % 

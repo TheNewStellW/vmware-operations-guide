@@ -134,7 +134,7 @@ While using the rightsizing feature, vRealize Operations provide the vCPUs to be
 
 **If** the value of Recommended vCPUs to add is 0,
 
-**then** Actual Recommended vCPU = Provisioned vCPUs – Recommended vCPUs to remove (as an Oversized VM ),
+**then** Actual Recommended vCPU = Provisioned vCPUs - Recommended vCPUs to remove (as an Oversized VM ),
 
 **else** Actual Recommended vCPU = Provisioned vCPUs + Recommended vCPUs to add ( as an Undersized VM ).
 
@@ -152,7 +152,7 @@ For completeness, let's do the same for memory. Since the default unit is KB, we
 
 **If** the value of Recommended Memory to add  is 0,
 
-**then** Actual Recommended Memory = Provisioned memory – Recommended Memory to remove (as an Oversized VM),
+**then** Actual Recommended Memory = Provisioned memory - Recommended Memory to remove (as an Oversized VM),
 
 **else** Actual Recommended Memory = Provisioned Memory + Recommended Memory to add (as an Undersized VM)
 

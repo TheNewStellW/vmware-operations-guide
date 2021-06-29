@@ -34,7 +34,7 @@ In a perfect world, if all the large VMs are right sized, which scenario will yo
 
 ![over provisioned scenarios](1.3.12-fig-2.png)
 
-That's right. Scenario 2. Because the group has hundreds of members, there is a good chance that one of the large VMs is using the CPU given to it. On average, they should be hovering around 40 – 50%, as at any given 5-minute interval, some may be idle while others may be busy.
+That's right. Scenario 2. Because the group has hundreds of members, there is a good chance that one of the large VMs is using the CPU given to it. On average, they should be hovering around 40 - 50%, as at any given 5-minute interval, some may be idle while others may be busy.
 
 The technique we use for both CPU and RAM are the same. I'd use CPU as an example.
 
@@ -143,7 +143,7 @@ Guest OS CPU Run Queue metric needs some conversion before it can be used. Let's
 - VM has 8 vCPU.
 - CPU Run Queue = 28 for the entire VM.
 - VM can handle 8 x 3 = 24 queues.
-- There is a shortage of 28 – 24 = 4 queues.
+- There is a shortage of 28 - 24 = 4 queues.
 - Each additional vCPU can handle 1 process + 3 queues.
 - Conclusion: we add 1 vCPU.
 
@@ -209,7 +209,7 @@ The thin bar is a generic guidance for all utilization metrics, such as CPU and 
 
 When you spend your money on infrastructure, you want to maximize its use, ideally at 100%. After all, you pay for the whole box. In the case of memory, it even makes sense to use the whole hardware as the very purpose of memory is just a cache for disk.
 
-The first bar above shows the utilization range (0% – 100%). The green range is where you want the utilization to fall. Below the 50% mark is shown in blue, symbolizing cold. The company is wasting money if the utilization is below 50%. So what lies beneath the green zone is not an even greener zone; it is a wastage zone. On the other hand, higher than 75% opens the risk that [performance](http://virtual-red-dot.info/vmware-performance-sla/) may be impacted. Hence I put a yellow and red threshold. The green zone is actually a relatively **narrow** band.
+The first bar above shows the utilization range (0% - 100%). The green range is where you want the utilization to fall. Below the 50% mark is shown in blue, symbolizing cold. The company is wasting money if the utilization is below 50%. So what lies beneath the green zone is not an even greener zone; it is a wastage zone. On the other hand, higher than 75% opens the risk that [performance](http://virtual-red-dot.info/vmware-performance-sla/) may be impacted. Hence I put a yellow and red threshold. The green zone is actually a relatively **narrow** band.
 
 Now let's apply the above concept to memory utilization.
 

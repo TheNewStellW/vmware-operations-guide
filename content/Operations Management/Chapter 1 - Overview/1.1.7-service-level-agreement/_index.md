@@ -40,7 +40,7 @@ Even if you measure the SLA once a month, it can still be very difficult to meet
 
 ![SLA downtime in minutes comparison](1.1.7-fig-2.png)
 
-If you promise 99.99%, you only have 4.0 minutes – 4.5 minutes of downtime per calendar month. That means your architecture must be able to detect the issue and then complete proper remediation in just a few minutes. That's a tight space to manoeuvre.
+If you promise 99.99%, you only have 4.0 minutes - 4.5 minutes of downtime per calendar month. That means your architecture must be able to detect the issue and then complete proper remediation in just a few minutes. That's a tight space to manoeuvre.
 
 A unique saving grace that applies to Availability but not Performance is scheduled downtime. There is no such thing as scheduled downtime in performance. Specific to IaaS, you can propose that scheduled downtime is not included in the SLA, so long it's done quickly and rarely. Planned activities such as VM hardware upgrade, Tools upgrade and Windows upgrade can be included in scheduled downtime activities. Downtime caused by customer is not included, be it intentional or not. This is why you need two counters: one for SLA and one for actual. The actual will record every downtime, be it a part of SLA or not.
 

@@ -19,7 +19,7 @@ All the running VMs are children of the User resource pool. This includes the VM
 
 ## Reservation
 
-This is more of a property than a metric, as it does not change often. The formula is `Overhead = CPU Total Capacity – CPU Capacity Available to VMs`.
+This is more of a property than a metric, as it does not change often. The formula is `Overhead = CPU Total Capacity - CPU Capacity Available to VMs`.
 
 Where capacity available to VMs is the capacity reserved by and available for VMs. 
 
@@ -27,7 +27,7 @@ Since it is just a reservation (allocation), its not included in the calculation
 
 ![](2.6.2-fig-1.png)
 
-If you are curious about the actual values, they sort of map to the actual size of the ESXi. Based on a sample of almost 400 ESXi in production environment, here is what I got. By far the majority of the value is 6 – 10 GHz.
+If you are curious about the actual values, they sort of map to the actual size of the ESXi. Based on a sample of almost 400 ESXi in production environment, here is what I got. By far the majority of the value is 6 - 10 GHz.
 
 ![](2.6.2-fig-2.png)
 

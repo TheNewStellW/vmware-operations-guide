@@ -31,7 +31,7 @@ Take note that there can be situation where Guest OS metrics do not make it to v
 
 ## Memory \ Utilization (KB)
 
-Equals to Guest Needed Memory (KB) + (Guest Page In Rate per second * Guest Page Size (KB) ) + Memory Total Capacity (KB) – Guest Physically Usable Memory (KB).
+Equals to Guest Needed Memory (KB) + (Guest Page In Rate per second * Guest Page Size (KB) ) + Memory Total Capacity (KB) - Guest Physically Usable Memory (KB).
 
 Because of the formula, the value can exceed 100%. The following is an example:
 
