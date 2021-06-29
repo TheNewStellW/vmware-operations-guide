@@ -68,7 +68,7 @@ The **Worst Performance** column shows the lowest performance in the last period
 
 ![](3.2.2-fig-5.png)
 
-The problem with functions like Minimum() and Maximum() is their value can be extreme. All it takes is a single 5 –minute collection to show bad data and the entire 24 hours (which is 288 data points) becomes bad. This is where the Percentile() function comes in. It tells you if the Worst Performance is something you should look further into or not. 
+The problem with functions like Minimum() and Maximum() is their value can be extreme. All it takes is a single 5-minute collection to show bad data and the entire 24 hours (which is 288 data points) becomes bad. This is where the Percentile() function comes in. It tells you if the Worst Performance is something you should look further into or not. 
 
 Can you figure out why we don't show average instead?
 
