@@ -34,12 +34,12 @@ To implement the above requirements, we need to see 3 aspects of **Sustainable O
 ##### Green Supply
 - Hardware & Software infrastructure that is optimized
 - Opportunity to optimize the supply
-  - Fibre Channel → Ethernet consolidation. No need 2 separate network for storage and server.
-  - Physical Array → vSAN migration. HCI consumes less power and DC footprint.
-  - Physical Network → NSX migration. Physical FW, LB, etc
-  - Islands of hardware due to physical air gaps → NSX
+  - Fibre Channel -> Ethernet consolidation. No need 2 separate network for storage and server.
+  - Physical Array -> vSAN migration. HCI consumes less power and DC footprint.
+  - Physical Network -> NSX migration. Physical FW, LB, etc
+  - Islands of hardware due to physical air gaps -> NSX
   - Ageing hardware. Newer CPU has more cores and more power efficient
-  - Physical Desktop → VDI with thin client. This also improves security.
+  - Physical Desktop -> VDI with thin client. This also improves security.
   - Incorrect power mgmt settings. Many customers like to set power management to Max, legacy of old best practice.
   - Oversized cluster, datastore, storage arrays, physical switches, SAN fabric, network devices.
   - Unused resource (physical servers, network devices, network ports). Old equipment are easily forgotten in large environment.
