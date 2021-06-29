@@ -1,5 +1,5 @@
 ---
-title: "14. Provider \\ Optimize It?"
+title: "14. Provider / Optimize It?"
 date: 2021-06-15T22:27:39+10:00
 draft: false
 weight: 140

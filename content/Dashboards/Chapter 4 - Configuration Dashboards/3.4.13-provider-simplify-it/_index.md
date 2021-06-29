@@ -1,5 +1,5 @@
 ---
-title: "13. Provider \\ Simplify It?"
+title: "13. Provider / Simplify It?"
 date: 2021-06-15T22:24:32+10:00
 draft: false
 weight: 130
