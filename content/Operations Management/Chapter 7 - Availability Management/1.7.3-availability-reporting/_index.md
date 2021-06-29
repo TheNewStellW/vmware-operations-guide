@@ -65,7 +65,7 @@ SLA is based on calendar month. Using February 2021 as the example, there are 28
 
 #### Reality
 
-- Average of (34% + 3.75% + 0 + 0% + 34% + 34% + 100% + 100% + 100% + ….)
+- Average of (34% + 3.75% + 0 + 0% + 34% + 34% + 100% + 100% + 100% + ...)
 - Yes, we simply average all the 8064 numbers that make up February 2021.
 - Result is 99.939%
 

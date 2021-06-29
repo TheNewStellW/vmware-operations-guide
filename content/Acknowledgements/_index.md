@@ -26,6 +26,6 @@ The 3rd edition is also made possible because of my role. Having a global role a
 
 ![Photo of Iwan's parents](dedication.jpg)
 
-The book is dedicated to the loving memory of Mama and Papa…
+The book is dedicated to the loving memory of Mama and Papa...
 
 for your love and sacrifice in raising me in the old town of [Surabaya](https://www.youtube.com/watch?v=5KNb8r5mqNg).

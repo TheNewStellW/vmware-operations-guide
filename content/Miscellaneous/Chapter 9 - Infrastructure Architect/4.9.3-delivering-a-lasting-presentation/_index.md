@@ -13,17 +13,17 @@ A great presentation has that lasting impact. It goes beyond educating. It chang
 
 So what makes a great presentation?
 
-A great presentation…
+A great presentation...
 
-- looks natural (as if you speak from your heart, not your brain)…,
+- looks natural (as if you speak from your heart, not your brain)...,
 
-- is both humble and authoritative…,
+- is both humble and authoritative...,
 
-- is both funny and deep…,
+- is both funny and deep...,
 
 - is both engaging and relaxing...,
 
-- is both entertaining and enlightening…,
+- is both entertaining and enlightening...,
 
 - and truly leaves a moment of truth.
 

@@ -26,7 +26,7 @@ There are four periods above where I made changes inside Windows. Let's step thr
 
 Let's now look inside the VM. I will use another VM to show a different example. This time around, I will take an idle VM so we can see how the counters behave. An idle VM will have minimal or 0 activity.
 
-You can see that this Windows Server 2016 VM has 16 GB, but 0 GB is active. It is expected as we know the Guest OS is idle as nothing is installed. vCenter is showing the data correctly. So far so good….
+You can see that this Windows Server 2016 VM has 16 GB, but 0 GB is active. It is expected as we know the Guest OS is idle as nothing is installed. vCenter is showing the data correctly. So far so good...
 
 ![0GB active memory VM](2.3.2-fig-3.png)
 

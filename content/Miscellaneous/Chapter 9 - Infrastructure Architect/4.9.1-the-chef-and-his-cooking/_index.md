@@ -31,7 +31,7 @@ As shared, I see a chance for us to **step up** and **step out**.
 
 -   Step up from pure IT architecture to business architecture. Architect your pricing strategy and service tiering.
 
-The good thing about pricing is…. your benchmark is already set.
+The good thing about pricing is... your benchmark is already set.
 
 Azure, AWS, Google, and many Service Providers have already set the benchmark. Your private cloud cannot be too far from it. Too low and you will likely make a loss (it's almost impossible to beat their efficiency). Too high and you will get a complain. Another source of benchmark is to consider what it would cost to run the same applications on physical servers
 

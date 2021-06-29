@@ -67,7 +67,7 @@ Another downside is global travel 🙁 It impacts my family, and certainly mysel
 
 I travel alone most of the time. After doing the requested work by the hosting country, I'd go back to the hotel, eat a quick dinner alone then do my day job. If I have dinner with the local team, that means that day I can't do my day job. Coupled with being apart from my kids and family, loneliness is my friend.
 
-Travel can be sudden. I got a call to help a large customer on Thursday morning, and on Sunday I was already in the plane to see them. If you have young kids, this can be deal breaker. My 2 kids are big already, but my Mama at 81 needed care. When she passed away, I was overseas…
+Travel can be sudden. I got a call to help a large customer on Thursday morning, and on Sunday I was already in the plane to see them. If you have young kids, this can be deal breaker. My 2 kids are big already, but my Mama at 81 needed care. When she passed away, I was overseas...
 
 Speaking of travel, gluten free is a challenge. I am allergic to both dairy and gluten, so keeping these 2 away is almost impossible when abroad. There is no easy solution today. Singapore Airlines changes the menu only every 3 months, so I know in advance exactly what I'm getting 🙂
 

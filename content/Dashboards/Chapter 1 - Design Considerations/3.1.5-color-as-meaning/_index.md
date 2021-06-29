@@ -14,7 +14,7 @@ Green means good, and gradually getting worse as it moves toward red.
 
 Typically used in performance monitoring and compliance.
 
-##### Dark Grey –> Green … Red
+##### Dark Grey -> Green -> Red
 We use dark grey in Capacity as wastage (unused) is a bigger issue than over utilization. It's critical to show wastage as it can also impact performance.
 
 For performance dashboard, you should consider using red to convey that oversized is bad for performance.
