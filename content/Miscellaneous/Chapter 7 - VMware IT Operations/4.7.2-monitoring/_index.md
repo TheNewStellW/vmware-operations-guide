@@ -17,7 +17,7 @@ To eliminate this operational over ahead, the team introduced additional functio
 
 ## Daily Operational Dashboard
 
-With over 250+ applications and services, and 4000+ components, it is indeed challenging for the Operations teams to have a ‘birds-eye' view of the health of all applications/services. vRealize Operations made it seamless with the logical grouping functionality.
+With over 250+ applications and services, and 4000+ components, it is indeed challenging for the Operations teams to have a 'birds-eye' view of the health of all applications/services. vRealize Operations made it seamless with the logical grouping functionality.
 
 We grouped devices based on service and application component with the help of applications owners. We used these groups to custom health and operations dashboard. This will help to know the health and deeper data analysis to troubleshoot the issue. If this dashboard was not made available, the Operations teams would have to view multiple dashboards in order to ascertain the overall health of the Applications/Services.
 

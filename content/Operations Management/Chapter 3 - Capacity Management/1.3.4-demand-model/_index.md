@@ -17,7 +17,7 @@ This can wreak havoc in a shared environment. A group of highly demanding VMs ca
 
 #### Latent Demand
 
-Many critical VMs are protected with Disaster Recovery. During a DR drill or actual disaster, this load will ‘wake up' and consume. You should consider the Site Recovery Manager plans into your capacity.
+Many critical VMs are protected with Disaster Recovery. During a DR drill or actual disaster, this load will 'wake up' and consume. You should consider the Site Recovery Manager plans into your capacity.
 
 #### Potential Demand
 

@@ -37,7 +37,7 @@ Average of CPU Usage with all VMs in a custom group:
 
 `avg( ${ adaptertype=VMWARE, objecttype=VirtualMachine, metric=cpu|usage_average, depth=3 } )`
 
-## ‘Where' Clause
+## 'Where' Clause
 
 Things get more powerful and complex once you need to specify a condition.
 

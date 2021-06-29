@@ -7,7 +7,7 @@ weight: 10
 
 It is a programming language with mathematical formula that contains a combination of one or more metrics for one or more objects. Once you create a super metric, it persists over time and can be used for different interactions just like any other metric. It can be used in views, reports, dashboards and symptom definitions.
 
-Super metrics are created with a list of operators and functions. These can be further combined and operated using several conditional expressions like ‘where' or ‘if-else'.
+Super metrics are created with a list of operators and functions. These can be further combined and operated using several conditional expressions like 'where' or 'if-else'.
 
 Over the last few releases, there have been several enhancements focused on creating and working on super metrics more easily. With autocomplete in the new editor starting in vRealize Operations 7.5, you simply start typing an object name or object type, and the Super Metric Editor will pop up a list of options that match. You can keep typing to refine the list and then use Enter key to select and finalize the super metric formula.
 
