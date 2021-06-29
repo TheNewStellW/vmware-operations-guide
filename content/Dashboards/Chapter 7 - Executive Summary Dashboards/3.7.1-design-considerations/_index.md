@@ -18,7 +18,7 @@ Can the dashboard be understood within 5 seconds?
 
 If yes, you buy yourself a few more minutes. Your IT Management has understood what the dashboard does, and is willing to spend more time appreciating its full capabilities. 
 
-Take note of the “size” of your dashboard.
+Take note of the "size" of your dashboard.
 
 KISS. Keep it simple solution. Keep the interaction, clicking, zooming, sorting, etc. minimal. Use larger fonts, round numbers (law of significant number)
 

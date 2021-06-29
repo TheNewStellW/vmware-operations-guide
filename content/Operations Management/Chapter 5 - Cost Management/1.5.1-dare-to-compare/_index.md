@@ -17,7 +17,7 @@ You also need to do an apple-to-apple comparison. List the entire components of 
 
 Cost and Price are related but different. Price is what your customers care as that's what they pay. If you increase your prices too high because your costs are high, your customers will just move to public cloud.
 
-Be consistent with the terminology. What is Price to you is Cost to your customer. It's easier to use the term price when describing cost to your customers. Otherwise, you can get mixed up, such as demonstrated in the following sentence: “Cluster with plenty of capacity is more expensive as the cost is only shared by few VMs”.
+Be consistent with the terminology. What is Price to you is Cost to your customer. It's easier to use the term price when describing cost to your customers. Otherwise, you can get mixed up, such as demonstrated in the following sentence: "Cluster with plenty of capacity is more expensive as the cost is only shared by few VMs".
 
 What that sentence meant is Cost per VM, which is a hypothetical cost as you do not incur that cost.
 

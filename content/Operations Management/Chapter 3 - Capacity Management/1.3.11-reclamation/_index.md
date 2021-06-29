@@ -164,7 +164,7 @@ When reducing oversized VM or powering off idle VMs, focus on large VMs. Let's t
 
 In both scenarios, you reclaim 200 vCPU. But the large VM option delivers more benefits and is easier to realize. Here is why:
 
-- Every downsize is a battle because you are changing paradigm with “Less is More”. Plus, it requires downtime, which requires approval and change request process.
+- Every downsize is a battle because you are changing paradigm with "Less is More". Plus, it requires downtime, which requires approval and change request process.
 - Downsizing from 4 vCPU to 2 does not buy much nowadays with >20 core Xeon.
 - No one likes to give up what they are given, especially if they are given little. By focusing on the large ones, you spend 20% effort to get 80% result.
 - Large VMs are also bad for other VMs, not just for themselves. They can impact other VMs, large or small. ESXi VMkernel scheduler has to find available cores for all the vCPUs, even though they are idle. Other VMs may be migrated from core to core, or socket to socket, as a result. There is a counter in esxtop that tracks this migration.

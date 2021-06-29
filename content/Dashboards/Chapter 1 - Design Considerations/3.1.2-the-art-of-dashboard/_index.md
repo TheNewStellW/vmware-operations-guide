@@ -73,7 +73,7 @@ Here is a good example of layout[^1]. Notice how simple it is. It is clear that 
 
 ## Past vs Present
 
-The past is harder to visualize as it has >1 data points. Ideally, you show the data as a line chart so you can see the trend. Showing a single data such as the maximum or average can miss critical information such as “is it trending upwards or downwards” and “how long did the peak last?”. The problem with line chart is it takes up screen real estate.
+The past is harder to visualize as it has >1 data points. Ideally, you show the data as a line chart so you can see the trend. Showing a single data such as the maximum or average can miss critical information such as "is it trending upwards or downwards" and "how long did the peak last?". The problem with line chart is it takes up screen real estate.
 
 If you need to show a lot of objects or metris, then you need to summarize. As covered in Leading Indicator, you may need to show 2 numbers, especially if one of them is an average. 
 

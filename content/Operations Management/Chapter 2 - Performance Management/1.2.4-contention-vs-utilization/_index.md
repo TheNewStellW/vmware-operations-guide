@@ -17,7 +17,7 @@ Consumption, better known as utilization, is hence a family of metrics. It comes
 
 Contention is the primary counter family for performance, while utilization is the primary counter family for capacity. Performance & Capacity uses these two types of counters differently. Knowing the requirements of each is critical in optimizing both performance and capacity.
 
-Most look at **utilization**, because they fear something wrong will happen if it's high. That “something” is contention. Contention manifests in different forms. It can be queue, latency, loss, dropped, aborted, context switch.
+Most look at **utilization**, because they fear something wrong will happen if it's high. That "something" is contention. Contention manifests in different forms. It can be queue, latency, loss, dropped, aborted, context switch.
 
 The following diagram shows three different scenarios
 
@@ -27,7 +27,7 @@ The following diagram shows three different scenarios
 
 ![esxi utilisation breakdown](1.2.4-fig-1.png)
 
-Do not confuse **“ultra-high”** utilization indicators as a performance problem. High utilization does not compromise performance, so long as there is no queue or contention. Just because an ESXi Host is experiencing ballooning, compression, and swapping does not mean your VM has memory performance problem. You measure the performance of the host by how well it serves its VMs. While it is related to ESXi utilization, the performance metric is not based on the utilization at all. It is based on contention metrics.
+Do not confuse **"ultra-high"** utilization indicators as a performance problem. High utilization does not compromise performance, so long as there is no queue or contention. Just because an ESXi Host is experiencing ballooning, compression, and swapping does not mean your VM has memory performance problem. You measure the performance of the host by how well it serves its VMs. While it is related to ESXi utilization, the performance metric is not based on the utilization at all. It is based on contention metrics.
 
 Utilization is not a counter for performance. It's a counter for capacity. The higher the utilization, the more work gets done, and hence the better the performance. Utilization at 100% is in fact the best possible performance, so long there is no contention. Since we can track contention explicitly, the performance counter becomes secondary, supporting counter.
 

@@ -59,7 +59,7 @@ If user has the access, you will see something like this
 
 ![](4.5.2-fig-11.png)
 
-The widget “Security related message” is my personal favourite, as it demonstrate the adhoc troubleshooting ability of Log Insight. The following shows the many security related messages. They are grouped by the vRealize Operations nodes, so you can exclude certain types or zoom into a particular type.
+The widget "Security related message" is my personal favourite, as it demonstrate the adhoc troubleshooting ability of Log Insight. The following shows the many security related messages. They are grouped by the vRealize Operations nodes, so you can exclude certain types or zoom into a particular type.
 
 ![](4.5.2-fig-12.png)
 
@@ -89,7 +89,7 @@ Let's go through some of its contents in-depth.
 
 ![](4.5.2-fig-14.png)
 
-The query that produces the above chart is the following. I've excluded “dashboard_add_tab” from the category as it dominates the chart.
+The query that produces the above chart is the following. I've excluded "dashboard_add_tab" from the category as it dominates the chart.
 
 ![](4.5.2-fig-15.png)
 
@@ -137,7 +137,7 @@ The query to get the above is complex
 
 ![](4.5.2-fig-25.png)
 
-Let's dive into “Deletion activity per resource” widget by opening it in **Interactive Analytics** page. You get the same information shown on the widget, but this time you can adjust it. I've made each time block to be 10 minute instead of 1 hour so I can see the changes better.
+Let's dive into "Deletion activity per resource" widget by opening it in **Interactive Analytics** page. You get the same information shown on the widget, but this time you can adjust it. I've made each time block to be 10 minute instead of 1 hour so I can see the changes better.
 
 ![](4.5.2-fig-26.png)
 
@@ -168,7 +168,7 @@ You can monitor the above stages as they progress via Log Insight. Yup, pretty m
 
 ![](4.5.2-fig-31.png)
 
-The “**Upgrade Range**” widget shows when the upgrade started and when it completed. It covers the time range of the upgrade process. If the process was successful, you'll see two columns, one marking the start and one marking the end, as shown in the following.
+The "**Upgrade Range**" widget shows when the upgrade started and when it completed. It covers the time range of the upgrade process. If the process was successful, you'll see two columns, one marking the start and one marking the end, as shown in the following.
 
 ![](4.5.2-fig-32.png)
 
@@ -178,13 +178,13 @@ The actual query to produce the chart is this.
 
 ![](4.5.2-fig-33.png)
 
-When you see “uploaded into reserved” that means the upgrade process has started. When you see “Completed operation CLEANUP for pakID” that means the upgrade process for that node has been completed successfully. The following shows examples of actual messages you should expect to see.
+When you see "uploaded into reserved" that means the upgrade process has started. When you see "Completed operation CLEANUP for pakID" that means the upgrade process for that node has been completed successfully. The following shows examples of actual messages you should expect to see.
 
 ![](4.5.2-fig-34.png)
 
-The “Overall events over time” widget is showing the proportion of all logs generated during the upgrade.
+The "Overall events over time" widget is showing the proportion of all logs generated during the upgrade.
 
-The “Overall errors, warnings and exceptions” widget is showing the proportion of all logs with errors, warnings and exceptions generated during the upgrade.
+The "Overall errors, warnings and exceptions" widget is showing the proportion of all logs with errors, warnings and exceptions generated during the upgrade.
 
 The second row of the dashboard shows 2 widgets. They cover the main two services responsible for upgrade: PAK Manager and CaSa. The widget monitoring errors, warnings and exceptions generated from that services.
 
@@ -218,4 +218,4 @@ vRealize Operations collect data every 5 minutes by default. For metric, it will
 
 If you see missing dots, that means there is no metric stored. That could be because there is no metric to begin with (e.g. the VM is powered off) or there is a collection failure.
 
-If you suspect a problem in collection, dive in “VMware - vROps 6.7+” content pack and go to the “Cluster - Collector Overview” dashboard. Check under “Collector Service shutdown events by Node, Role” widget and “Collector Service error events by node, role” widget and see if there are error messages.
+If you suspect a problem in collection, dive in "VMware - vROps 6.7+" content pack and go to the "Cluster - Collector Overview" dashboard. Check under "Collector Service shutdown events by Node, Role" widget and "Collector Service error events by node, role" widget and see if there are error messages.

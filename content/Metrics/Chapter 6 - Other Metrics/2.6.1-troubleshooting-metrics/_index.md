@@ -23,7 +23,7 @@ While vRealize Operations collects every 300 seconds, it actually grabs 15 data 
 
 What vRealize Operations 8.3 does is to add a new metric. It does not change the existing metric, because both have their own purpose. The 5-minute average is better for your SLA and performance guarantee claim. If you guarantee 10 ms disk latency for every single IOPS, you'd be hard pressed to deliver that service. These new counters act as early warning. It's an internal threshold that you use to monitor if your 5-minute SLA is on the way to be breached.
 
-vRealize Operations 8.3 takes the peak of these 15 data points, and stores them every 5 minutes. It does not store all 15 data points, because that will create a lot more IOPS and consume more storage. It answers the question “Does the VM or Guest OS experience any performance problem in any 20-second period?”
+vRealize Operations 8.3 takes the peak of these 15 data points, and stores them every 5 minutes. It does not store all 15 data points, because that will create a lot more IOPS and consume more storage. It answers the question "Does the VM or Guest OS experience any performance problem in any 20-second period?"
 
 Having all 20-second data points are more natural to us, as we're used to 1 second in Windows and 20 second in vCenter performance charts. But how does that additional 14 data points change the end remediation action? If the action you take to troubleshoot is the same (e.g. adjust the VM size), why pay the price of storing 15x more data points?
 
@@ -33,7 +33,7 @@ In the case of virtual disk (as opposed to say memory), a VM can have many of th
 
 ![](2.6.1-fig-4.png)
 
-The next question is naturally why we picked the above 12. You notice they are only VM counters. No ESXi, Resource Pool, Datastore, Cluster, etc counters. The reason is the counters at these “higher-level” objects are mathematically an average of the VMs in the object. A datastore with 10 ms disk latency represents a normalized/weighted average of all the VMs in the datastore. Another word, these counters give less visibility than the 12 above, and they can be calculated from the 12. And 1 more reason: 
+The next question is naturally why we picked the above 12. You notice they are only VM counters. No ESXi, Resource Pool, Datastore, Cluster, etc counters. The reason is the counters at these "higher-level" objects are mathematically an average of the VMs in the object. A datastore with 10 ms disk latency represents a normalized/weighted average of all the VMs in the datastore. Another word, these counters give less visibility than the 12 above, and they can be calculated from the 12. And 1 more reason: 
 
 You troubleshoot VM, not infrastructure. If there is no VM, there is no problem 😊
 

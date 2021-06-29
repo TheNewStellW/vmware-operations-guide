@@ -29,7 +29,7 @@ The most popular variant of IaaS is VM as a Service. In this variant, the busine
 
 ![Multiple aspects of VM as a Service](1.1.2-fig-4.png?width=50pc&classes=shadow,border)
 
-The cost part is easy to quantify. You know what you spend on hardware, software, services and salary. The “well” in _running well_ is the hard part as there is a big unknown.
+The cost part is easy to quantify. You know what you spend on hardware, software, services and salary. The "well" in _running well_ is the hard part as there is a big unknown.
 
 Let's use IaaS as the example. Say you are architecting for 10,000 VMs in 2 data centers. You envisage 2000 VMs in the first month, 5000 VMs in the first half year, and eventually to 10,000 within the first year. Do you know the basic information about each of these 10,000 VMs, so that you can architect an infrastructure to serve them well?
 

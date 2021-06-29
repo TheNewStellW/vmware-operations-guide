@@ -19,7 +19,7 @@ It is the era of the cloud. Who does not know what a VM is? Even a business user
 
 Wise men say that small leaks sink the ship. We think that's a good way to explain why IT departments who manage physical servers well struggle when the same servers were virtualized.
 
-We can also use Pareto principle (80/20) rule. 80% of a VM is identical to physical server. But it's the 20% differences that hit you. We will highlight some of this “20% portion”, focusing on areas that impact data center management.
+We can also use Pareto principle (80/20) rule. 80% of a VM is identical to physical server. But it's the 20% differences that hit you. We will highlight some of this "20% portion", focusing on areas that impact data center management.
 
 The change caused by virtualization is much larger than the changes brought forward by previous technologies. In the past two or more decades, we transitioned from mainframes to the client/server-based model to the web-based model. These are commonly agreed upon as the main evolutions in IT architecture. However, all of these are just technological changes. It changes the architecture, yes, but it does not change the operation in a fundamental way. Both the client-server and web shifts did not talk about the "journey". There was no journey to the client-server based model. However, with virtualization, we talk about the virtualization journey. It is a journey because the changes are massive and involve a lot of people. That's why the evolution toward multi-cloud operations is also called a journey.
 

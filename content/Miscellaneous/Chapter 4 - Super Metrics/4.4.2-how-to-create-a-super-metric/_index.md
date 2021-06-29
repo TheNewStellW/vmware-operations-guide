@@ -9,7 +9,7 @@ weight: 20
 
 From the main menu, click Administration and in the left pane click Configuration à Super Metrics.
 
-Click on “Add” to start Super Metrics creation wizard.
+Click on "Add" to start Super Metrics creation wizard.
 
 ## Step 2
 
@@ -21,13 +21,13 @@ You may also assign a unit from the available drop-down list, if required. (avai
 
 ## Step 3
 
-Start with Selecting “Functions” from the drop-down options available, followed by “Object Type” or “Object” ( typing in the name brings up suggestive text which can be selected) and followed by Metric or Property to use ( typing in the key words of required metric or property brings up suggestive text which can be selected). Further, you may add any operators as required in the super metrics workspace.
+Start with Selecting "Functions" from the drop-down options available, followed by "Object Type" or "Object" ( typing in the name brings up suggestive text which can be selected) and followed by Metric or Property to use ( typing in the key words of required metric or property brings up suggestive text which can be selected). Further, you may add any operators as required in the super metrics workspace.
 
 ![](4.4.2-fig-2.png)
 
-“CTRL + Space” keyboard shortcut will activate search for key words while typing in the super metrics workspace.
+"CTRL + Space" keyboard shortcut will activate search for key words while typing in the super metrics workspace.
 
-By default, any expression ends with depth=1, which means that the metric is assigned to an object that is one level above the referred object in the relationship chain. If you would need to assign super metric to higher levels, accordingly, the depth level needs to be increased. For example, if you are creating a super metric to find maximum value of CPU Usage on all VMs in the vSphere World, the super metric which is created based on VM metric with “max” function will need to be applied on vSphere World object and with Depth=5 in the expression. The depth can also be negative, this happens when you need to aggregate the parents of a child object. For example, when aggregating all the VMs in a datastore, the metric expression ends with depth=-1, because VM is a parent object of datastore.
+By default, any expression ends with depth=1, which means that the metric is assigned to an object that is one level above the referred object in the relationship chain. If you would need to assign super metric to higher levels, accordingly, the depth level needs to be increased. For example, if you are creating a super metric to find maximum value of CPU Usage on all VMs in the vSphere World, the super metric which is created based on VM metric with "max" function will need to be applied on vSphere World object and with Depth=5 in the expression. The depth can also be negative, this happens when you need to aggregate the parents of a child object. For example, when aggregating all the VMs in a datastore, the metric expression ends with depth=-1, because VM is a parent object of datastore.
 
 Other options available in the page are:
 

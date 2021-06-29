@@ -47,7 +47,7 @@ First step in performance dashboard is modelling the KPI. This is required so we
 
 The health of a tier is the average health of its member. This is because a tier scales out. We are not taking the minimum value. This is not a convoy.
 
-“Hold on!” you might say. Since it is scale out, App Team has catered for this. If they only need 3 web servers, they will deploy 4 or even 5. So both performance and availability are not affected if one web server goes down. The tier performance has to take into account this extra capacity, and not simply doing an average.
+"Hold on!" you might say. Since it is scale out, App Team has catered for this. If they only need 3 web servers, they will deploy 4 or even 5. So both performance and availability are not affected if one web server goes down. The tier performance has to take into account this extra capacity, and not simply doing an average.
 
 This logic sounds reasonable. But is it correct?
 

@@ -121,7 +121,7 @@ Lastly, the views on the right represent a current state view of the inventory v
  
 ## Identify Green Options to Run Workload Dashboard
 
-This dashboard is designed to be an interactive way to allow users to identify which VM's, ESXi hosts and Compute Clusters are consuming the most power (Watts). The Geographical dashboard view allows representation of the various Green Data Center objects based on their “green score” KPI. ESXi hosts that are tagged by host hardware model details identified from object native metrics are also categorised on the bottom to help identify and compare power efficiencies for all hardware models in use.
+This dashboard is designed to be an interactive way to allow users to identify which VM's, ESXi hosts and Compute Clusters are consuming the most power (Watts). The Geographical dashboard view allows representation of the various Green Data Center objects based on their "green score" KPI. ESXi hosts that are tagged by host hardware model details identified from object native metrics are also categorised on the bottom to help identify and compare power efficiencies for all hardware models in use.
 
 {{% notice note %}}
 Additional configuration will be required after importing the dashboard package to assign geographical tag against the ESXi hosts and editing their respective vendor model details. Refer to the import instructions for additional detail.

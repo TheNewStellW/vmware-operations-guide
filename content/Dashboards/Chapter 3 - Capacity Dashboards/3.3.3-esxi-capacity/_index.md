@@ -17,7 +17,7 @@ The **Summary** heat map provides an overall view of ESXi Hosts capacity, groupe
 - The ESXi host size has been made constant for ease of use. If your ESXi sizes are not standardized, consider using the number of physical cores or Total CPU GHz to show the size difference. Check that the smallest ESXi does not become too small.
 
 About the ESXi Hosts Capacity table 
-- The table lists all the ESXi hosts in your environment, grouped by their parent cluster. Standalone ESXi will be shown at the bottom under “No Group” 
+- The table lists all the ESXi hosts in your environment, grouped by their parent cluster. Standalone ESXi will be shown at the bottom under "No Group" 
 - In a large environment with many data centers, you can zoom into specific vCenter or Data center. You can also filter or search for specific ESXi hosts matching certain names. 
 - The 99th percentile Performance column takes the 99th percentile value of the ESXi Performance (%) metric. The reason we're not taking the worst performance (which is equivalent to 100thpercentile) is to rule out outlier. In addition, the performance threshold has been set to be stringent.
 

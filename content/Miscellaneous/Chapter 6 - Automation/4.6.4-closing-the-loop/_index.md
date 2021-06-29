@@ -7,11 +7,11 @@ weight: 40
 
 Now with the ability to connect back to vRealize Operations to either retrieve data or push custom information, we can finally close the loop to achieve a fully featured closed-control loop. The next picture represents our closed-loop control system including all concepts we have learned in the previous sections of this chapter.
 
-If you compare the next picture to figure 16, you will notice that now we have a continuous and closed-loop between the entity executing our automated actions and the entity collecting the data which reflect the behavior of objects we control. We are no longer limited to the “fire and forget, until the sensors do something” method. With the possibility to execute callbacks to the REST API, vRealize Operations becomes an integral part of an automated SDDC solution.
+If you compare the next picture to figure 16, you will notice that now we have a continuous and closed-loop between the entity executing our automated actions and the entity collecting the data which reflect the behavior of objects we control. We are no longer limited to the "fire and forget, until the sensors do something" method. With the possibility to execute callbacks to the REST API, vRealize Operations becomes an integral part of an automated SDDC solution.
 
 ![](4.6.4-fig-1.png "Closed-loop control with vRealize Operations")
 
-Let us now come back to our initial use case: “If a VM (the OS) crashes, this VM should be hard-reset”. How could we expand that use case and have a sophisticated and automated remediation using all the concepts I have presented in this chapter. We will examine the next picture and extract the possible components of the automation.
+Let us now come back to our initial use case: "If a VM (the OS) crashes, this VM should be hard-reset". How could we expand that use case and have a sophisticated and automated remediation using all the concepts I have presented in this chapter. We will examine the next picture and extract the possible components of the automation.
 
 ![](4.6.4-fig-2.png "Full automation using vRealize Operations")
 
@@ -19,7 +19,7 @@ The central control point is of course vRealize Operation itself.
 
 -   The vCenter Adapter instance is continuously collecting metrics which describes the current behavior of our SDDC, including the behavior of our VMs.
 
--   Within vRealize Operations we have an Alert Definition that utilizes certain symptoms to fire an alarm when the symptoms indicate that something is wrong, in our use case a VM probably crashed. “Probably” because we are evaluating symptoms, and symptoms do not necessarily point directly to a root cause.
+-   Within vRealize Operations we have an Alert Definition that utilizes certain symptoms to fire an alarm when the symptoms indicate that something is wrong, in our use case a VM probably crashed. "Probably" because we are evaluating symptoms, and symptoms do not necessarily point directly to a root cause.
 
 -   As soon as the alarm has been raised, the configured Notification:
 

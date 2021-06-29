@@ -52,11 +52,11 @@ Best practices of operations management require you to distinguish between pilla
 Each pillar is an individual unit of management. They represent individual disciplines and are compatible with one another. The complexity of each pillar depends on the technology, for example, vSAN capacity is more dynamic than a central array. In vSAN, changing the storage policy can create a sudden spike.
 Process is the activities within each pillar. It requires roles and responsibilities, which is documented in policies.
 
-Day 0 is the phase where you plan and define the expected result. Some companies perform stress tests and load tests, so they know what to expect when the real load actually occurs. Without planning and testing, you don't know what the reality will be, as you have not defined “well”.
+Day 0 is the phase where you plan and define the expected result. Some companies perform stress tests and load tests, so they know what to expect when the real load actually occurs. Without planning and testing, you don't know what the reality will be, as you have not defined "well".
 
 Day 1 is the phase where you build the system and launch the service. This includes configuring the various operations input such as cost drivers (e.g. application license cost, electricity rates). As the focus of this book is Day 2, I'm not including Day 1 in the preceding table.
 
-Monitoring and Troubleshooting are activities. They are not something you manage. In monitoring, you have [Standard Operating Procedure](https://en.wikipedia.org/wiki/Standard_operating_procedure) (SOP), which defines what roles performs what checking. You focus on insight first, alert second. Troubleshooting is much more than simply “finding out” and goes beyond just gathering facts. It focuses on why, and then formulates a solution to prevent future incidents. Incidents mean something is dead, slow or breached. You troubleshoot availability, performance, and security.
+Monitoring and Troubleshooting are activities. They are not something you manage. In monitoring, you have [Standard Operating Procedure](https://en.wikipedia.org/wiki/Standard_operating_procedure) (SOP), which defines what roles performs what checking. You focus on insight first, alert second. Troubleshooting is much more than simply "finding out" and goes beyond just gathering facts. It focuses on why, and then formulates a solution to prevent future incidents. Incidents mean something is dead, slow or breached. You troubleshoot availability, performance, and security.
 
 Inventory is something you have, not something you plan. You plan for capacity, with certain configuration. Inventory merely accounts for what you have. Nothing to troubleshoot nor optimize.
 
@@ -92,7 +92,7 @@ Performance and Capacity are closely related and interdependent, but not identic
 
 In larger organizations, they are typically managed by two different teams. The capacity team does not get involved in the day-to-day operations as they focus on longer term resource availability. Capacity _planning_ is about maximizing utilization, without compromising performance. It also considers latent workload and future demand, which performance does **not** consider.
 
-The capacity team may not have the technical skills to troubleshoot performance. On the other hand, the day-to-day operations deals with “what's on the floor” of the data center. Their primary focus is meeting the demand from applications. It is consumer driven, while capacity is provider driven.
+The capacity team may not have the technical skills to troubleshoot performance. On the other hand, the day-to-day operations deals with "what's on the floor" of the data center. Their primary focus is meeting the demand from applications. It is consumer driven, while capacity is provider driven.
 
 Performance is affected by capacity as the lack of capacity is often the reason for poor performance.
 

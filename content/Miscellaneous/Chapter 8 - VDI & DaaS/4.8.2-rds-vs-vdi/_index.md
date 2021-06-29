@@ -13,7 +13,7 @@ At the end of the day, users just wants to access their desktops (e.g. to organi
 
 The shared architecture is called RDS and the dedicated architecture is called VDI. As you can guess, the shared is cheaper as it has less overhead, but harder to troubleshoot. Shared technology also carries higher availability risk. When the application or Windows crash, more than 1 user are affected. Windows 2019 also does not have concept of shares, limit and reservation. All the sessions compete freely for its resources.
 
-[Hilko Lantiga](https://www.linkedin.com/in/hilkolantinga/) shares another limitation of RDS is the load balancer does not balance based on actual load. It's simply distributing the session based on initial placement. The initial placement can consider any metrics, but there is no “session vMotion” subsequently within the RDS Farm. If you are unlucky all the heavy users could end up on the same RDS session host. That's why vRealize Operations introduces the Usage Disparity metrics. 
+[Hilko Lantiga](https://www.linkedin.com/in/hilkolantinga/) shares another limitation of RDS is the load balancer does not balance based on actual load. It's simply distributing the session based on initial placement. The initial placement can consider any metrics, but there is no "session vMotion" subsequently within the RDS Farm. If you are unlucky all the heavy users could end up on the same RDS session host. That's why vRealize Operations introduces the Usage Disparity metrics. 
 
 ![](4.8.2-fig-1.png)
 

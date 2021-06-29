@@ -14,7 +14,7 @@ The dashboard is designed with the same considerations that are common among all
 The dashboard is organized into sections for ease of use. 
 
 The upper part of the dashboard displays basic ESXi configurations that should be standardized for ease of operations. 
-- There are six pie-charts that are displayed as one set because there is a relationship in their values. There should be a correlation between them. Ideally, the ESXi version, the ESXi build, and the BIOS should be identical across all ESXi hosts in a cluster”. Keep the variations of hardware model, NIC speed, and storage path minimal. The more complex the pie chart, the more variants you have. This results in complex operations, potentially resulting in increased OPEX.
+- There are six pie-charts that are displayed as one set because there is a relationship in their values. There should be a correlation between them. Ideally, the ESXi version, the ESXi build, and the BIOS should be identical across all ESXi hosts in a cluster". Keep the variations of hardware model, NIC speed, and storage path minimal. The more complex the pie chart, the more variants you have. This results in complex operations, potentially resulting in increased OPEX.
 - The configurations should reflect your current architecture standard. Each pie-chart counts the occurrence of a particular value. A large slice signifies that the value is the most common value, and if that is not your current standard, then you must address it.
 ![](3.4.4-fig-1.png)
 

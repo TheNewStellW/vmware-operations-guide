@@ -5,7 +5,7 @@ draft: false
 weight: 60
 ---
 
-Google “performance SLA” VMware, and you will find only a few relevant articles. The string performance SLA must be within a quote, as it is not performance and SLA, but **Performance SLA**. Yes, I'm after web pages with the words Performance SLA together. You will get many irrelevant results if you simply google VMware Performance SLA without the quote.
+Google "performance SLA" VMware, and you will find only a few relevant articles. The string performance SLA must be within a quote, as it is not performance and SLA, but **Performance SLA**. Yes, I'm after web pages with the words Performance SLA together. You will get many irrelevant results if you simply google VMware Performance SLA without the quote.
 
 I just tried it again on 14 March 2021. Google returned less than 20K results, which is up from 1.6K results in October 2015. The first 10 are shown below. Notice 8 of them are from my blog, book or speaking event. One item from [Sunny Dua](https://sunnydua.com/), talking about the same performance SLA concept we came up with, appears on the top 10. The last one is from Michael Webster, who used to work at VMware years ago.
 

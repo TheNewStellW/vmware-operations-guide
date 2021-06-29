@@ -34,7 +34,7 @@ The timeline matters. In the following table, notice 99.999% in a year is actual
 
 ![SLA downtime duration comparison](1.1.7-fig-1.png)
 
-Each additional “9” shrinks your downtime window by 10x. That's why each decimal can cost a lot more money, as a different architecture may be required.
+Each additional "9" shrinks your downtime window by 10x. That's why each decimal can cost a lot more money, as a different architecture may be required.
 
 Even if you measure the SLA once a month, it can still be very difficult to meet. Take a look at the following table. For simplicity, we will use Availability SLA and not Performance SLA, because up or down is a simple binary.
 
@@ -50,7 +50,7 @@ KPI complements SLA as it tracks at much higher intensity and it covers more cou
 
 ![explaination of availability and performance SLAs and KPIs](1.1.7-fig-3.png)
 
-From the preceding table, note that Guest OS counters are not included as that's part of “application KPI” or VM KPI, not IaaS KPI. They impact the VM performance, but nothing the IaaS can do, meaning the remediation is at the Guest OS layer.
+From the preceding table, note that Guest OS counters are not included as that's part of "application KPI" or VM KPI, not IaaS KPI. They impact the VM performance, but nothing the IaaS can do, meaning the remediation is at the Guest OS layer.
 
 KPI also complements SLA by providing the stepping stone in your operations transformation. It is a necessary step towards operations with real business SLA.
 

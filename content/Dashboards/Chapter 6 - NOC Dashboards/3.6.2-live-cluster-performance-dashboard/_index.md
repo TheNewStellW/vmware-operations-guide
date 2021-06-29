@@ -7,7 +7,7 @@ weight: 20
 
 This dashboard provides live information on whether the requests of the VMs are met by their underlying compute clusters. This dashboard focuses on the compute resources (CPU or Memory), and show if the cluster is performing well (i.e. meeting the demand). Use this dashboard to view if there is any problem in meeting the demands of the VMs.
 
-This the primary dashboard for performance. It is complemented by the Live! Cluster Performance dashboard. This secondary dashboard complements it by showing if the performance problem (read: contention) was caused by high utilization. The primary dashboard answers the question “Is our IaaS performing?”, while the secondary dashboard answers the question “Is our IaaS working hard?”.
+This the primary dashboard for performance. It is complemented by the Live! Cluster Performance dashboard. This secondary dashboard complements it by showing if the performance problem (read: contention) was caused by high utilization. The primary dashboard answers the question "Is our IaaS performing?", while the secondary dashboard answers the question "Is our IaaS working hard?".
 
 ## Design Consideration
 
@@ -33,11 +33,11 @@ Check if there is unbalanced.
 - If a single ESXi host is displaying a different color across 3 heat maps, it indicates imbalance between CPU and memory resources in the host.
 
 For NOC Operator, drill down by selecting one of the ESXi on the heat map
-- The “Trends of selected ESXi Host” will automatically show the performance counters 
+- The "Trends of selected ESXi Host" will automatically show the performance counters 
 - It's showing from all 3 heat maps, so you can correlate. To hide any metric, simply click on its name on the legend.
 
 As part of the deployment, it is best that you configure auto rotate among the NOC dashboard. If you only want to show 1 dashboard, you can remove vRealize Operations menu by using URL sharing feature. This will make the overall UI clean, enabling viewers to just focus on the dashboard. 
 
 ## Points to Note
 
-If you have the screen real estate, add a Heat Map for Disk Latency. Use the counter “Percentage of Consumers facing Disk Latency (%)”. It is part of datastore object, not cluster, as a VM in a cluster can have disks across multiple datastores. Organize this storage performance by data center and not by cluster.
+If you have the screen real estate, add a Heat Map for Disk Latency. Use the counter "Percentage of Consumers facing Disk Latency (%)". It is part of datastore object, not cluster, as a VM in a cluster can have disks across multiple datastores. Organize this storage performance by data center and not by cluster.

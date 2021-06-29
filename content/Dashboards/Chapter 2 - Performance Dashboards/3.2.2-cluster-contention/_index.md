@@ -21,7 +21,7 @@ See the Performance Dashboard page for common design consideration among all the
 
 ## How to Use
 
-Look at the “Average Cluster Performance (%)” health chart at the top of the dashboard. In a high performing environment, where all the clusters are doing well, you will see something like this. 
+Look at the "Average Cluster Performance (%)" health chart at the top of the dashboard. In a high performing environment, where all the clusters are doing well, you will see something like this. 
 
 ![](3.2.2-fig-1.png)
 

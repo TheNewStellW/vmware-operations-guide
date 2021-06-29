@@ -37,7 +37,7 @@ The next picture shows the corresponding part of a sample policy.
 
 ![](4.6.2-fig-5.png "Enabling automated Actions in a Policy")
 
-Next time this specific Alert will be triggered, vRealize Operations will try to execute the configured Action automatically. I say “try” because some actions need appropriate inputs und simply cannot run without interaction with the administrator.
+Next time this specific Alert will be triggered, vRealize Operations will try to execute the configured Action automatically. I say "try" because some actions need appropriate inputs und simply cannot run without interaction with the administrator.
 
 The Automated Action Plugin is a great and easy to use option to start automating tasks triggered by vRealize Operations alerts, but it has its limits. The available actions are pre-configured and cannot be customized to cover more complex scenarios.
 
@@ -47,7 +47,7 @@ Another plugin that may be used to automate tasks triggered by vRealize Operatio
 
 The following [link](https://docs.vmware.com/en/vRealize-Orchestrator/8.2/com.vmware.vrealize.orchestrator-use-plugins.doc/GUID-AE78D7CE-E2CE-4522-A9D4-ADE2601132DE.html) describes how to configure a SNMP trap receiver policy to start scripts or workflows anytime a SNMP trap has been received.
 
-On the vRealize Operations site, the Notification element provides the required functionality to connect the “sensors” with the “actors”. As part of a Notification***,*** we specify the Outbound Instance, like the SNMP-Plugin based one depicted in the next figure. This way we can utilize vRealize Orchestrator workflows as part of our automation setup.
+On the vRealize Operations site, the Notification element provides the required functionality to connect the "sensors" with the "actors". As part of a Notification***,*** we specify the Outbound Instance, like the SNMP-Plugin based one depicted in the next figure. This way we can utilize vRealize Orchestrator workflows as part of our automation setup.
 
 ![](4.6.2-fig-7.png "Notification using SNMP Outbound Instance")
 
@@ -93,9 +93,9 @@ The ingredients for self-driving SDDC are:
 
 -   vRealize Operations Management Pack for vRealize Orchestrator.
 
-To describe the details let us focus on a simple use case: “If a VM (the OS) crashes, this VM should be hard-reset.”
+To describe the details let us focus on a simple use case: "If a VM (the OS) crashes, this VM should be hard-reset."
 
-As “seems to be crashed” or the exact description how to determine if a VM really crashed is not object of this chapter, we assume we have appropriate symptom and alert definitions in place.
+As "seems to be crashed" or the exact description how to determine if a VM really crashed is not object of this chapter, we assume we have appropriate symptom and alert definitions in place.
 
 The generic **recipe** from use case to auto-remediation is almost always applicable:
 
@@ -135,9 +135,9 @@ The following picture shows two custom vRealize Orchestrator workflows available
 
 If the use case requires the workflow to be executed on a specific vCenter object, like the VM in this example, it needs to be configured properly in vRealize Operations.
 
-vRealize Operations driven automation needs to know for what resource types within an alert definition as the type this specific alert will be triggered on and on what resource type in vRealize Orchestrator the configured workflow can be executed. The corresponding configuration process is to run “Create/Modify Workflow Action on vCenter Resources” in context of the specific workflow.
+vRealize Operations driven automation needs to know for what resource types within an alert definition as the type this specific alert will be triggered on and on what resource type in vRealize Orchestrator the configured workflow can be executed. The corresponding configuration process is to run "Create/Modify Workflow Action on vCenter Resources" in context of the specific workflow.
 
-The alert specified in the example use case will be triggered on VM resource type and will be executed on a VM resource in vCenter. To accomplish this VM is exactly the type to configure as highlighted in the following picture. The last step is the “Add” Operation to actually configure the workflow as usable action.
+The alert specified in the example use case will be triggered on VM resource type and will be executed on a VM resource in vCenter. To accomplish this VM is exactly the type to configure as highlighted in the following picture. The last step is the "Add" Operation to actually configure the workflow as usable action.
 
 With this configuration vRealize Operations has everything it needs to automate tasks using vRealize Orchestrator workflows. The very last step is to configure such workflow-based actions in the according Recommendation definition and enable the automation withing the respective policy.
 

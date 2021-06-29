@@ -23,12 +23,12 @@ There is a good chance that the root cause is different than the symptom. It may
 
 You need to ensure that the alert is valid. That means it should not result in false positive.
 
-Let's take an example. This was a [VDI](https://www.vmware.com/topics/glossary/content/virtual-desktop-infrastructure-vdi) mass disconnect issue, where >100 users had their sessions disconnected at the same time. The analysis concludes that the problem started with the “resuming traffic on DV port”, so we need to trap this message when it appears again.
+Let's take an example. This was a [VDI](https://www.vmware.com/topics/glossary/content/virtual-desktop-infrastructure-vdi) mass disconnect issue, where >100 users had their sessions disconnected at the same time. The analysis concludes that the problem started with the "resuming traffic on DV port", so we need to trap this message when it appears again.
 
 ![Disconnection logs](1.2.12-fig-2.png)
 
 The first thing you need to do is validate the above alert. Using tools like Log Insight, you cross check the message against your entire environment, especially the healthy (in this case, unaffected users). Ideally, you cross check for entire week, not just during the time the incident happen.
 
-The following was the result when I cross checked against all the users in the last five working days. It happens more than 1000 times, meaning that “resuming traffic on DV port” is not the message that I should base my alert on. There are too many of them and there is a clear pattern following office hours.
+The following was the result when I cross checked against all the users in the last five working days. It happens more than 1000 times, meaning that "resuming traffic on DV port" is not the message that I should base my alert on. There are too many of them and there is a clear pattern following office hours.
 
 ![Log insight log pattern](1.2.12-fig-3.png)

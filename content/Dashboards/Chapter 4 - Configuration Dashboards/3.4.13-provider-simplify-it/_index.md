@@ -5,9 +5,9 @@ draft: false
 weight: 130
 ---
 
-The “**Provider \ Simplify It?**” dashboard complements the main vSphere configuration dashboards by displaying the actual vSphere objects, with their relevant information. It is designed for vSphere administrator and platform team. It is a part of 8 dashboards that check the environment for optimization opportunities. 
+The "**Provider \ Simplify It?**" dashboard complements the main vSphere configuration dashboards by displaying the actual vSphere objects, with their relevant information. It is designed for vSphere administrator and platform team. It is a part of 8 dashboards that check the environment for optimization opportunities. 
 
-The dashboard follows the same design consideration with the “Consumer \ Correct it?” dashboard. In fact, the 8 dashboards that form the Optimization Flow is designed as a set. You are meant to use them together as you go through the optimization review process. 
+The dashboard follows the same design consideration with the "Consumer \ Correct it?" dashboard. In fact, the 8 dashboards that form the Optimization Flow is designed as a set. You are meant to use them together as you go through the optimization review process. 
 
 ## How to Use
 
@@ -30,5 +30,5 @@ Click the object name to navigate to the Object Summary page to view more config
 
 ## Points to Note
 
-See the Points to Note section of “Consumer \ Correct it?” dashboard. This dashboard follows the same design consideration with the dashboard, hence share the same limitations and customization idea. 
+See the Points to Note section of "Consumer \ Correct it?" dashboard. This dashboard follows the same design consideration with the dashboard, hence share the same limitations and customization idea. 
 Complexity can come from many things, lack of standard being one of them. Think of the standards in your SDDC architecture or EUC architecture, and enhance this dashboard to shine light on the issue.

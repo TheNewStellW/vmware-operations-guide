@@ -13,6 +13,6 @@ Windows reports the packet loss (%) and latency (ms) counters per TCP connection
 
 Take note that Windows mixes bit and byte, which it should not. The chart is showing in bit, while the table is showing in byte.
 
-Another counter that could be potentially useful is Output Queue Length. You can monitor it on a per network adapter basis, as shown in the Performance Monitor screenshot below. I said it could be useful, because unfortunately the value is always 0. As you can see in the screenshot, Windows 10 states that “since the requests are queued by the Network Driver Interface Specification (NDIS) in this implementation, this will always be 0.“
+Another counter that could be potentially useful is Output Queue Length. You can monitor it on a per network adapter basis, as shown in the Performance Monitor screenshot below. I said it could be useful, because unfortunately the value is always 0. As you can see in the screenshot, Windows 10 states that "since the requests are queued by the Network Driver Interface Specification (NDIS) in this implementation, this will always be 0."
 
 ![](2.5.3-fig-2.png)

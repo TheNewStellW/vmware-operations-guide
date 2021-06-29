@@ -75,7 +75,7 @@ That means you need to divide the number of VM against the total number of runni
 
 ```text
 count(
-    ${ adaptertype=VMWARE, objecttype=VirtualMachine, metric=cpu|readyPct, depth=8, where=”>1” }
+    ${ adaptertype=VMWARE, objecttype=VirtualMachine, metric=cpu|readyPct, depth=8, where=">1" }
     )
 /
 ${ this, metric=summary|running_vms }
@@ -117,7 +117,7 @@ count(
 
 This takes you deeper into Java programming
 
-**Use Case:** Count of provisioned vCPUs and if it is equal to 4, return value “1” and if it is not equal to 4, return a value “0”.
+**Use Case:** Count of provisioned vCPUs and if it is equal to 4, return value "1" and if it is not equal to 4, return a value "0".
 
 ```text
 count( ${this, metric=cpu|corecount_provisioned, depth=1, where= ($value == 4)} )
@@ -128,7 +128,7 @@ count( ${this, metric=cpu|corecount_provisioned, depth=1, where= ($value == 4)} 
 Above formula requires version 8.1 or later.
 {{% /notice %}}
 
-**Use Case:** Find the “Actual Recommended vCPU” for a VM.
+**Use Case:** Find the "Actual Recommended vCPU" for a VM.
 
 While using the rightsizing feature, vRealize Operations provide the vCPUs to be removed or added based on if it is an oversized or undersized VM. The following logic can be used find the actual recommended values:
 

@@ -67,7 +67,7 @@ There are practically 2 lines, even though we actually plot 8 line charts. What 
 
 Yes, they map to North-South traffic and South-North traffic. An end user requesting data from a web server would be South to North, while the web server response would be North to South.
 
-“Wait!” you might say. There should only 4 lines. Why do we have 8 lines?
+"Wait!" you might say. There should only 4 lines. Why do we have 8 lines?
 
 Can you figure it out from the following diagram?
 

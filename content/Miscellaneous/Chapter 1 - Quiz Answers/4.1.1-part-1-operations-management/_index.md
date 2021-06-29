@@ -11,6 +11,6 @@ You should exclude CPU Co-Stop from Performance SLA because the reason for CoSto
 
 You should exclude CPU Contention from Performance SLA because its value can go as high as 37.5% without the application noticing any degradation. You can login to Windows or Linux and feel it's responsive. Read this for details.
 
-## “Good” Advice
+## "Good" Advice
 
 The problem with the advice is it assumes utilization as the metric for performance. You want to drive by contention, while aiming to maximize utilization.

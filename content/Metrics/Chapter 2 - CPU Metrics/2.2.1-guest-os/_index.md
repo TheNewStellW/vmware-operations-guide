@@ -19,7 +19,7 @@ Because it reports the queue, this is the _primary_ counter to measure Guest OS 
 
 What is a healthy value?
 
-Windows Performance Monitor UI description is not consistent with MSDN documentation (based on Windows Server 2016 documentation). One document states that a sustained processor queue of greater than 2 threads generally indicates processor congestion. However, another states that “sustained processor queue of less than 10 threads per processor is normally acceptable, dependent of the workload”. SQL Server document states 3 as the threshold. Let me know if you have seen other recommendation from Microsoft or Linux.
+Windows Performance Monitor UI description is not consistent with MSDN documentation (based on Windows Server 2016 documentation). One document states that a sustained processor queue of greater than 2 threads generally indicates processor congestion. However, another states that "sustained processor queue of less than 10 threads per processor is normally acceptable, dependent of the workload". SQL Server document states 3 as the threshold. Let me know if you have seen other recommendation from Microsoft or Linux.
 
 Windows or Linux utilization may be 100%, but as long as the queue is low, the workload is running as fast as it can. Adding more vCPU will in fact slow down the performance as you have higher chance of [context switching](/metrics/chapter-2-cpu-metrics/2.2.1-guest-os/#guest-os-cpu-context-switch).
 
@@ -47,7 +47,7 @@ Reference: [Windows](https://msdn.microsoft.com/en-us/library/aa394272(v=vs.85).
 
 ## Guest OS CPU Context Switch
 
-[CPU Context Switch](https://en.wikipedia.org/wiki/Context_switch) costs performance “due to running the [task scheduler](https://en.wikipedia.org/wiki/Scheduling_(computing)), TLB flushes, and indirectly due to sharing the [CPU cache](https://en.wikipedia.org/wiki/CPU_cache) between multiple tasks”. It's important to track this counter and at least know what's an acceptable behaviour for that specific application.
+[CPU Context Switch](https://en.wikipedia.org/wiki/Context_switch) costs performance "due to running the [task scheduler](https://en.wikipedia.org/wiki/Scheduling_(computing)), TLB flushes, and indirectly due to sharing the [CPU cache](https://en.wikipedia.org/wiki/CPU_cache) between multiple tasks". It's important to track this counter and at least know what's an acceptable behaviour for that specific application.
 
 Based on Windows 10 Performance Monitor documentation, context switches/sec is the combined rate at which all processors on the computer are switched from one thread to another. All else being equal, the more the processors, the higher the context switch.
 
@@ -61,7 +61,7 @@ The rate of Windows or Linux switching CPU context per second ranges widely. The
 
 ![CPU context per second](2.2.1-fig-4.png)
 
-The value should correlate with CPU “utilization”, since in theory the higher the utilization the higher the chance of CPU context switch. The following chart shows a near perfect corelation. Every time CPU Usage went up, CPU Context Switch also.
+The value should correlate with CPU "utilization", since in theory the higher the utilization the higher the chance of CPU context switch. The following chart shows a near perfect corelation. Every time CPU Usage went up, CPU Context Switch also.
 
 ![Correlation between CPU usage and context switch](2.2.1-fig-5.png)
 

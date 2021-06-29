@@ -51,7 +51,7 @@ Select a datastore from the table
 
 ## Points to Note
 
-If you are using “thin on thin”, meaning the underlying LUN is also thin provisioned, add visibility into the physical array.
+If you are using "thin on thin", meaning the underlying LUN is also thin provisioned, add visibility into the physical array.
 
 The dashboard does not have **datastore clusters**. If your environment use it, modify this dashboard or create a new one. In a large environment with many datastores and datastore clusters, add a View List to list the datastore clusters so you get summary information. From this list, drives the datastore view list. Alternatively, create a heat map, listing the datastore clusters. 
 

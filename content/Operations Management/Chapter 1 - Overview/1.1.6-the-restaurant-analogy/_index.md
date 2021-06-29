@@ -21,8 +21,8 @@ If everything runs smoothly in the dining area, customers are being served on ti
 
 We use the analogy to drive the message that you need to focus on the customers first, and your IaaS second. If you take care of your customers well, and they are happy with your service, the problem you have in your IaaS is a secondary and internal matter.
 
-- The “dining area” is the Consumer layer. Look at the diagram below. It is where your customers' VMs live.
-- The “kitchen” is the Provider Layer. This is your infrastructure layer, where VMware and the hardware reside.
+- The "dining area" is the Consumer layer. Look at the diagram below. It is where your customers' VMs live.
+- The "kitchen" is the Provider Layer. This is your infrastructure layer, where VMware and the hardware reside.
 
 Public cloud is part of the kitchen. Just because you no longer owns the infrastructure does not mean you can't take management responsibility. The structure of enterprise IT means the infrastructure team end up being held accountable.
 

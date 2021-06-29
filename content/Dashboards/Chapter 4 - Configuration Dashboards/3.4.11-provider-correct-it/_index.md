@@ -5,9 +5,9 @@ draft: false
 weight: 110
 ---
 
-The “**Provider \ Correct It?**” dashboard complements the main vSphere configuration dashboards by displaying the actual vSphere objects, with their relevant information. It is designed for vSphere administrator and platform team. It is a part of 8 dashboards that check the environment for optimization opportunities. 
+The "**Provider \ Correct It?**" dashboard complements the main vSphere configuration dashboards by displaying the actual vSphere objects, with their relevant information. It is designed for vSphere administrator and platform team. It is a part of 8 dashboards that check the environment for optimization opportunities. 
 
-The dashboard follows the same design consideration with the “Consumer \ Correct it?” dashboard. In fact, the 8 dashboards that form the Optimization Flow is designed as a set. You are meant to use them together as you go through the optimization review process. 
+The dashboard follows the same design consideration with the "Consumer \ Correct it?" dashboard. In fact, the 8 dashboards that form the Optimization Flow is designed as a set. You are meant to use them together as you go through the optimization review process. 
 
 ## How to Use
 
@@ -32,6 +32,6 @@ The third section covers ESXi host configuration that need to be consistent with
 - ESXi hardware specifications. Different specifications can result in inconsistent performances experienced by the VM. 
 
 ## Points to Note
-- See the Points to Note section of “Consumer \ Correct it?” dashboard. This dashboard follows the same design consideration with the dashboard, hence share the same limitations and customization idea. 
+- See the Points to Note section of "Consumer \ Correct it?" dashboard. This dashboard follows the same design consideration with the dashboard, hence share the same limitations and customization idea. 
 - If you have standalone ESXi and you plan to replace them with clustered ESXi host, add a table to list them.
 - Based on your security settings, add a table to check Distributed Switch and Port Group to ensure that security settings such as promiscuous mode are used correctly.

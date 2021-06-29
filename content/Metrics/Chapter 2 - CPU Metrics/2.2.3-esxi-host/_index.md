@@ -9,13 +9,13 @@ Hope you like the tour of VM CPU accounting. Can you apply that knowledge into E
 
 ![ESXi utilisation counters](2.2.3-fig-1.png)
 
-The above is an ESXi host, showing 3 types of utilization counters. One shows 50%, indicating you have more capacity. But the second one shows 100%, indicating you do not have capacity. And the 3rd shows 75%. Which counters do you take for the ESXi CPU “utilization” then?
+The above is an ESXi host, showing 3 types of utilization counters. One shows 50%, indicating you have more capacity. But the second one shows 100%, indicating you do not have capacity. And the 3rd shows 75%. Which counters do you take for the ESXi CPU "utilization" then?
 
 Notice they have similar pattern, but their **sensitivity** differs.
 
 - Why is Usage (%) = 100% when Utilization (%) is around 47%? The gap is more than double. What could be causing it?
 - Why is Utilization (%) fluctuating yet Usage (%) remains constant? Notice both Utilization varies between 45% and 55% while Usage remains flat at 100%
-- Why is Core Utilization (%) in the “middle”? What does it actually measure then?
+- Why is Core Utilization (%) in the "middle"? What does it actually measure then?
 
 To answer the above, we need to cover some fundamental. Note that we must take the vantage point of ESXi, not VM. Don't mix this with the VM view of the world as they are similar so it's easy to get mixed up. From ESXi physical threads viewpoint, things such as Ready and CoStop are not applicable as the physical threads are provider of resource.
 
@@ -25,7 +25,7 @@ Unlike RAM, CPU performance varies widely among different CPU models. Speed matt
 - How fast it runs. All else being equal, a 5 GHz CPU is 5x faster than a 1 GHz CPU. Throughput impacts utilization. The faster it can complete a task, the shorter it has to work. That's why you see some counters in MHz.
 - How efficient it runs. CPU SMP impacts the core efficiency. This is covered more [here](/metrics/chapter-2-cpu-metrics/2.2.3-esxi-host/#esxi-utilization-counters). This efficiency is then translated into MHz, for ease of accounting.
 
-These 3 dimensions of run are the reason why CPU utilization is hard to measure. It becomes “it depends on what you consider”. It can't be a single number. Insisting that the CPU has a single, static, total capacity and use this as the only 100% for all use cases will result in confusion in “utilization” numbers.
+These 3 dimensions of run are the reason why CPU utilization is hard to measure. It becomes "it depends on what you consider". It can't be a single number. Insisting that the CPU has a single, static, total capacity and use this as the only 100% for all use cases will result in confusion in "utilization" numbers.
 
 ESXi uses 3 types of units: millisecond, MHz and %.
 
@@ -45,7 +45,7 @@ If you guess that they eventually map into vSphere Client counters Usage (%) and
 
 PCPU means a physical hardware execution context. That means it is a physical core if CPU SMT is disabled, or a physical thread inside a core if SMT is enabled. It does not mean CPU socket. A single socket with 10 cores and 20 threads will have 20 PCPU counters.
 
-PCPU Utilization (%) tracks is a physical thread is used or not over time. At any given moment, a thread is either running (unhalted) or not (halted). So it's binary (0% or 100%). But over the 20 second period, the value is averaged. So when you see the number as 50%, it does not mean it's running 100% at half the “speed”. It means it's running half the time, for only 10 seconds. Using a human analogy, think of it as a person who is either running or standing, and never walking. It's not considering CPU Frequency.
+PCPU Utilization (%) tracks is a physical thread is used or not over time. At any given moment, a thread is either running (unhalted) or not (halted). So it's binary (0% or 100%). But over the 20 second period, the value is averaged. So when you see the number as 50%, it does not mean it's running 100% at half the "speed". It means it's running half the time, for only 10 seconds. Using a human analogy, think of it as a person who is either running or standing, and never walking. It's not considering CPU Frequency.
 
 Core Utilization (%) tracks at the core level. If one of the threads is running, then the value is 100%. At the core level, the average utilization in that entire period is 75%. In the last portion, the core still runs at 100%. The CPU Utilization (%) tracks this. As a result, CPU Utilization (%) is only relevant when hyper-threading is enabled.
 
@@ -154,7 +154,7 @@ If you want to verify with vCenter, the following ESXi host has 16 cores 32 thre
 
 ## Usage
 
-vCenter adds this counter, meaning it does not exist at ESXi level. If you see in esxtop, you will find Used (%) and Utilization (%) but not Usage. Usage basically maps to Used, but showing in MHz. This is great as using millisecond is hard to account for “how fast you run” and “how efficient you run”. With MHz, we can plot the value across time.
+vCenter adds this counter, meaning it does not exist at ESXi level. If you see in esxtop, you will find Used (%) and Utilization (%) but not Usage. Usage basically maps to Used, but showing in MHz. This is great as using millisecond is hard to account for "how fast you run" and "how efficient you run". With MHz, we can plot the value across time.
 
 Let's see if Used (ms) = Usage (MHz).
 
@@ -204,7 +204,7 @@ One good thing about Demand metric is it can go above 100%. All the other counte
 
 In older release of vRealize Operations, this counter used to be computed as `Sum ( VM CPU / Host Demand for Aggregation ) + CPU Overhead`. This is no longer the case as vRealize Operations now simply maps to vCenter metric.
 
-## ESXi “Utilization” counters
+## ESXi "Utilization" counters
 
 Let's summarise the counters we have covered so far. vCenter provides 6 counters to account for the utilization of ESXi CPU. Since esxtop uses the Used (%) metric but ESXi uses the Used (ms) metric in the vCenter client, I'm including both.
 

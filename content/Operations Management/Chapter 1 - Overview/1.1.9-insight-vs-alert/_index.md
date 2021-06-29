@@ -8,7 +8,7 @@ Many operations rely on alerts as the starting point. Actions are taken based on
 
 ![alerts vs. insight iceberg illustration](1.1.9-fig-1.png)
 
-Alerts may auto close if the symptom disappears. This encourages “lazy operations” when no alert is associated with no problem. Insight does not have this “auto close” concept as it does not involve help desk ticket. It's recording a fact that something has gone wrong, and that something could potentially cause an alert. Ideally, you want to detect and address that something before an alert is triggered.
+Alerts may auto close if the symptom disappears. This encourages "lazy operations" when no alert is associated with no problem. Insight does not have this "auto close" concept as it does not involve help desk ticket. It's recording a fact that something has gone wrong, and that something could potentially cause an alert. Ideally, you want to detect and address that something before an alert is triggered.
 
 There is a common misconception that Insight is simply alerts that use different threshold on the same metric. So insight is basically an alert with lower threshold. This is valid, but incomplete. Implementing insight this way can result in an alert storm and a lot of tickets. It is better for Insight to use different metrics than Alerts, so you get a different perspective.
 

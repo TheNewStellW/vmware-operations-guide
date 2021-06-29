@@ -5,9 +5,9 @@ draft: false
 weight: 90
 ---
 
-The “Consumer \ Simplify It?” dashboard complements the main VM configuration dashboard by displaying the actual VMs, with their relevant information. It is designed for vSphere administrator and platform team, to facilitate the follow-up action with the VM owners. It is a part of 8 dashboards that check the environment for optimization opportunities. 
+The "Consumer \ Simplify It?" dashboard complements the main VM configuration dashboard by displaying the actual VMs, with their relevant information. It is designed for vSphere administrator and platform team, to facilitate the follow-up action with the VM owners. It is a part of 8 dashboards that check the environment for optimization opportunities. 
 
-The dashboard follows the same design consideration with the “Consumer \ Correct it?” dashboard. In fact, the 8 dashboards that form the Optimization Flow is designed as a set. You are meant to use them together as you go through the optimization review process. 
+The dashboard follows the same design consideration with the "Consumer \ Correct it?" dashboard. In fact, the 8 dashboards that form the Optimization Flow is designed as a set. You are meant to use them together as you go through the optimization review process. 
 
 ## How to Use
 
@@ -34,4 +34,4 @@ VM with many IP addresses or NICs:
 
 ## Points to Note
 
-See the Points to Note section of “Consumer \ Correct it?” dashboard. This dashboard follows the same design consideration with the dashboard, hence share the same limitations and customization idea.
+See the Points to Note section of "Consumer \ Correct it?" dashboard. This dashboard follows the same design consideration with the dashboard, hence share the same limitations and customization idea.

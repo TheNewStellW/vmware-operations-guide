@@ -7,7 +7,7 @@ weight: 10
 
 Capacity Management dashboards share the same design principles. They are intentionally designed to be similar, as it will be confusing if each dashboard looks totally different from one another, considering they have the same objective.
 
-The dashboard is designed “top down”. It has 2 sections: summary and detail.
+The dashboard is designed "top down". It has 2 sections: summary and detail.
 - The summary section is typically placed at the top of the dashboard. It gives the big picture. 
 - The detail section is placed below the summary section. It lets you drill down into a specific object. For example, if it's a VM capacity, you can get the detail capacity of a specific VM. 
 

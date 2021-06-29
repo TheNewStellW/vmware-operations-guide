@@ -68,7 +68,7 @@ Why is VM CPU Ready above 100%? If you look at esxtop, many VM level counters ar
 
 Why are CPU counters expressed in milliseconds instead of percentage or GHz? How can a time counter (milliseconds in this case) account for CPU Frequency? There is a good reason for that!
 
-#### “Missing” Counters
+#### "Missing" Counters
 
 You will find VM CPU Demand, but not VM Memory Demand. Demand does not apply to memory as it's a form of storage, just as there is no such thing as a Demand metric for your laptop disk space.
 
@@ -76,9 +76,9 @@ You will find VM CPU Demand, but not VM Memory Demand. Demand does not apply to 
 
 When you have two watches showing different time, You are not sure which watch is the correct one.
 
-There are five counters for VM CPU “utilization”: Run, Used, Usage, Usage in MHz, and Demand. Why so many counters just to track utilization, different to what Windows or Linux tracks?
+There are five counters for VM CPU "utilization": Run, Used, Usage, Usage in MHz, and Demand. Why so many counters just to track utilization, different to what Windows or Linux tracks?
 
-There are 6 counters for ESXi CPU “utilization”: Core Utilization, Utilization, Used, Usage, Usage in MHz, and Demand.
+There are 6 counters for ESXi CPU "utilization": Core Utilization, Utilization, Used, Usage, Usage in MHz, and Demand.
 
 You must remember that the counters are not just created for vSphere administrators. They are also used by the VMkernel scheduler itself as input. CPU Latency is one such counter.
 

@@ -13,7 +13,7 @@ At the infrastructure layer, we care whether it serves everyone well. Make sure 
 
 For objects where there are many counters, I split the dashboard into 2: contention and utilization. This keeps the dashboard simple, while emphasizing the concept of contention as the primary counter for performance.
 
-The dashboard is designed “top down”. It has 2 sections: summary and detail.
+The dashboard is designed "top down". It has 2 sections: summary and detail.
 - The summary section is typically placed at the top of the dashboard. It gives the big picture. 
 - The detail section is placed below the summary section. It lets you drill down into a specific object. For example, if it's a VM performance, you can get the detail performance of a specific VM. 
 

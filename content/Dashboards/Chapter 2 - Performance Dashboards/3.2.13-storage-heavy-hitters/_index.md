@@ -21,7 +21,7 @@ See the **Network Top Talkers** dashboard as they basically have the same design
 
 ![](3.2.13-fig-1.png)
 
-About the “Which VMs hit storage the hardest” table
+About the "Which VMs hit storage the hardest" table
 
 ![](3.2.13-fig-2.png)
  

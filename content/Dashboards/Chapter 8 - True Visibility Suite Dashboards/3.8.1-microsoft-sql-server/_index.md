@@ -13,7 +13,7 @@ This is a custom dashboard. You can download it [here](https://code.vmware.com/s
  
 ## Design Consideration
 
-The MS SQL Server Summary was designed to allow the user to select a MS SQL Instance, then be shown all child objects, their health, and metrics that could reflect problems. Once the MS SQL Instance is selected the user immediately sees Key Performance Indicators (KPIs) in the widgets below. The two Views in the sixth row of widgets have “Auto Select First Row” turned on, such that their respective Scoreboards are populated with data upon selection. 
+The MS SQL Server Summary was designed to allow the user to select a MS SQL Instance, then be shown all child objects, their health, and metrics that could reflect problems. Once the MS SQL Instance is selected the user immediately sees Key Performance Indicators (KPIs) in the widgets below. The two Views in the sixth row of widgets have "Auto Select First Row" turned on, such that their respective Scoreboards are populated with data upon selection. 
 
 The design is simple, clean, and efficient, allowing DBAs to search for a database instance and work their way into the details. It's designed to flow from top to bottom and left to right, which is reflected by the widget interaction canvas.
 

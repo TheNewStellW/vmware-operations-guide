@@ -9,7 +9,7 @@ With the almost limitless capabilities of the vRealize Orchestrator adapter we a
 
 ![](4.6.3-fig-1.png "Open-loop control with vRealize Operations")
 
-Of course, we can implement the actual workflow to execute other workflows and possibly include other systems to contribute to the overall automation process but how do we close the loop back to vRealize Operations? And yes, you are right if you now say: “Hold on Thomas, we closed the loop, the action may influence the behavior of a certain object in vCenter, which in turn has impact on metrics collected by the adapter instance.” This in fact may close the loop, but I would like to have something more tightly connected to the entity executing the action, something more powerful working really in context of my automated actions, giving me all options to quickly get back to vRealize Operations and immediately check the impact my actions have. Having the control over what objects I need to inspect, or retrieve additional data from to take more sophisticated actions.
+Of course, we can implement the actual workflow to execute other workflows and possibly include other systems to contribute to the overall automation process but how do we close the loop back to vRealize Operations? And yes, you are right if you now say: "Hold on Thomas, we closed the loop, the action may influence the behavior of a certain object in vCenter, which in turn has impact on metrics collected by the adapter instance." This in fact may close the loop, but I would like to have something more tightly connected to the entity executing the action, something more powerful working really in context of my automated actions, giving me all options to quickly get back to vRealize Operations and immediately check the impact my actions have. Having the control over what objects I need to inspect, or retrieve additional data from to take more sophisticated actions.
 
 What options do we have to get back to vRealize Operations and retrieve more information? Can we extend what vRealize Operations is managing with custom object types and metrics? Let's find out!
 
@@ -27,7 +27,7 @@ The Swagger UI provides an easy way to find the appropriate method – just type
 
 ![](4.6.3-fig-4.png "Swagger UI - search bar")
 
-The REST API provides access to all managed objects, their metrics and properties as well as to vRealize Operations constructs like Alert and Symptom Definitions, Recommendations etc. With appropriate permissions one can not only read information, but new information can also be added to vRealize Operations. “New information” means entirely new custom object types with own set of metrics and properties as well as custom metrics and properties added to existing objects collected by vRealize Operations adapter instances.
+The REST API provides access to all managed objects, their metrics and properties as well as to vRealize Operations constructs like Alert and Symptom Definitions, Recommendations etc. With appropriate permissions one can not only read information, but new information can also be added to vRealize Operations. "New information" means entirely new custom object types with own set of metrics and properties as well as custom metrics and properties added to existing objects collected by vRealize Operations adapter instances.
 
 The next picture shows the REST API POST method for adding custom metrics to existing resources specified by their vRealize Operations ID.
 

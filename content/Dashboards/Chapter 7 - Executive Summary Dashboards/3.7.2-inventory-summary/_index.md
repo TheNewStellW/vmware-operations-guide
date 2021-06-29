@@ -25,7 +25,7 @@ Since all the information is at vSphere World level, clicking any of them will s
 
 ![](3.7.2-fig-3.png)
  
-Select a data center from the “Data centers” table. It drives Clusters and Datastores, so that you can quickly view what you have in a given Data center and related capacity.
+Select a data center from the "Data centers" table. It drives Clusters and Datastores, so that you can quickly view what you have in a given Data center and related capacity.
 
 For a small environment, the vSphere World is provided so you can see all the VMs in the environment.
 

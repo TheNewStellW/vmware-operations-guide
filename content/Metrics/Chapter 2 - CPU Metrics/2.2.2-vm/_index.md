@@ -107,7 +107,7 @@ Note that the value of CoStop tends to be larger for large VM. Its value also te
 
 Just like Ready, CoStop happens at the vCPU and not the VM level. When a VM vCPU experiences co-stop, it's because its sibling's vCPU experienced Ready. The sibling vCPU could be Run or still in Ready, but it was behind because it was unable to run. Since it's not CoStop, then it must be Ready.
 
-Guest OS is ***not aware*** of both CoStop and Ready. The vCPU freezes. “What happens to you when time is frozen?”[^3] is a great way to put it. As far as the Guest OS is concerned, time is frozen when it is not scheduled. Time jumps when it's scheduled again.
+Guest OS is ***not aware*** of both CoStop and Ready. The vCPU freezes. "What happens to you when time is frozen?"[^3] is a great way to put it. As far as the Guest OS is concerned, time is frozen when it is not scheduled. Time jumps when it's scheduled again.
 
 The metric Guest OS CPU Usage isn't aware of stolen time. For this counter to be aware, its code has to be modified. If you know that Microsoft or Linux has modified this counter, let me know in which version they make the change.
 
@@ -245,8 +245,8 @@ If both threads are running all the time, guest what CPU Used and CPU Run will r
 
 As covered earlier, CPU Run does not account for the following:
 
-- How fast is the “run”? All else being equal, a 5 GHz CPU is 5x faster than a 1 GHz CPU. Throughput impacts utilization. The faster it can complete a task, the shorter it has to work. That's why you see some counters in MHz, because they account for this speed.
-- How efficient is the “run”? If there is competing thread running in the same core, the 2 threads have to share the core resource. ESXi accounting records this as 1.25x overall gain, hence each thread drops to 62.5% only. This is a significant drop that should be accounted.
+- How fast is the "run"? All else being equal, a 5 GHz CPU is 5x faster than a 1 GHz CPU. Throughput impacts utilization. The faster it can complete a task, the shorter it has to work. That's why you see some counters in MHz, because they account for this speed.
+- How efficient is the "run"? If there is competing thread running in the same core, the 2 threads have to share the core resource. ESXi accounting records this as 1.25x overall gain, hence each thread drops to 62.5% only. This is a significant drop that should be accounted.
 - IO work. IO performed by hypervisor has to be charged to the VM.
 
 This is where [Used](/metrics/chapter-2-cpu-metrics/2.2.2-vm/#used) and [Demand](/metrics/chapter-2-cpu-metrics/2.2.2-vm/#demand) come in. vCenter then adds Usage (MHz) and Usage (%) counters. The following table shows the 5 VM utilization counters.
@@ -408,12 +408,12 @@ If the value is low, then you don't need to check CPU Ready, CoStop, Power Manag
 
 If the value is high (>37.5%), then follow these steps:
 
-- Check CPU Run Queue, CPU Context Switch, “Guest OS CPU Usage“, CPU Ready and CPU CoStop. Ensure all the CPU counters are good. If they are all low, then it's Frequency Scaling and HT. If they are not low, check VM CPU Limit and CPU Share.
+- Check CPU Run Queue, CPU Context Switch, "Guest OS CPU Usage", CPU Ready and CPU CoStop. Ensure all the CPU counters are good. If they are all low, then it's Frequency Scaling and HT. If they are not low, check VM CPU Limit and CPU Share.
 - Check ESXi power management. If they are set to Maximum correctly, then Frequency Scaling is out (you are left with HT as the factor), else HT could be at play. A simple solution for apps who are sensitive to frequency scaling is to set power management to max.
 - Check CPU Overcommit at the time of issue. If there is more vCPU than pCore on that ESXi, then HT could be impacting, else HT not impacting. IMHO, it is rare that an application does not tolerate HT as it's transparent to it. Simplistically speaking, while HT reduces the CPU time by 37.5%, a CPU that is 37.5% faster will logically make up for it.
 
 {{% notice info %}}
-There is a corner case accounting issue in `%LAT_C` that was resolved in ESXi 6.7. VMs with Latency Sensitive = High on ESXi 6.5 or older, will show any “guest idle” time of vCPUs as `LAT_C`, for those VMs the counter should not be relied on. This is a corner case because majority of VM should not be set with this, as it impacts performance of other VMs.
+There is a corner case accounting issue in `%LAT_C` that was resolved in ESXi 6.7. VMs with Latency Sensitive = High on ESXi 6.5 or older, will show any "guest idle" time of vCPUs as `LAT_C`, for those VMs the counter should not be relied on. This is a corner case because majority of VM should not be set with this, as it impacts performance of other VMs.
 {{% /notice %}}
 
 ## CPU Usage Disparity

@@ -31,7 +31,7 @@ Ensuring continuous monitoring with no impact to service owners with a seamless 
 
 Customization was a key area of focus. We ensured that the correct ownership was assigned to each application and tagged accordingly to configure alert notifications based on the application owner's specifications and policies.
 
-In vRealize Operations we used the “delay” feature to set alert timeframes according to the requirements of service owners. This helped us to ensure that all the alerts received by service owners are actionable. We also created container tags to distinguish our inventory as production, non-production and maintenance which helps our team provide efficient operational support.
+In vRealize Operations we used the "delay" feature to set alert timeframes according to the requirements of service owners. This helped us to ensure that all the alerts received by service owners are actionable. We also created container tags to distinguish our inventory as production, non-production and maintenance which helps our team provide efficient operational support.
 
 We wrote several scripts based on the vRealize Operations API to automate steps to configure the monitoring tool.
 

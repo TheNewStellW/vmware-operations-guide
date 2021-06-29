@@ -31,7 +31,7 @@ For Storage, the counter for contention is clear. First, ensure that you do not 
 
 Once you have ensured that you do not have packet loss on IP Storage or aborted commands on block storage, use the latency counter and outstanding IO for monitoring. For troubleshooting, you will need to check both read latency and write latency, as they tend to have different patterns and value. It's common to only have read or write issue, and not both.
 
-Total Latency is not Read Latency + Write Latency, because it is not a simple summation. In a given second, a VM issues many IOPS. For example, the VM issues 100 reads and 10 writes in a second. Each of these 110 commands will have their own latency. The “total” latency is the average of these 110 commands. In this example, the total latency will be more influenced by the read latency, as the workload is read dominated.
+Total Latency is not Read Latency + Write Latency, because it is not a simple summation. In a given second, a VM issues many IOPS. For example, the VM issues 100 reads and 10 writes in a second. Each of these 110 commands will have their own latency. The "total" latency is the average of these 110 commands. In this example, the total latency will be more influenced by the read latency, as the workload is read dominated.
 
 ## Guest OS Disk Queue
 
@@ -39,7 +39,7 @@ This counter tracks the queue inside Linux or Windows storage subsystem. It's no
 
 For Windows, the number is the snapshot at the collection period. For example, if the collection is every 5 minute, then it's number on the 300th second, not the average of 300 numbers.
 
-Interestingly, Window documentation said that “Multispindle disk devices can have multiple requests active at one time, but other concurrent requests await service. Requests experience delays proportional to the length of the queue minus the number of spindles on the disks. This difference should average less than two for good performance.”
+Interestingly, Window documentation said that "Multispindle disk devices can have multiple requests active at one time, but other concurrent requests await service. Requests experience delays proportional to the length of the queue minus the number of spindles on the disks. This difference should average less than two for good performance."
 
 I plot the disk queue among ~1K VMs. It's interesting to see see some are very high.
 

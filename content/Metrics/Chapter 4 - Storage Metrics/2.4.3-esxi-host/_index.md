@@ -48,7 +48,7 @@ The screenshot shows an ESXi host with the list of its adapters. We have selecte
 
 ![Storage Adapters](2.4.3-fig-6.png)
 
-What do you think it will look like on vSAN? The following screenshot shows the storage adapter vmhba1 being used to connect to two vSAN devices. Both devices have names begin with “Local”. The storage adapter has 2 targets, 2 devices and 2 paths. If you are guessing it is 1:1 mapping among targets, devices and paths, you are right.
+What do you think it will look like on vSAN? The following screenshot shows the storage adapter vmhba1 being used to connect to two vSAN devices. Both devices have names begin with "Local". The storage adapter has 2 targets, 2 devices and 2 paths. If you are guessing it is 1:1 mapping among targets, devices and paths, you are right.
 
 We know vSAN is not part of Storage Fabric, so there is no need for Identifier, which is made of WWNN and WWPN.
 

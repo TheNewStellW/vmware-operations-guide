@@ -11,7 +11,7 @@ This dashboard is designed to complement the vSAN file services management provi
 
 ## How to Use
 
-Review the “**File Shares by Used Space and Latency**” heat map
+Review the "**File Shares by Used Space and Latency**" heat map
 
 -   It shows all the file shares in your environment.
 
@@ -19,7 +19,7 @@ Review the “**File Shares by Used Space and Latency**” heat map
 
 -   They are colored by latency. Pay attention to the box with red color.
 
-Review the “**vSAN Clusters with File Services enabled**” table
+Review the "**vSAN Clusters with File Services enabled**" table
 
 -   It lists all the vSAN clusters with file services enabled, giving a convenient view to see which clusters have these settings turned on.
 

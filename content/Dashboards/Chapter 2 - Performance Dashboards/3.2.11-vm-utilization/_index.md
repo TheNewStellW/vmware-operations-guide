@@ -46,5 +46,5 @@ Choose a VM from the table.
 See the Points to Note section of VM Contention dashboard as this dashboard is designed to complement it.
 
 Health chart is not used for these 2 reasons: 
-- Some utilization metrics do not have a “ceiling”, meaning we don't know what “high utilization” is, as 100% is hard to define. Example of such metrics are disk IOPS and network throughput.
+- Some utilization metrics do not have a "ceiling", meaning we don't know what "high utilization" is, as 100% is hard to define. Example of such metrics are disk IOPS and network throughput.
 - High utilization actually means good performance. 100% utilization is in fact perfect performance, as that means more work is being done.

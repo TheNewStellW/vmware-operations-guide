@@ -6,7 +6,7 @@ draft: false
 
 How do you know that the Infrastructure as a Service (IaaS) Platform (be it on-prem or in the cloud) is serving its workload *well*? If you depend on complaints, then you run a complaint-based operation.
 
-Changing from reactive to proactive is unfortunately a complex undertaking, especially in large organizations where there are many roles and personas. It requires [operations transformation](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/files/pdf/services/vmware-operations-transformation-services.pdf) and a paradigm shift. It is not easy to get customers to agree on a [Service Level Agreement](/operations-management/chapter-1-overview/1.1.7-service-level-agreement/) (SLA) when you've promised them “good” for years already. This book aims to provide practical guidance, something you can implement with the current version of vRealize products.
+Changing from reactive to proactive is unfortunately a complex undertaking, especially in large organizations where there are many roles and personas. It requires [operations transformation](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/files/pdf/services/vmware-operations-transformation-services.pdf) and a paradigm shift. It is not easy to get customers to agree on a [Service Level Agreement](/operations-management/chapter-1-overview/1.1.7-service-level-agreement/) (SLA) when you've promised them "good" for years already. This book aims to provide practical guidance, something you can implement with the current version of vRealize products.
 
 The litmus test below helps you assess the maturity of your IaaS.
 
@@ -46,7 +46,7 @@ Capacity is measured on utilization and performance. A cluster capacity is full 
 
 This is an indicator that you are operating as a System Builder as opposed to a Service Provider. As a System Builder, you are meddling with each System (read: Application). You size them and argue with the application team, who are actually your customers. You are busy as there are many applications and you are outnumbered.
 
-If you are operating as an internal [Cloud Service Provider](https://itlaw.wikia.org/wiki/Cloud_service_provider), You are not “in the way” of the business. You use an effective pricing model to drive the right behaviour. Does a public cloud provider block application teams when they buy 40 CPU [AWS EC2](https://aws.amazon.com/ec2/?ec2-whats-new.sort-by=item.additionalFields.postDateTime&ec2-whats-new.sort-order=desc) VMs when they only need 2 CPU? They don't, hence neither should you.
+If you are operating as an internal [Cloud Service Provider](https://itlaw.wikia.org/wiki/Cloud_service_provider), You are not "in the way" of the business. You use an effective pricing model to drive the right behaviour. Does a public cloud provider block application teams when they buy 40 CPU [AWS EC2](https://aws.amazon.com/ec2/?ec2-whats-new.sort-by=item.additionalFields.postDateTime&ec2-whats-new.sort-order=desc) VMs when they only need 2 CPU? They don't, hence neither should you.
 
 ### Does Troubleshooting mean all hands on deck?
 

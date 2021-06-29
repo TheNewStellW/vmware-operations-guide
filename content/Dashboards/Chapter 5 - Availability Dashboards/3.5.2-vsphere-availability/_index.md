@@ -40,7 +40,7 @@ Select a cluster from the above
 - The ESXi in the selected cluster table will be automatically filled up. For more context, you can add a property widget that lists the selected ESXi Host properties. 
 - The 'Connected to vCenter' and 'Maintenance State' columns are not the average values, as both are string. However, they display the last state in the selected period. This allows you to go back to a specific point in time and view availability at that point.
 
-About the “Datastore not available” list
+About the "Datastore not available" list
 ![](3.5.2-fig-3.png)
 
 - It filters to only those datastores with status powered off. This covers both local and shared datastore. To add context, consider adding extra column such as the data center where it resides, and the datastore type (e.g. NFS, VMFS)

@@ -5,7 +5,7 @@ draft: false
 weight: 70
 ---
 
-The “**Consumer \ Correct It?**” dashboard complements the main VM configuration dashboard by displaying the actual VMs, with their relevant information. It is designed for vSphere administrator and platform team, to facilitate the follow-up action with the VM owners. It is a part of 8 dashboards that check the environment for optimization opportunities.
+The "**Consumer \ Correct It?**" dashboard complements the main VM configuration dashboard by displaying the actual VMs, with their relevant information. It is designed for vSphere administrator and platform team, to facilitate the follow-up action with the VM owners. It is a part of 8 dashboards that check the environment for optimization opportunities.
 
 The dashboard is designed to focus on VMs that need attention. A list is used to keep it simple, and show actual objects. The list is easy to be tailored by filter and custom group. The list can also be exported for an offline discussion.
 

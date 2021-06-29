@@ -123,7 +123,7 @@ VM does generate CPU even though it's stuck at BIOS. We need a counter that show
 
 So we need to know if the Guest OS is up or down. We are expecting binary, 1 or 0. Can you see the challenge here?
 
-Yes, none of the counters above is giving you binary. Disk IOPS for example, can vary from 0.01 to 10000. The “sign of life” is not coming as binary.
+Yes, none of the counters above is giving you binary. Disk IOPS for example, can vary from 0.01 to 10000. The "sign of life" is not coming as binary.
 
 We need to convert them into 0 or 1. 0 is the easy part, as they will be 0 if they are down.
 

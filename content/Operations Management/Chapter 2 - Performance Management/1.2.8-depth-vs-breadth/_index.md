@@ -44,7 +44,7 @@ Proactive monitoring requires insights from more than one angle. When you hear t
 - How long did the problem last? Is there any pattern?
 - How many VMs are affected? Who else are affected? You want to gauge the breadth of the problem.
 
-Notice you did not ask “What's the _average_ performance?”. Obviously, average is too late in this case. By the time the average performance is bad, likely half the population is affected.
+Notice you did not ask "What's the _average_ performance?". Obviously, average is too late in this case. By the time the average performance is bad, likely half the population is affected.
 
 The answer to the 3rd question impacts the course of troubleshooting. Is the incident isolated or widespread? If it's isolated, then you will look at the affected object more closely. If it's a widespread problem then you'll look at common areas (e.g. cluster, datastore, resource pool, host) that are shared among the affected VMs.
 

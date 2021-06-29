@@ -19,4 +19,4 @@ Another equation for availability is a ratio of the Mean Time Between Failure (M
 
 ![MTBF equation](1.7.1-fig-3.png)
 
-The industry practice is to call out availability in terms of “nines”. For example, 99% availability is two nines, 99.99% is termed as four nines. In our example above, the system delivered 99.73% even though it was down for entire day!
+The industry practice is to call out availability in terms of "nines". For example, 99% availability is two nines, 99.99% is termed as four nines. In our example above, the system delivered 99.73% even though it was down for entire day!

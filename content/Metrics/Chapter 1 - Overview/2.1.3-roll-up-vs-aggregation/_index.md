@@ -53,7 +53,7 @@ Over a period of 20 seconds, a VM may accumulate different CPU Ready Time for ea
 
 Rolling up from 20 seconds to 5 minutes or higher results in further averaging, regardless whether the rollup technique is summation or average. This is the reason why it is better to use vRealize Operations than vCenter for data older than 1 day, as vCenter averages the data further, into a 0.5 hour average.
 
-Because the source data is based on 20-second, and vRealize Operations by default averages these data, the “100%” of any milisecond data is 20,000 ms, not 300,000 ms. When you see CPU Ready of 3000 ms, that's actually 15% and not 1%.
+Because the source data is based on 20-second, and vRealize Operations by default averages these data, the "100%" of any milisecond data is 20,000 ms, not 300,000 ms. When you see CPU Ready of 3000 ms, that's actually 15% and not 1%.
 
 By default, vRealize Operations takes data every 5 minutes. This means it is **not** suitable to troubleshoot performance that does not last for 5 minutes. In fact, if the performance issue only lasts for 5 minutes, you may not get any alert, because the collection could happen exactly in the middle of those 5 minutes. For example, let's assume the CPU is idle from 08:00:00 to 08:02:30, spikes from 08:02:30 to 08:07:30, and then again is idle from 08:07:30 to 08:10:00. If vRealize Operations is collecting at exactly 08:00, 08:05, and 08:10, you will not see the spike as it is spread over two data points. This means, for vRealize Operations to pick up the spike in its ***entirety*** without any idle data, the spike *may* have to last for 10 minutes.
 

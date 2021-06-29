@@ -31,6 +31,6 @@ Yup, it might be too sensitive. All it takes is 1 number out of 2304 metrics. If
 
 Take note that the most common approach is to take the _average_ utilization among all the 8 ESXi hosts in the cluster. So you lose the true peak, as each data point becomes an average. For the cluster to hit 80% average utilization, at least 1 ESXi host must have hit over 80%. That means you can't rule out the possibility that one host might hit near 100%.
 
-The same logic applies to a VM. If a VM with 64 vCPUs hits 90% utilization, some cores probably hit 100%. This method results in under-reporting as it takes an average of the “members” at any given moment, then take the peak across time (e.g. last 24 hours).
+The same logic applies to a VM. If a VM with 64 vCPUs hits 90% utilization, some cores probably hit 100%. This method results in under-reporting as it takes an average of the "members" at any given moment, then take the peak across time (e.g. last 24 hours).
 
-This “averaging issue” exists basically everywhere in monitoring, as it's the default technique when rolling up. For a more in-depth reading, look at [this](https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/) analysis by [Tyler Treat](https://bravenewgeek.com/about-me/).
+This "averaging issue" exists basically everywhere in monitoring, as it's the default technique when rolling up. For a more in-depth reading, look at [this](https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/) analysis by [Tyler Treat](https://bravenewgeek.com/about-me/).

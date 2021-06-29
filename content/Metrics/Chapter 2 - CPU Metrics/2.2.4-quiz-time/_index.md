@@ -5,7 +5,7 @@ draft: false
 weight: 40
 ---
 
-By now I hope you vrealize that the various “utilization” metrics in the 4 key objects (Guest OS, VM, ESXi and Cluster) varies. Each has their own unique behaviour. Because of this, you are right to assume that they do not map nicely across the stack. Let's test your knowledge with an example 😊
+By now I hope you vrealize that the various "utilization" metrics in the 4 key objects (Guest OS, VM, ESXi and Cluster) varies. Each has their own unique behaviour. Because of this, you are right to assume that they do not map nicely across the stack. Let's test your knowledge with an example 😊
 
 ## Guest OS
 
@@ -29,11 +29,11 @@ Review the following chart carefully. Zoom in if necessary.
 
 The vCenter chart[^1] above shows a VM utilization counters. It's a large VM with 24 vCPU running controlled CPU test. The power management is fixed so it run at nominal clock speed. This eliminates CPU frequency scaling factor.
 
-It starts at 50% “utilization”, with each vCPU pinned to a different physical core. It then slowly ramps up over time until it reached 100%.
+It starts at 50% "utilization", with each vCPU pinned to a different physical core. It then slowly ramps up over time until it reached 100%.
 
 Can you figure out why the three counters moved up differently? What do they measure?
 
-Now let's look at the impact on the parent ESXi. It only has a single VM, but the VM vCPU matches the ESXi physical cores. The ESXi starts at 50% “utilization”, then slowly ramp up over time until it reached 100%.
+Now let's look at the impact on the parent ESXi. It only has a single VM, but the VM vCPU matches the ESXi physical cores. The ESXi starts at 50% "utilization", then slowly ramp up over time until it reached 100%.
 
 ![Spiked utilisation](2.2.4-fig-3.png)
 
@@ -41,7 +41,7 @@ Can you figure out why the 3 counters moved up differently? What do they measure
 
 ## ESXi Utilization vs Contention
 
-ESXi “utilization” does not correlate to ESXi “contention”. The 4 highlighted area are examples where the metrics don't correlate, even go the opposite way in some of them. Can you guess why?
+ESXi "utilization" does not correlate to ESXi "contention". The 4 highlighted area are examples where the metrics don't correlate, even go the opposite way in some of them. Can you guess why?
 
 ![contention vs. utilisation](2.2.4-fig-4.png)
 

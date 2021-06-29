@@ -91,7 +91,7 @@ How do you prove to auditor that your templates have not been modified by unauth
 
 The good thing is there are only a few things you can change to a template. You can rename the template, change the permission, and convert it into a VM. All other changes require the template to be converted into a VM first. That means we can focus on this conversion.
 
-The vCenter logs the entry as “mark virtual machine as template” when you convert a VM into a template. When it is converted back to, it writes “mark as virtual machine”. So it's a matter of tracking these 2 entries.
+The vCenter logs the entry as "mark virtual machine as template" when you convert a VM into a template. When it is converted back to, it writes "mark as virtual machine". So it's a matter of tracking these 2 entries.
 
 ![](4.5.1-fig-18.png)
 

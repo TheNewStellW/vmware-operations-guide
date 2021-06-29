@@ -5,7 +5,7 @@ draft: false
 weight: 30
 ---
 
-Windows memory management is not something that is well explained. [Ed Bott](https://www.zdnet.com/meet-the-team/us/ed-bott/) sums it [this](http://www.zdnet.com/article/windows-7-memory-usage-whats-the-best-way-to-measure/) article by saying “Windows memory management is rocket science”. Like what Ed has experienced, there is conflicting information, including the ones from Microsoft. [Mark Russinovich](https://www.linkedin.com/in/markrussinovich/), cofounder of Winternals software, explains the situation in [this](https://blogs.technet.microsoft.com/markrussinovich/2008/11/17/pushing-the-limits-of-windows-virtual-memory/) TechNet post.
+Windows memory management is not something that is well explained. [Ed Bott](https://www.zdnet.com/meet-the-team/us/ed-bott/) sums it [this](http://www.zdnet.com/article/windows-7-memory-usage-whats-the-best-way-to-measure/) article by saying "Windows memory management is rocket science". Like what Ed has experienced, there is conflicting information, including the ones from Microsoft. [Mark Russinovich](https://www.linkedin.com/in/markrussinovich/), cofounder of Winternals software, explains the situation in [this](https://blogs.technet.microsoft.com/markrussinovich/2008/11/17/pushing-the-limits-of-windows-virtual-memory/) TechNet post.
 
 Available means exactly what the word means. It is the amount of physical memory immediately available for use. Immediately means Windows does not need to copy the existing page before it can be reused.
 
@@ -72,7 +72,7 @@ Cache is an integral part of memory management, as the more you cache, the lower
 
 ![Resource Monitor](2.3.3-fig-7.png)
 
-Linux and VMkernel also has its fair share of simplifying this information. This [Linux Ate My RAM](http://linuxatemyram.com/) documents it well. For ESXi, a common misperception is “we are short on RAM, but fine on CPU”, when it is actually the **other way around**. To prove it, check the performance counters for each cluster. You may see that the VMs have CPU performance while cluster CPU utilization is lower than cluster memory utilization.
+Linux and VMkernel also has its fair share of simplifying this information. This [Linux Ate My RAM](http://linuxatemyram.com/) documents it well. For ESXi, a common misperception is "we are short on RAM, but fine on CPU", when it is actually the **other way around**. To prove it, check the performance counters for each cluster. You may see that the VMs have CPU performance while cluster CPU utilization is lower than cluster memory utilization.
 
 ## Free
 
@@ -139,7 +139,7 @@ This tracks the currently committed virtual memory, although not all of them are
 
 **Commit Limit**: Commit Limit is physical RAM + size of the page file. Since the pagefile is normally configured to map the physical RAM, the Commit Limit tends to be 2x. Commit Limit is important as a **growing** value is an **early warning sign**. The reason is Windows proactively increases its **pagefile.sys** if it's under memory pressure.
 
-The pagefile is an integral part of Windows total memory, as explained by [Mark Russinovich](https://blogs.technet.microsoft.com/markrussinovich/2008/11/17/pushing-the-limits-of-windows-virtual-memory/) explains here. There is Reserved Memory, and then there is Committed Memory. Some applications like to have its committed memory in 1 long contiguous block, so it reserves a large chunk up front. Databases and JVM belong in this category. This reserved memory does not actually store meaningful application data or executable. Only when the application commits the page that it becomes used. Mark explains that “when a process commits a region of virtual memory, the OS guarantees that it can maintain all the data the process stores in the memory either in physical memory or on disk”.
+The pagefile is an integral part of Windows total memory, as explained by [Mark Russinovich](https://blogs.technet.microsoft.com/markrussinovich/2008/11/17/pushing-the-limits-of-windows-virtual-memory/) explains here. There is Reserved Memory, and then there is Committed Memory. Some applications like to have its committed memory in 1 long contiguous block, so it reserves a large chunk up front. Databases and JVM belong in this category. This reserved memory does not actually store meaningful application data or executable. Only when the application commits the page that it becomes used. Mark explains that "when a process commits a region of virtual memory, the OS guarantees that it can maintain all the data the process stores in the memory either in physical memory or on disk".
 
 Notice the word **on disk**. Yes, that's where the pagefile.sys comes in. Windows will use either the physical memory or the pagefile.sys.
 
@@ -185,7 +185,7 @@ vSphere Tools 10.3.5 provides the following counters:
 
 From the [kernel documentation](https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/commit/?id=34e431b0ae398fc54ea69ff85ec700722c9da773), the definition are:
 
-- “Cached includes memory that is not freeable as page cache, for example shared memory segments, tmpfs, and ramfs, and it does not include reclaimable slab memory, which can take up a large fraction of system memory on mostly idle systems with lots of files.”
+- "Cached includes memory that is not freeable as page cache, for example shared memory segments, tmpfs, and ramfs, and it does not include reclaimable slab memory, which can take up a large fraction of system memory on mostly idle systems with lots of files."
 - Available = An _estimate_ of how much memory is available for starting new applications, without swapping. Calculated from MemFree, SReclaimable, the size of the file LRU lists, and the low watermarks in each zone. The estimate takes into account that the system needs some page cache to function well, and that not all reclaimable slab will be reclaimable, due to items being in use. The impact of those factors will vary from system to system.
 - Buffers: Relatively temporary storage for raw disk blocks shouldn't get tremendously large (20MB or so)
 

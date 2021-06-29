@@ -16,7 +16,7 @@ Let's talk about out-of-box regulatory benchmarks. As mentioned earlier, vRealiz
 
 One interesting point to note, all of these benchmarks apply and work on the same set of objects, mostly vCenter, ESXi, VMs, Distributed Port Groups and Distributed Virtual Switch. You may ask if they work on the same environment with a similar security setting, then how are they different?
 
-These regulatory benchmarks are developed and certified by regulatory authorities aiming for specific use cases. Assume an ESXi host has 100 configurations to make. One of the benchmarks may need 60 of them to be configured, another may need another combination of 60 requirements. For example, assume one benchmark only requires the “root” password needs to be set with an expiry time. But another requires password complexity needs to be also set as per defined criteria.
+These regulatory benchmarks are developed and certified by regulatory authorities aiming for specific use cases. Assume an ESXi host has 100 configurations to make. One of the benchmarks may need 60 of them to be configured, another may need another combination of 60 requirements. For example, assume one benchmark only requires the "root" password needs to be set with an expiry time. But another requires password complexity needs to be also set as per defined criteria.
 
 You can apply all of the suggestions from all of the benchmarks and comply to all of them. The purpose of the compliance check is to certify to a regulatory benchmark so that everyone can be sure that the requirements are met. Without the compliance and certification only word of mouth needs to be trusted. The compliance to the benchmark provides the trust and authenticity.
 

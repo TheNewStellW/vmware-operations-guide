@@ -13,7 +13,7 @@ At the VM level, you can look at counters at the individual virtual disk level, 
 
 ![Virtual disk counters](2.4.2-fig-2.png)
 
-Use the **virtual disk** counters to see VMFS vmdk files, NFS vmdk files, and RDMs. However, you don't get data below the virtual disk. For example, if the VM has snapshot, the data does not know about it. Also, a VM typically has multiple virtual disks (OS drive, swap drive, data drive), so you need to add them manually if you use vCenter. In vRealize Operations, you use the “aggregate of all instances”.
+Use the **virtual disk** counters to see VMFS vmdk files, NFS vmdk files, and RDMs. However, you don't get data below the virtual disk. For example, if the VM has snapshot, the data does not know about it. Also, a VM typically has multiple virtual disks (OS drive, swap drive, data drive), so you need to add them manually if you use vCenter. In vRealize Operations, you use the "aggregate of all instances".
 
 Use the **datastore** counters to see VMFS and NFS, but not RDM. Because snapshots happen at Datastore level, the counter will include it. Datastore figures will be higher if your VM has a snapshot. You don't have to add the data from each virtual disk together as the data presented is already at the VM level. It also has the Highest Latency counter, which is useful in tracking peak latency.
 
