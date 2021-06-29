@@ -1,8 +1,13 @@
 # Commands used to clean text from Word
 
-Recursively searches through MD files and removes UTF-8 right-side curled apostrophes, also known as `xe2 x80 x99`
+Use this to search and replace characters in content directory:
 
 ```bash
-find . -type f -name "*.md" -print0 | xargs -0 sed -i '' "s/`printf "\xe2\x80\x99"`/'/g"
+find . -type f -name "*.md" -print0 | xargs -0 sed -i '' "s/<characters to remove>/<characters to insert>/g"
 ```
 
+Use this to identify all non-ascii characters
+
+```bash
+pcregrep -r --color='auto' -n '[^[:ascii:]]' .
+```
