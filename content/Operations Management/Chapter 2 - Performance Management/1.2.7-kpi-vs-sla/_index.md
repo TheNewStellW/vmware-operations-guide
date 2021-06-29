@@ -123,4 +123,4 @@ We repeat the calculation for each metric. The KPI is simply the average of the 
 
 In future, we can add _weighted average_, so you get a better leading indicator. The problem with a simple average is a single red can be outnumbered by many green, and the KPI will not show a problem.
 
-[^1]: You see, I'm not opposed to jargons 😊 so long they are actually used in live operations. If it's just a goal, then no need to label with jargon, else we have to create jargon for every single type of goals.
+[^1]: You see, I'm not opposed to jargons.  so long they are actually used in live operations. If it's just a goal, then no need to label with jargon, else we have to create jargon for every single type of goals.

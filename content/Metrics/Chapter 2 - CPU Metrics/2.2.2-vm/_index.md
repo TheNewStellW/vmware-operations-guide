@@ -281,7 +281,7 @@ Where **E** is the combination of:
 
 VMX is typically negligible. It accounts for CPU cycles spent on things like consoling to the VM. In esxtop, System time is charged to the VM VMX world.
 
-Because Used accounts for the actual frequency, you may expect it to be measured in GHz and not millisecond. Think of the number of cycles completed instead of simply frequency. You then convert it back to time. I know it requires a bit of mental mathematics 😊
+Because Used accounts for the actual frequency, you may expect it to be measured in GHz and not millisecond. Think of the number of cycles completed instead of simply frequency. You then convert it back to time. I know it requires a bit of mental mathematics. 
 
 Quiz:
 
@@ -350,7 +350,7 @@ Demand (MHz) and Usage (MHz) can exceed 100%. The following is a 32-vCPU hadoop 
 
 ![Hadoop](2.2.2-fig-31.png)
 
-Okay, now that you have some knowledge, let's test it 😊
+Okay, now that you have some knowledge, let's test it. 
 
 Quiz Time! Looking at the chart below, what could be causing it?
 
@@ -488,6 +488,6 @@ The formula I'd propose is Ready + CoStop + Overlap + Swap Wait + VM Wait.
 
 [^1]: Designing an OS for multiple hardware classes is hard. Notice Apple MacOS, iPhone OS, and iPad OS. Google has Android and ChromeOS.
 
-[^2]: Labelled as MLMTD in esxtop. That's Max Limited, not some Multi Level Marketing scam 😊
+[^2]: Labelled as MLMTD in esxtop. That's Max Limited, not some Multi Level Marketing scam. 
 
 [^3]: Asked to me by Valentin Bondzio in one of the VMworld where we got to meet. Those were the days!

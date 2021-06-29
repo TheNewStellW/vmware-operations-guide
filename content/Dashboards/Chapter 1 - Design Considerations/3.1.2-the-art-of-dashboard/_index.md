@@ -5,7 +5,7 @@ draft: false
 weight: 20
 ---
 
-To a few of us who love visualizing information with vRealize Operations, we see the dashboard as a canvas. Granted, the widgets have limitation but that's part of the art 😊
+To a few of us who love visualizing information with vRealize Operations, we see the dashboard as a canvas. Granted, the widgets have limitation but that's part of the art. 
 
 Creating dashboards is an art as you need to balance many conflicting requirements, such as:
 

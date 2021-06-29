@@ -35,7 +35,7 @@ In the case of virtual disk (as opposed to say memory), a VM can have many of th
 
 The next question is naturally why we picked the above 12. You notice they are only VM counters. No ESXi, Resource Pool, Datastore, Cluster, etc counters. The reason is the counters at these "higher-level" objects are mathematically an average of the VMs in the object. A datastore with 10 ms disk latency represents a normalized/weighted average of all the VMs in the datastore. Another word, these counters give less visibility than the 12 above, and they can be calculated from the 12. And 1 more reason: 
 
-You troubleshoot VM, not infrastructure. If there is no VM, there is no problem 😊
+You troubleshoot VM, not infrastructure. If there is no VM, there is no problem. 
 
 Among the 12 counters, you notice only 1 counter tracks *utilization*. The other 11 tracks *contention*. The reason is covered here. 
 

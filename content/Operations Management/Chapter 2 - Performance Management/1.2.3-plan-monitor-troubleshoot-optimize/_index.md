@@ -19,7 +19,7 @@ This is where you compare Plan vs Actual. That's why the goal must be clearly de
 
 #### Troubleshoot
 
-You do this when reality is worse than plan, or something amiss, not when there is a complaint. You want to take time in troubleshooting, so it's best done proactively. And quietly with no one rushing you for results 😊
+You do this when reality is worse than plan, or something amiss, not when there is a complaint. You want to take time in troubleshooting, so it's best done proactively. And quietly with no one rushing you for results. 
 
 #### Optimize
 

@@ -26,7 +26,7 @@ The second section of the dashboard displays configurations that are potentially
 The third section of the dashboard displays configurations that you may want to avoid. 
 - The six bar-charts focus on security, availability, and capacity settings that you can set as a standard. For example, you should consider enabling the NTP daemon for consistent time, which is critical for logging and troubleshooting.
 - The three tables list the actual ESXi hosts that are in a non-productive state. They can be in maintenance mode, powered off, or in a disconnected state.
-- BTW, I've modified the last one to show information, to show an example if that makes sense for your operations. I do not do it for the out of the box version as visually it will look awkward as the first 5 charts do not need it 😊
+- BTW, I've modified the last one to show information, to show an example if that makes sense for your operations. I do not do it for the out of the box version as visually it will look awkward as the first 5 charts do not need it. 
 
 The last part displays all the ESXi hosts in your environment. 
 - You can sort the columns and export the result into spreadsheet for further analysis.

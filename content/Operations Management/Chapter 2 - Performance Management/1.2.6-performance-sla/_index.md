@@ -11,7 +11,7 @@ I just tried it again on 14 March 2021. Google returned less than 20K results, w
 
 ![Google results screenshot](1.2.6-fig-1.png)
 
-I checked beyond the first 10 results. Other than my own articles, Google returned only a handful of relevant articles. The rest are not in fact relevant if you read them carefully. The relevant articles mention Performance SLA, but they do not define and quantify what a Performance SLA is. If something is not quantified, it is subjective. It's hard to reach formal agreement with customers quickly and consistently when the line is not clearly drawn. If you have a disagreement with your customers, especially paying customers, guess who wins 😊
+I checked beyond the first 10 results. Other than my own articles, Google returned only a handful of relevant articles. The rest are not in fact relevant if you read them carefully. The relevant articles mention Performance SLA, but they do not define and quantify what a Performance SLA is. If something is not quantified, it is subjective. It's hard to reach formal agreement with customers quickly and consistently when the line is not clearly drawn. If you have a disagreement with your customers, especially paying customers, guess who wins. 
 
 Availability SLA protects you when there is downtime. Performance SLA protects you when there is performance issue.
 
