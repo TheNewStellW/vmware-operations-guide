@@ -15,7 +15,7 @@ There are many examples of migration. Popular ones are:
 
 In the above, you typically change all infrastructure. New server, new network, new storage, new vSphere. You may virtualize network by adding NSX. You may also virtualize storage by going vSAN.
 
-Regardless, your Application Team do not and should not care. It's transparent to them. In fact, it should be better as You are using **faster & bigger hardware**. You have more CPU cores, faster RAM, faster storage, bigger network, less network hops, etc.
+Regardless, your Application Team do not and should not care. It's transparent to them. In fact, it should be better as You are using **faster & bigger hardware**. You have more CPU cores, faster RAM, faster storage, bigger network, less network hops, etc.
 
 And that's exactly where the problem might start.
 
