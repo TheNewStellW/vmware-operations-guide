@@ -23,7 +23,7 @@ And this is exactly how you should operate your environment. **Self-Driving Oper
 
 Probably everybody knows the impact automation has on the industry, not only since the invention of industrial robotics in the 50s and 60s of the last century.
 
-But why is automation important, what are the reasons behind introducing a technology which may be complex and cost intensive as it might appear at first sight?
+But why is automation important, what are the reasons behind introducing a technology which may be complex and cost intensive as it might appear at first sight?
 
 Yes, automation may indicate that you will need to invest time initially, and time means money. You are making a one-time invest or if you will, increasing your **CAPEX**.
 
@@ -47,7 +47,7 @@ Before we jump into the essentials of this chapter, let us take a quick look on 
 
 ![](4.6.1-fig-1.png "Components of an automated system")
 
-This is example of a closed is also called **closed-loop feedback control**. Another, less complex kind of automated system is shown in the next picture. It is a so called **open-loop control**.
+This is example of a closed is also called **closed-loop feedback control**. Another, less complex kind of automated system is shown in the next picture. It is a so called **open-loop control**.
 
 ![](4.6.1-fig-2.png "Open-loop control system")
 

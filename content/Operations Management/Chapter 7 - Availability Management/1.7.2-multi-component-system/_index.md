@@ -15,7 +15,7 @@ The availability of the overall system with multiple subcomponents in series is 
 
 ![Availability overall system](1.7.2-fig-1.png)
 
-Let's consider an example, in this scenario, we have three individual components in series with each other and has 99.9% availability each. The availability of overall system = `99.9 * 99.9 * 99.9 ≅ 99.7 %`
+Let's consider an example, in this scenario, we have three individual components in series with each other and has 99.9% availability each. The availability of overall system = `99.9 * 99.9 * 99.9 = ~99.7 %`
 
 ![Overall system flow](1.7.2-fig-2.png)
 
@@ -45,6 +45,6 @@ Let us consider a more practical system which has both serial and parallel compo
 
 First, we need to calculate the overall availability of the parallel components first. Using the above-mentioned formulas we see the overall availability of Application servers are 99.99% and Web Servers are 99.9999%.
 
-Next, we need to calculate the overall availability of the components in series. Applying the above-mentioned formula we get the overall availability as ≅ 99.89%.
+Next, we need to calculate the overall availability of the components in series. Applying the above-mentioned formula we get the overall availability of ~99.89%.
 
 This is the reason we avoid a single point of failure in series with other systems as such components reduces the overall availability.

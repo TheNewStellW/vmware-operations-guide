@@ -13,7 +13,7 @@ From the process' point of view, this technique provides a contiguous address sp
 
 Virtual Memory abstraction provides the possibility to overcommit. Linux may have 16 GB of physical RAM, but by using pagefile the total memory available to its processes can exceed 16 GB. The process is unaware what is backing its virtual address. It does not know whether a page is backed by Physical Memory or Swap File.
 
-With virtualization, VM adds another layer. So we actually have 4 layers from Process à Guest OS àVM à ESXi. Each of these layers have their own address space.
+With virtualization, VM adds another layer. So we actually have 4 layers from Process -> Guest OS -> VM -> ESXi. Each of these layers have their own address space.
 
 ![Memory allocation in hypervisor](2.3.1-fig-2.png)
 

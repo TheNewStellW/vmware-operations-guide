@@ -151,7 +151,7 @@ Will not suggest the reclamation if the CPU Reclaimable value < MHz Per Core val
 = total Capacity - recommended Size
 ```
 
-Must be ≥ 1 GB and the remaining capacity after reclamation should be ≥ 2 GB
+Must be => 1 GB and the remaining capacity after reclamation should be => 2 GB
 
 ## Reclamation Approach
 

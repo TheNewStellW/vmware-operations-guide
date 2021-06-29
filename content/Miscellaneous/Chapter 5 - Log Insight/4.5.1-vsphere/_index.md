@@ -97,7 +97,7 @@ The vCenter logs the entry as "mark virtual machine as template" when you conver
 
 ## vSphere Health
 
-In general, you know that you did a good job with your vSphere IaaS as the VM owners are happy with the performance of their VMs. The business is powered by the VMware infrastructure that you design and operate. However, there is a chance that the vSphere logs bear evidence of hidden issues which are not visible from the UI.
+In general, you know that you did a good job with your vSphere IaaS as the VM owners are happy with the performance of their VMs. The business is powered by the VMware infrastructure that you design and operate. However, there is a chance that the vSphere logs bear evidence of hidden issues which are not visible from the UI.
 
 As VMware professionals, we know vSphere well and probably have years of experience working with vSphere. We can architect, design, implement, upgrade, and troubleshoot it.
 

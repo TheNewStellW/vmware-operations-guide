@@ -63,12 +63,12 @@ I didn't know there was so much work! The demand for the role I took was apparen
 
 The downside is people expectation. I receive regular escalation and work closely with R&D. I have to produce a solution instead of relying on others. My work starts where the documentation ends. Now you know why I have to write 3 books. [Sunny](https://www.linkedin.com/in/duasunny/) has been a godsend for me. After intense discussion, we often come up with a solution that neither of us had originally considered.
 
-Another downside is global travel 🙁 It impacts my family, and certainly myself. The jet lag and long flight in economy is not good for my health, since I have autoimmune disease and low back pain. Controlling the schedule is important, else I could travel non-stop and only spend weekends at home. My travel schedule is practically full 3 months in advance. Again, folks are generally accommodating. I learn when we explain to folks openly why we can't be there (they are sponsoring my trip), they are willing to accommodate.
+Another downside is global travel. It impacts my family, and certainly myself. The jet lag and long flight in economy is not good for my health, since I have autoimmune disease and low back pain. Controlling the schedule is important, else I could travel non-stop and only spend weekends at home. My travel schedule is practically full 3 months in advance. Again, folks are generally accommodating. I learn when we explain to folks openly why we can't be there (they are sponsoring my trip), they are willing to accommodate.
 
 I travel alone most of the time. After doing the requested work by the hosting country, I'd go back to the hotel, eat a quick dinner alone then do my day job. If I have dinner with the local team, that means that day I can't do my day job. Coupled with being apart from my kids and family, loneliness is my friend.
 
 Travel can be sudden. I got a call to help a large customer on Thursday morning, and on Sunday I was already in the plane to see them. If you have young kids, this can be deal breaker. My 2 kids are big already, but my Mama at 81 needed care. When she passed away, I was overseas...
 
-Speaking of travel, gluten free is a challenge. I am allergic to both dairy and gluten, so keeping these 2 away is almost impossible when abroad. There is no easy solution today. Singapore Airlines changes the menu only every 3 months, so I know in advance exactly what I'm getting 🙂
+Speaking of travel, gluten free is a challenge. I am allergic to both dairy and gluten, so keeping these 2 away is almost impossible when abroad. There is no easy solution today. Singapore Airlines changes the menu only every 3 months, so I know in advance exactly what I'm getting. 
 
 I hope the sharing is useful for those who are thinking of taking a global role.

@@ -90,7 +90,7 @@ ESXi provides Run (ms), Used (ms), Demand (MHz) for VM CPU. vCenter adds Usage (
 
 ESXi shows Used (%), while vCenter shows Used (ms). The first one affected by CPU frequency and can go beyond 100%.
 
-#### ESXi ≠ VMs + VMkernel
+#### ESXi != VMs + VMkernel
 
 The counters at ESXi is more complex than the sum of its VM + VMkernel. The reason is there are additional parameters that must be taken into account. For example, the impact of CPU SMP (or Hyper Threading as Intel calls it) is not measured at the VM level. Be careful when summing VM counters and assume it's ESXi counter.
 

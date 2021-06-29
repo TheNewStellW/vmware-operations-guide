@@ -19,14 +19,14 @@ These also apply to vRealize Custom Data Center, vCenter and World objects.
 |----------------------|-----------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
 | Total Capacity (KB)  | Amount of physical memory configured on descendant ESXi hosts                                                                           | Sum (\[HostSystem\]Memory\|Total Capacity)                                               |
 | Usable Capacity (KB) | Amount of usable memory resources for VMs after considering reservations for vSphere High Availability (HA) and other vSphere Services. | Sum (\[Cluster\]Memory\|Usable Capacity)                                                 |
-| Workload (%)         |                                                                                                                                         | \[(Memory\|Machine Demand + Memory\|ESX System usage) / Memory\|Usable Capacity\] \* 100 |
+| Workload (%)         |                                                                                                                                         | \[(Memory\|Machine Demand + Memory\|ESX System usage) / Memory\|Usable Capacity\] \* 100 |
 
 ### Disk Space
 
 | Utilization (GB)    | Storage space utilized on connected vSphere Datastores        | Sum (\[Datastore\]Disk Space\|Utilization)                        |
 |---------------------|---------------------------------------------------------------|-------------------------------------------------------------------|
 | Total Capacity (GB) | Total Storage space available on connected vSphere Datastores | Sum (\[Datastore\]Disk Space\|Total Capacity)                     |
-| Workload (%)        |                                                               | \[(Disk Space\|Utilization)/(Disk Space\|Total Capacity)\] \* 100 |
+| Workload (%)        |                                                               | \[(Disk Space\|Utilization)/(Disk Space\|Total Capacity)\] \* 100 |
 
 ### CPU
 
@@ -34,9 +34,9 @@ These also apply to vRealize Custom Data Center, vCenter and World objects.
 |-------------------------------|--------------------------------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------|
 | Total Capacity (MHz)          | Amount of CPU resources configured on descendant ESXi hosts                                                                          | Sum (\[HostSystem\]CPU\|Total Capacity)                                          |
 | Usable Capacity (MHz)         | Amount of usable CPU resources for VMs after considering reservations for vSphere High Availability (HA) and other vSphere Services. | Sum (\[Cluster\]CPU\|Usable Capacity)                                            |
-| Overhead (MHz)                |                                                                                                                                      | Sum (\[HostSystem\]CPU\|Overhead)                                                |
-| Demand without overhead (MHz) |                                                                                                                                      | Sum (\[HostSystem\]CPU\|Demand without Overhead)                                 |
-| Workload (%)                  |                                                                                                                                      | \[(CPU\|Demand without overhead + CPU\|Overhead) / CPU\|Usable Capacity\] \* 100 |
+| Overhead (MHz)                |                                                                                                                                      | Sum (\[HostSystem\]CPU\|Overhead)                                                |
+| Demand without overhead (MHz) |                                                                                                                                      | Sum (\[HostSystem\]CPU\|Demand without Overhead)                                 |
+| Workload (%)                  |                                                                                                                                      | \[(CPU\|Demand without overhead + CPU\|Overhead) / CPU\|Usable Capacity\] \* 100 |
 
 ### Other Metrics
 

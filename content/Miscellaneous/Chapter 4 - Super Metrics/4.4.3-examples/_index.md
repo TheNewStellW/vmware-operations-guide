@@ -150,11 +150,11 @@ This formula uses the **$this**, a reference to the object itself. So the contex
 
 For completeness, let's do the same for memory. Since the default unit is KB, we would like to convert into GB.
 
-**If** the value of Recommended Memory to add  is 0,
+**If** the value of Recommended Memory to add  is 0,
 
 **then** Actual Recommended Memory = Provisioned memory - Recommended Memory to remove (as an Oversized VM),
 
-**else** Actual Recommended Memory = Provisioned Memory + Recommended Memory to add (as an Undersized VM)
+**else** Actual Recommended Memory = Provisioned Memory + Recommended Memory to add (as an Undersized VM)
 
 ```text
 (

@@ -7,9 +7,9 @@ weight: 40
 
 Wow, you made it to the end of the book. If you have read this far I certainly want to know more about you. So here is a bit about me.
 
-I was born in the beautiful island of [Lombok](http://www.lonelyplanet.com/indonesia/lombok)(Indonesia), grew up in Surabaya (Indonesia), studied in Australia, and since 1994 I live in Singapore.
+I was born in the beautiful island of [Lombok](http://www.lonelyplanet.com/indonesia/lombok)(Indonesia), grew up in Surabaya (Indonesia), studied in Australia, and since 1994 I live in Singapore.
 
-I graduated from [Bond University](https://bond.edu.au/) in 1994, then migrated to Singapore and started working in IT. I still remember that I carried [Apple Mac LC](https://en.wikipedia.org/wiki/Macintosh_LC) (yup, with the 12″ monitor) to Singapore in June 1994.
+I graduated from [Bond University](https://bond.edu.au/) in 1994, then migrated to Singapore and started working in IT. I still remember that I carried [Apple Mac LC](https://en.wikipedia.org/wiki/Macintosh_LC) (yup, with the 12" monitor) to Singapore in June 1994.
 
 First 9 years of my career was at the Application layer, doing business process innovation and application development. Lettuce Node, I mean Lotus Notus, was and is still dear to my heart.
 

@@ -36,7 +36,7 @@ The second difference with network is the resource that is given to a single VM 
 
 The third difference is that the hardware itself can provide different functionalities. 
 
-- For compute, you have servers. While they may have different form factors or specifications, they all serve the same purpose—to provide processing power and a set of working memory for hypervisor or VM. 
+- For compute, you have servers. While they may have different form factors or specifications, they all serve the same purpose-to provide processing power and a set of working memory for hypervisor or VM. 
 - For network, you have a variety of network services (firewall and load balancer) in addition to the basic network functionalities (switch, router, and gateway). You need to monitor all of them to get a complete picture. These functionalities can take the form of software or hardware.
 
 The fourth difference is the nature of network. 

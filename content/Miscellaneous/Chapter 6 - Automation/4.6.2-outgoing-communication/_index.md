@@ -87,7 +87,7 @@ The first version of the vRealize Operations Management Pack for vRealize Orches
 
 The ingredients for self-driving SDDC are:
 
--   vRealize Orchestrator instance. You can use a stand-alone vRealize Orchestrator or the instance deployed as part of the vRealize Automation installation.
+-   vRealize Orchestrator instance. You can use a stand-alone vRealize Orchestrator or the instance deployed as part of the vRealize Automation installation.
 
 -   vRealize Operations.
 
@@ -117,15 +117,15 @@ The generic **recipe** from use case to auto-remediation is almost always applic
 
 I am not going to describe the content of the workflow itself or how to code in vRealize Orchestrator. The focus is how to integrate any given workflow in vRealize Operations and let it execute automatically as part of the alert remediation.
 
-For our use case the vRealize Orchestrator workflow needs at least one input parameter to pass the vCenter VM object reference from vRealize Operations to vRealize Orchestrator. In the following picture you see a second input string parameter, vRealize Operations_alert_id. If this parameter is available, vRealize Operations will pass the internal alert ID to vRealize Orchestrator. This ID can be used for callbacks to retrieve more information from vRealize Operations. How to accomplish this will be part of the next subsection of this chapter.
+For our use case the vRealize Orchestrator workflow needs at least one input parameter to pass the vCenter VM object reference from vRealize Operations to vRealize Orchestrator. In the following picture you see a second input string parameter, vRealize Operations_alert_id. If this parameter is available, vRealize Operations will pass the internal alert ID to vRealize Orchestrator. This ID can be used for callbacks to retrieve more information from vRealize Operations. How to accomplish this will be part of the next subsection of this chapter.
 
 ![](4.6.2-fig-13.png "vRealize Orchestrator workflow and its input parameters")
 
 The workflow inputs, as for the current version of the solution, are:
 
--   vm as `VC:<Datatype>`, it will be populated with the object which triggered the alert.
+-   vm as `VC:<Datatype>`, it will be populated with the object which triggered the alert.
 
--   vRealize Operations_alert_id as String, it will be populated with the actual vRealize Operations alert ID for further callbacks.
+-   vRealize Operations_alert_id as String, it will be populated with the actual vRealize Operations alert ID for further callbacks.
 
 To make the workflows which you would like to use be available in vRealize Operations you need to follow a certain process. You can easily find the details on [my blog](http://thomas-kopton.de/vblog/).
 

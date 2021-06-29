@@ -7,7 +7,7 @@ weight: 20
 
 ## Step 1
 
-From the main menu, click Administration and in the left pane click Configuration à Super Metrics.
+From the main menu, click Administration and in the left pane click Configuration -> Super Metrics.
 
 Click on "Add" to start Super Metrics creation wizard.
 
