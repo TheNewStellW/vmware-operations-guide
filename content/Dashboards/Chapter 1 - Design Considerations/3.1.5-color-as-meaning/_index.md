@@ -9,7 +9,7 @@ It's easier to see color than read numbers, if the color has meaning. There are 
 
 Here is the color I recommend:
 
-##### Green –> Yellow –> Orange –> Red
+##### Green -> Yellow -> Orange -> Red
 Green means good, and gradually getting worse as it moves toward red.
 
 Typically used in performance monitoring and compliance.
