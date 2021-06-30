@@ -6,6 +6,7 @@ chapter: true
 ---
 
 ### Chapter 1
+
 # Design Considerations
 
 There are many considerations required in designing a suite of dashboards that tell a story.
