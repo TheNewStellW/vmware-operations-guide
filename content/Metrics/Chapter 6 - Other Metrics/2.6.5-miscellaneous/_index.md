@@ -13,7 +13,7 @@ Large objects such as vCenter also tend to host clusters that serves different p
 
 These also apply to vRealize Custom Data Center, vCenter and World objects.
 
-### Memory 
+### Memory
 
 | Utilization (KB)     | Memory utilization level based on descendant VMs utilization. Includes reservations, limits and overhead to run VMs                     | Sum (\[HostSystem\]Memory\|Utilization)                                                  |
 |----------------------|-----------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------|
@@ -55,6 +55,7 @@ One popular request among customers is we simplify our metrics and properties to
 - [vRealize Operations 7.0](https://kb.vmware.com/s/article/58843)
 
 Metrics and Properties can be deprecated or disabled for the following reasons:
+
 - They are rarely used and hence have been disabled. If you plan to use them, you can enable them.
 - They are duplicates. The replacement metric are provided.
 - They are not the right indicator of performance or capacity issues. We have provided replacement metrics and guidance on how you should interpret the results.

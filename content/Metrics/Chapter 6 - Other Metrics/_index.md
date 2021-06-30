@@ -6,8 +6,9 @@ chapter: true
 ---
 
 ### Chapter 6
+
 # Other Metrics
 
-This section covers metrics and properties beyond the core metrics covered in previous chapter. 
+This section covers metrics and properties beyond the core metrics covered in previous chapter.
 
 {{% children %}}

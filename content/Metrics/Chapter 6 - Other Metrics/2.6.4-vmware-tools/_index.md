@@ -7,9 +7,9 @@ weight: 40
 
 The following table explains the meaning of the value of Tools status property
 
-| Value	| Description|
+| Value | Description|
 | ----- | -----------|
-| Guest Tools Not Installed	| Tools are not installed on the VM. You should install it as you get both drivers and visibility|
+| Guest Tools Not Installed | Tools are not installed on the VM. You should install it as you get both drivers and visibility|
 | Current | Tools version matches with the Tools available with ESXi. Each ESXi has a version of Tools that comes with it. See this for the list. This is the ideal scenario|
 | Supported New | Newer than the ESXi VMware tools version, but it is supported|
 | Supported Old | The opposite of New. It is also supported. Even it is older by 0.0.1 is considered old. It does not have to far behind|
@@ -18,7 +18,7 @@ The following table explains the meaning of the value of Tools status property
 
 I covered the various counters used by Tools in their respective section. The following table provides a summary with their key and formula. ***Not all counters*** are exposed by Tools and vRealize Operations.
 
-If you notice a rare intermittent collection, check vmware.log of the VM. It could be that vmtoolsd daemon in Guest OS paused for a while, due to guest workload or other issue in Windows or Linux.
+If you notice a rare intermittent collection, check `vmware.log` of the VM. It could be that **vmtoolsd** daemon in Guest OS paused for a while, due to guest workload or other issue in Windows or Linux.
 
 ## Linux Memory Metrics
 
