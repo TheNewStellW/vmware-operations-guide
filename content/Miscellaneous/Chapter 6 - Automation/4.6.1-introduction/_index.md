@@ -29,33 +29,28 @@ Yes, automation may indicate that you will need to invest time initially, and ti
 
 What does it give you back? The answer is actually pretty easy:
 
--   Repetitive work does not have to be done manually anymore; you are reducing your **OPEX**
-
--   You free up time to focus on more **important** things for your **business**
-
--   Repetitive work is done the same way, following a **descriptive** procedure, eliminating human errors (except for the ones in your procedure)
-
--   It makes **auditing** easier or even possible in first place
-
--   It increases **productivity**, **reliability** and **performance**
-
--   Automation is work force multiplier
+- Repetitive work does not have to be done manually anymore; you are reducing your **OPEX**
+- You free up time to focus on more **important** things for your **business**
+- Repetitive work is done the same way, following a **descriptive** procedure, eliminating human errors (except for the ones in your procedure)
+- It makes **auditing** easier or even possible in first place
+- It increases **productivity**, **reliability** and **performance**
+- Automation is work force multiplier
 
 ## Basic Principles of Automation
 
 Before we jump into the essentials of this chapter, let us take a quick look on the typical ingredients of automated systems. The following picture shows the four basic elements comprising an automated system. **Controller**, **sensors**, **actors** and the **plant** build a closed loop.
 
-![](4.6.1-fig-1.png "Components of an automated system")
+![Components of an automated system](4.6.1-fig-1.png "Components of an automated system")
 
 This is example of a closed is also called **closed-loop feedback control**. Another, less complex kind of automated system is shown in the next picture. It is a so called **open-loop control**.
 
-![](4.6.1-fig-2.png "Open-loop control system")
+![Automated system components](4.6.1-fig-2.png "Open-loop control system")
 
 How does this translate to an environment managed by vRealize Operations? Let us start with the less complex example, the ingredients are at the end the same in both examples.
 
 As you can see in the next figure, some parts are easy to be mapped to components that you will find in your SDDC.
 
-![](4.6.1-fig-3.png "vRealize Operations in an open-loop control system")
+![Open Loop](4.6.1-fig-3.png "vRealize Operations in an open-loop control system")
 
 The *sensors* are our adapter instances collecting metrics and properties, the *controller* is vRealize Operations itself and the *plant* that we would like to control or automate is e.g., our vCenter instance managing ESXi hosts, VMs, Datastores etc.
 

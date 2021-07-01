@@ -11,49 +11,37 @@ Many years have passed since 2016, so I'd like to share the pros and cons of bot
 
 It's common for a global corporation to have 4 levels of geographic coverage:
 
--   Local: cover a city or a small country. In my case, it's just Singapore.
+- **Local**: cover a city or a small country. In my case, it's just Singapore.
+- **Regional**: cover a region or large country. In my case, it's ASEAN.
+- **Continent**: Asia Pacific, Europe, Africa, America
+- Global.
 
--   Regional: cover a region or large country. In my case, it's ASEAN.
-
--   Continent: Asia Pacific, Europe, Africa, America
-
--   Global.
-
-![](4.9.2-fig-1.png)
+![Global role diagram](4.9.2-fig-1.png)
 
 In a vendor environment (as opposed to end-user), there are 2 large primary teams:
 
--   Product team: develop the product.
+- Product team: develop the product.
+  - The sub-teams are: Product Management, R&D, QA, Sustaining, UX (focus on the UI), IX (focus on documentation).
+  - They focus on releasing the next big thing.
+- Field team: sell, implement, support the product.
+  - Sales, SE, Consulting, Technical Account Managers, Support, Education, Customer Success
+  - They focus on the quarterly target, closing large deals.
 
-    -   The sub-teams are: Product Management, R&D, QA, Sustaining, UX (focus on the UI), IX (focus on documentation).
-
-    -   They focus on releasing the next big thing.
-
--   Field team: sell, implement, support the product.
-
-    -   Sales, SE, Consulting, Technical Account Managers, Support, Education, Customer Success
-
-    -   They focus on the quarterly target, closing large deals.
-
-![](4.9.2-fig-2.png)
+![Field vs Product](4.9.2-fig-2.png)
 
 Of course, they are supported by many smaller & supporting teams, such as marketing, pricing, and CTO Office.
 
 I've never worked in Product Team, so when an opportunity arose, I took the leap of faith.
 
--   From Local to Global, bypassing ASEAN and Asia Pacific.
-
--   From Field to R&D. My boss no longer in Singapore, ASEAN and Pacific, but directly at our HQ in Palo Alto.
-
--   From generalist to specialist. I now do vR Ops full time. If this is not my passion, I'd have quit long time ago!
+- From Local to Global, bypassing ASEAN and Asia Pacific.
+- From Field to R&D. My boss no longer in Singapore, ASEAN and Pacific, but directly at our HQ in Palo Alto.
+- From generalist to specialist. I now do vR Ops full time. If this is not my passion, I'd have quit long time ago!
 
 I can say with confidence that it was generally a good decision, although it comes at a price. We all work for 3 reasons. I call them the 3M's of work:
 
--   Money. It pays the bills
-
--   Meaning. It has to fill your spirit, not just your pocket.
-
--   Merriment. It's gotta be fun, and you love your work.
+- Money. It pays the bills
+- Meaning. It has to fill your spirit, not just your pocket.
+- Merriment. It's gotta be fun, and you love your work.
 
 The job at the global level is harder, much harder. Instead of thinking for just 1 customer (my job was Account SE), or a few customers, I have to think of the world. While working on future versions, I have to think of current and previous versions that customers are still running. Brownfield is much harder than greenfield. I learned from the R&D team that there were many things to be considered before adding or removing a feature. The complexity makes the job meaningful. Life is short, and the journey is as important as the destination. I've never done product development before. Luckily, folks are kind and we got along well. I work with the R&D team in Armenia, Bangalore and Palo Alto. They have never, never asked me to accommodate their time zone. I'm truly grateful for that. Folks like [Monica](https://www.linkedin.com/in/msmonica/), [Chandra](https://www.linkedin.com/in/chandra-prathuri-a00167/), [Kameswaran](https://www.linkedin.com/in/ksubramz/) and of course my trusted partner-in-crime Sunny Dua provide a lot of coaching and guidance. I know the fact that their mentorship is critical.
 
@@ -69,6 +57,6 @@ I travel alone most of the time. After doing the requested work by the hosting c
 
 Travel can be sudden. I got a call to help a large customer on Thursday morning, and on Sunday I was already in the plane to see them. If you have young kids, this can be deal breaker. My 2 kids are big already, but my Mama at 81 needed care. When she passed away, I was overseas...
 
-Speaking of travel, gluten free is a challenge. I am allergic to both dairy and gluten, so keeping these 2 away is almost impossible when abroad. There is no easy solution today. Singapore Airlines changes the menu only every 3 months, so I know in advance exactly what I'm getting. 
+Speaking of travel, gluten free is a challenge. I am allergic to both dairy and gluten, so keeping these 2 away is almost impossible when abroad. There is no easy solution today. Singapore Airlines changes the menu only every 3 months, so I know in advance exactly what I'm getting.
 
 I hope the sharing is useful for those who are thinking of taking a global role.

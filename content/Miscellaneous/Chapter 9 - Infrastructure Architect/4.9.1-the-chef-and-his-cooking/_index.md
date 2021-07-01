@@ -7,9 +7,9 @@ weight: 10
 
 I see myself as an Infrastructure Architect. After almost a decade in application world, I entered the weird and wonderful world of enterprise IT infrastructure, starting as a presales with Sun Microsystems in 2003. My job titles, roles and departments have changed many times since then, but fundamentally it's about architecting enterprise infrastructure. My official role is a Product Manager for an operations management product, but I still see myself as the engineer doing the performance troubleshooting and reading logs.
 
-### The Chef and His Cooking
+## The Chef and His Cooking
 
-![](4.9.1-fig-1.jpg)
+![Stock photo of chef](4.9.1-fig-1.jpg)
 
 This is a story of the life of a VMware Admin that I shared as an impromptu presentation at our VMUG Singapore back in 2014 and it still resonates until today.
 
@@ -27,9 +27,8 @@ To me, the Chargeback model and the Service Tiering serve as Key Drivers to our 
 
 As shared, I see a chance for us to **step up** and **step out**.
 
--   Step out of the kitchen and network with your customers (the Application team). Educate and fix the problem at the source.
-
--   Step up from pure IT architecture to business architecture. Architect your pricing strategy and service tiering.
+- Step out of the kitchen and network with your customers (the Application team). Educate and fix the problem at the source.
+- Step up from pure IT architecture to business architecture. Architect your pricing strategy and service tiering.
 
 The good thing about pricing is... your benchmark is already set.
 

@@ -9,7 +9,7 @@ Performance ranks high in VDI operations so let's start with it. Horizon is a co
 
 One good way to answer is to begin with the end in mind. The purpose of DaaS is to provide acceptable user experience. To deliver that, there are 3 components (Edge, Network, Data Center) that must work well. Horizon is a client/server architecture, meaning it has a Horizon Client software that runs at the edge, talking via the network to a server agent software residing in the data center.
 
-![](4.8.4-fig-1.png)
+![Connectivity](4.8.4-fig-1.png)
 
 The client software does the screen rendering. Due to lack of contention and utilization metrics, we can't measure its performance. Some thin client or zero client has a tiny OS that support syslog.
 
@@ -19,15 +19,18 @@ The data center part is where the bulk of EUC component resides. This includes b
 
 The network part and the data center part are two independent parts, typically managed by different teams. You can have network problem without the data center problem, and vice versa. By separating them as separate KPI, you can see what kind of problems you have and do the necessary follow up. By combining them, you can potentially lose visibility as the good one can mask the bad one.
 
-Be mindful of the difference between the user has performance problem and the user causes performance problem.
+Be mindful of the difference between the **user has performance problem** and the **user causes performance problem**.
 
-<table><colgroup><col style="width: 10%" /><col style="width: 89%" /></colgroup><thead><tr class="header"><th><strong>Victim</strong></th><th><p>The user experiences problem.</p><p>Contention is high, utilization is low. Not getting work done, so productivity is impacted.</p><p>User is upset.</p></th></tr></thead><tbody><tr class="odd"><td><strong>Villain</strong></td><td><p>The user causes performance problem.</p><p>Utilization is very high. Contention is irrelevant in this case. The user may get a lot of work done.</p><p>Other users could be affected, so you are upset.</p></td></tr></tbody></table>
+| Duality of users |   | 
+| --- | --- |
+| **Victim** | The user experiences problem.<br />Contention is high, utilization is low. Not getting work done, so productivity is impacted.<br />User is upset.|
+| **Villain** | The user causes performance problem.<br />Utilization is very high. Contention is irrelevant in this case. The user may get a lot of work done.<br />Other users could be affected, so you are upset.|
 
 ## Network KPI
 
 This is easier to measure as it has fewer metrics and only has 1 type of resource.
 
-![](4.8.4-fig-2.png)
+![KPI](4.8.4-fig-2.png)
 
 The latency is measured at PCoIP or Blast protocol layer, not TCP/UDP layer. Upper layer is more accurate as we can have packet loss at application-layer but Windows sees no dropped packet. The reason was the packet arrives out of order and hence unusable from Horizon viewpoint.
 
@@ -43,11 +46,14 @@ The session network utilization is not part of the KPI as we can't put the value
 
 The DC KPI depends on the types of object. A user can have VDI Session or RDS Session, served by VDI Pool and RDS Farm respectively.
 
-<table><colgroup><col style="width: 14%" /><col style="width: 85%" /></colgroup><thead><tr class="header"><th><strong>VDI Session</strong></th><th>It has contention metrics. As it's Windows OS running on a vSphere VM, it has metrics from both layers.</th></tr></thead><tbody><tr class="odd"><td><strong>RDS Session</strong></td><td><p>It does not have contention metrics. It only has utilization metrics and they cannot be used to determine if a user experience degrades.</p><p>This applies to both application session and desktop session. As a result, the KPI is taken from the RDS Host, which is a server VM serving many users concurrently. The drawback is RDS Host does not provide visibility into the performance of each session.</p></td></tr></tbody></table>
+| KPI | Consideration |
+| --- | --- |
+| **VDI Session** | It has contention metrics. As it’s Windows OS running on a vSphere VM, it has metrics from both layers.|
+| **RDS Session** | It does not have contention metrics. It only has utilization metrics and they cannot be used to determine if a user experience degrades.<br />This applies to both application session and desktop session. As a result, the KPI is taken from the RDS Host, which is a server VM serving many users concurrently. The drawback is RDS Host does not provide visibility into the performance of each session.|
 
 Since both RDS Host and VDI Session is basically a Window VM, we are using the same KPI. Other than RDSH specific counter such as [this one](https://docs.microsoft.com/en-us/windows-server/remote/remote-desktop-services/rds-rdsh-performance-counters), there is no application level specific counters to measure contention. vRealize Operations uses the following counters and threshold to form the KPI.
 
-![](4.8.4-fig-3.png)
+![Counters](4.8.4-fig-3.png)
 
 The counters above are layered into 4, matching the layer used in performance troubleshooting. Look at the contention metrics first, then the utilization type.
 
@@ -71,7 +77,7 @@ Now that we have the DC KPI and Network KPI at the smallest object, we can roll 
 
 Using the above as the foundation, we can build the KPI at higher level object. Here is how we do it.
 
-![](4.8.4-fig-4.png)
+![Rollup](4.8.4-fig-4.png)
 
 Each VDI session has 2 KPI: Network KPI and Data Center KPI.
 
@@ -91,7 +97,7 @@ The KPI for higher level objects cannot be the average of Pod KPI, as Pod is bas
 
 `Horizon World DC KPI = Average (VDI Pool DC KPI, RDS Farm DC KPI)`
 
-We do not include the Horizon server infrastructure at the KPI level. The reason is they are supporting metrics. They do *not* directly measure the user experience as none of their counters are session-specific. This is an example where we're being careful in choosing KPI. Each KPI is ideally a primary metric, directly measuring the session performance. If you include supporting metrics, you can get false positive or false negative.
+We do _not_ include the Horizon server infrastructure at the KPI level. The reason is they are supporting metrics. They do *not* directly measure the user experience as none of their counters are session-specific. This is an example where we're being careful in choosing KPI. Each KPI is ideally a primary metric, directly measuring the session performance. If you include supporting metrics, you can get false positive or false negative.
 
 ## Leading Indicator
 
@@ -99,35 +105,27 @@ We covered in Part 1 Chapter 2 Performance Management that you need a leading in
 
 A Pod can have thousands of sessions, so how do you roll up?
 
--   Each session has a KPI (%). This is a balanced approach, so we can take its value.
+- Each session has a KPI (%). This is a balanced approach, so we can take its value.
+- At Farm or Pool level, if you take the worst among sessions, the value may be bad most of the time. A better way is to take the 95th percentile, and then complement with a count of sessions in the red.
+- At Pod level, take the same approach, which is 95th percentile, complemented with a count of sessions in the red
 
--   At Farm or Pool level, if you take the worst among sessions, the value may be bad most of the time. A better way is to take the 95th percentile, and then complement with a count of sessions in the red.
-
--   At Pod level, take the same approach, which is 95th percentile, complemented with a count of sessions in the red
-
-![](4.8.4-fig-6.png)
+![Roll up and indicator](4.8.4-fig-5.png)
 
 Using the above, here are the KPI metrics we have at the top level
 
--   95th Percentile Pod DC KPI = 95th Percentile of all its (Farm KPIs, Pool KPIs) values
-
--   95th Percentile World DC KPI. Identical formula to Pod, so expect this to be lower than the average of all pods
-
--   95th Percentile Pod Network KPI. Same approach with DC KPI, but obviously using Network KPI as input.
-
--   95th Percentile World Network KPI. You got the idea.
+- 95th Percentile Pod DC KPI = 95th Percentile of all its (Farm KPIs, Pool KPIs) values
+- 95th Percentile World DC KPI. Identical formula to Pod, so expect this to be lower than the average of all pods
+- 95th Percentile Pod Network KPI. Same approach with DC KPI, but obviously using Network KPI as input.
+- 95th Percentile World Network KPI. You got the idea.
 
 Yes, just 2 each for Pod and World, and 2 each for DC and Network. You need to keep it minimum so it's easier to see over time.
 
 At the Farm and Pool level, it's the same approach.
 
--   95th Percentile Farm DC KPI = 95th Percentile of all its RDS Hosts DC KPI values
-
--   95th Percentile Farm Network KPI. Same approach with DC KPI, but obviously using Network KPI as input.
-
--   95th Percentile Pool DC KPI. Same approach with RDS Farm, but obviously using VDI Session DC KPI as input.
-
--   95th Percentile Pod Network KPI. You got the idea.
+- 95th Percentile Farm DC KPI = 95th Percentile of all its RDS Hosts DC KPI values
+- 95th Percentile Farm Network KPI. Same approach with DC KPI, but obviously using Network KPI as input.
+- 95th Percentile Pool DC KPI. Same approach with RDS Farm, but obviously using VDI Session DC KPI as input.
+- 95th Percentile Pod Network KPI. You got the idea.
 
 Now that we have the KPI, let's look at the Horizon objects one by one, starting with the smallest/lowest one. We will also include all other performance metrics to complete the picture. To keep the list short and topic manageable, we will not include non performance metrics and properties. We will cover them separately.
 
@@ -137,9 +135,17 @@ Horizon is one of the largest applications in a company, as it can span thousand
 
 Take time to profile your actual environment while it's healthy so you have a baseline.
 
-We cover the profiling technique earlier in [Part 1 Chapter 2](#baseline-profiling). Specific for Horizon, you should profile the following counters.
+We cover the profiling technique earlier in [Part 1 Chapter 2](/operations-management/chapter-2-performance-management/1.2.10-baseline-profiling/). Specific for Horizon, you should profile the following counters.
 
-<table><colgroup><col style="width: 28%" /><col style="width: 71%" /></colgroup><tbody><tr class="odd"><td>RDS Session</td><td><p>Disk IOPS</p><p>Frame Rate</p></td></tr><tr class="even"><td>RDS Host</td><td><p>CPU Queue</p><p>CPU Context Switch</p><p>Memory Page-in Rate</p><p>Disk Queue</p><p>Disk Outstanding IO</p><p>Read IOPS and Write IOPS. Profile them side by side, and compare both against expectation.</p><p>CPU Usage and Memory Usage. Compare against plan.</p></td></tr><tr class="odd"><td>RDS Farm</td><td><p>Read IOPS and Write IOPS. Profile them side by side, and compare against expectation.</p><p>CPU Usage in MHz. Make sure this number is within what the cluster can provide. Check the average does not exceed your sizing.</p></td></tr><tr class="even"><td>VDI Session</td><td>Same sets of metrics as RDS Host, as both are just VMs. You need to profile separately as your desktop pattern may differ to your server.</td></tr><tr class="odd"><td>VDI Pool</td><td>Same sets of metrics as RDS Farm, as both are just collection of VMs.</td></tr><tr class="even"><td><p>Connection Server</p><p>(and other Horizon servers)</p></td><td><p>Same sets of metrics as RDS Host. You need to profile separately as their pattern may differ. The profiling will also be useful after a major upgrade. For examples</p><ul><li><p>If the new version is supposed to deliver 10% performance improvement, does the reality support it?</p></li><li><p>If the new version delivers 2x scalability but at cost of 1.5x footprint, what do you actually get in your own environment? The lab may not be identical to your real world situation.</p></li></ul></td></tr><tr class="odd"><td>Horizon World</td><td><p>Disk IOPS. Make sure this number is within what your storage subsystem can handle.</p><p>Network Bandwidth. Make sure this number is well within what your WAN link can handle, as majority of traffic is non-protocol traffic.</p></td></tr></tbody></table>
+| Object | Counters |
+| --- | --- |
+| **RDS Session** | Disk IOPS<br />Frame Rate |
+| **RDS Host** | CPU Queue<br />CPU Context Switch<br />Memory Page-in Rate<br />Disk Queue<br />Disk Outstanding IO<br />Read IOPS and Write IOPS. Profile them side by side, and compare both against expectation.<br />CPU Usage and Memory Usage. Compare against plan.|
+| **RDS Farm** | Read IOPS and Write IOPS. Profile them side by side, and compare against expectation.<br />CPU Usage in MHz. Make sure this number is within what the cluster can provide. Check the average does not exceed your sizing.|
+| **VDI Session** | Same sets of metrics as RDS Host, as both are just VMs. You need to profile separately as your desktop pattern may differ to your server. |
+| **VDI Pool** | Same sets of metrics as RDS Farm, as both are just collection of VMs.|
+| **Connection Server** | Same sets of metrics as RDS Host. You need to profile separately as their pattern may differ. The profiling will also be useful after a major upgrade. For example:<br /><ul><li>If the new version is supposed to deliver 10% performance improvement, does the reality support it?<br /><li>If the new version delivers 2x scalability but at cost of 1.5x footprint, what do you actually get in your own environment? The lab may not be identical to your real world situation.</ul>|
+| **Horizon World** | Disk IOPS. Make sure this number is within what your storage subsystem can handle.<br />Network Bandwidth. Make sure this number is well within what your WAN link can handle, as majority of traffic is non-protocol traffic. |
 
 As part of the baselining, you will know the typical size of a session, a user, an RDS Host. They form the building block for your sizing. Compare these numbers against the numbers you put in your sizing document (during the time you architected the system). If the reality is higher, you need to revise your plan and buy additional hardware.
 
@@ -191,15 +197,11 @@ Next, check if there is a problem outside Windows, meaning at the VM or below.
 
 For Network, check the protocol metrics. Note they are implemented at RDS Farm level, because RDS Hosts in a farm are meant to be uniformed. Meaning you should not be changing the setting of individual host, because they come from the same master.
 
--   Protocol Latency (ms)
-
--   Protocol Packet Loss Receive (%)
-
--   Protocol Packet Loss Transmit (%)
-
--   Worst Time taken to logon
-
--   Worst Time taken to load profile
+- Protocol Latency (ms)
+- Protocol Packet Loss Receive (%)
+- Protocol Packet Loss Transmit (%)
+- Worst Time taken to logon
+- Worst Time taken to load profile
 
 ### Utilization Metrics
 

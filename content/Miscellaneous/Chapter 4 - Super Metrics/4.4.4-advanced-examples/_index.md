@@ -29,7 +29,7 @@ Recall in the KPI that you typically have metrics with different units and range
 
 Let's say you have the following metrics that you want to combine into a single KPI
 
-![](4.4.4-fig-1.png)
+![Weighted KPI table](4.4.4-fig-1.png)
 
 For each metric, you have established the range for each color.
 
@@ -39,11 +39,11 @@ Super metric does not have a Case statement, so we have to use nested IF. The lo
 
 ```text
 If it's in the green range
-then calculate for green range
+    then calculate for green range
 else if it's in the yellow range
-then calculate for yellow range
+    then calculate for yellow range
 else if in the orange range
-then calculate for orange range
+    then calculate for orange range
 else calculate for red range
 ```
 
@@ -93,7 +93,7 @@ Sum ([
 
 Once you have the above 2 sets, it's a matter of dividing one over the other. The following shows part of the logic, as I want to focus on the 2 sum statements.
 
-![](4.4.4-fig-2.png)
+![Logic example](4.4.4-fig-2.png)
 
 Pretty cool isn't it? If you agree, send your thanks to [Gautam Kumar](https://www.linkedin.com/in/gautam-kumar-b4036867/) and [Artavazd Amirkhanyan](https://www.linkedin.com/in/artavazdamirkhanyan/).
 
@@ -101,11 +101,11 @@ Pretty cool isn't it? If you agree, send your thanks to [Gautam Kumar](https://w
 
 **Use Case:** calculate the VM uptime within the 5-minute collection cycle.
 
-This particular super metric wasn't fully implemented in the product due to the false positive from the raw vCenter counter that was discovered during validation. So I'm providing as an example of what you can do with super metric.
+This particular super metric wasn't fully implemented in the product due to the false positive from the raw vCenter counter that was discovered during validation. So I'm providing as an **example** of what you can do with super metric.
 
 The up time of a VM is more complex than that of a physical machine. Just because the VM is powered on, does not mean the Guest OS is up and running. The VM could be stuck at BIOS, Windows hits BSOD or Guest OS simply hang. This means we need to check the Guest OS. If we have VMware Tools, we can check for heartbeat. But what if VMware Tools is not running or not even installed? Then we need to check for sign of life. Does the VM generate network packets, issue disk IOPS, consume RAM?
 
-Another challenge is the frequency of reporting. If you report every 5 minutes, what if the VM was rebooted within that 5 minutes, and it comes back up before the 5<sup>th</sup> minute ends? You will miss that fact that it was down within that 5 minutes!
+Another challenge is the frequency of reporting. If you report every 5 minutes, what if the VM was rebooted within that 5 minutes, and it comes back up before the 5th minute ends? You will miss that fact that it was down within that 5 minutes!
 
 From the above, we can build a logic:
 
@@ -129,9 +129,8 @@ We need to convert them into 0 or 1. 0 is the easy part, as they will be 0 if th
 
 I'd take Network Usage as example.
 
--   What if Network Usage is >1? We can use Min (Network Usage, 1) to return 1.
-
--   What if Network Usage is <1? We can use Round up (Network Usage, 1) to return 1.
+- What if Network Usage is >1? We can use Min (Network Usage, 1) to return 1.
+- What if Network Usage is <1? We can use Round up (Network Usage, 1) to return 1.
 
 So we can combine the above formula to get us 0 or 1.
 
@@ -141,14 +140,14 @@ If the up time is >300 seconds then return 300 else return it as it is.
 
 Let's now put the formula together. Here is the logical formula:
 
-![](4.4.4-fig-3.png)
+![Uptime calculation](4.4.4-fig-3.png)
 
 Can you write the above formula differently? Yes, you can use If Then Else. I do not use it as it makes the formula harder to read. It's also more resource intensive.
 
 Let's translate the above into a pseudcode.
 
-![](4.4.4-fig-4.png)
+![Pseudocode](4.4.4-fig-4.png)
 
 Lastly, here is what it looks like in actual code. I've optimized the last bit to **/3**. No point multiply by 100 then divide by 300.
 
-![](4.4.4-fig-5.png)
+![Final code example](4.4.4-fig-5.png)

@@ -9,7 +9,7 @@ A critical foundation in managing a mission critical VDI is the object model. Th
 
 vRealize Operations 8.4 sports a new adapter, replacing the previous adapter (called V4H). It sports a revamped object model, blending vSphere and Horizon objects as one traversal path, as shown in the following diagram.
 
-![](4.8.3-fig-1.png)
+![Object Model](4.8.3-fig-1.png)
 
 The object model introduces a new super parent object called Horizon World, to make dashboard creation easier and support cloud provider who provides Horizon as a service.
 
@@ -25,10 +25,10 @@ The following shows an example of how the implementation is vrealized. Notice ho
 
 The interwoven hierarchy is required for summarizing information.
 
-![](4.8.3-fig-2.png)
+![vSphere and Horizon integration](4.8.3-fig-2.png)
 
 Notice the farm name Site02-Fram. Why is it directly under a Pod?
 
 The answer is it's a manual farm. The hierarchy is aware that you can have manual pool across vCenter and will show it accordingly.
 
-![](4.8.3-fig-3.png)
+![Farm details](4.8.3-fig-3.png)

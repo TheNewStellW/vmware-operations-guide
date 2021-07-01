@@ -21,7 +21,7 @@ My email is e1@vmware.com and mobile is +65.9119.9226.
 
 You can see more of my works on the Internet. Google has somehow tracks it
 
-![](4.9.4-fig-1.png)
+![Google search for Iwan](4.9.4-fig-1.png)
 
 ## Operationalize Your World
 

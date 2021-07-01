@@ -9,7 +9,7 @@ As VMware continued to make acquisitions and drive organic growth, the infrastru
 
 Simultaneously, challenges with configuration and tool management started to build up. The increased complexity of our infrastructure landscape and growing demand for modern, proactive features such as dashboards, reports, rich historical data, and real-time monitoring made it clear that the existing tooling was no longer adequate.
 
-## Challenges 
+## Challenges
 
 VMware IT Tools Team, are responsible for Availability, Performance and Automate the monitoring to cover IT Infrastructure monitoring space. We were running various tools for silo and legacy monitoring since we don't have a tool to cover proactive and End-to-End monitoring. Its lead into operation over-ahead and more Opex cost.
 
@@ -23,7 +23,7 @@ VMware IT recognized the need to move from traditional monitoring to a more mode
 
 VMware IT use vRealize Operations Manager for our infrastructure monitoring to gain application-to-storage visibility across physical, virtual, and cloud infrastructures. We can now investigate and solve complex technical issues faster because of the more precise analytics provided by vRealize Operations. Once the vCenters are identified and plugged in, all components under the purview of each vCenter get automatically monitored during the lifecycle of the component.
 
-![](4.7.1-fig-1.png)
+![Steps to follow](4.7.1-fig-1.png)
 
 ## Migration Preparation
 
@@ -35,19 +35,15 @@ In vRealize Operations we used the "delay" feature to set alert timeframes accor
 
 We wrote several scripts based on the vRealize Operations API to automate steps to configure the monitoring tool.
 
--   Simplified the migration of 4,000 plus devices
-
--   Separate devices by operating system (OS)
-
--   Group and map them according to specific policies
-
--   Attach objects and devices to service owners
-
--   Create remote checks for critical items mapped to container tags
+- Simplified the migration of 4,000 plus devices
+- Separate devices by operating system (OS)
+- Group and map them according to specific policies
+- Attach objects and devices to service owners
+- Create remote checks for critical items mapped to container tags
 
 Once we completed writing these scripts, it was time to launch the migration of devices from the current tool to vRealize Operations.
 
-![](4.7.1-fig-2.png)
+![Monitoring Config Process](4.7.1-fig-2.png)
 
 We have many objects being monitored and it's challenging to know who is responsible to remediate/action upon the alerts. To simplify this, we have introduced [IMSET](https://flings.vmware.com/vrealize-operations-rest-notifications-helper), an external service to accomplish these requirements.
 

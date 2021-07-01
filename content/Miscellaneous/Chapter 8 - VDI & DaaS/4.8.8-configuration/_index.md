@@ -5,7 +5,7 @@ draft: false
 weight: 80
 ---
 
-Consistent configuration is important in DaaS, which is made of many softwares (Horizon, vSphere, NSX, vSAN, physical network, client, etc.). We're following the configuration dashboard best practices set in [Part 3 Chapter 1 Design Consideration](#design-consideration).
+Consistent configuration is important in DaaS, which is made of many softwares (Horizon, vSphere, NSX, vSAN, physical network, client, etc.). We're following the configuration dashboard best practices set in [Part 3 Chapter 1 Design Consideration](/dashboards/chapter-1-design-considerations/).
 
 | **Incorrect Configuration**   | Address settings that are incorrect, insecure, not following your corporate standards or against Horizon best practice.                                                                   |
 |-------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -15,24 +15,24 @@ Consistent configuration is important in DaaS, which is made of many softwares (
 
 While the server-side is under your control as Horizon administrator, the client-side depends on users cooperation. Using a pie chart, you can see what are the most common type of client, and their version of Horizon client software.
 
-![](4.8.8-fig-1.png)
+![Horizon Client Configuration](4.8.8-fig-1.png)
 
 At the server-side, ensure your Horizon agents software are up to date.
 
-![](4.8.8-fig-2.png)
+![Agent Versions](4.8.8-fig-2.png)
 
 The agents reporting version 0 - 0 could be test agent. Don't worry about them.
 
 The simplest form of configuration widget is a table that lists the settings you're interested. The following shows an example for VDI Pool.
 
-![](4.8.8-fig-3.png)
+![VDI Pool configuration](4.8.8-fig-3.png)
 
 And here is the example for RDS Farm
 
-![](4.8.8-fig-4.png)
+![RDS Farm configuration](4.8.8-fig-4.png)
 
 For Connection Servers, consider checking the following. Group them by the Pod, as the servers within a pod should be consistent.
 
-![](4.8.8-fig-5.png)
+![Connection Server configuration](4.8.8-fig-5.png)
 
 If performance matters, check the power management of ESXi Host. For the clusters hosting the actual sessions, set it to high performance, and not balanced.

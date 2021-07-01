@@ -13,77 +13,77 @@ To see all the vCenter events, all we need is to select a built-in variable call
 
 From the following chart, we can see there are steady stream of events every 10 minutes. You can change the data granularity.
 
-![](4.5.1-fig-1.png)
+![Steady stream](4.5.1-fig-1.png)
 
 We can see actual event names by changing into a table. We can sort it to show the top events if required.
 
-![](4.5.1-fig-2.png)
+![Events](4.5.1-fig-2.png)
 
-We are interested in events impacting our consumer (VMs), so let's filter it out. The filter is vim25.vm\* as that is what vCenter shows in its log as we can see from the above table. I did not know that vCenter uses **vim25.vm**\*, but looking at the table above I could make an educated guess.
+We are interested in events impacting our consumer (VMs), so let's filter it out. The filter is `vim25.vm*` as that is what vCenter shows in its log as we can see from the above table. I did not know that vCenter uses `vim25.vm`, but looking at the table above I could make an educated guess.
 
-![](4.5.1-fig-3.png)
+![Filter](4.5.1-fig-3.png)
 
 Once the above filter is set, I rerun the search and get all events impacting VM.
 
-![](4.5.1-fig-4.png)
+![Results of filter](4.5.1-fig-4.png)
 
 Let's zoom into one of the events. Let's say we're interested in VM configuration event and want to know what exactly was changed. So let's zoom into that event and group it by the user who changed it. We get the following chart, showing the user in the legend.
 
-![](4.5.1-fig-5.png)
+![Result Zoom](4.5.1-fig-5.png)
 
 You can group the data by VM name to see which VM were changed when. I've cropped the VM name in the legend.
 
-![](4.5.1-fig-6.png)
+![Grouping](4.5.1-fig-6.png)
 
 You can see the result in tabular format. You have the VM name, user name and additional context such as the parent ESXi host at the time of the change.
 
-![](4.5.1-fig-7.png)
+![Tabular results](4.5.1-fig-7.png)
 
 Last but not least, you can see the actual change, as higlighted in green.
 
-![](4.5.1-fig-8.png)
+![Results of change](4.5.1-fig-8.png)
 
 ## vCenter Tasks Analysis
 
 To see all the vCenter Tasks, all we need is to select a built-in variable called VC Task Type. A log entry that has this field exist will appear.
 
-![](4.5.1-fig-9.png)
+![Task analysis](4.5.1-fig-9.png)
 
 We can see that there is a regular stream of events throughout the day. The pattern looks normal.
 
-![](4.5.1-fig-10.png)
+![Event Stream](4.5.1-fig-10.png)
 
 Let's show the top tasks by showing the result in table format.
 
-![](4.5.1-fig-11.png)
+![Table Format](4.5.1-fig-11.png)
 
 To zoom into any of the tasks, we specify the task name. I only specify one below, but it can take multiple.
 
-![](4.5.1-fig-12.png)
+![Specify task name](4.5.1-fig-12.png)
 
 Using the above, and limiting the result to a narrower time window, we can zoom into the nearest minute.
 
-![](4.5.1-fig-13.png)
+![Zoom into nearest minute](4.5.1-fig-13.png)
 
 ## Snapshot Analysis
 
-You can visually see all the snapshot operations with a single filter **vmw_esxi_snapshot_operation**. Just use the **exist** operator.
+You can visually see all the snapshot operations with a single filter `vmw_esxi_snapshot_operation`. Just use the **exist** operator.
 
-![](4.5.1-fig-14.png)
+![Snapshot filter](4.5.1-fig-14.png)
 
 Group the data by the operations and you will get something like this. I can see there are 3 snapshots created but only two were removed. So one of the VM still has a snapshot.
 
-![](4.5.1-fig-15.png)
+![Activity stream](4.5.1-fig-15.png)
 
 The above shows the time too. In production, you should not take snapshot during busy hours, especially on mission critical VM. So if you run the query in the last 1 week, you should expect no data during the busy hours, and all the daily back up should appear within the backup window.
 
 You can see the details such as the VM name and other context, so see which VM did not have its snapshot removed.
 
-![](4.5.1-fig-16.png)
+![List of events](4.5.1-fig-16.png)
 
 You can check the snapshot name (partially masked out in grey) and whether the snapshot include memory.
 
-![](4.5.1-fig-17.png)
+![Event detail](4.5.1-fig-17.png)
 
 ## Template Analysis
 
@@ -93,7 +93,7 @@ The good thing is there are only a few things you can change to a template. You 
 
 The vCenter logs the entry as "mark virtual machine as template" when you convert a VM into a template. When it is converted back to, it writes "mark as virtual machine". So it's a matter of tracking these 2 entries.
 
-![](4.5.1-fig-18.png)
+![Event stream](4.5.1-fig-18.png)
 
 ## vSphere Health
 
@@ -107,33 +107,33 @@ One common question I get from customers is how to prove that there are not hidd
 
 Your first stop should be the General Problems dashboard in Log Insight. This dashboard checks the health of your vSphere using 8 queries. You expect a flying color, meaning it should be blank like this. That means vSphere has not logged any issues.
 
-![](4.5.1-fig-19.png)
+![General Problems Dashboard](4.5.1-fig-19.png)
 
 Let's look at some of the queries that Log Insight runs. The SCSI latency is based on 1 second, which is 1,000,000 microseconds. Here is what the query looks like:
 
-![](4.5.1-fig-20.png)
+![SCSI Problem queries](4.5.1-fig-20.png)
 
 1 second is on the high side; you can change it to a lower number. Do note that this is from VMkernel viewpoint and it's taking 1 SCSI operation (1 read or 1 write), so the number will be much higher than vCenter average. I've seen 12 ms value in vCenter (from the real time chart, so it is a 20 second average) became 600 ms. For details, see [this](http://virtual-red-dot.info/vsphere-storage-latency-view-from-the-vmkernel/).
 
 The above query is pretty simple, as it's looking for a specific item. Here is a much broader health check.
 
-![](4.5.1-fig-21.png)
+![Broad Health Check](4.5.1-fig-21.png)
 
 The example below checks for any errors in the vCenter which have not yet been reported as an alarm.
 
-![](4.5.1-fig-22.png)
+![vCenter Alarms](4.5.1-fig-22.png)
 
 This query below checks for cluster imbalance.
 
-![](4.5.1-fig-23.png)
+![Cluster imbalance](4.5.1-fig-23.png)
 
 And this query tracks for VM which were rebooted due to HA.
 
-![](4.5.1-fig-24.png)
+![HA reboots](4.5.1-fig-24.png)
 
 All the above widgets are what you would check out first. You might also want to ensure that there are no errors across major vSphere components.
 
-![](4.5.1-fig-25.png)
+![Overall errors](4.5.1-fig-25.png)
 
 ## VM Log File
 

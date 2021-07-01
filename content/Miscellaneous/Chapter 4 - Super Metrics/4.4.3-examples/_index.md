@@ -13,28 +13,24 @@ There are many examples in the [repository](https://code.vmware.com/samples) of 
 
 The maximum, minimum, average and sum functions are simple functions that can quickly summarize a large number of objects.
 
-Maximum CPU Ready (%) among VMs within a group of clusters providing same class of service.
-
+**Maximum CPU Ready (%) among VMs within a group of clusters providing same class of service:**
 `max( ${ adaptertype=VMWARE, objecttype=VirtualMachine, metric=cpu|readyPct, depth=3 } )`
 
-Maximum Memory Balloon (%) among VMs within a group of clusters providing same class of service.
-
+**Maximum Memory Balloon (%) among VMs within a group of clusters providing same class of service:**
 `max( ${ adaptertype=VMWARE, objecttype=VirtualMachine, metric=mem|balloonPct, depth=3 } )`
 
 **Depth=3** is used since the super metric is applied at a custom group level which is 3 levels up the VM object whose metric is used. The hierarchy is Group -> Cluster -> ESXi Host -> VM.
 
-{{% notice info %}}
-Tip: If you use the same super metric for different levels, specify the deepest one.
+{{% notice tip %}}
+If you use the same super metric for different levels, specify the deepest one.
 {{% /notice %}}
 
-Sum of vCPUs provisioned on all VMs in a group of VM.
-
+**Sum of vCPUs provisioned on all VMs in a group of VM:**
 `sum( ${ adaptertype=VMWARE, objecttype=VirtualMachine, metric=cpu|corecount_provisioned, depth=1 } )`
 
 **Depth=1** is sufficient as the VM is directly under the group. No need to manually change the depth.
 
-Average of CPU Usage with all VMs in a custom group:
-
+**Average of CPU Usage with all VMs in a custom group:**
 `avg( ${ adaptertype=VMWARE, objecttype=VirtualMachine, metric=cpu|usage_average, depth=3 } )`
 
 ## 'Where' Clause
@@ -124,6 +120,7 @@ count( ${this, metric=cpu|corecount_provisioned, depth=1, where= ($value == 4)} 
 ? 1
 : 0
 ```
+
 {{% notice note %}}
 Above formula requires version 8.1 or later.
 {{% /notice %}}
