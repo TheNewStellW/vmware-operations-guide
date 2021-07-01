@@ -7,6 +7,7 @@ weight: 60
 ---
 
 ### Chapter 6
+
 # Automation
 
 This chapter is contributed by Thomas Kopton, Consulting Architect and vRealize Ambassadors based in Europe.

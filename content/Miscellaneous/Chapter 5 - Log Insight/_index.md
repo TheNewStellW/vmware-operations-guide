@@ -7,6 +7,7 @@ weight: 50
 ---
 
 ### Chapter 5
+
 # Log Insight
 
 There are many useful information that only exists in the logs. They don't surface as alerts, metrics or events. The information is not limited to just security and compliance. They cover availability and performance too. In this chapter, we will share a few practical use cases.

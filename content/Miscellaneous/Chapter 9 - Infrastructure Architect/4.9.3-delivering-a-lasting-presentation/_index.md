@@ -15,21 +15,16 @@ So what makes a great presentation?
 
 A great presentation...
 
-- looks natural (as if you speak from your heart, not your brain)...,
-
-- is both humble and authoritative...,
-
-- is both funny and deep...,
-
-- is both engaging and relaxing...,
-
-- is both entertaining and enlightening...,
-
+- looks natural (as if you speak from your heart, not your brain)
+- is both humble and authoritative
+- is both funny and deep
+- is both engaging and relaxing
+- is both entertaining and enlightening
 - and truly leaves a moment of truth.
 
 I find that delivering a great presentation is very hard. I normally take around 40 hours to prepare a 40 minute presentation. The less technical the topic, the longer it takes. The less technical the audience, the longer it takes. The less interaction I have (e.g. due to large size), the longer it takes.
 
-I created all the slides manually, I typed every word I want to say in the speaker notes section of Power Point, Then I rehearsed, rehearsed and rehearsed. I time myself if time is a constraint. For an important event, you are right to guess, pretty much the whole thing is memorised from so much of darn rehearsal!. 
+I created all the slides manually, I typed every word I want to say in the speaker notes section of Power Point, Then I rehearsed, rehearsed and rehearsed. I time myself if time is a constraint. For an important event, you are right to guess, pretty much the whole thing is memorised from so much of darn rehearsal!
 
 So anytime you see me speak naturally, it was more like virtually natural.
 

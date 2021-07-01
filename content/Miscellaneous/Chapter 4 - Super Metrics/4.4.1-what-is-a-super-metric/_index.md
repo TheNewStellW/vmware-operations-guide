@@ -13,12 +13,12 @@ Over the last few releases, there have been several enhancements focused on crea
 
 Before starting to create a super metric, make sure you identify the following:
 
--   Objects or object types that are involved
+- Objects or object types that are involved
 
--   Metrics which will need to be used.
+- Metrics which will need to be used.
 
--   How to combine the metrics? Which operator, function or expression to use?
+- How to combine the metrics? Which operator, function or expression to use?
 
--   Which object type will be used to assign super metric?
+- Which object type will be used to assign super metric?
 
--   Policy in which super metric will need to be enabled
+- Policy in which super metric will need to be enabled
