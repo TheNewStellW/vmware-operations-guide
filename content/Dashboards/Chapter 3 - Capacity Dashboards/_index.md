@@ -6,8 +6,9 @@ chapter: true
 ---
 
 ### Chapter 3
+
 # Capacity Dashboards
 
-The capacity dashboards aims to implement the capacity concept covered in Capacity Management chapter, and complement the existing product pages.
+The capacity dashboards aims to implement the capacity concept covered in [Capacity Management](/operations-management/chapter-3-capacity-management/) chapter, and complement the existing product pages.
 
 {{% children %}}
