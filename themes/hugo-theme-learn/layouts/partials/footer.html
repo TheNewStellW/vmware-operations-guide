@@ -1,5 +1,5 @@
 <hr>
-This page was last updated on {{ .Lastmod.Format "January 2, 2006" }} by {{ .GitInfo.AuthorName }} with commit message: "{{ .GitInfo.Subject }}"
+This page was last updated on {{ .Lastmod.Format "January 2, 2006" }} by {{ with .GitInfo }}{{ .AuthorName }}{{ end }} with commit message: "{{ with .GitInfo }}{{ .Subject }}{{ end }}"
         {{ if .Params.chapter }}
             </div> <!-- end chapter-->
         {{ end }}
