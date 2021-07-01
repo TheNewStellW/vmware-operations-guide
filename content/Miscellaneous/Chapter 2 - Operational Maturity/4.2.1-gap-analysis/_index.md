@@ -13,7 +13,7 @@ For each issue/question below, the ideal answer is provided in light grey so you
 |---|---|
 | Do your business units (your customers) blame the infrastructure first? If yes, why? | Business Units (Apps Team) do not blame us because there is transparency on how each of their VM is being served. |
 | Is that because you have not defined the performance they can expect? | There is a formal SLA on both Performance and Availability, which is applied to each VM based on the class of service they buy. Both SLA are clearly defined and measured every 5 minutes. For Performance SLA, we check CPU, RAM, Disk and network. |
-| How do you know when your IaaS is **not** serving the VM well? Do you depend on complaint to know if your IaaS isn’t performing? | Our operations do not depend on complain. SLA enables us to be proactive and provide early warning to CIO. We track the threshold and act before complaint is made.|
+| How do you know when your IaaS is **not** serving the VM well? Do you depend on complaint to know if your IaaS isn't performing? | Our operations do not depend on complain. SLA enables us to be proactive and provide early warning to CIO. We track the threshold and act before complaint is made.|
 | How can you move toward proactive operations? What metrics do you use to measure IaaS performance? |  |
 | Does Help Desk provide a good first level defense? Or does it simply pass through to the next level? | Help Desk uses the SLA, with a custom dashboard given to them. They encourage App Team to self-service as the same dashboard is provided. Our operations is VM-centric and application-centric, even though we are the infrastructure team.| Yes. We maximize utilization without compromising performance. Performance is at the heart of our capacity management. We also consider concentration risk, and do not exceed the limit set in business continuity policy. 
 
@@ -29,7 +29,7 @@ For each issue/question below, the ideal answer is provided in light grey so you
 | Business Question | Ideal Answer |
 | --- | --- |
 | Do you have many over-provisioned VMs? Do you know how much to reclaim, and from which VMs? | No. We do not interfere with application team business. They are paying for each vCPU, vRAM and vDisk. |
-| Are the VM Owners convinced on your recommendation? If not, why? | There is progressive pricing and a discount for a small VM. These 2 factors make larger VMs much more expensive, hence encouraging right sizing right from the start. If an LOB wants to waste their money, that’s certainly their right. We do highlight how much they can save if they right-size |
+| Are the VM Owners convinced on your recommendation? If not, why? | There is progressive pricing and a discount for a small VM. These 2 factors make larger VMs much more expensive, hence encouraging right sizing right from the start. If an LOB wants to waste their money, that's certainly their right. We do highlight how much they can save if they right-size |
 | How do you right-size without impacting performance? | We may advise, but never dictate VM size, as it all depends on the applications. |
 
 ## Configuration
@@ -45,7 +45,7 @@ For each issue/question below, the ideal answer is provided in light grey so you
 | Business Question | Ideal Answer |
 | --- | --- |
 | On issue that spans multiple team, do you use a set of common tools to perform joint analysis? Or each team use their own, working in silo?| Yes. The Storage and Network teams have custom access to both vCenter and vRealize. For vRealize Operations and Log Insight, we created custom dashboards so they are not overwhelmed with unnecessary information. |
-| Does Network Team and Storage Team have good visibility into the VMware environment? Do you have good visibility into Network and Storage? | Yes. Storage, Network, and Compute have access to one another’s tools. We use the True Visibility Suite to correlate with Network and Storage, so everyone is looking at the same information. |
+| Does Network Team and Storage Team have good visibility into the VMware environment? Do you have good visibility into Network and Storage? | Yes. Storage, Network, and Compute have access to one another's tools. We use the True Visibility Suite to correlate with Network and Storage, so everyone is looking at the same information. |
 | As part of Root Cause Analysis, do you setup alert so issue can be detected faster if it happens again? | Yes. Alerts are mandatory as exit criteria in RCA. |
 
 ## Availability
