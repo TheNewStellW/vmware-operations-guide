@@ -10,11 +10,13 @@ The VM Reclamation dashboard helps you managing various types of reclamation tha
 ## How to Use
 
 The dashboard is divided into 2 sections.
+
 - The upper section provides summary, giving you overall picture of reclamation.
 - The lower section provides details, giving you the actual VM name to reclaim.
-![](3.3.7-fig-1.png)
- 
-Select a data center from the table. 
+![VM storage waste](3.3.7-fig-1.png)
+
+Select a data center from the table.
+
 - The summary information will be automatically shown. To show from all clusters, select vSphere World. This object covers all clusters. Take note that the charts will take longer due to refresh due to higher amount of data.
 - The reclamation potentials are presented as 3 bar charts, each corresponds to an area you can reclaim:
   - Snapshot. Especially those more than a few days old as snapshot is meant to be temporary.
@@ -24,7 +26,7 @@ Select a data center from the table.
 - Memory reclamation is based on the memory footprint at the parent ESXi. The value inside the Guest is not what is being reclaimed, and so it is irrelevant. That's why the VM consumed memory is chosen.
 - Adjust the bucket size in the charts to suit your operational requirements.
 Review each of the 3 tables
-- They are sorted by the largest reclamation opportunities. 
+- They are sorted by the largest reclamation opportunities.
 - Select any of the VM row to see its trend over time. The trend chart is placed in the same page, so you can review without changing context (e.g. open a new screen) and quickly toggle between VMs.
 - If the snapshot is expanding rapidly, ensure that the VM disk is large (relative to the underlying datastore) as it can fill up the datastore.
 
@@ -34,7 +36,7 @@ If your environment is large, change the dashboard filter to a functional filter
 
 If reclaiming is a long drawn manual process in your organization, add a filter by department or VM owners. One way to do this is to create a vRealize Operations custom group.
 
-If the VM name in your environment does not provide sufficient business context, add more information in the table to give context to the VM. Information such as VM Owner, clusters where the VM is running, and datastores where the VM files are stored can be useful in the analysis. 
+If the VM name in your environment does not provide sufficient business context, add more information in the table to give context to the VM. Information such as VM Owner, clusters where the VM is running, and datastores where the VM files are stored can be useful in the analysis.
 
 Disk cannot be reclaimed immediately. They have to be in the powered-off stage at least for a week.
 

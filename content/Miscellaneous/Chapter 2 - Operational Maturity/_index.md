@@ -7,6 +7,7 @@ weight: 20
 ---
 
 ### Chapter 2
+
 # Operational Maturity
 
 {{% children %}}

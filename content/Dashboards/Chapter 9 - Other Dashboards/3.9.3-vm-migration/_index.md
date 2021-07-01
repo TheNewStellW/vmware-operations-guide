@@ -33,14 +33,14 @@ Yes, you promise higher consolidation. You have more CPU cores, more RAM, so log
 
 Since you have to increase overcommit ratio, how do you then prove that performance will not be affected as you drive utilization higher?
 
-The answer is to look at what KPI can impact a VM performance. A VM Owner looks at her VM performance, not your IaaS utilization. The VM Contention dashboard is designed for that.
+The answer is to look at what KPI can impact a VM performance. A VM Owner looks at her VM performance, not your IaaS utilization. The [VM Contention](/dashboards/chapter-2-performance-dashboards/3.2.10-vm-contention/) dashboard is designed for that.
 
 Moving a busy VM to another ESXi only needs to see the VM external footprint. It matters not if Guest OS is doing excessive memory paging or has long CPU run queue. None of these internal works are visible by the hypervisor, hence they are irrelevant.
 
-![](3.9.3-fig-1.png)
+![VM Migration timeline](3.9.3-fig-1.png)
 
 Before vs After comparison cannot be done *immediately* after a VM is migrated. The First VM will experience greatest performance improvement. It is the only VM in the VMC cluster, so it has 0 contention. The Last VM will experience greatest performance degradation. It was the only VM in the on-prem cluster, so it had 0 contention.
 
 The following table shows a sample design of a comparison dashboard. It has two identical columns, allowing you to do show before vs after comparison.
 
-![](3.9.3-fig-2.png)
+![Sample comparison dashboard](3.9.3-fig-2.png)

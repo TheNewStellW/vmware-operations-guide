@@ -13,7 +13,8 @@ From the chart you can see that the formula for VM CPU Contention \> Demand - Us
 
 ## VM CPU vs ESXi CPU Metrics
 
-##### At the start of the test
+#### At the start of the test
+
 - The VM runs 12 vCPU, but each vCPU was pinned to each ESXi core. So all cores are 100% utilized, but each running 1 thread.
 
 - VM CPU Run (ms) is 240K milliseconds, which is 20K milliseconds x 12 (half of its 24 vCPU).
@@ -30,7 +31,7 @@ From the chart you can see that the formula for VM CPU Contention \> Demand - Us
 
 - On the other hand, ESXi Utilization (%) looks at if each thread HT is running or not. It does not care about the fact that the 2 threads share a core, and simply roll up to ESXi level directly from thread level. This is why it's showing 50% as it only cares whether a thread is running or not, at any point in time.
 
-##### During Ramp Up period
+#### During Ramp Up period
 
 - VM is being ramped up steadily. You can see all 3 counters went up in steps.
 
@@ -46,7 +47,7 @@ From the chart you can see that the formula for VM CPU Contention \> Demand - Us
 
 - ESXi CPU Core Utilization (%) matches VM Run. Both went 2x.
 
-##### Towards the end of the run
+#### Towards the end of the run
 
 - VM CPU Run is at 480K ms. This counter is suitable for VM Capacity sizing, as it correctly accounts that each vCPU is used by Guest OS.
 
@@ -58,42 +59,39 @@ From the chart you can see that the formula for VM CPU Contention \> Demand - Us
 
 - ESXi CPU Utilization (%) is at 100%. Because it tracks the ramp correctly, it can be used from Performance. You can use it for Capacity, but take note that 100% means you get performance hit from. In fact, at 50% the HT effect will kick in.
 
-## VM Active Memory 
+## VM Active Memory
 
 Active is lower than Consumed and Guest OS In Use counters because they do not actually measure how actively the page is used. They are measuring the disk space used, so it contains a lot of inactive pages. You can see it in the general pattern of Consume and Guest OS used counters. The following is vRealize Operations appliance VM. Notice how stable the metrics are, even over millions of seconds.
 
-![](4.1.2-fig-1.png)
+![VM Active Memory](4.1.2-fig-1.png)
 
 ## ESXi CPU Contention vs Utilization
 
 These are the reasons why they don't match:
 
--   One looks at physical CPU, the other the virtual CPU. One looks at ESXi, while the other looks at VM.
+- One looks at physical CPU, the other the virtual CPU. One looks at ESXi, while the other looks at VM.
+- Limit may impact the VM, either directly or via resource pool
+- CPU pinning, although this is rarely happen
+- Unbalanced utilization. There are many VMs in this host. Their experience will not be identical.
 
--   Limit may impact the VM, either directly or via resource pool
-
--   CPU pinning, although this is rarely happen
-
--   Unbalanced utilization. There are many VMs in this host. Their experience will not be identical.
-
-#### Mystery of VM Memory
+## Mystery of VM Memory
 
 This behaviour confuses me so if you know the answer let me know please. This 64-bit CentOS VM runs My SQL and is configured with 8 GB of RAM. However, a limit is set at 2 GB hence you saw consumed does not exist 2 GB.
 
-![](4.1.2-fig-2.png)
+![VM Consumed Memory](4.1.2-fig-2.png)
 
 Can you explain the dip in Consumed at around 9:30 pm? It went down from 2.09 GB to 1.6 GB, and then slowly going back up. Why did it suddenly consume 400 MB less in the span of 20 minutes? Both the configured limit and the runtime limit do not change. They are main at a constant 2 GB. This makes sense, else the Consumed would not be able to slowly go up again.
 
-![](4.1.2-fig-3.png)
+![Effective Limit](4.1.2-fig-3.png)
 
 My guess is there must be activity by the VM and pages were compressed to make room for the newly requested pages. The Non Zero Active counter shows that there are activities.
 
-![](4.1.2-fig-4.png)
+![Non-zero Active](4.1.2-fig-4.png)
 
 The pages that are not used must be compressed or swapped. The Swapped value is negligible, but the Compressed metric shows the matching spike.
 
-![](4.1.2-fig-5.png)
+![Compressed](4.1.2-fig-5.png)
 
 But what puzzles me is why did balloon go down by around 400 MB but then goes up immediately?
 
-![](4.1.2-fig-6.png)
+![Balloon](4.1.2-fig-6.png)

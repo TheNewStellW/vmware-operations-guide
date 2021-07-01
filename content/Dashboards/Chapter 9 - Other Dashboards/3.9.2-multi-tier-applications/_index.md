@@ -33,7 +33,7 @@ The above check makes a good starting point in your analysis. Don't zoom into a 
 
 The following is the logical design of the dashboard. I've not include the vertical problem to keep it simple.
 
-![](3.9.2-fig-1.png)
+![Logical Application layout](3.9.2-fig-1.png)
 
 At the top of the dashboard, the list of critical applications is shown across. The logical design shows 6. The actual dashboard can handle more. I've seen a large customer showing forty, as the list is just limited by your screen real estate.
 
@@ -43,7 +43,7 @@ If an app is not green, you can click on it. The dashboard will list all its VMs
 
 First step in performance dashboard is modelling the KPI. This is required so we show a single number for each business applications, and then drill down from it.
 
-![](3.9.2-fig-2.png)
+![KPI Model](3.9.2-fig-2.png)
 
 The health of a tier is the average health of its member. This is because a tier scales out. We are not taking the minimum value. This is not a convoy.
 
@@ -55,7 +55,7 @@ It is not actually. This is not about Availability. This is about Performance. A
 
 The VM KPI is turn an aggregation of its key performance metrics. As each metric has their own units, we need to convert them into a unit-less range. I picked 0 - 100 range as that's easier to understand.
 
-![](3.9.2-fig-3.png)
+![Metric table](3.9.2-fig-3.png)
 
 The threshold is designed to support proactive, not alert based operations. Hence, the red range does not mean emergency and you must drop everything. It means you need to take a look within the next 24 hours.
 
@@ -63,32 +63,32 @@ The threshold is designed to support proactive, not alert based operations. Henc
 
 Using vRealize Operations 8.2, the dashboard looks like the following:
 
-![](3.9.2-fig-4.png)
+![Resulting Dashboard](3.9.2-fig-4.png)
 
 The top part of the dashboard shows 4 mission critical applications. Each of them is color coded for ease of visualization. Selecting one of them will automatically shows the trend chart of each tiers in the app. In the example above, I've selected one of the business applications. I did not have enough space for the VMs, so I've placed the VMs in the selected tier below the tier. I selected the DB Tier, which had 5 VM (4 of them being shown below). Selecting any of the VM will show all the KPI that make up the VM. There are 28 counters that make up the VM KPI, and we can quickly see that Free Memory has turned from green to yellow.
 
-![](3.9.2-fig-5.png)
+![VM Tier Dashboard](3.9.2-fig-5.png)
 
 ## Implementation
 
 You can create your own object and assign metrics to it in vRealize Operations. In the following screenshot, I've created Tiered Applications object, which has the Application Tier object as its children.
 
-![](3.9.2-fig-6.png)
+![Environment Overview](3.9.2-fig-6.png)
 
 You set the relationship making the Application Tier object as the group member. In the following screenshot, notice the group membership is dynamic. If you follow a naming convention, you will not need to hardcode each member one by one. The number of members can be dynamic.
 
-![](3.9.2-fig-7.png)
+![Group Membership](3.9.2-fig-7.png)
 
-For the KPI metrics, yuo will need three super metrics. The first one is at the business application object. This is simply the minimum of its tier KPI.
+For the KPI metrics, you will need three super metrics. The first one is at the business application object. This is simply the minimum of its tier KPI.
 
-![](3.9.2-fig-8.png)
+![Super Metrics](3.9.2-fig-8.png)
 
 The second super metric is assigned to the application tier object. The formula is simply the average of its member VM KPI.
 
-![](3.9.2-fig-9.png)
+![Super Metrics](3.9.2-fig-9.png)
 
 The third and last super metric is the KPI of each VM. I use a nested IF Statement to assign each value to the respective color.
 
-![](3.9.2-fig-10.jpg)
+![Nested IF statement](3.9.2-fig-10.jpg)
 
 I added the blue line. It sets the value to 100 when it's detecting **-1**.

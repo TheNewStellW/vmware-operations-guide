@@ -13,22 +13,22 @@ This dashboard is designed to complement the vSAN file services management provi
 
 Review the "**File Shares by Used Space and Latency**" heat map
 
--   It shows all the file shares in your environment.
+- It shows all the file shares in your environment.
 
--   The greater the usage (consumption), the greater the box, so you can easily see the most consumed ones.
+- The greater the usage (consumption), the greater the box, so you can easily see the most consumed ones.
 
--   They are colored by latency. Pay attention to the box with red color.
+- They are colored by latency. Pay attention to the box with red color.
 
 Review the "**vSAN Clusters with File Services enabled**" table
 
--   It lists all the vSAN clusters with file services enabled, giving a convenient view to see which clusters have these settings turned on.
+- It lists all the vSAN clusters with file services enabled, giving a convenient view to see which clusters have these settings turned on.
 
 Select a vSAN cluster from the table
 
--   The file servers in the selected vSAN cluster will be automatically shown. Selecting a file server will filter the file shares list to only show the file shares in the selected file server.
+- The file servers in the selected vSAN cluster will be automatically shown. Selecting a file server will filter the file shares list to only show the file shares in the selected file server.
 
--   The file shares in the selected vSAN cluster will be automatically shown. Selecting a file share will display all the relevant KPI on the file share.
+- The file shares in the selected vSAN cluster will be automatically shown. Selecting a file share will display all the relevant KPI on the file share.
 
-#### Points to Note
+## Points to Note
 
 vSAN File Servers and vSAN File Shares are 2 new objects in vRealize Operations vSAN management pack.

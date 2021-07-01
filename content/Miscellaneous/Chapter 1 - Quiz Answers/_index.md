@@ -7,6 +7,7 @@ weight: 10
 ---
 
 ### Chapter 1
+
 # Quiz Answers
 
 Throughout the book, I sprinkled some quizzes to help you pause and ponder. This section documents the answer.
