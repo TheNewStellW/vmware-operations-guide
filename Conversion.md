@@ -9,5 +9,5 @@ find . -type f -name "*.md" -print0 | xargs -0 sed -i '' "s/<characters to remov
 Use this to identify all non-ascii characters
 
 ```bash
-pcregrep -r --color='auto' -n '[^[:ascii:]]' .
+pcregrep -r --include='/*.md' --color='auto' -n '[^[:ascii:]]' .
 ```
