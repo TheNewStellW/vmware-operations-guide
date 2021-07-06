@@ -48,7 +48,7 @@ This front matter specifies many attributes, but for this book, only the basics 
 
 ## Page Content
 
-All content is written in Markdown. See the [Why Markdown?](#why-markdown) section above.
+All content is written in Markdown. See the [Why Markdown?](readme.md#why-markdown) section above.
 
 However, there are a lot of things that Markdown doesn’t support well. You could use pure HTML to expand possibilities. But this happens to be a bad idea. Everyone uses Markdown because it’s pure and simple to read even non-rendered. You should avoid HTML to keep it as simple as possible.
 
