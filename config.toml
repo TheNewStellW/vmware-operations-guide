@@ -4,6 +4,22 @@ title = "VMware Operations Guide"
 theme = "hugo-theme-learn"
 enableGitInfo = true
 
+# English is the default language
+defaultContentLanguage = "en"
+# Force to have /en/my-page and /fr/my-page routes, even for default language.
+defaultContentLanguageInSubdir= true
+
+[Languages]
+  [Languages.en]
+  title = "VMware Operations Guide"
+  weight = 1
+  languageName = "English"
+
+[Languages.zh]
+  title = "VMware 操作指南"
+  weight = 2
+  languageName = "Chinese (Simplified)"
+
 [frontmatter]
   lastmod = [":git", "lastmod", "date", "publishDate"]
 
