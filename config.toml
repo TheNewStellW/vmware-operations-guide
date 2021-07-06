@@ -20,6 +20,11 @@ defaultContentLanguageInSubdir= true
   weight = 2
   languageName = "Chinese (Simplified)"
 
+  [Languages.zh-tw]
+  title = "VMware 操作指南"
+  weight = 2
+  languageName = "Chinese (Traditional)"
+
 [frontmatter]
   lastmod = [":git", "lastmod", "date", "publishDate"]
 
