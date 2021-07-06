@@ -9,6 +9,6 @@ chapter: true
 
 # 设计注意事项
 
-There are many considerations required in designing a suite of dashboards that tell a story.
+在设计一套讲述故事的仪表板时需要考虑许多因素。
 
 {{% children %}}
