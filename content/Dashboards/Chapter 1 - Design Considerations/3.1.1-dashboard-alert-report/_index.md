@@ -5,7 +5,7 @@ draft: false
 weight: 10
 ---
 
-It is easy to think that dashboards, alerts and reports are unrelated and should be designed independently. If we take a step back and look at the big picture, there is actually minimal overlap, as they form a **continuum**. They serve the same purpose, which is the way for System to "communicate" with user.
+It is easy to think that dashboards, alerts and reports are separate and should be designed independently. If we take a step back and look at the big picture, there is actually minimal overlap, as they form a **continuum**. They serve the same purpose, which is the way for System to "communicate" with user.
 
 ![Dashboard, alert, report map to personas](3.1.1-fig-1.png)
 
