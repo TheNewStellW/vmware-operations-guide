@@ -23,7 +23,7 @@ IT 运营就像指纹。两家公司可以有相同的结构，但它们的运�
 
 ![Operationalize your world image](operationalize-your-world.png)
 
-{{%attachments title="Original Word Document" style="green" pattern=".*(docx)"/%}}
+{{%attachments title="原始 Word 文档" style="green" pattern=".*(docx)"/%}}
 
 # 目录
 

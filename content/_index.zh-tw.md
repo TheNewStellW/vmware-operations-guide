@@ -23,7 +23,7 @@ IT 運營就像指紋。兩家公司可以有相同的結構，但它們的運�
 
 ![Operationalize your world image](operationalize-your-world.png)
 
-{{%attachments title="Original Word Document" style="green" pattern=".*(docx)"/%}}
+{{%attachments title="原始 Word 文檔" style="green" pattern=".*(docx)"/%}}
 
 # 目錄
 
