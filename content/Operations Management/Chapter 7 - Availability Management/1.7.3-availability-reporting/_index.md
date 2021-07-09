@@ -37,7 +37,7 @@ Let's step through the time to show how difference scenarios impact availability
 - The uptime of the web tier become 9/10 = 90%.
 - The uptime of the application tier become 3/4 = 75%.
 - Overall, the system uptime is 68%.
-- SLA is not impacted, as both tiers do not breached their threshold.
+- SLA is not impacted, as neither tier has violated their thresholds.
 
 #### 9:10 - 9:15 am
 
