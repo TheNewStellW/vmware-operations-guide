@@ -21,9 +21,9 @@ You avoid disaster by doing long distance vMotion on an stretched vSphere cluste
 
 #### DR Test
 
-You are doing a test, as required by regulator or internal Business Continuity Plan. Your production VM is still running, so you need to buble the network.
+You are doing a test, as required by regulator or internal Business Continuity Plan. Your production VM is still running, so you need to bubble the network.
 
-- Do you have enough capacity on the recovery site?
+- Do you have enough resources on the recovery site?
 - Did it complete within the expected time? If not, what's causing it?
 
 #### DR Actual
