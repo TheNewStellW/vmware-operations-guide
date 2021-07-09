@@ -1,6 +1,6 @@
 # VMware Operations Guide
 
-This repo contains the contents of Iwan Rahabok's [VMware Operations Guide](https://via.vmw.com/OpsMgmt), ported to Markdown and built into a static site using Hugo.
+This repo contains the contents of Iwan Rahabok's [VMware Operations Guide](https://via.vmw.com/OpsMgmt), ported to Markdown and built into a static site using Hugo: https://vrops.funkycloudmedina.com.
 
 ![Homepage screenshot](readme/screenshot.png)
 
