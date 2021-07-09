@@ -43,7 +43,7 @@ Let's step through the time to show how difference scenarios impact availability
 
 - 3 web servers are down. All other servers are up. The uptime of the web tier become 7/10 = 70%.
 - Overall, the system uptime is 70%. This is higher than the 68% previously, but this time the SLA is impacted as the web tier is not designed to handle 3 failures.
-- From here you can see that uptime and SLA can differ. - The former is absolute and technical, while SLA is relative to design and eventually business contract.
+- From here you can see that uptime and SLA can differ. - The former is absolute and technical, while SLA is relative to the design and any business contracts.
 
 #### 9:15 - 9:20 am
 
