@@ -1,36 +1,32 @@
-baseURL = "https://vrops.funkycloudmedina.com/"
+baseURL = "/"
 languageCode = "en-us"
 title = "VMware Operations Guide"
 theme = "hugo-theme-learn"
 enableGitInfo = true
-
-# English is the default language
-defaultContentLanguage = "en"
-# Force to have /en/my-page and /fr/my-page routes, even for default language.
-defaultContentLanguageInSubdir= true
+# defaultContentLanguage = "en" # English is the default language
+defaultContentLanguageInSubdir = false # Force to have /en/my-page and /fr/my-page routes, even for default language.
 
 [Languages]
   [Languages.en]
-  title = "VMware Operations Guide"
-  weight = 1
-  languageName = "English"
+    title = "VMware Operations Guide"
+    weight = 1
+    languageName = "English"
 
-[Languages.zh]
-  title = "VMware 操作指南"
-  weight = 2
-  languageName = "Chinese (Simplified)"
+  [Languages.zh]
+    title = "VMware 操作指南"
+    weight = 2
+    languageName = "Chinese (Simplified)"
 
   [Languages.zh-tw]
-  title = "VMware 操作指南"
-  weight = 2
-  languageName = "Chinese (Traditional)"
+    title = "VMware 操作指南"
+    weight = 2
+    languageName = "Chinese (Traditional)"
 
 [frontmatter]
   lastmod = [":git", "lastmod", "date", "publishDate"]
 
 [params]
-# Change default color scheme with a variant one. Can be "red", "blue", "green".
-  themeVariant = "green"
+  themeVariant = "green" # Change default color scheme with a variant one. Can be "red", "blue", "green".
   editURL = "https://github.com/TheNewStellW/vmware-operations-guide/tree/main/content/"
 
 [[menu.shortcuts]] 
@@ -49,7 +45,7 @@ defaultContentLanguageInSubdir= true
   home = [ "HTML", "RSS", "JSON"]
 
 [markup]
-    defaultMarkdownHandler = "goldmark"
+  defaultMarkdownHandler = "goldmark"
 	
   [markup.goldmark]
     [markup.goldmark.renderer]
