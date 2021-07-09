@@ -9,26 +9,26 @@ weight: 40
 本页出租。这意味着我们需要一位贡献作者！
 {{% /notice %}}
 
-There are operational impact when you add capability to handle disaster. There are 3 primary use cases:
+处理灾难恢复时有 3 个主要用例：
 
 #### 避灾
 
 您可以通过在延伸的 vSphere 集群上执行远程 vMotion 来避免灾难。
 
-- Do you have enough WAN bandwidth?
-- Does the vMotion complete within the expected time? - If not, what's causing it?
-- What's the performance impact during the vMotion? As the pipe is shared, this can impact other VMs too.
+- 你有足够的 WAN 带宽吗？
+- vMotion 是否在预期时间内完成？ - 如果不是，是什么原因造成的？
+- vMotion 期间的性能影响是什么？由于管道是共享的，这也会影响其他虚拟机。
 
-#### DR Test
+#### DR 测试
 
-You are doing a test, as required by regulator or internal Business Continuity Plan. Your production VM is still running, so you need to buble the network.
+您正在按照监管机构或内部业务连续性计划的要求进行测试。您的生产 VM 仍在运行，因此您需要对网络进行冒泡。
 
-- Do you have enough capacity on the recovery site?
-- Did it complete within the expected time? If not, what's causing it?
+- 您在恢复站点上是否有足够的资源？
+- 是否在预期时间内完成？如果不是，是什么原因造成的？
 
-#### DR Actual
+#### DR 实际
 
-You are doing the actual recovery. This can be planned or unplanned.
+你正在做实际的恢复。这可以是计划的或计划外的。
 
 - 你有足够的资源吗？
 - 对目标集群和数据存储有什么性能影响？
