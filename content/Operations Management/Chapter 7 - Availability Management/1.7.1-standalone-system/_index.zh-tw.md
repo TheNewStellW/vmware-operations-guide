@@ -1,5 +1,5 @@
 ---
-title: "1.獨立系統”"
+title: "1. 獨立系統”"
 date: 2021-06-14T14:13:20+10:00
 draft: false
 weight: 10
