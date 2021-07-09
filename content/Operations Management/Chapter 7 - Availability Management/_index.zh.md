@@ -1,5 +1,5 @@
 ---
-title: "第 7 章可用性管理"
+title: "第 7 - 章可用性管理"
 date: 2021-06-11T11:31:22+10:00
 draft: false
 chapter: true
