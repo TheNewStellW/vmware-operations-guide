@@ -5,7 +5,7 @@ draft: false
 weight: 20
 ---
 
-Nowadays we rarely deal with a standalone solution. Even the solutions we think are standalone consists of multiple smaller components. For example, a physical server consists of multiple smaller parts, such as power supply and disks. Calculating the availability of the server need to consider the availability of each components and the impact it has on the overall availability.
+Nowadays we rarely deal with a standalone solution. Even the solutions we think are standalone consists of multiple smaller components. For example, a physical server consists of multiple smaller parts, such as power supply and disks. To calculate the availability of servers we need to consider the availability of each component and the impact it has on the overall availability.
 
 ## Components in Series
 
