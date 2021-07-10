@@ -1,5 +1,5 @@
 ---
-title: "第 1 章 - 概述"
+title: "第 1 - 章概述"
 date: 2021-06-11T11:31:22+10:00
 draft: false
 chapter: true
