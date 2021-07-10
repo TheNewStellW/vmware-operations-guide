@@ -1,5 +1,5 @@
 ---
-title: "第 1 章 - 设计注意事项"
+title: "第 1 - 章设计注意事项"
 date: 2021-06-11T11:31:22+10:00
 draft: false
 chapter: true
