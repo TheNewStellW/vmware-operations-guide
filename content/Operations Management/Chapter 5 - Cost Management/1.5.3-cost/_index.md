@@ -15,7 +15,7 @@ Overcommitment Ratio is the way you justify a higher price, hence it's imperativ
 
 Unit Cost has to be associated with VM, not ESXi. It is expressed in vCPU, not per physical core or GHz. How many vCPU you plan to pack determines the cost per vCPU.
 
-Unit Cost depends on hardware and software. New cluster should cost less due to bigger hardware
+Unit Cost depends on hardware and software. New cluster should cost less due to bigger hardware.
 
 Unit Price should remain the same within the same class of service. Back to the airline industry example, the price does not depend on the plane generation.
 
