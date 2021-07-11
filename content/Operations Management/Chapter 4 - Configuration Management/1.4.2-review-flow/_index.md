@@ -39,4 +39,4 @@ The following table lists some of the possibilities. Use them as an input to tai
 
 The next table covers the IaaS Provider layer. This layer consists of the software and hardware infrastructure, such as Telegraf, ESXi, compute cluster, datastore & datastore cluster, resource pool, distributed virtual switch and port group, vSAN, NSX and certainly hardware.
 
-![Iaas Provider layer dashboard examples](1.4.2-fig-3.png)
+![IaaS Provider layer dashboard examples](1.4.2-fig-3.png)
