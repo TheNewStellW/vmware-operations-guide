@@ -17,7 +17,7 @@ Unit Cost has to be associated with VM, not ESXi. It is expressed in vCPU, not p
 
 Unit Cost depends on hardware and software. New cluster should cost less due to bigger hardware.
 
-Unit Price should remain the same within the same class of service. Back to the airline industry example, the price does not depend on the plane generation.
+Unit Price should remain the same within the same class of service. Back to the airline industry example, the price does not depend on the aircraft generation.
 
 ## Cost Savings
 
