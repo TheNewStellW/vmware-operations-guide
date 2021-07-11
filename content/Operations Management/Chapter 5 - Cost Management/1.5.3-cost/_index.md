@@ -34,7 +34,7 @@ Accounting wise, it's $1 million only. While that HCI cost you $2 million three 
 
 The $1 million is certainly an ***estimation***. The actual cost avoided or to be spent depends on vendor quotation, and your negotiation skills. Take note that the actual is much more than the HCI cost. Additional costs can exceed the hardware cost. You need to include the full loaded cost, such as data center facility, implementation service, back up storage, administration service, software licence, management, etc.
 
-Reclamation alone does ***not*** save cost. How much do you save when you delete files in your notebook?
+Reclamation alone does ***not*** reduce cost. How much do you save when you delete files in your notebook?
 
 Right. Zero.
 
