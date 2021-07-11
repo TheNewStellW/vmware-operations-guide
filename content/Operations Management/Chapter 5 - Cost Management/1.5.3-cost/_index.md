@@ -9,9 +9,9 @@ It's important to calculate unit cost, despite the fact it does not actually exi
 
 ![cost input and unit pricing](1.5.3-fig-1.png)
 
-The Unit cost per VM depends on Overcommit Ratio, since the hardware cost is identical. If cluster A has 2x overcommit ratio, then the cost per VM is 2x cheaper, all else being equal.
+The Unit cost per VM depends on Overcommitment Ratio, since the hardware cost is identical. If cluster A has 2x overcommitment ratio, then the cost per VM is 2x cheaper, all else being equal.
 
-Overcommit Ratio is the way you justify a higher price, hence it's imperative to disclose upfront to your customers.
+Overcommitment Ratio is the way you justify a higher price, hence it's imperative to disclose upfront to your customers.
 
 Unit Cost has to be associated with VM, not ESXi. It is expressed in vCPU, not per physical core or GHz. How many vCPU you plan to pack determines the cost per vCPU.
 
