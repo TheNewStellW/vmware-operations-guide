@@ -3,8 +3,10 @@ languageCode = "en-us"
 title = "VMware Operations Guide"
 theme = "hugo-theme-learn"
 enableGitInfo = true
+
 # defaultContentLanguage = "en" # English is the default language
 defaultContentLanguageInSubdir = false # Force to have /en/my-page and /fr/my-page routes, even for default language.
+disableLanguages = [""]
 
 [Languages]
   [Languages.en]
