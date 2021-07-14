@@ -6,7 +6,7 @@ draft: false
 
 您如何知道基礎設施即服務 (IaaS) 平台（無論是在本地還是在雲中）正在為其工作負載提供 **好** ？如果您依賴投訴，那麼您將運行基於投訴的運營。
 
-不幸的是，從被動轉變為主動是一項複雜的工作，尤其是在有許多角色和角色的大型組織中。這需要[運營轉型](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/files/pdf/services/vmware-operations-transformation-services.pdf) 和範式轉變. 讓客戶同意【服務水平協議】並不容易[SLA](/operations-management/chapter-1-overview/1.1.7-service-level-agreement/) (SLA) 當你已經承諾他們“好”多年時。本書旨在提供實用指導，您可以使用當前版本的 vRealize 產品實施這些指導。
+不幸的是，從被動轉變為主動是一項複雜的工作，尤其是在有許多角色和角色的大型組織中。這需要 [運營轉型](https://www.vmware.com/content/dam/digitalmarketing/vmware/en/pdf/files/pdf/services/vmware-operations-transformation-services.pdf) 和範式轉變. 讓客戶同意【服務水平協議】並不容易 [SLA](/operations-management/chapter-1-overview/1.1.7-service-level-agreement/) (SLA) 當你已經承諾他們“好”多年時。本書旨在提供實用指導，您可以使用當前版本的 vRealize 產品實施這些指導。
 
 這 指標 下內容可幫助您評估 IaaS 的成熟度。
 
@@ -18,7 +18,7 @@ draft: false
 
 這是本書的目標。
 
-成熟運營的標誌是您擁有完整、正確、準確的服務水平協議[SLA](/operations-management/chapter-1-overview/1.1.7-service-level-agreement/). 完整意味著您擁有性能SLA和合規性SLA，而不僅僅是可用性SLA。正確意味著 SLA 是在每個付費虛擬機上衡量的，而不是在基礎架構級別。這也意味著您使用了正確的指標。準確意味著必須每 5 分鐘進行一次測量，因為任何超過此時間的間隔都可能會漏掉問題。
+成熟運營的標誌是您擁有完整、正確、準確的服務水平協議 [SLA](/operations-management/chapter-1-overview/1.1.7-service-level-agreement/). 完整意味著您擁有性能SLA和合規性SLA，而不僅僅是可用性SLA。正確意味著 SLA 是在每個付費虛擬機上衡量的，而不是在基礎架構級別。這也意味著您使用了正確的指標。準確意味著必須每 5 分鐘進行一次測量，因為任何超過此時間的間隔都可能會漏掉問題。
 
 ### 您的 IaaS 是否比公共雲或混合雲便宜？
 
@@ -46,7 +46,7 @@ draft: false
 
 這是一個指標，表明您是作為系統構建商而不是服務提供商運營的。作為系統構建者，您正在干預每個系統（閱讀：應用程序）。您調整它們的大小並與應用程序團隊爭論他們實際上是您的客戶。你很忙，因為有很多應用程序，你有很多人。
 
-如果您作為內部雲服務提供商運營 [CSP](https://itlaw.wikia.org/wiki/Cloud_service_provider), 您不會“妨礙”業務。您使用有效的定價模型來推動正確的行為。公有云提供商會不會阻止應用團隊購買 40 個 CPU 虛擬機，而他們只需要 2 個 CPU？ [AWS EC2](https://aws.amazon.com/ec2/?ec2-whats-new.sort-by=item.additionalFields.postDateTime&ec2-whats-new.sort-order=desc) 他們沒有，所以你也不應該。
+如果您作為內部雲服務提供商運營 [CSP](https://itlaw.wikia.org/wiki/Cloud_service_provider), 您不會“妨礙”業務。您使用有效的定價模型來推動正確的行為。公有云提供商會不會阻止應用團隊購買 40 個 CPU 虛擬機，而他們只需要 2 個 CPU？  [AWS EC2](https://aws.amazon.com/ec2/?ec2-whats-new.sort-by=item.additionalFields.postDateTime&ec2-whats-new.sort-order=desc) 他們沒有，所以你也不應該。
 
 ### 故障排除是否意味著所有部門都參與其中？
 
