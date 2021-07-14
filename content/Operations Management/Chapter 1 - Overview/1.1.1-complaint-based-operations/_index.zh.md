@@ -46,7 +46,7 @@ draft: false
 
 这是一个指标，表明您是作为系统构建商而不是服务提供商运营的。作为系统构建者，您正在干预每个系统（阅读：应用程序）。您调整它们的大小并与应用程序团队争论他们实际上是您的客户。你很忙，因为有很多应用程序，你有很多人。
 
-如果您作为内部云服务提供商运营 [CSP](https://itlaw.wikia.org/wiki/Cloud_service_provider), 您不会“妨碍”业务。您使用有效的定价模型来推动正确的行为。 公有云提供商会不会阻止应用团队购买 40 个 CPU 虚拟机，而他们只需要 2 个 CPU？ [AWS EC2](https://aws.amazon.com/ec2/?ec2-whats-new.sort-by=item.additionalFields.postDateTime&ec2-whats-new.sort-order=desc) 他们没有，所以你也不应该。
+如果您作为内部云服务提供商运营 [CSP](https://itlaw.wikia.org/wiki/Cloud_service_provider), 您不会“妨碍”业务。您使用有效的定价模型来推动正确的行为。 公有云提供商会不会阻止应用团队购买 40 个 CPU 虚拟机，而他们只需要 2 个 CPU？  [AWS EC2](https://aws.amazon.com/ec2/?ec2-whats-new.sort-by=item.additionalFields.postDateTime&ec2-whats-new.sort-order=desc) 他们没有，所以你也不应该。
 
 ### 故障排除是否意味着所有部门都参与其中？
 
