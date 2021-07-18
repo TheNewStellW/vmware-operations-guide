@@ -18,7 +18,7 @@ draft: false
 
 这是本书的目标。
 
-成熟运营的标志是您拥有完整、正确、准确的服务水平协议 [SLA](/operations-management/chapter-1-overview/1.1.7-service-level-agreement/). 完整意味着您拥有性能 SLA 和合规性 SLA，而不仅仅是可用性 SLA。正确意味着 SLA 是在每个付费虚拟机上衡量的，而不是在基础架构级别。这也意味着您使用了正确的指标。准确意味着必须每 5 分钟进行一次测量，因为任何超过此时间的间隔都可能会漏掉问题。
+成熟运营的标志是您拥有完整、正确、准确的服务水平协议 [SLA](/zh/operations-management/chapter-1-overview/1.1.7-service-level-agreement/). 完整意味着您拥有性能 SLA 和合规性 SLA，而不仅仅是可用性 SLA。正确意味着 SLA 是在每个付费虚拟机上衡量的，而不是在基础架构级别。这也意味着您使用了正确的指标。准确意味着必须每 5 分钟进行一次测量，因为任何超过此时间的间隔都可能会漏掉问题。
 
 ### 您的 IaaS 是否比公共云或混合云便宜？
 

@@ -33,4 +33,4 @@ weight: 80
 
 相同的逻辑适用于 VM。如果具有 64 个 vCPU 的虚拟机达到 90% 的利用率，则某些内核可能会达到 100%。这种方法会导致漏报，因为它在任何给定时刻取“成员”的平均值，然后随着时间的推移（例如，过去 24 小时）取峰值。
 
-这种“平均问题”在监控中基本上无处不在，因为它是聚合的默认技术。更深入的阅读请查看 [这个](https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/) 分析 [TylerTreat](https://bravenewgeek.com/about-me/)。
+这种“平均问题”在监控中基本上无处不在，因为它是聚合的默认技术。更深入的阅读请查看 [这个](https://bravenewgeek.com/everything-you-know-about-latency-is-wrong/) 分析 [Tyler Treat](https://bravenewgeek.com/about-me/)。

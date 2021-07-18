@@ -33,7 +33,7 @@ draft: false
 
 在您的服务产品中，您可以让客户检查自己的 VM 运行状况，以及底层平台如何为他们的 VM 提供服务。这意味着您的架构需要知道如何将租户与其虚拟机相关联。您需要有一个标记标准，例如业务单位、部门、联系人姓名。
 
-您的 CIO 希望向他的同事提供实时信息，以了解 IT 如何为业务服务。这需要您考虑关键绩效指标 [KPI](/operations-management/chapter-1-overview/1.1.8-pillar-vs-process/) (KPI)[^2]. 您如何知道 IaaS 对其消费者而言执行得足够快？您如何证明您符合服务水平协议 [SLA](/operations-management/chapter-1-overview/1.1.7-service-level-agreement/) (SLA) 你承诺了？
+您的 CIO 希望向他的同事提供实时信息，以了解 IT 如何为业务服务。这需要您考虑关键绩效指标 [KPI](/zh/operations-management/chapter-1-overview/1.1.8-pillar-vs-process/) (KPI)[^2]. 您如何知道 IaaS 对其消费者而言执行得足够快？您如何证明您符合服务水平协议 [SLA](/zh/operations-management/chapter-1-overview/1.1.7-service-level-agreement/) (SLA) 你承诺了？
 
 ![服务层图](1.1.4-fig-2.png)
 

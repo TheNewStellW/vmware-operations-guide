@@ -9,7 +9,7 @@ weight: 70
 
 在這本書中，我對 KPI 的定義嚴格按照**性能**，因為性能這個詞有特定的含義。對我來說，KPI 作為一個術語不適用於可用性管理和容量管理。我們應該將決定可用性的關鍵指標稱為**KAI**，將決定容量的關鍵指標稱為**KCI**[^1]。這將防止混淆，因為實現級解決方案要求我們明確術語。
 
-本書沒有使用包括非績效在內的更廣泛的 KPI 定義，因此我們可以在實現中精確。對於整體業務KPI, [Norman Dee](https://blogs.vmware.com/services-education-insights/author/ndee) 寫了一系列的博客文章[這裡](https://blogs.vmware.com /services-education-insights/2020/05/getting-started-with-kpis-and-metrics-part-1-their-importance-and-value.html).
+本書沒有使用包括非績效在內的更廣泛的 KPI 定義，因此我們可以在實現中精確。對於整體業務KPI, [Norman Dee](https://blogs.vmware.com/services-education-insights/author/ndee) 寫了一系列的博客文章[這裡](https://blogs.vmware.com/services-education-insights/2020/05/getting-started-with-kpis-and-metrics-part-1-their-importance-and-value.html).
 
 要使 KPI 支持 SLA，它使用的閾值必須與 SLA 使用的閾值相同。
 

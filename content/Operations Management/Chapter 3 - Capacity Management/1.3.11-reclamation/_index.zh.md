@@ -155,7 +155,7 @@ Idleness Indicator 是一个属性，因此只有在更改时才会显示值。�
 
 ## 开垦方法
 
-Active VM 在政治上是最难的，因为它们服务于业务工作负载。首先关注大型虚拟机。分别使用 CPU 和 RAM，因为拆分它们时更容易处理。分而治之。如果两者都降低，并且应用程序团队声称对性能产生影响，则需要同时恢复两者。无论闲置情况如何，从小型虚拟机中获取 CPU 和 RAM 都是徒劳的。无法进一步减少具有一个 vCPU 的空闲 VM。关注大型虚拟机，原因已涵盖[这里](/operations-management/chapter-3-capacity-management/1.3.12-rightsizing/#severity-of-over-provisioning).
+Active VM 在政治上是最难的，因为它们服务于业务工作负载。首先关注大型虚拟机。分别使用 CPU 和 RAM，因为拆分它们时更容易处理。分而治之。如果两者都降低，并且应用程序团队声称对性能产生影响，则需要同时恢复两者。无论闲置情况如何，从小型虚拟机中获取 CPU 和 RAM 都是徒劳的。无法进一步减少具有一个 vCPU 的空闲 VM。关注大型虚拟机，原因已涵盖 [这里](/operations-management/chapter-3-capacity-management/1.3.12-rightsizing/#severity-of-over-provisioning).
 
 在减少超大虚拟机或关闭空闲虚拟机时，请注意大型虚拟机。举个例子来比较：
 

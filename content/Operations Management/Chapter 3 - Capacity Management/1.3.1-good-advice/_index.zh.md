@@ -26,4 +26,4 @@ weight: 10
 
 你能找出错误在哪里吗？
 
-你现在应该注意到一个趋势。他们有一些共同点。如果没有，请 [第 4 部分：测验答案](/miscellaneous/chapter-1-quiz-answers/4.1.1-part-1-operations-management/)!
+你现在应该注意到一个趋势。他们有一些共同点。如果没有，请 [第 4 部分：测验答案](/zh/miscellaneous/chapter-1-quiz-answers/4.1.1-part-1-operations-management/)!

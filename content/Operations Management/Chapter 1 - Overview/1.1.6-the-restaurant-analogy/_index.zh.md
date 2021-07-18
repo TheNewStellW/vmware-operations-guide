@@ -4,9 +4,9 @@ date: 2021-06-11T11:31:22+10:00
 draft: false
 ---
 
-我们已经描述了数据中心管理的各个方面是如何发生变化的。如果您需要更多信息，请参阅[本章](/miscellaneous/chapter-3-sddc-vs-iaas/)。这些根本性的变化也将改变您的 IT 业务。您现在是服务提供商。尽管您的工程或技术知识仍然很重要，但您的客户会根据您的业务服务水平来衡量您。尽管他们关心您的系统架构及其功能，但他们衡量的是您的服务质量。
+我们已经描述了数据中心管理的各个方面是如何发生变化的。如果您需要更多信息，请参阅[本章](/zh/miscellaneous/chapter-3-sddc-vs-iaas/)。这些根本性的变化也将改变您的 IT 业务。您现在是服务提供商。尽管您的工程或技术知识仍然很重要，但您的客户会根据您的业务服务水平来衡量您。尽管他们关心您的系统架构及其功能，但他们衡量的是您的服务质量。
 
-[Sunny Dua](https://www.linkedin.com/in/duasunny/)[^1] 在解释正式服务水平协议的必要性时，我们使用餐厅类比 [SLA](/operations-management/chapter-1-overview/1.1.7-service-level-agreement/) (SLA). 这个比喻引起了许多客户的共鸣。人类总是与食物有关！
+[Sunny Dua](https://www.linkedin.com/in/duasunny/)[^1] 在解释正式服务水平协议的必要性时，我们使用餐厅类比 [SLA](/zh/operations-management/chapter-1-overview/1.1.7-service-level-agreement/) (SLA). 这个比喻引起了许多客户的共鸣。人类总是与食物有关！
 
 从本质上讲，一家餐厅有 2 个区域，通常有明确的分界线：
 

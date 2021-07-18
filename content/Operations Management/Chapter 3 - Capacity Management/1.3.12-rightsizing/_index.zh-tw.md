@@ -134,7 +134,7 @@ weight: 120
 
 結果是 vCPU 的數量。它不是以 % 或 GHz 為單位的。我們正在調整客戶操作系統的大小，而不是虛擬機。
 
-我們需要除以 20,000，因為 20,000 毫秒代表單個 vCPU 的 100%。 [此處](/metrics/chapter-1-overview/2.1.3-roll-up-vs-aggregation/) 解釋了有關此單元的更多信息。
+我們需要除以 20,000，因為 20,000 毫秒代表單個 vCPU 的 100%。 [此處](/zh-tw/metrics/chapter-1-overview/2.1.3-roll-up-vs-aggregation/) 解釋了有關此單元的更多信息。
 
 來賓操作系統 CPU 運行隊列指標需要進行一些轉換才能使用。讓我們舉個例子：
 
@@ -211,7 +211,7 @@ weight: 120
 
 現在讓我們將上述概念應用於內存利用率。
 
-一般來說，應用程序傾向於在任何給定時間處理其 [工作集](https://en.wikipedia.org/wiki/Working_set) 的一部分。該過程並非一直都在觸及其所有內存。結果，剩下的就變成了緩存。這就是為什麼活動 + 緩存超過 95% 是可以的。如果您的 ESXi 顯示為 98%，請不要驚慌。事實上，ESXi 會等到它通過 99% 才會觸發 [氣球](/metrics/chapter-3-memory-metrics/2.3.5-esxi-host/) 進程。 Windows 和 Linux 也在這樣做。現代操作系統正在為您緩存所有這些頁面。因此，您希望將免費頁面保持在低位。
+一般來說，應用程序傾向於在任何給定時間處理其 [工作集](https://en.wikipedia.org/wiki/Working_set) 的一部分。該過程並非一直都在觸及其所有內存。結果，剩下的就變成了緩存。這就是為什麼活動 + 緩存超過 95% 是可以的。如果您的 ESXi 顯示為 98%，請不要驚慌。事實上，ESXi 會等到它通過 99% 才會觸發 [氣球](/zh-tw/metrics/chapter-3-memory-metrics/2.3.5-esxi-host/) 進程。 Windows 和 Linux 也在這樣做。現代操作系統正在為您緩存所有這些頁面。因此，您希望將免費頁面保持在低位。
 
 |規則 |說明 |
 | --- | --- |

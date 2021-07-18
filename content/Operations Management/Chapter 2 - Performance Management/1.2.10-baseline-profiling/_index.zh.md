@@ -39,7 +39,7 @@ weight: 100
 
 ------
 
-以上为您提供了问题的深度。正如[以前](/operations-management/chapter-2-performance-management/1.2.4-contention-vs-utilization/)所涵盖的那样，您需要用问题的广度来补充这一点。该步骤是类似的，除了在步骤 1 中计算虚拟机体验 > 2.5% CPU 就绪的百分比。
+以上为您提供了问题的深度。正如[以前](/zh/operations-management/chapter-2-performance-management/1.2.4-contention-vs-utilization/)所涵盖的那样，您需要用问题的广度来补充这一点。该步骤是类似的，除了在步骤 1 中计算虚拟机体验 > 2.5% CPU 就绪的百分比。
 
 为什么是 2.5% 而不是 5%？
 
@@ -55,4 +55,4 @@ weight: 100
 
 请注意，在这种情况下，我将值设置为第 99 个百分位数，因为取 Max 可能会给出异常值。
 
-如果你想看更多的例子，我应用这个基线技术来计算 [CPU Context Switch](/metrics/chapter-2-cpu-metrics/2.2.1-guest-os/#guest-os-cpu -context-switch) 和 [CPU 运行队列](/metrics/chapter-2-cpu-metrics/2.2.1-guest-os/#guest-os-cpu-run-queue)。
+如果你想看更多的例子，我应用这个基线技术来计算 [CPU Context Switch](/zh/metrics/chapter-2-cpu-metrics/2.2.1-guest-os/#guest-os-cpu-context-switch) 和 [CPU 运行队列](/zh/metrics/chapter-2-cpu-metrics/2.2.1-guest-os/#guest-os-cpu-run-queue)。

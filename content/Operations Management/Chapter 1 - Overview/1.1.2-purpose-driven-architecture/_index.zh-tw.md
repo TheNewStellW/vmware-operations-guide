@@ -12,7 +12,7 @@ draft: false
 
 ![常見的“即服務”產品](1.1.2-fig-1.png?width=60pc&classes=shadow,border)
 
-在 DaaS 的情況下，目標是確保最終用戶獲得高質量的桌面體驗，同時保持每個用戶的低價格。我們將對此進行更多討論 [這裡](/miscellaneous/chapter-8-vdi-daas/).
+在 DaaS 的情況下，目標是確保最終用戶獲得高質量的桌面體驗，同時保持每個用戶的低價格。我們將對此進行更多討論 [這裡](/zh-tw/miscellaneous/chapter-8-vdi-daas/).
 
 讓我們深入了解 IaaS 業務。 IaaS 有三種變體。每個銷售不同的項目，所以目標不可能相同。
 
@@ -39,7 +39,7 @@ IaaS 最流行的變體是虛擬機即服務。在此變體中，業務目標是
 
 答案顯然是否定的。甚至應用程序團隊也不知道，因為某些應用程序可能尚未開發。他們的供應商可能也不知道，因為用法尚不清楚。
 
-SDDC 將為所有10,000 台虛擬機提供良好服務的承諾類似於您設計的高速公路將為所有汽車、公共汽車和摩托車提供良好服務的承諾，我們無法預測將使用多少虛擬機以及使用多少虛擬機他們將使用它的頻率的虛擬機。我們將在 [Performance](/operations-management/chapter-2-performance-management/) 部分詳細介紹這一點。
+SDDC 將為所有10,000 台虛擬機提供良好服務的承諾類似於您設計的高速公路將為所有汽車、公共汽車和摩托車提供良好服務的承諾，我們無法預測將使用多少虛擬機以及使用多少虛擬機他們將使用它的頻率的虛擬機。我們將在 [Performance](/zh-tw/operations-management/chapter-2-performance-management/) 部分詳細介紹這一點。
 
 那麼我們如何保證您的 IaaS 將為您的客戶提供良好的服務？
 
@@ -47,6 +47,6 @@ SDDC 將為所有10,000 台虛擬機提供良好服務的承諾類似於您設�
 
 > 你想要便宜；它不會很快。你想快點；它不會便宜。
 
-這是您將 [服務等級](/operations-management/chapter-1-overview/1.1.7-service-level-agreement/#class-of-service) 與 [服務水平協議](/operations-management/chapter-1-overview/1.1.7-service-level-agreement) 一起. 最高級別的服務可提供最佳的正常運行時間和性能，但也是有代價的。所有這些屬性在 SLA 中都有很好的定義，沒有任何歧義。合同不受解釋。您預先定義所有關鍵指標，向您的客戶保證您有信心按承諾交付。
+這是您將 [服務等級](/zh-tw/operations-management/chapter-1-overview/1.1.7-service-level-agreement/#class-of-service) 與 [服務水平協議](/zh-tw/operations-management/chapter-1-overview/1.1.7-service-level-agreement) 一起. 最高級別的服務可提供最佳的正常運行時間和性能，但也是有代價的。所有這些屬性在 SLA 中都有很好的定義，沒有任何歧義。合同不受解釋。您預先定義所有關鍵指標，向您的客戶保證您有信心按承諾交付。
 
 然後，您可以構建 IaaS 來提供上述服務類別。服務水平成為您的業務產品。有了這個，你就可以開始思考結局了。

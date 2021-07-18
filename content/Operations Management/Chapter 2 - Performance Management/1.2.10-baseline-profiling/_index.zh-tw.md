@@ -55,4 +55,4 @@ weight: 100
 
 請注意，在這種情況下，我將值設置為第 99 個百分位數，因為取 Max 可能會給出異常值。
 
-如果你想看更多的例子，我應用這個基線技術來計算[CPU Context Switch](/metrics/chapter-2-cpu-metrics/2.2.1-guest-os/#guest-os-cpu -context- switch) 和[CPU 運行隊列](/metrics/chapter-2-cpu-metrics/2.2.1-guest-os/#guest-os-cpu-run-queue)。
+如果你想看更多的例子，我應用這個基線技術來計算 [CPU Context Switch](/zh-tw/metrics/chapter-2-cpu-metrics/2.2.1-guest-os/#guest-os-cpu-context-switch) 和[CPU 運行隊列](/zh-tw/metrics/chapter-2-cpu-metrics/2.2.1-guest-os/#guest-os-cpu-run-queue)。

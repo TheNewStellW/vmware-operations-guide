@@ -10,4 +10,4 @@ draft: false
 
 但最終，結構會慢慢成熟並成為商品。 CIO 將開始關注運營，因為業務將需要使用 SLA 進行適當的治理。
 
-無論底層系統架構如何，CIO 仍然需要管理成本、容量、合規性、性能和可用性。運營支柱不會因為你改變管道而改變。我們將涵蓋更多這些支柱 [這裡](/operations-management/chapter-1-overview/1.1.8-pillar-vs-process/).
+無論底層系統架構如何，CIO 仍然需要管理成本、容量、合規性、性能和可用性。運營支柱不會因為你改變管道而改變。我們將涵蓋更多這些支柱 [這裡](/zh-tw/operations-management/chapter-1-overview/1.1.8-pillar-vs-process/).

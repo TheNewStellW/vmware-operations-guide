@@ -25,15 +25,15 @@ IaaS 的四个要素不是独立的。当 CPU 暂停时，就来宾操作系统�
 
 ## 消费者层
 
-消费者层由虚拟机和容器（通常在虚拟机内运行）组成。客户操作系统存在于其中，反过来又为进程运行提供了一个平台。因此，如果您正在运行容器，则会添加一个新层进行监控。如您所见 [此处](/metrics/chapter-1-overview/)，添加新层会改变相邻层中的指标。如果您有容器监控方面的专业知识，请给我发电子邮件！
+消费者层由虚拟机和容器（通常在虚拟机内运行）组成。客户操作系统存在于其中，反过来又为进程运行提供了一个平台。因此，如果您正在运行容器，则会添加一个新层进行监控。如您所见 [此处](/zh/metrics/chapter-1-overview/)，添加新层会改变相邻层中的指标。如果您有容器监控方面的专业知识，请给我发电子邮件！
 
 ![进程/客户/容器层分解](1.2.11-fig-1.png)
 
-在流程级别，用于故障排除的有用信息似乎有限。下面展示了【Windows Sysinternal】(https://docs.microsoft.com/en-us/sysinternals/)，一个很好的 Windows 故障排除工具。如您所见，它们只是利用率计数器。
+在流程级别，用于故障排除的有用信息似乎有限。下面展示了 [Windows Sysinternal](https://docs.microsoft.com/en-us/sysinternals/)，一个很好的 Windows 故障排除工具。如您所见，它们只是利用率计数器。
 
 ![进程监视器示例](1.2.11-fig-2.png)
 
-更多关于 [CPU 上下文切换](https://en.wikipedia.org/wiki/Context_switch) 被覆盖[这里](/metrics/chapter-2-cpu-metrics/2.2.1-guest-os/#guest-os-cpu-context-switch).
+更多关于 [CPU 上下文切换](https://en.wikipedia.org/wiki/Context_switch) 被覆盖[这里](/zh/metrics/chapter-2-cpu-metrics/2.2.1-guest-os/#guest-os-cpu-context-switch).
 
 由于提供了各种计数器，我们在 vSphere 虚拟机级别具有更好的可见性。下表列出了您可以为解决问题而执行的指标和相关操作。
 

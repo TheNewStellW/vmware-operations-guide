@@ -25,6 +25,6 @@ vSphere 的性能 SLA 在下表中定義：
 
 我花了很多年才意識到這個錯誤。
 
-答案在本書末尾的 [第 4 部分：測驗答案](/miscellaneous/chapter-1-quiz-answers/4.1.1-part-1-operations-management/) 中。
+答案在本書末尾的 [第 4 部分：測驗答案](/zh-tw/miscellaneous/chapter-1-quiz-answers/4.1.1-part-1-operations-management/) 中。
 
 績效管理的全部意義在於能夠_在客戶抱怨之前_知道問題。如果您不能在客戶之前看到問題，那麼您就沒有進行績效管理。 _manage_ 這個詞意味著積極主動。被動等待警報或投訴觸發故障排除過程不是管理。 Proactive 需要一個比外部正式商定的 SLA 更嚴格的內部閾值。這就是 KPI 的來源。

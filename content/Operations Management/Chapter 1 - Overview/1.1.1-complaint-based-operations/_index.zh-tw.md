@@ -18,7 +18,7 @@ draft: false
 
 這是本書的目標。
 
-成熟運營的標誌是您擁有完整、正確、準確的服務水平協議 [SLA](/operations-management/chapter-1-overview/1.1.7-service-level-agreement/). 完整意味著您擁有性能SLA和合規性SLA，而不僅僅是可用性SLA。正確意味著 SLA 是在每個付費虛擬機上衡量的，而不是在基礎架構級別。這也意味著您使用了正確的指標。準確意味著必須每 5 分鐘進行一次測量，因為任何超過此時間的間隔都可能會漏掉問題。
+成熟運營的標誌是您擁有完整、正確、準確的服務水平協議 [SLA](/zh-tw/operations-management/chapter-1-overview/1.1.7-service-level-agreement/). 完整意味著您擁有性能SLA和合規性SLA，而不僅僅是可用性SLA。正確意味著 SLA 是在每個付費虛擬機上衡量的，而不是在基礎架構級別。這也意味著您使用了正確的指標。準確意味著必須每 5 分鐘進行一次測量，因為任何超過此時間的間隔都可能會漏掉問題。
 
 ### 您的 IaaS 是否比公共雲或混合雲便宜？
 
