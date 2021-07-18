@@ -60,57 +60,57 @@ KPI 还通过为您的运营转型提供垫脚石来补充 SLA。这是真正的
 
 ## 服务水平
 
-The following table shows a basic and generic guideline to a class of service. The actual model that you will implement will certainly differ, taking into account technology and business demand. In the [capacity management section](/zh/operations-management/chapter-3-capacity-management/1.3.3-capacity-planning/), we walk through an actual example.
+下表显示了服务级别的基本和一般准则。考虑到技术和业务需求，您将实施的实际模型肯定会有所不同。 在 [容量管理部分](/zh/operations-management/chapter-3-capacity-management/1.3.3-capacity-planning/), 让我们回顾一个实际的例子。
 
-![class of service positioning breakdown](1.1.7-fig-5.png)
+![服务定位细分](1.1.7-fig-5.png)
 
-The table above is further defined by their SLA, because you need to quantify what 10% penalty exactly means.
+上表由他们的 SLA 进一步定义，因为您需要量化 10% 惩罚的确切含义。
 
-A Gold class has higher SLA than Silver. For that to happens, that means they are measured against the same benchmark.
+金子 级别的 SLA 高于 银 级别。为此，这意味着它们是根据相同的基准进行衡量的。
 
-- For availability, you measure all classes against the ideal, which is no downtime.
-- For performance, you measure them against the same threshold, which is a stringent (read: fast) number.
-- For compliance, you measure them against the ideal, which is perfect compliance.
-- For service, you measure them against the ideal, which is the best possible service.
+- 对于可用性，您可以根据理想情况衡量所有课程，即没有停机时间。
+- 对于性能，您可以根据相同的阈值来衡量它们，这是一个严格的（读取：快速）数字。
+- 对于合规性，您可以根据理想情况来衡量它们，即完美的合规性。
+- 对于服务，您根据理想来衡量它们，这是最好的服务。
 
-![VM health measured against SLA diagram](1.1.7-fig-6.png)
+![根据 SLA 图测量 VM 运行状况](1.1.7-fig-6.png)
 
 ### 性能 SLA
 
-Let's elaborate Performance SLA a bit, as it is more complex than the other two.
+让我们详细说明性能 SLA，因为它比其他两个更复杂。
 
-Following the above, diagram, you offer 99.9% for Gold, and 99% for Silver as the respective SLA.
+根据上图，您提供 99.9% 金子 和 99% 银 作为相应的 SLA。
 
-For Gold to be higher than Silver, that means both are measured against the _same raw threshold_. In other words, a VM in Silver environment will expect that it does not get what it demands as often as a VM in Gold. If the VM Owner wants to have more _consistent_ service in performance, then simply pay more and upgrade to the Gold cluster.
+对于黄金高于白银，这意味着两者都是根据_相同的原始阈值_来衡量的。换句话说，银色环境中的虚拟机期望它不会像黄金环境中的虚拟机那样频繁地得到它需要的东西。如果 VM Owner 在性能方面想要更多 _可靠的_ 服务，那么只需支付更多费用并升级到 金子 集群。
 
-This approach is easier than setting up a different performance threshold for each tier. Say you set the following:
+这种方法比为每一层设置不同的性能阈值更容易。假设您设置了以下内容：
 
-- **Gold**: VM Memory Contention: 0.5%
-- **Silver**: VM Memory Contention: 1.5%
+- **金子**: 虚拟机内存争用： 0.5%
+- **银**: 虚拟机内存争用： 1.5%
 
-You notice the problem already?
+你已经注意到问题了吗？
 
-It is hard to explain the delta or gaps between the class of services. Why is Silver 3x the value if it is only half the price? Shouldn't it be proportionate?
+很难解释服务类别之间的增量或差距。为什么银价只有一半，价值却是原来的三倍？不应该是成比例的吗？
 
-There is a 2nd problem. If you set _different_ standards, it is possible that Silver will perform better than Gold, because it has lower standard. This can create confusion.
+还有第二个问题。如果你设置_不同的_标准，白银的表现可能会比黄金好，因为它的标准较低。这会造成混乱。
 
-Operationally, having a single threshold is easier to set up. No need to play with vRealize Operations policy. You can also have mixed classes of VM in the same cluster or datastore, as the SLA threshold is the same.
+在操作上，设置单一阈值更容易。无需使用 vRealize Operations 策略。由于 SLA 阈值相同，您还可以在同一集群或数据存储中使用混合类 VM。
 
-We will cover the counters used in Performance SLA in more details [here](/zh/operations-management/chapter-2-performance-management/1.2.6-performance-sla/).
+我们将详细介绍性能 SLA 中使用的计数器 [这里](/zh/operations-management/chapter-2-performance-management/1.2.6-performance-sla/).
 
-### Differentiated Service
+### 差异化服务
 
-IaaS is built on commodity hardware and provided as a utility. Having said that, there are many ways to differentiate your service vs your competitors. Use class of service to distinguish premium service. The following table lists some examples.
+IaaS 建立在商品硬件上，并作为实用程序提供。话虽如此，有很多方法可以让您的服务与竞争对手区分开来。使用服务级别来区分高质量的服务。下表列出了一些示例。
 
-| Service | Description |
+| 服务 | 描述 |
 | ------- | ----------- |
-| Backup | Gold Tier provides application-level back up. It also provides more frequent full back up, and customers are provided with self-service individual file restore. |
-| High Availability | Gold Tier provides application- level monitoring. Customers can also ask for specific boot up sequence of their VMs, and ask for VM-Host affinity rules to minimize risk. |
-| Disaster Recovery | Gold Tier provides lower [RPO and RTO](https://en.wikipedia.org/wiki/Disaster_recovery). Customers are also entitled to annual real test, where the production workload are run from the DR site. |
-| Snapshot | Gold Tier provides longer snapshot and larger snapshot. |
-| OS Management | Gold Tier provides flexibility in patching. Customers can specify delay in patching and request for custom patch package, where not all patches from Microsoft or Red Hat is applied. |
-| VM Management | Gold Tier provides flexibility in updating Tools and VM Hardware. Customers are allowed to defer the update |
-| Monitoring Service | Gold Tier VMs will be proactively monitored, not just relying on alerts. Gold Tier provides deeper visibility into the underlying physical infrastructure where customers VM are running. Customers are entitled for lower internal metrics such as vMotion stun time and VMkernel latency. Gold tier provides self-service monitoring. Customers are given their own login to a portal where they can monitor their own VMs. They can initiate scheduled downtime. Customers will be alerted over email and messaging network. |
-| Support | Gold Tier provides faster response time, longer business hours, and faster resolution time. |
-| Network | Gold Tier provides priority network. Customers can opt for periodic ping service to ensure network latency between their applications remain within the agreed threshold. |
-| TAM | Gold Tier comes with a Technical Account Manager, acting as single point of contact for customers |
+|备份 | 黄金级 提供应用程序级别的备份。它还提供更频繁的完整备份，并为客户提供自助式个人文件恢复。 |
+|高可用性 | 黄金级 提供应用程序级别的监控。客户还可以要求他们的 VM 的特定启动顺序，并要求 VM-Host 关联规则以最小化风险。 |
+|灾难恢复 |黄金级提供较低的 [RPO 和 RTO](https://en.wikipedia.org/wiki/Disaster_recovery)。客户还有权进行年度实际测试，其中生产工作负载从 DR 站点运行。 |
+|快照 | 黄金级 提供更长的快照和更大的快照。 |
+|操作系统管理 | 黄金级 提供了打补丁的灵活性。客户可以指定补丁延迟和自定义补丁包请求，其中并非所有来自 Microsoft 或 Red Hat 的补丁都适用。 |
+|虚拟机管理 | 黄金级 提供更新工具和 VM 硬件的灵活性。允许客户推迟更新 |
+|监控服务 |黄金级虚拟机将受到主动监控，而不仅仅是依靠警报。黄金层提供对运行客户虚拟机的底层物理基础架构的更深入的可见性。客户有权获得较低的内部指标，例如 vMotion 眩晕时间和 VMkernel 延迟。黄金层提供自助服务监控。客户可以自己登录到一个门户网站，在那里他们可以监控自己的虚拟机。他们可以启动预定的停机时间。客户将通过电子邮件和消息网络收到警报。 |
+|支持 |黄金级提供更快的响应时间、更长的工作时间和更快的解决时间。 |
+|网络| 黄金级 提供优先网络。客户可以选择定期 ping 服务，以确保其应用程序之间的网络延迟保持在商定的阈值内。 |
+|谭 | 黄金级 配备一名技术客户经理，作为客户的单点联系方式 |
