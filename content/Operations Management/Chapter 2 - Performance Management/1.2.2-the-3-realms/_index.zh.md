@@ -10,7 +10,7 @@ weight: 20
 ![3个字段解释](1.2.2-fig-1.png)
 
 性能故障排除在很大程度上是一种消除练习。此方法对每一层进行切片并确定该层是否导致性能问题。因此，必须有一个指示符来指示是否正在执行特定层。这个主要指标被恰当地命名为关键绩效指标。我们将在 
-[这里](/zh/operations-management/chapter-2-performance-management/1.2.7-kpi-vs-sla/#internal-sla) 中介绍更多。
+[这里](/zh/operations-management/chapter-2-performance-management/1.2.7-kpi-vs-sla/#内部的-sla) 中介绍更多。
 
 上层依赖于下层，因此基础设施层通常是争用的来源。因此，首先关注底层，因为它是上层的基础。好的部分是，该层通常是一个水平层，它提供一组通用的基础设施服务，而不管在其上运行什么业务应用程序。
 

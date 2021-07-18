@@ -47,6 +47,6 @@ SDDC 將為所有10,000 台虛擬機提供良好服務的承諾類似於您設�
 
 > 你想要便宜；它不會很快。你想快點；它不會便宜。
 
-這是您將 [服務等級](/zh-tw/operations-management/chapter-1-overview/1.1.7-service-level-agreement/#class-of-service) 與 [服務水平協議](/zh-tw/operations-management/chapter-1-overview/1.1.7-service-level-agreement) 一起. 最高級別的服務可提供最佳的正常運行時間和性能，但也是有代價的。所有這些屬性在 SLA 中都有很好的定義，沒有任何歧義。合同不受解釋。您預先定義所有關鍵指標，向您的客戶保證您有信心按承諾交付。
+這是您將 [服務等級](/zh-tw/operations-management/chapter-1-overview/1.1.7-service-level-agreement/#服務水平) 與 [服務水平協議](/zh-tw/operations-management/chapter-1-overview/1.1.7-service-level-agreement) 一起. 最高級別的服務可提供最佳的正常運行時間和性能，但也是有代價的。所有這些屬性在 SLA 中都有很好的定義，沒有任何歧義。合同不受解釋。您預先定義所有關鍵指標，向您的客戶保證您有信心按承諾交付。
 
 然後，您可以構建 IaaS 來提供上述服務類別。服務水平成為您的業務產品。有了這個，你就可以開始思考結局了。

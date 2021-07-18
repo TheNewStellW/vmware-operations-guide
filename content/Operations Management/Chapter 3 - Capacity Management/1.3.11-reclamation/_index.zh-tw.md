@@ -35,7 +35,7 @@ vRealize Operations 通過 ESXi 主機上的 2 個衡量指標跟踪取消映射
 
 您可以在每個數據存儲上跟踪這兩個操作，但不能按數據存儲聚合它們。
 
-要詳細了解vSAN 中的TRIM 和取消映射，請閱讀[這篇詳細的文章](http://www.patrickkremer.com/save-money-using-vsan-unmap-trim-in-vmware-cloud-on -aws/) 這篇文章是由[Patrick Kremer](https://twitter.com/KremerPatrick).
+要詳細了解vSAN 中的TRIM 和取消映射，請閱讀[這篇詳細的文章](http://www.patrickkremer.com/save-money-using-vsan-unmap-trim-in-vmware-cloud-on-aws/) 這篇文章是由[Patrick Kremer](https://twitter.com/KremerPatrick).
 
 此問題僅發生在精簡配置的磁盤上。因此，如果要檢查可以回收多少空間，請創建一個視圖，將 Guest 中的值與 VMDK 級別顯示的值進行比較。
 
@@ -155,7 +155,7 @@ Idleness Indicator 是一個屬性，因此只有在更改時才會顯示值。�
 
 ## 開墾方法
 
-Active VM 在政治上是最難的，因為它們服務於業務工作負載。首先關注大型虛擬機。分別使用 CPU 和 RAM，因為拆分它們時更容易處理。分而治之。如果兩者都降低，並且應用程序團隊聲稱對性能產生影響，則需要同時恢復兩者。無論閒置情況如何，從小型虛擬機中獲取 CPU 和 RAM 都是徒勞的。無法進一步減少具有一個 vCPU 的空閒 VM。關注大型虛擬機，原因已涵蓋 [這裡](/operations-management/chapter-3-capacity-management/1.3.12-rightsizing/#severity-of-over-provisioning).
+Active VM 在政治上是最難的，因為它們服務於業務工作負載。首先關注大型虛擬機。分別使用 CPU 和 RAM，因為拆分它們時更容易處理。分而治之。如果兩者都降低，並且應用程序團隊聲稱對性能產生影響，則需要同時恢復兩者。無論閒置情況如何，從小型虛擬機中獲取 CPU 和 RAM 都是徒勞的。無法進一步減少具有一個 vCPU 的空閒 VM。關注大型虛擬機，原因已涵蓋 [這裡](/zh-tw/operations-management/chapter-3-capacity-management/1.3.12-rightsizing/#過度配置的嚴重程度).
 
 在減少超大虛擬機或關閉空閒虛擬機時，請注意大型虛擬機。舉個例子來比較：
 

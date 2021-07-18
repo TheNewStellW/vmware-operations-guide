@@ -30,35 +30,35 @@ KPI 和 SLA 齐头并进。
 
 SLA 是 **每月** 计数器，而不是每天或每年。您使用整个月的数据来计算它。
 
-The timeline matters. In the following table, notice 99.999% in a year is actually easier than 99.95% in a week. Your customers would not accept a yearly counter as they can be exposed to a long downtime. You would not accept a daily counter as there is no room for error. The monthly counter provides a balance between service quality and cost to deliver the service. It also makes reporting easier as you simply follow the calendar month.
+时间线很重要。在下表中，请注意一年中的 99.999% 实际上比一周中的 99.95% 容易。您的客户不会接受年度柜台，因为他们可能面临长时间停机。你不会接受每日柜台，因为没有错误的余地。月度计数器在服务质量和提供服务的成本之间提供平衡。它还使报告更容易，因为您只需要跟踪日历月。
 
-![SLA downtime duration comparison](1.1.7-fig-1.png)
+![SLA 停机持续时间比较](1.1.7-fig-1.png)
 
-Each additional "9" shrinks your downtime window by 10x. That's why each decimal can cost a lot more money, as a different architecture may be required.
+每添加一个“9”，您的停机时间窗口就会减少 10 倍。这就是为什么每个小数会花费更多的钱，因为可能需要不同的结构。
 
-Even if you measure the SLA once a month, it can still be very difficult to meet. Take a look at the following table. For simplicity, we will use Availability SLA and not Performance SLA, because up or down is a simple binary.
+即使您每月测量一次 SLA，仍然难以满足。看看下表。为简单起见，我们将使用可用性 SLA 而不是性能 SLA，因为 up 或 down 是一个简单的二进制文件。
 
-![SLA downtime in minutes comparison](1.1.7-fig-2.png)
+![以分钟为单位的 SLA 停机时间比较](1.1.7-fig-2.png)
 
-If you promise 99.99%, you only have 4.0 minutes - 4.5 minutes of downtime per calendar month. That means your architecture must be able to detect the issue and then complete proper remediation in just a few minutes. That's a tight space to manoeuvre.
+如果您承诺 99.99%，那么您每个日历月只有 4.0 分钟到 4.5 分钟的停机时间。这意味着您的架构必须能够检测到问题，然后在短短几分钟内完成相应的修复。这是一个狭窄的操作空间。
 
-A unique saving grace that applies to Availability but not Performance is scheduled downtime. There is no such thing as scheduled downtime in performance. Specific to IaaS, you can propose that scheduled downtime is not included in the SLA, so long it's done quickly and rarely. Planned activities such as VM hardware upgrade, Tools upgrade and Windows upgrade can be included in scheduled downtime activities. Downtime caused by customer is not included, be it intentional or not. This is why you need two counters: one for SLA and one for actual. The actual will record every downtime, be it a part of SLA or not.
+适用于可用性但不适用于性能的独特节省宽限期是计划停机时间。没有计划的性能停机时间这样的事情。特定于 IaaS，您可以建议计划停机时间不包括在 SLA 中，只要它快速且很少完成即可。 VM 硬件升级、工具升级和 Windows 升级等计划活动可以包含在计划停机活动中。客户造成的停机时间不包括在内，无论是否有意。这就是为什么您需要两个计数器：一个用于 SLA，一个用于实际。实际上，每次停机都会被记录下来，无论它是否属于 SLA 的一部分。
 
-A challenge that impact Availability but not Performance is recovery time. Your system may detect the VM is down within 1 minute, but the reboot process until the entire OS is properly up and running takes 5 minutes, as it needs to perform filesystem consistency check.
+影响可用性但不影响性能的挑战是恢复时间。您的系统可能会在 1 分钟内检测到 VM 已关闭，但是整个操作系统启动并正常运行之前的重启过程需要 5 分钟，因为它需要执行文件系统一致性检查。
 
-KPI complements SLA as it tracks at much higher intensity and it covers more counters and events. Use vRealize Log Insight for more time sensitive event, as vRealize Operations measures every 5 minutes.
+KPI 是对 SLA 的补充，因为它跟踪的强度更大，涵盖更多的计数器和事件。使用 vRealize Log Insight 处理更多时间敏感事件，因为 vRealize Operations 每 5 分钟测量一次。
 
-![explaination of availability and performance SLAs and KPIs](1.1.7-fig-3.png)
+![可用性和性能 SLA 和 KPI 的描述](1.1.7-fig-3.png)
 
-From the preceding table, note that Guest OS counters are not included as that's part of "application KPI" or VM KPI, not IaaS KPI. They impact the VM performance, but nothing the IaaS can do, meaning the remediation is at the Guest OS layer.
+从上表中，请注意不包括来宾操作系统计数器，因为它是“应用程序 KPI”或 VM KPI 的一部分，而不是 IaaS KPI。它们会影响 VM 性能，但 IaaS 无能为力，这意味着修复是在来宾 OS 层完成的。
 
-KPI also complements SLA by providing the stepping stone in your operations transformation. It is a necessary step towards operations with real business SLA.
+KPI 还通过为您的运营转型提供垫脚石来补充 SLA。这是真正的业务 SLA 操作的必要步骤。
 
-![complaint, KPI and SLA steps](1.1.7-fig-4.png)
+![投诉、KPI 和 SLA 程序](1.1.7-fig-4.png)
 
-You walk from where you stand. Adopt KPI first. Baseline your actual availability, performance, and compliance over time. Remember these counters are VM level, not infrastructure. Therefore, you need to profile all the VMs.
+你从你站的地方走。首先使用 KPI。随着时间的推移，确定您的实际可用性
 
-## Class of Service
+## 服务水平
 
 The following table shows a basic and generic guideline to a class of service. The actual model that you will implement will certainly differ, taking into account technology and business demand. In the [capacity management section](/zh/operations-management/chapter-3-capacity-management/1.3.3-capacity-planning/), we walk through an actual example.
 
@@ -75,7 +75,7 @@ A Gold class has higher SLA than Silver. For that to happens, that means they ar
 
 ![VM health measured against SLA diagram](1.1.7-fig-6.png)
 
-### Performance SLA
+### 性能 SLA
 
 Let's elaborate Performance SLA a bit, as it is more complex than the other two.
 
