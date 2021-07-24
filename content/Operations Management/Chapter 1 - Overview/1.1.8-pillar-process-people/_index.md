@@ -1,5 +1,5 @@
 ---
-title: "8. Pillar vs. Process"
+title: "8. Pillar | Process | People"
 date: 2021-06-11T11:31:22+10:00
 draft: false
 ---
