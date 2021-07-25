@@ -10,4 +10,4 @@ Don't be disheartened if your organisation is struggling with running a multi-cl
 
 Eventually though, the architecture will slowly mature and turn into a commodity. CIOs will begin focus on the operations as business will demand proper governance with SLA.
 
-Regardless of the underlying system architecture, CIOs are still required to manage cost, capacity, compliance, performance and availability. The Pillars of Operations do not change just because you change the plumbing. We will cover more of these pillars [here](/operations-management/chapter-1-overview/1.1.8-pillar-vs-process/).
+Regardless of the underlying system architecture, CIOs are still required to manage cost, capacity, compliance, performance and availability. The Pillars of Operations do not change just because you change the plumbing. We will cover more of these pillars [here](/operations-management/chapter-1-overview/1.1.8-pillar-process-people/).
