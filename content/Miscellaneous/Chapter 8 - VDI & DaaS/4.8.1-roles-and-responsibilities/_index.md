@@ -9,7 +9,7 @@ We covered the various roles required in cloud operations earlier, so let's dive
 
 | Role | Responsibility |
 | --- | --- |
-| **Level 1 Ops** | **Reactive**: respond to user complaint or alerts and perform simple remediation. Typically does not require reading logs. **Proactive** health check of the environment, as part of the SOP. Look at availability, performance and compliance.| 
+| **Level 1 Ops** | **Reactive**: respond to user complaint or alerts and perform simple remediation. Typically does not require reading logs. **Proactive** health check of the environment, as part of the SOP. Look at availability, performance and compliance.|
 | **Level 2 Ops** | **Reactive**: Perform advance troubleshooting. Likely require reading logs and Windows Events. **Proactive**: Analyse the overall environment, especially from performance and availability. Should do this at least once a week. |
 | **Capacity** | Review the pool and farm capacity. Depending on the volatility, this could be done monthly.|
 | **Compliance** | Set the compliance settings to agreed internal and industry standard. Verify that non-compliance alert was addressed timely and correctly by the operations team. Report the comp. |
@@ -27,3 +27,12 @@ The responsibilities cover the 7 pillar of operations. As Horizon requires vSphe
 | **Configuration** | Any misconfiguration, outdated configuration, incompatible configuration or suboptimal configuration? This needs to be checked across the entire stack, especially the lower stack as problem in a stack will impact the stack above it.|
 
 From the brief summary above, you can see that VDI operations management is complex. It's much more than waiting for user to complain and then troubleshoot a single desktop.
+
+Minimize the time troubleshooting single users by optimizing the Windows image, so you can focus on wide-spread problems. Using [VMware OS Optimization Tool](https://flings.vmware.com/vmware-os-optimization-tool), you can get improvements like these:
+
+- reduce disk space by up to 80%.
+- reduces the time to create desktop pools by up to 3x.
+- speed up user profile creation from 30 seconds to 8 seconds.
+- reduce memory by up to 2x.
+- reduce CPU usage by up to 40%
+- reduce disk IOPS by up to 2.5x.
