@@ -7,7 +7,7 @@ weight: 30
 
 I will provide some examples demonstrating the various features of super metrics [functions and operators](https://docs.vmware.com/en/VMware-vRealize-Operations-Cloud/services/config-guide/GUID-7A557E72-0FD0-4AC9-B778-2F492C121EE9.html). More is covered in the manual.
 
-There are many examples in the [repository](https://code.vmware.com/samples) of super metrics.
+There are also many examples in the [repository](https://code.vmware.com/samples) of super metrics.
 
 ## Basic Functions
 
@@ -32,6 +32,10 @@ If you use the same super metric for different levels, specify the deepest one.
 
 **Average of CPU Usage with all VMs in a custom group:**
 `avg( ${ adaptertype=VMWARE, objecttype=VirtualMachine, metric=cpu|usage_average, depth=3 } )`
+
+**Return CO2 Emission if the metric exists. If not, return 0.744 by default**
+`${this, metric=CustomProperty\|CO2 Emission, defval=0.744}`
+The above is handy if the metric may not exist and you want to specify a default value.
 
 ## 'Where' Clause
 
@@ -78,7 +82,7 @@ ${ this, metric=summary|running_vms }
 * 100
 ```
 
-The last row is to manually convert into percentage.
+The last line in the code is to manually convert into percentage.
 
 **Use Case:** Count of all VMs with CPU usage \> 70% OR memory usage \> 60%
 
