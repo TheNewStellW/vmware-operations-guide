@@ -7,7 +7,7 @@ draft: false
 # VMware Operations Management
 ### Journey Towards Proactive Operations, powered by vRealize
 
-#### 3rd Edition, Update 2, June 2021
+#### 3rd Edition, Update 3, July 2021
 
 Five long years have passed since the [2nd edition](http://virtual-red-dot.info/released-vmware-performance-and-capacity-management/) of the book and you will find that this 3rd edition has been written from the ground up, with many new and expanded sections, as well as the removal of many parts that are now considered level 100. There are now 4 parts of the book. Part 3 has been brought forward to Part 2, as you need to know the metrics before using the dashboards. Also, compared to 5 years ago, creating your own dashboard is easier. Part 4 has been added for miscellaneous stuff that may expand in the future.
 
