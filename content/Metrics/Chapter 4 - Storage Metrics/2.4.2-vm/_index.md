@@ -64,3 +64,5 @@ How I know that's IOPS effect as the throughput is identical. The additional rea
 And here is the IOPS on the same time period. Notice the value at datastore layer is consistently higher.
 
 ![Higher Read IOPS on datastore](2.4.2-fig-9.png)
+
+For further reading, [Sreekanth Setty](https://blogs.vmware.com/performance/author/sreekanth_setty) has shared best practice [here](https://blogs.vmware.com/performance/2021/06/performance-best-practices-for-vmware-snapshots.html).
