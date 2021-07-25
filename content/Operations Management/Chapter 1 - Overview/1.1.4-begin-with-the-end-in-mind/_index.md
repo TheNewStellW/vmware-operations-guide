@@ -33,7 +33,7 @@ You also promise the concept of Availability Zone for Gold class, as they host m
 
 In your service offering, you include the ability for the customers to check their own VM health, and how their VMs are served by the underlying platform. This means your architecture needs to know how to associate tenants with their VMs. You need to have a tagging standard, such as business unit, department, contact name.
 
-Your CIO wants a live information projected for his peers to see on how IT is serving the business. This requires you to think of the [Key Performance Indicators](/operations-management/chapter-1-overview/1.1.8-pillar-vs-process/) (KPI)[^2]. How do you know the IaaS is performing fast enough for its consumers? How do you prove that you are meeting the [Service Level Agreement](/operations-management/chapter-1-overview/1.1.7-service-level-agreement/) (SLA) you promised?
+Your CIO wants a live information projected for his peers to see on how IT is serving the business. This requires you to think of the [Key Performance Indicators](/operations-management/chapter-1-overview/1.1.8-pillar-process-people/) (KPI)[^2]. How do you know the IaaS is performing fast enough for its consumers? How do you prove that you are meeting the [Service Level Agreement](/operations-management/chapter-1-overview/1.1.7-service-level-agreement/) (SLA) you promised?
 
 ![Figure of service tiers](1.1.4-fig-2.png)
 
