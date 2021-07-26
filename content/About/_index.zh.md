@@ -1,7 +1,7 @@
 ---
 title: "VMware 运营管理"
 date: 2021-06-11T11:31:22+10:00
-draft: false
+draft: true
 ---
 
 # VMware 运营管理
