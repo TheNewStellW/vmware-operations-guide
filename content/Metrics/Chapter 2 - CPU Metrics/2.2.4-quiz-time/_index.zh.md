@@ -45,6 +45,6 @@ ESXi“利用率”与 ESXi“争用”无关。 4 个突出显示的区域是�
 
 ![争用与使用](2.2.4-fig-4.png)
 
-像往常一样，回答[部分 4](/zh/miscellaneous/chapter-1-quiz-answers/).
+像往常一样，回答 [部分 4](/zh/miscellaneous/chapter-1-quiz-answers/).
 
 [^1]: 由...提供 Valentin Bondzio
