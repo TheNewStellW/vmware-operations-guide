@@ -37,7 +37,7 @@ weight: 40
 
 ![使用率飆升](2.2.4-fig-3.png)
 
-你能弄清楚為什麼 3 個計數器的上升方式不同嗎？他們測量什麼？像往常一樣，答案可以在 [部分 4](/zh/miscellaneous/chapter-1-quiz-answers/).
+你能弄清楚為什麼 3 個計數器的上升方式不同嗎？他們測量什麼？像往常一樣，答案可以在 [部分 4](/zh-tw/miscellaneous/chapter-1-quiz-answers/).
 
 ## ESXi 利用率與爭用
 
@@ -45,6 +45,6 @@ ESXi“利用率”與 ESXi“爭用”無關。 4 個突出顯示的區域是�
 
 ![爭用與使用](2.2.4-fig-4.png)
 
-像往常一樣，回答 [部分 4](/zh/miscellaneous/chapter-1-quiz-answers/).
+像往常一樣，回答 [部分 4](/zh-tw/miscellaneous/chapter-1-quiz-answers/).
 
 [^1]: 由...提供 Valentin Bondzio
