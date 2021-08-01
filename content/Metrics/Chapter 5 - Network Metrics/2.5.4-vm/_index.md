@@ -9,7 +9,9 @@ The following screenshot shows the counters vCenter provides for the Network at 
 
 ![VM counters](2.5.4-fig-1.png)
 
-As usual, let's approach the counters starting with Contention. There is no Latency counter so you cannot track how long it takes for a packet to reach its destination. There are, however, counters that track packet loss. For TCP connection, dropped packet needs to be retransmitted and therefore increases network latency from application point of view. vCenter does not provide a counter to track packet retransmit.
+As usual, let's approach the counters starting with Contention. There is no Latency counter so you cannot track how long it takes for a packet to reach its destination. There are, however, counters that track packet loss. For TCP connection, dropped packet needs to be retransmitted and therefore increases network latency from application point of view. The counter will not match the values from Guest OS level as packets are dropped before it’s handed into Guest OS, or after it left the Guest OS. ESXi dropped the packet because it’s not for the Guest OS or it violates the security setting you set.
+
+vCenter does not provide a counter to track packet retransmit.
 
 Network latency could be impacted by CPU. CPU might not fast enough to process the packet. In VM, this could also be due to the VM having CPU contention.
 

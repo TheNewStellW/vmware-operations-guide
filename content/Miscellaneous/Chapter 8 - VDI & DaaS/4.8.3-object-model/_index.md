@@ -5,7 +5,9 @@ draft: false
 weight: 30
 ---
 
-A critical foundation in managing a mission critical VDI is the object model. This means the objects and relationship among the objects. It will be impossible to roll up if the correct hierarchy is not in place.
+A critical foundation in managing a mission critical VDI is the object model. This means the objects and relationship among the objects. It will be impossible to roll up if the correct hierarchy is not in place. The object model also plays a critical role in navigating the structure of a large Horizon set up. It complements the tabular presentation by showing relationship and hierarchy clearly.
+
+![Object Model](4.8.3-fig-4.png)
 
 vRealize Operations 8.4 sports a new adapter, replacing the previous adapter (called V4H). It sports a revamped object model, blending vSphere and Horizon objects as one traversal path, as shown in the following diagram.
 

@@ -9,7 +9,7 @@ weight: 70
 This page is still in draft.
 {{% /notice %}}
 
-We covered in [Part 1 Chapter 1](/operations-management/chapter-1-overview/1.1.8-pillar-vs-process/) that Availability can impact Performance and Capacity, but need to be measured separately.
+We covered in [Part 1 Chapter 1](/operations-management/chapter-1-overview/1.1.8-pillar-process-people/) that Availability can impact Performance and Capacity, but need to be measured separately.
 
 Horizon consists of different components, each having their own availability metrics.
 

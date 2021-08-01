@@ -33,3 +33,5 @@ For VDI, this is what the connection looks like. The pool cannot be both desktop
 ![User connectivity flow VDI](4.8.2-fig-4.png)
 
 I did not draw the permutation where a user accesses all 4 types of sessions. You can certainly have it. When you design, think of complexity in operations. Flexibility can reduce cost but often comes at the price of complexity. A few human errors in a year can negate the benefit of cost savings, or reduce customer satisfaction.
+
+Horizon sessions are ephemeral objects. In solution such as Instant Clone, the vSphere VM is also a temporary object that gets destroyed after usage. This means the historical data will be lost too. To enable troubleshooting past data, we keep a copy of the data in the User object.
