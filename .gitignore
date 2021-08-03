@@ -23,7 +23,6 @@ creds.js
 
 # Hugo 
 public/
-content/Pandoc/
  
 # Private Files
 *.json
