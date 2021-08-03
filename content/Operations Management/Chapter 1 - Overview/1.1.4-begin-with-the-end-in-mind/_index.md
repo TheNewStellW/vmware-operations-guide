@@ -43,7 +43,7 @@ It's important to reflect the business in your operations. Create a hierarchical
 
 ![breakdown of departments and service tiers](1.1.4-fig-3.png)
 
-The limitation of the above is reorganisation. You will need to rename, move folders to the new parent folders, and delete folders. For example, if Business Unit B merges with Business Unit C and the combined entity has a new name, then you need to rename of them, and delete the other.
+The limitation of the above is reorganisation. You will need to rename, move folders to the new parent folders, and delete folders. For example, if Business Unit B merges with Business Unit C and the combined entity has a new name, then you need to rename one of them, and delete the other.
 
 Last but not least, you need to account for problem. Real problems happen in Day 2 as that's when you have business workloads doing revenue generating transactions. Do not architect something you are not willing to troubleshoot. Think of the roles and skills required to operate your architecture. Provide the necessary visibility[^3] into each component and define what constitutes health, risk and efficiency.
 
