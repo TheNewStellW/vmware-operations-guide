@@ -9,15 +9,15 @@ It's important to calculate unit cost, despite the fact it does not actually exi
 
 ![cost input and unit pricing](1.5.3-fig-1.png)
 
-The Unit cost per VM depends on Overcommit Ratio, since the hardware cost is identical. If cluster A has 2x overcommit ratio, then the cost per VM is 2x cheaper, all else being equal.
+The Unit cost per VM depends on Overcommitment Ratio, since the hardware cost is identical. If cluster A has 2x overcommitment ratio, then the cost per VM is 2x cheaper, all else being equal.
 
-Overcommit Ratio is the way you justify a higher price, hence it's imperative to disclose upfront to your customers.
+Overcommitment Ratio is the way you justify a higher price, hence it's imperative to disclose upfront to your customers.
 
 Unit Cost has to be associated with VM, not ESXi. It is expressed in vCPU, not per physical core or GHz. How many vCPU you plan to pack determines the cost per vCPU.
 
-Unit Cost depends on hardware and software. New cluster should cost less due to bigger hardware
+Unit Cost depends on hardware and software. New cluster should cost less due to bigger hardware.
 
-Unit Price should remain the same within the same class of service. Back to the airline industry example, the price does not depend on the plane generation.
+Unit Price should remain the same within the same class of service. Back to the airline industry example, the price does not depend on the aircraft generation.
 
 ## Cost Savings
 
@@ -34,7 +34,7 @@ Accounting wise, it's $1 million only. While that HCI cost you $2 million three 
 
 The $1 million is certainly an ***estimation***. The actual cost avoided or to be spent depends on vendor quotation, and your negotiation skills. Take note that the actual is much more than the HCI cost. Additional costs can exceed the hardware cost. You need to include the full loaded cost, such as data center facility, implementation service, back up storage, administration service, software licence, management, etc.
 
-Reclamation alone does ***not*** save cost. How much do you save when you delete files in your notebook?
+Reclamation alone does ***not*** reduce cost. How much do you save when you delete files in your notebook?
 
 Right. Zero.
 

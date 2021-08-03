@@ -33,7 +33,7 @@ You also promise the concept of Availability Zone for Gold class, as they host m
 
 In your service offering, you include the ability for the customers to check their own VM health, and how their VMs are served by the underlying platform. This means your architecture needs to know how to associate tenants with their VMs. You need to have a tagging standard, such as business unit, department, contact name.
 
-Your CIO wants a live information projected for his peers to see on how IT is serving the business. This requires you to think of the [Key Performance Indicators](/operations-management/chapter-1-overview/1.1.8-pillar-vs-process/) (KPI)[^2]. How do you know the IaaS is performing fast enough for its consumers? How do you prove that you are meeting the [Service Level Agreement](/operations-management/chapter-1-overview/1.1.7-service-level-agreement/) (SLA) you promised?
+Your CIO wants a live information projected for his peers to see on how IT is serving the business. This requires you to think of the [Key Performance Indicators](/operations-management/chapter-1-overview/1.1.8-pillar-process-people/) (KPI)[^2]. How do you know the IaaS is performing fast enough for its consumers? How do you prove that you are meeting the [Service Level Agreement](/operations-management/chapter-1-overview/1.1.7-service-level-agreement/) (SLA) you promised?
 
 ![Figure of service tiers](1.1.4-fig-2.png)
 
@@ -43,7 +43,7 @@ It's important to reflect the business in your operations. Create a hierarchical
 
 ![breakdown of departments and service tiers](1.1.4-fig-3.png)
 
-The limitation of the above is reorganisation. You will need to rename, move folders to the new parent folders, and delete folders. For example, if Business Unit B merges with Business Unit C and the combined entity has a new name, then you need to rename of them, and delete the other.
+The limitation of the above is reorganisation. You will need to rename, move folders to the new parent folders, and delete folders. For example, if Business Unit B merges with Business Unit C and the combined entity has a new name, then you need to rename one of them, and delete the other.
 
 Last but not least, you need to account for problem. Real problems happen in Day 2 as that's when you have business workloads doing revenue generating transactions. Do not architect something you are not willing to troubleshoot. Think of the roles and skills required to operate your architecture. Provide the necessary visibility[^3] into each component and define what constitutes health, risk and efficiency.
 

@@ -205,7 +205,7 @@ Accuracy of Guest OS memory has been a debate for a long time in virtualization 
 
 The thin bar is a generic guidance for all utilization metrics, such as CPU and memory. The thicker bar is specific to memory utilization.
 
-![utilisation](1.3.12-fig-5.png)
+![utilisation](1.3.12-fig-5.jpg)
 
 When you spend your money on infrastructure, you want to maximize its use, ideally at 100%. After all, you pay for the whole box. In the case of memory, it even makes sense to use the whole hardware as the very purpose of memory is just a cache for disk.
 

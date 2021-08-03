@@ -11,15 +11,13 @@ From the main menu, click Administration and in the left pane click Configuratio
 
 Click on "Add" to start Super Metrics creation wizard.
 
-## Step 2
-
 Start with a meaningful name for the super metric and description.
 
 You may also assign a unit from the available drop-down list, if required. (available only from version 8.1)
 
 ![New Super Metric](4.4.2-fig-1.png)
 
-## Step 3
+## Step 2
 
 Start with Selecting "Functions" from the drop-down options available, followed by "Object Type" or "Object" ( typing in the name brings up suggestive text which can be selected) and followed by Metric or Property to use ( typing in the key words of required metric or property brings up suggestive text which can be selected). Further, you may add any operators as required in the super metrics workspace.
 
@@ -35,13 +33,13 @@ Other options available in the page are:
 
 - **Legacy**: This mode switches to the template to create a super metric formula without the suggestive text as it used to be in version 7.0 or older.
 
-## Step 4
+## Step 3
 
 Add the object(s) to which the super metric needs to be applied.
 
 ![Object Types](4.4.2-fig-3.png)
 
-## Step 5
+## Step 4
 
 The last step of creating super metric is to apply to relevant policy or policies.
 
