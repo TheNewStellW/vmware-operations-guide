@@ -1,0 +1,22 @@
+{{- $folder := .Get "folder" -}}
+{{- $boxTitle := .Get "boxTitle" -}}
+
+<section class="attachments green">
+	<label>
+		<i class="fas fa-paperclip" aria-hidden="true"></i>
+		{{ $boxTitle }}
+	</label>
+		{{$.Scratch.Add "filesName" ( lower (printf "%s" $folder )) }}
+	<div class="attachments-files">
+	{{ range (readDir (printf "./content/%s%s" .Page.File.Dir ($.Scratch.Get "filesName")) ) }}
+		{{ $fileDir := lower (replace $.Page.File.Dir "\\" "/" ) }}
+		<li>
+			<a href="{{ lower (printf "%s%s/%s" $fileDir ($.Scratch.Get "filesName") .Name) | relURL }}" >
+				{{.Name}}
+			</a>
+			({{div .Size 1024 }} {{T "BinaryPrefix-kilobyte"}})
+		</li>
+	{{ end }}
+	</div>
+	{{.Inner}}
+</section>
