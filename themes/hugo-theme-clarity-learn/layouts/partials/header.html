@@ -1,0 +1,10 @@
+<header class="header-6">
+   <div class="branding">
+      <a href="{{ .Site.BaseURL }}" class="nav-link">
+         {{ partial "logo.html" . }}
+         <span class="title">{{ .Site.Title }}</span>
+      </a>
+   </div>
+
+   {{ partial "clarity-search.html" . }}
+</header>

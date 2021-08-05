@@ -1,0 +1,21 @@
+# theme.toml template for a Hugo theme
+# See https://github.com/spf13/hugoThemes#themetoml for an example
+
+name = "Clarity Learn"
+license = "MIT"
+licenselink = "https://github.com/vinayvivekananda/hugo-theme-clarity-learn/blob/master/LICENSE.md"
+description = "Documentation theme for Hugo, based on Grav Learn theme"
+homepage = "https://github.com/vinayvivekananda/hugo-theme-clarity-learn"
+repo = "https://github.com/vinayvivekananda/hugo-theme-clarity-learn"
+tags = ["documentation", "grav", "learn", "doc", "search", "clarity"]
+features = ["documentation", "menu", "nested sections", "search", "mermaid"]
+min_version = 0.25
+
+[author]
+  name = "Vinay Vivekananda"
+  homepage = "https://vinayvivekananda.github.io/"
+
+[original]
+  name = "Mathieu Cornic"
+  homepage = "https://github.com/matcornic/hugo-theme-learn"
+  repo = "https://github.com/matcornic/hugo-theme-learn"
