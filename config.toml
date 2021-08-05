@@ -1,7 +1,7 @@
 baseURL = "/"
 languageCode = "en-us"
 title = "VMware Operations Guide"
-theme = "hugo-theme-learn"
+theme = "hugo-theme-clarity-learn"
 enableGitInfo = true
 
 # defaultContentLanguage = "en" # English is the default language
@@ -28,16 +28,15 @@ disableLanguages = [""]
   lastmod = [":git", "lastmod", "date", "publishDate"]
 
 [params]
-  themeVariant = "green" # Change default color scheme with a variant one. Can be "red", "blue", "green".
   editURL = "https://github.com/TheNewStellW/vmware-operations-guide/tree/main/content/"
 
-[[menu.shortcuts]] 
+[[menu.shortcuts]]
   name = "Iwan 'e1' Rahabok"
   identifier = "ds"
   url = "http://virtual-red-dot.info/iwan-rahabok/"
   weight = 10
 
-[[menu.shortcuts]] 
+[[menu.shortcuts]]
   name = "Hosted on FunkyCloudMedina"
   identifier = "fcm"
   url = "https://www.funkycloudmedina.com/"
@@ -48,7 +47,7 @@ disableLanguages = [""]
 
 [markup]
   defaultMarkdownHandler = "goldmark"
-	
+
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true

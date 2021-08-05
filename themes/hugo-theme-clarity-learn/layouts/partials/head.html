@@ -1,0 +1,11 @@
+<head>
+   <meta charset="utf-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   {{ hugo.Generator }}
+   {{ partial "meta.html" . }}
+   {{ partial "favicon.html" . }}
+   <title>{{ .Title }} {{ default "::" .Site.Params.titleSeparator }} {{ .Site.Title }}</title>
+
+   {{ partial "link.html" . }}
+   {{ partial "custom-header.html" . }}
+ </head>
