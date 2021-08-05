@@ -1,0 +1,73 @@
+<body class="" data-url="{{ .RelPermalink }}">
+   <div class="main-container">
+      {{ partial "header.html" . }}
+      <div class="content-container">
+         <div class="content-area">
+            <section id="body">
+               <div class="padding highlightable">
+                  <div>
+                     <div id="top-bar">
+                        {{ if and (or .IsPage .IsSection) .Site.Params.editURL }}
+                        {{ $File := .File }}
+                        {{ $Site := .Site }}
+                        {{with $File.Path }}
+                        <div id="top-github-link">
+                           <a class="github-link" title='{{T "Edit-this-page"}}'
+                              href="{{ $Site.Params.editURL }}{{ replace $File.Dir " \\" "/" }}{{ $File.LogicalName }}"
+                              target="blank">
+                              <i class="fas fa-code-branch"></i>
+                              <span id="top-github-link-text">{{T "Edit-this-page"}}</span>
+                           </a>
+                        </div>
+                        {{ end }}
+                        {{ end }}
+                        {{$toc := (and (not .Params.disableToc) (not .Params.chapter))}}
+                        <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                           <span id="sidebar-toggle-span">
+                              <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                                 <i class="fas fa-bars"></i>
+                              </a>
+                           </span>
+                           {{ if $toc }}
+                           <!-- <span id="toc-menu"><i class="fas fa-list-alt"></i></span> -->
+                           {{ end }}
+                           <span class="links">
+                              {{$showBreadcrumb := (and (not .Params.disableBreadcrumb) (not
+                              .Site.Params.disableBreadcrumb))}}
+                              {{if $showBreadcrumb}}
+                              {{ template "breadcrumb" dict "page" . "value" .Title }}
+                              {{ else }}
+                              {{ .Title }}
+                              {{ end }}
+                           </span>
+                        </div>
+                        {{ if $toc }}
+                        {{ partial "toc.html" . }}
+                        {{ end }}
+                     </div>
+                  </div>
+                  <div id="head-tags">
+                     {{ partial "tags.html" . }}
+                  </div>
+                  {{ if .Params.chapter }}
+                  <div id="chapter">
+                     {{ end }}
+                     <div id="body-inner">
+                        {{if and (not .IsHome) (not .Params.chapter) }}
+                        <h1>
+                           {{ if or (eq .Kind "taxonomy") (eq .Kind "term") }}
+                           {{.Data.Singular}} ::
+                           {{ end }}
+                           {{.Title}}
+                        </h1>
+                        {{end}}
+
+                        {{define "breadcrumb"}}
+                        {{$parent := .page.Parent }}
+                        {{ if $parent }}
+                        {{ $value := (printf "<a href='%s'>%s</a> > %s" $parent.RelPermalink $parent.Title .value) }}
+                        {{ template "breadcrumb" dict "page" $parent "value" $value }}
+                        {{else}}
+                        {{.value|safeHTML}}
+                        {{end}}
+                        {{end}}

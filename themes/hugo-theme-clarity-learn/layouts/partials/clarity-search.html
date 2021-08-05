@@ -1,0 +1,24 @@
+{{if not .Site.Params.disableSearch}}
+<!-- {{ partial "search.html" . }} -->
+<form id="clarity-search" class="search">
+   <label id="search-label" for="search_input">
+      <input id="search_input" type="text" placeholder="Search for keywords...">
+   </label>
+
+</form>
+
+{{ $assetBusting := not .Site.Params.disableAssetsBusting }}
+<script type="text/javascript" src="{{"js/lunr.min.js" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}"></script>
+<script type="text/javascript" src="{{"js/auto-complete.js" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}"></script>
+<script type="text/javascript">
+   {{ if .Site.IsMultiLingual }}
+       var baseurl = "{{.Site.BaseURL}}{{.Site.LanguagePrefix}}";
+   {{ else }}
+       var baseurl = "{{.Site.BaseURL}}";
+   {{ end }}
+</script>
+<script type="text/javascript" src="{{"js/search.js" | relURL}}{{ if $assetBusting }}?{{ now.Unix }}{{ end }}"></script>
+
+{{end}}
+
+
