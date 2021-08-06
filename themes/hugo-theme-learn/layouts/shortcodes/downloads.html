@@ -6,12 +6,10 @@
 		<i class="fas fa-paperclip" aria-hidden="true"></i>
 		{{ $boxTitle }}
 	</label>
-		{{$.Scratch.Add "filesName" ( lower (printf "%s" $folder )) }}
 	<div class="attachments-files">
-	{{ range (readDir (printf "./content/%s%s" .Page.File.Dir ($.Scratch.Get "filesName")) ) }}
-		{{ $fileDir := lower (replace $.Page.File.Dir "\\" "/" ) }}
+	{{ range (readDir ( print "static/files/downloads/" $folder)) }}
 		<li>
-			<a href="{{ lower (printf "%s%s/%s" $fileDir ($.Scratch.Get "filesName") .Name) | relURL }}" >
+			<a href="{{ print "/files/downloads/" $folder "/" .Name }}">
 				{{.Name}}
 			</a>
 			({{div .Size 1024 }} {{T "BinaryPrefix-kilobyte"}})
