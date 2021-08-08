@@ -25,7 +25,7 @@ creds.js
 public/
  
 # Private Files
-*.json
+#*.json
 *.csv
 *.csv.gz
 *.tsv
