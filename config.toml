@@ -30,6 +30,7 @@ disableLanguages = [""]
 [params]
   themeVariant = "green" # Change default color scheme with a variant one. Can be "red", "blue", "green".
   editURL = "https://github.com/TheNewStellW/vmware-operations-guide/tree/main/content/"
+  disableReadingTime = false
 
 [[menu.shortcuts]] 
   name = "Hosted on FunkyCloudMedina"

@@ -99,6 +99,7 @@
               {{ end }}
               {{.Title}}
             </h1>
+            {{ partial "detail.html" . }}
           {{end}}
 
         {{define "breadcrumb"}}
@@ -110,3 +111,4 @@
             {{.value|safeHTML}}
           {{end}}
         {{end}}
+        
