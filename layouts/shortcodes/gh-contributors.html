@@ -1,0 +1,47 @@
+<div>
+    <table id="leaderboard">
+        <thead>
+          <tr>
+            <th>Position</th>
+            <th>User</th>
+            <th>Commit Count</th>
+          </tr>
+        </thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+</div>
+
+<script>
+function loadData (users) {
+    const table = document.getElementById("tableBody");
+        for (var i = 0; i < users.length; i++){
+            var row = table.insertRow();
+            var position = row.insertCell(0);
+            if ((i + 1) == 1 || (i + 1) == 2 || (i + 1) == 3 ){
+              position.innerHTML = '<i class="fas fa-trophy"></i>  ' + (i + 1);
+            } else {
+              position.innerHTML = i + 1;
+            };
+            var username = row.insertCell(1);
+            username.innerHTML = '<a class="highlight" target="_blank" href="' + users[i].html_url + '"/>' + users[i].login + "</a>";
+            var commits = row.insertCell(2);
+            commits.innerHTML = users[i].contributions;
+        };
+}
+
+fetch('https://api.github.com/repos/TheNewStellW/vmware-operations-guide/contributors').then(function (response) {
+	// The API call was successful!
+	return response.json();
+}).then(function (data) {
+	// This is the JSON from our response
+    loadData(data);
+}).catch(function (err) {
+	// There was an error
+	console.warn('Something went wrong.', err);
+});
+
+
+
+
+
+</script>
