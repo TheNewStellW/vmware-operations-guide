@@ -23,7 +23,7 @@ function loadData (users) {
               position.innerHTML = i + 1;
             };
             var username = row.insertCell(1);
-            username.innerHTML = '<a target="_blank" href="' + users[i].html_url + '"/>' + users[i].login + "</a>";
+            username.innerHTML = '<a class="highlight" target="_blank" href="' + users[i].html_url + '"/>' + users[i].login + "</a>";
             var commits = row.insertCell(2);
             commits.innerHTML = users[i].contributions;
         };
