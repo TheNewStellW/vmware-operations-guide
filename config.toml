@@ -32,12 +32,6 @@ disableLanguages = [""]
   editURL = "https://github.com/TheNewStellW/vmware-operations-guide/tree/main/content/"
 
 [[menu.shortcuts]] 
-  name = "Iwan 'e1' Rahabok"
-  identifier = "ds"
-  url = "http://virtual-red-dot.info/iwan-rahabok/"
-  weight = 10
-
-[[menu.shortcuts]] 
   name = "Hosted on FunkyCloudMedina"
   identifier = "fcm"
   url = "https://www.funkycloudmedina.com/"
