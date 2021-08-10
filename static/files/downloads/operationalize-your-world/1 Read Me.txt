@@ -1,0 +1,19 @@
+Steps to use Operationalize Your World dashboard
+1. Login as admin. Do not login using other accounts as you need to overwrite dashboards, which is owned by admin.
+1. Enable the 12 VM peak metrics in default policy.
+2. Import views. Overwrite existing. Import process should take <1 minute.
+3. Import dashboard. Overwrite existing.
+
+Get a cup of coffee. Wait ~10 minutes for the dashboards to settled. All the "Hour Glass" icons will disappear.
+
+Optional Step: disable the following dashboards as they are redundant
+VM Contention
+VM Utilization
+Cluster Contention
+Cluster Utilization
+ESXi Contention
+ESXi Utilization
+vSAN Contention
+vSAN Utilization
+ESXi Capacity
+
