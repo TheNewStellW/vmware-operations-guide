@@ -1,5 +1,8 @@
 <hr>
-This page was last updated on {{ .Lastmod.Format "January 2, 2006" }} by {{ with .GitInfo }}{{ .AuthorName }}{{ end }} with commit message: "{{ with .GitInfo }}{{ .Subject }}{{ end }}"
+<div>
+    <em>{{ .Title }}</em> last updated: {{ .Lastmod.Format "January 2, 2006" }} by {{ with .GitInfo }}{{ .AuthorName }}{{ end }}. 
+    Commit message: "{{ with .GitInfo }}{{ .Subject }}{{ end }}" ({{with .GitInfo }}<a class="highlight" href="https://github.com/TheNewStellW/vmware-operations-guide/commit/{{.Hash}}" target="_blank">{{.AbbreviatedHash}}{{end}}</a>)
+</div>
         {{ if .Params.chapter }}
             </div> <!-- end chapter-->
         {{ end }}
