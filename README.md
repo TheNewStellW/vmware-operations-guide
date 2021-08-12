@@ -1,29 +1,12 @@
 # VMware Operations Guide
 
-This repo contains the contents of Iwan Rahabok's [VMware Operations Guide](https://via.vmw.com/OpsMgmt), ported to Markdown and built into a static site using Hugo: https://www.vmwareopsguide.com.
+![https://www.vmwareopsguide.com](readme/screenshot.png)
 
-![Homepage screenshot](readme/screenshot.png)
+The [VMware Operations Guide](https://www.vmwareopsguide.com), and the git repository that supports it, is the result of countless hours by VMware staff. It is given freely to the community both for consumption and contribution. It is a unique attempt to take deep tribal knowledge from inside VMware and out, and turning it into a detailed library for new and existing customers alike to reference and learn from.
 
-The entire site is static and built using the static site generator [Hugo](https://gohugo.io/). Hugo uses HTML/CSS, Markdown files, and a templating engine to generate a static site that can be hosted almost anywhere. This is a great model for an online book, as the Markdown files can be parsed by Pandoc and made into EPUB, MOBI and PDF files quite easily.
+Our vision is that this project continues to grow as the central all-knowing library for everything vRealize Operations and delving further into IT Operations in a multi-cloud world. The decision to allow open access was a very clear one for us. Many VMware customers are utilizing VMware vRealize Operations at a massive, unthinkable scale in very creative ways. But we also have customers using it on much smaller scales. We are eager to invite all customers to contribute to this repository and provide great insight to all administrators of environments at any size.
 
-## Why Markdown?
-
-There's no point trying to improve on a great write up. Read this [Why Markdown?](https://learn.netlify.app/en/cont/markdown/) post to see why I selected this format.
-
-For your convenience, here's an excerpt:
-
->Let’s face it: Writing content for the Web is tiresome. WYSIWYG editors help alleviate this task, but they generally result in horrible code, or worse yet, ugly web pages.
->
->Markdown is a better way to write HTML, without all the complexities and ugliness that usually accompanies it.
->
->Some of the key benefits are:
->
-> - Markdown is simple to learn, with minimal extra characters so it’s also quicker to write content.
-> - Less chance of errors when writing in markdown.
-> - Produces valid XHTML output.
-> - Keeps the content and the visual display separate, so you cannot mess up the look of your site.
-> - Write in any text editor or Markdown application you like.
-> - Markdown is a joy to use!
+We want this site to take readers from “zero” to “hero”, and anywhere in between, in their operations management endeavours.
 
 ## License
 
