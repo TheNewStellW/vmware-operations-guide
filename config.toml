@@ -38,6 +38,30 @@ disableLanguages = [""]
   url = "https://www.funkycloudmedina.com/"
   weight = 15
 
+[[menu.shortcuts]] 
+  name = "Learn Code Stream"
+  identifier = "lcm"
+  url = "https://learncodestream.github.io/"
+  weight = 30
+
+[[menu.shortcuts]] 
+  name = "Learn Cloud Assembly"
+  identifier = "lca"
+  url = "https://learncloudassembly.github.io/"
+  weight = 20
+
+[[menu.shortcuts]] 
+  name = "Learn Service Broker"
+  identifier = "lsb"
+  url = "https://learnservicebroker.github.io/"
+  weight = 25
+
+[[menu.shortcuts]] 
+  name = "Learn Salt Stack"
+  identifier = "lss"
+  url = "https://learnsaltstackconfig.github.io/"
+  weight = 35
+
 [outputs]
   home = [ "HTML", "RSS", "JSON"]
 
