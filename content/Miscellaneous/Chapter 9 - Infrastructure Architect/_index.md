@@ -1,7 +1,7 @@
 ---
 title: "Chapter 9 - Infrastructure Architect"
 date: 2021-06-11T11:31:22+10:00
-draft: false
+draft: true
 chapter: true
 weight: 90
 ---

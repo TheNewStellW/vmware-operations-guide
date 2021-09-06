@@ -1,7 +1,7 @@
 ---
 title: "3. Delivering a Lasting Presentation"
 date: 2021-06-16T23:46:30+10:00
-draft: false
+draft: true
 weight: 30
 ---
 
