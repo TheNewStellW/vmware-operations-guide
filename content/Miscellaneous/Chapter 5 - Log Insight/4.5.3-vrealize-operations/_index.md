@@ -1,8 +1,9 @@
 ---
-title: "2. vRealize Operations"
+title: "3. vRealize Operations"
 date: 2021-06-16T21:11:15+10:00
 draft: false
 weight: 20
+aliases: [/miscellaneous/chapter-5-log-insight/4.5.2-vrealize-operations/]
 ---
 
 ### vRealize Operations
@@ -47,7 +48,7 @@ The widgets in the third row of the dashboard covers users creation, import and 
 
 ![User Deletion events](4.5.2-fig-8.png)
 
-The query that produces the above chart is the following. To some extend, it's actually human-readable!
+The query that produces the above chart is the following. To some extent, it's actually human-readable!
 
 ![Deletion filter](4.5.2-fig-9.png)
 
@@ -63,7 +64,7 @@ The widget "Security related message" is my personal favourite, as it demonstrat
 
 ![Node events](4.5.2-fig-12.png)
 
-How was the above achieved? The following shows the actual query. Log Insight automatically group log entries of similar type and give them a unique event_type. This means you can filter out the types that are not relevant, like what I have done below.
+How was the above achieved? The following shows the actual query. Log Insight automatically group log entries of similar type and give them a unique **event_type**. This means you can filter out the types that are not relevant, like what I have done below.
 
 ![Filter out](4.5.2-fig-13.png)
 
