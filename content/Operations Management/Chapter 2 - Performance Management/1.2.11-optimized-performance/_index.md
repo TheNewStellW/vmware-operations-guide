@@ -5,23 +5,14 @@ draft: false
 weight: 110
 ---
 
-Optimized Performance is difficult because the best performance is achieved when utilization/throughput is at 100%. Running at that level requires a perfect level of mastery due to many dimensions of inter-dependencies.
+Optimized Performance is difficult because the best performance is achieved when utilization/throughput is at 100%. Running at that level requires a perfect level of mastery due to many dimensions of inter-dependencies. In addition, the majority of workloads have peaks so on average you could be well below 100%.
 
-#### Vertical dependency
-
-There are layers in the stack, and a problem in a lower layer can impact an upper layer.
-
-#### Horizontal dependency
-
-The four elements of IaaS are not standalone. When CPU is paused, RAM & Disk will experience latency as time shifts as far as the Guest OS is concerned.
-
-#### Flow dependency
-
-A problem in your NSX Edge VM on the NSX Edge Cluster can impact a business VM sitting on another cluster, because of the traffic flow. If you don't understand the flow, you can waste time troubleshooting at the wrong cluster.
-
-#### Version dependency
-
-There are valid reasons behind "What Works With What". It's a known problem that not all versions of all components work well together. Drivers, Firmware, etc. can cause interoperability problem, which can manifest itself as performance.
+| Dependency | Description |
+| --- | --- |
+| **Vertical** | There are layers in the stack, and a problem in a lower layer can impact an upper layer.|
+| **Horizontal** | The four elements of IaaS are not standalone. When CPU is paused, RAM & Disk will experience latency as time shifts as far as the Guest OS is concerned.|
+| **Flow** | A problem in your NSX Edge VM on the NSX Edge Cluster can impact a business VM sitting on another cluster, because of the traffic flow. If you don't understand the flow, you can waste time troubleshooting at the wrong cluster.|
+| **Version** | There are valid reasons behind "What Works With What". It's a known problem that not all versions of all components work well together. Drivers, Firmware, etc. can cause interoperability problem, which can manifest itself as performance.|
 
 ## Consumer Layer
 
