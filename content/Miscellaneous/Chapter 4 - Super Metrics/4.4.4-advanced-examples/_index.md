@@ -49,8 +49,6 @@ else calculate for red range
 
 In addition to the above, you can also assign weightage. This is critical if you have many metrics forming a KPI. for example, if there are 10 metrics, then a single red will not have enough weight to change the overall KPI red. To solve this, you assign higher weightage to red. A good technique is to give yellow 2x the weight of green, orange 2x the weight of yellow, and red 2x the weight of orange. All else being equal, a red has 8x more weight than green.
 
-The code in red show how the weigtage being applied.
-
 ```text
 ${this, metric=cpu|iowaitAvg} as ioWait == 0
     ?
@@ -144,7 +142,7 @@ Let's now put the formula together. Here is the logical formula:
 
 Can you write the above formula differently? Yes, you can use If Then Else. I do not use it as it makes the formula harder to read. It's also more resource intensive.
 
-Let's translate the above into a pseudcode.
+Let's translate the above into a pseudocode.
 
 ![Pseudocode](4.4.4-fig-4.png)
 
