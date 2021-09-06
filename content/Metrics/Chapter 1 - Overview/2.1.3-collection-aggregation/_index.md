@@ -1,14 +1,16 @@
 ---
-title: "3. Roll-Up vs Aggregation"
+title: "3. Collection | Aggregation"
 date: 2021-06-14T15:25:08+10:00
 draft: false
 weight: 30
+aliases: ["/metrics/chapter-1-overview/2.1.3-roll-up-vs-aggregation/"]
 ---
 
-Before we cover the counters, you need to know the various units and how they get:
+Before we cover the counters, you need to know the various units and how they get
 
+- collected within a collection period (e.g. 20 second)
 - rolled up across time (e.g. from 20 second to 5 minutes)
-- aggregated across parent (higher level object).
+- aggregated to higher level object (e.g. from ESXi to Cluster)
 
 Some common units are milliseconds, MHz, percent, KBps, and KB. Some counters are shown in MHz, which means you need to compare with the ESXi physical CPU _static_ frequency[^1]. In large environments, this can be operationally difficult as you have different ESXi hosts from different generations (and hence, are likely to sport a different GHz). This is also the reason why cluster is the smallest logical building block. If your cluster has ESXi hosts with different frequencies, these MHz-based counters can be difficult to use, as the VMs get vMotion-ed by DRS.
 
