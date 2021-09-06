@@ -6,10 +6,10 @@ weight: 70
 ---
 
 {{% notice info %}}
-This page is still in draft.
+This page is still in draft and tracked under [Issue #23](https://github.com/TheNewStellW/vmware-operations-guide/issues/23). We'd love your help in making it better. Check out our [Contribution](https://github.com/TheNewStellW/vmware-operations-guide/wiki) page to find out how.
 {{% /notice %}}
 
-We covered in [Part 1 Chapter 1](/operations-management/chapter-1-overview/1.1.8-pillar-process-people/) that Availability can impact Performance and Capacity, but need to be measured separately.
+We covered in [Part 1 Chapter 1 - SLA](/operations-management/chapter-1-overview/1.1.7-service-level-agreement/) that Availability can impact Performance and Capacity, but need to be measured separately.
 
 Horizon consists of different components, each having their own availability metrics.
 
