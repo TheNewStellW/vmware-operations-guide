@@ -52,6 +52,7 @@ Examples where you expect balance are:
 - Usage among RDS Hosts in a farm
 - Usage among Horizon Connection Server in a pod
 - Usage among disk in a vSAN disk group
+- Usage among web servers in a farm
 
 There are 2 options to calculate unbalanced:
 
