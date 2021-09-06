@@ -25,7 +25,7 @@ Snapshots are not backups, and they do cause performance problems to the VM if k
 
 When Guest OS delete files or parts of it, it does not replace the value with 0 and just leave the block. This is more efficient and also enable recovery. But this cause the underlying VMDK to grow. The same thing happen at the array level. This is where [Trim and Unmap](https://en.wikipedia.org/wiki/Trim_(computing)) come in.
 
-vRealize Operations tracks the unmap operations via 2 metrics at ESXi Host. The first one is Unmap IO, which tracks the number of unmap SCSI instructions. For example, if the value is 100, that means ESXi has sent 100 requests of unmap to its datastore. So think of it like IOPS, except the IO is not writing/reading actual block, but more of a request to delete (unmap) the block in the back end array. The value is the sum of 20 seconds since vSphere reports per 20 seconds, then averaged over 5 minutes. In the example below, you can see the host sends unmaps commands frequently in the last 30 days.
+vRealize Operations tracks the unmap operations via 2 metrics at ESXi Host. The first one is Unmap IO, which tracks the number of unmap SCSI instructions. For example, if the value is 100, that means ESXi has sent 100 requests of unmap to its datastore. So think of it like IOPS, except the IO is not writing/reading actual block, but more of a request to delete (unmap) the block in the back end array. The value is the sum of 20 seconds since vSphere reports per 20 seconds, then averaged over 5 minutes. In the example below, you can see the host sends unmap commands frequently in the last 30 days.
 
 ![Unmap IOs](1.3.11-fig-3.png)
 
@@ -175,8 +175,28 @@ In both scenarios, you reclaim 200 vCPU. But the large VM option delivers more b
 
 Unused VM is not idle, but they do not provide business value anymore. The application team may have stopped using it, but left the application running just in case they need in the future. The VM is not idle as it still generates CPU activity. The activity can be business workload, IT workload, or both.
 
-The IT workloads take many forms. Guest OS upgrade, updates and patches can be 3 different workloads with different patterns. VMware Tools patches, antivirus scan, intrusion detection scan n agent based back up are other common examples. In an environment with high security, there can be many security related agents running.
+The IT workloads take many forms. Guest OS upgrade, Guest OS patches, and application patches can be 3 different workloads with different patterns. VMware Tools patches, anti-virus scan, intrusion detection scan and agent based back up are other common examples. In an environment with high security, there can be many security related agents running.
 
-Business workloads can be batch jobs, reports or monitoring. No one is using the application anymore but the application continues running. This is harder to identify than the one running pure IT workload.
+Business workloads can be batch jobs, reports or monitoring. No one is using the application anymore but the application continues running. It could be generating report and send email to someone who just ignore that emails. This is harder to identify than the one running pure IT workload as it's more unique.
 
-Unused VM is hard to detect as the infra team lack the business context, and the patterns vary widely. The owner verification is required before you power off the VM. This is why it's important to have ability to relate a VM to a department or owner. We discussed the criticality of business-centric infrastructure in Part 1.
+Unused VM is hard to detect as the infra team lack the business context, and the patterns vary widely. The owner verification is required before you power off the VM. This is why it's important to have ability to relate a VM to a department or owner. We discussed the criticality of business-centric infrastructure in Part 1 Chapter 1.
+
+There are some basic checks you can do to find the unused VMs when their CPU usage is not low. Find VMs that exhibit multiple of these behaviours. Take note that each of these can be false positive, so you need multiple of them.
+
+| Metric | Description |
+| --- | --- | 
+| **CPU** | While usage is not idle, or even high, it's the same CPU. There is very little context switch, indicating the same processes are running. If the CPU Usage Disparity (%) metric is stable, that indicates constant run. |
+| **Memory** | While usage is high, it's passive. There is lack of paging, both in and out.|
+| **Disk** | While IOPS and throughput, its filesystem is stable, rarely change in both size and activities. The IOPS and throughput also eventually form a pattern over the long run.|
+| **Network**      | The VM sends very little packets out, indicating it is not talking much on the network. At the same time, it's only talking to a fixed and small group of other servers. Take note that secure application that store data typically is restricted.<br>It belongs to a VLAN that is due for decommissioning.<br>The network it belongs to is no longer reachable, or has been isolated. That means access to it is non-existent or highly restricted.|
+| **Process** | It's the same set of processes that are running. The number of process also remains steady and predictable.<br>The process that takes up the most CPU is not system process or IT application.|
+| **No login** | No one has ever logged into the Guest OS, be it from UI or the console (e.g. SSH into Linux)|
+| **Log** | The amount of logs or Windows Event is much lower relative to its peers. |
+| **Guest OS** | It's running an older version, especially those nearing End of Life. It indicates the app team may have written a replacement app running somewhere else.|
+| **Application**  | It's running older version, especially those nearing End of Life.<br>It's running an application that you no longer license.<br>It's running without a license, or with an evaluation license.<br>It has no business application(s) installed. Just the base OS + IT security apps.|
+| **Availability** | It never gets rebooted, or it gets rebooted often. Essentially, it seems like no one cares about its state.<br>Reboot happened during business hours and no one complained.|
+| **Performance**  | Severe performance issue and you don't get a complaint. If someone owns it, you will get a formal ticket if the performance is terrible for a long time during business hours. At night, a VM can experience slowness for 1 hour and no one may notice. |
+| **Owner** | It belongs to a folder in vCenter that is no longer owned.<br>Unable to figure out the tagging for the VM.<br>Request to contact the owner has gone unanswered.|
+| **Report** | The app is no longer listed in any of the reports to the department owning it. This could be performance report, capacity report, compliance report, chargeback report, etc.|
+| **Location** | It runs on a cluster that is due for decommissioning. <br>It is stored on a datastore, that sits on an array that is due for decommissioned.|
+
