@@ -9,6 +9,13 @@ In the big picture, there are three main realms of enterprise applications. Each
 
 ![3 realms breakdown](1.2.2-fig-1.png)
 
+By the way, for those who use enterprise architecture framework, the 3 realms above actually map to TOGAF by [The Open Group](https://www.opengroup.org/togaf).
+
+- Business maps to Business Architecture
+- Application maps to Information Systems Architecture
+- IaaS maps to Technology Architecture
+
+
 Performance troubleshooting is largely an exercise in elimination. The methodology slices each layer and determines if that layer is causing the performance problem. Hence it is imperative to have a single metric to indicate if a particular layer is performing or not. This primary metric is aptly named Key Performance Indicator. We will cover it more [here](/operations-management/chapter-2-performance-management/1.2.7-kpi-vs-sla/#internal-sla).
 
 The upper layer depends on the layer below it, and hence the infrastructure layer is typically the source of contention. As a result, focus on the bottom layer first, as it serves as the foundation for the layer above it. The good part is this layer is typically a horizontal layer, providing a set of generic infrastructure services, regardless of what business applications are running on it.
