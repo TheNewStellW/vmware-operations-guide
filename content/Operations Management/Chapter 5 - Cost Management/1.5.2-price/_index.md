@@ -33,6 +33,6 @@ Overly simplified pricing could be unfair to customers, but that's common in oth
 
 When planning your pricing, think of the time required to reach the breakeven point. That period should leave enough time for you recoup your expenses. It should be way before the depreciation ends.
 
-The break-even point depends on the break-even level. You may not be able to fully sell all the resources at the end. So if your plan is based on 80% sold, then the price of this 80% has to be able to cover the cost of everything.
+The [break even point](https://en.wikipedia.org/wiki/Break-even) depends on the break-even level. You may not be able to fully sell all the resources at the end. So if your plan is based on 80% sold, then the price of this 80% has to be able to cover the cost of everything.
 
 ![Break-even graph](1.5.2-fig-5.png)
