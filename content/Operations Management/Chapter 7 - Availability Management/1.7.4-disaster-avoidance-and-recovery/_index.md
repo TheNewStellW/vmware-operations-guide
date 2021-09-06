@@ -6,7 +6,7 @@ weight: 40
 ---
 
 {{% notice info %}}
-This page is for rent. Meaning we need a contributing author!
+We are seeking a contributing author as more needs to be added. For more information, see [Issue #4](https://github.com/TheNewStellW/vmware-operations-guide/issues/4) and our [Contributor guide](https://github.com/TheNewStellW/vmware-operations-guide/wiki).
 {{% /notice %}}
 
 There are operational impact when you add capability to handle disaster. There are 3 primary use cases:
@@ -34,3 +34,13 @@ You are doing the actual recovery. This can be planned or unplanned.
 - What's the performance impact on the target cluster and datastore?
 
 In a large environment, you can have multiple clusters parcitipating in active/active DR, protecting one another. This can create complex relationship, especially if you have hundreds of business applications and they span across clusters.
+
+There is also impact on capacity and performance.
+
+#### Capacity
+
+This is covered earlier in Capacity chapter.
+
+#### Performance
+
+Historical counters need to follow the VM. This is tricky as there are actually 2 VM on 2 different vCenters. If the DR has inferior hardware because you're only running temporarily, you need to adjust your alert settings.
