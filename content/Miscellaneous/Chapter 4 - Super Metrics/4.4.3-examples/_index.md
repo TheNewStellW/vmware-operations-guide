@@ -168,3 +168,15 @@ For completeness, let's do the same for memory. Since the default unit is KB, we
 
 / 1048576
 ```
+
+## Instanced Value
+
+Some metrics and properties in vRealize Operations exist as instance value, meaning they are repeated for each instance. The advantage of this it reduces the number of children object. The disadvantage is in reporting, as the metrics need to be accessed via the instance and not just the object.
+
+One way to make reporting or dashboarding easier is to aggregate the value to the object. You do this via the attribute option.
+
+The following code adds all virtual disk space of a VM.
+
+`sum(\${adaptertype=VMWARE, objecttype=VirtualMachine, attribute=virtualDisk\|configuredGB, depth=5})`
+
+Note that where clause can be done with metric only and not attribute. You can add instanced metrics but cannot apply where clause to that.
