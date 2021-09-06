@@ -7,7 +7,7 @@ weight: 50
 
 ## vSphere Data Center
 
-he use case for higher level objects, such as Data center, Custom DC, vCenter and World need to reflect the nature of the object. The complex nature of the object needs to be accounted for. For example, a vCenter Data center object may span across physical data centers. This comes from the limitation that a stretched cluster is not a child of 2 separate data center objects, even when the clusters are physically in 2 separate buildings.
+The use case for higher level objects, such as Data center, Custom DC, vCenter and World need to reflect the nature of the object. The complex nature of the object needs to be accounted for. For example, a vCenter Data center object may span across physical data centers. This comes from the limitation that a stretched cluster is not a child of 2 separate data center objects, even when the clusters are physically in 2 separate buildings.
 
 Large objects such as vCenter also tend to host clusters that serves different purpose, and hence are not compatible with one another. A free capacity on the NSX Edge cluster may not mean the business VM can be deployed, due to different storage, security, and network requirements.
 
@@ -46,6 +46,8 @@ These also apply to vRealize Custom Data Center, vCenter and World objects.
 
 One popular request among customers is we simplify our metrics and properties to improve both scalability and usability. You notice that some metrics are marked for deprecation:
 
+- [vRealize Operations 8.5](https://kb.vmware.com/s/article/84287)
+- vRealize Operations 8.4 - no changes
 - [vRealize Operations 8.3](https://kb.vmware.com/s/article/82345)
 - [vRealize Operations 8.2](https://kb.vmware.com/s/article/80895)
   - We disable some instanced metrics here. You can enable them back.
