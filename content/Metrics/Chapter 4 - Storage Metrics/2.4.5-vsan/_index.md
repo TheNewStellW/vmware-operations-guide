@@ -20,8 +20,8 @@ Here are some of the questions you want to ask in day-to-day operations:
 - Is any of the NIC cards in any of the ESXi hosts running high utilization?
   - In the above example, with 4 NIC cards per ESXi, you have 40 TX + 40 RX metrics.
 - Is the vSAN VMkernel network on any of the ESXi hosts congested?
-- Is the Read Cache on any of the Disk Grups sufficient? If you have a lot of cache miss, it can impact performance.
-- Is the Write Buffer on any of the Disk Grups sufficient?
+- Is the Read Cache on any of the Disk Groups sufficient? If you have a lot of cache miss, it can impact performance.
+- Is the Write Buffer on any of the Disk Groups sufficient?
 - Is the Cache Tier performing fast? Each disk has 4 metrics: Read Cache Read Latency, Read Cache Write Latency, Write Buffer Write Latency, Write Buffer Read Latency. Since there are 20 disks, you need to check 80 counters
 - Are the Capacity Disks performing fast? Check both Read and Write latency as they typically have different results.
   - In our example above, there are 120 x 2 = 240 counters.
