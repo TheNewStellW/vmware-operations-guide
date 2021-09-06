@@ -5,7 +5,9 @@ draft: false
 weight: 20
 ---
 
-There are two types of counters here: reservation and actual consumption.
+There are two types of counters:
+- reservation 
+- actual consumption
 
 Reservation in turn has 2 parts: minimum and maximum. The minimum is guaranteed and the maximum is the limit that the resource group can go. Actual consumption is a value within this range.
 
