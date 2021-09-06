@@ -1,8 +1,9 @@
 ---
-title: "1. The Layers in Storage"
+title: "1. The Layers of Storage"
 date: 2021-06-15T12:33:48+10:00
 draft: false
 weight: 10
+aliases: [/metrics/chapter-4-storage-metrics/2.4.1-the-layers-in-storage/]
 ---
 
 Virtualization increases the complexity in monitoring storage performance. Just like memory, where we have more than one level, we have multiple levels for storage. At the highest level, we have VMs. A VM typically has 2-3 virtual disks (or even RDMs), such as OS drive, paging file drive, and data drive. A large database VM will have even more.
@@ -40,6 +41,8 @@ This counter tracks the queue inside Linux or Windows storage subsystem. It's no
 For Windows, the number is the snapshot at the collection period. For example, if the collection is every 5 minute, then it's number on the 300th second, not the average of 300 numbers.
 
 Interestingly, Window documentation said that "Multispindle disk devices can have multiple requests active at one time, but other concurrent requests await service. Requests experience delays proportional to the length of the queue minus the number of spindles on the disks. This difference should average less than two for good performance."
+
+High disk queue in the guest OS, accompanied by low IOPS at the VM, can indicate that the IO commands are stuck waiting on processing by Windows/Linux. There is no concrete guidance regarding these IO commands threshold as it varies for different applications. You should view this in relation to the Outstanding Disk IO at the VM layer.
 
 I plot the disk queue among ~1K VMs. It's interesting to see see some are very high.
 
