@@ -10,6 +10,8 @@ weight: 50
 
 # Log Insight
 
-There are many useful information that only exists in the logs. They don't surface as alerts, metrics or events. The information is not limited to just security and compliance. They cover availability and performance too. In this chapter, we will share a few practical use cases.
+Those of us who have experienced troubleshooting a VMware environment (or any enterprise infrastructure) know the importance of logs. In fact, it is the first thing that VMware Support and many other vendors support ask you. The reason is there are many useful information that only exists in the logs. They don’t surface as alerts, metrics or events. The information is not limited to just security and compliance. They cover availability and performance too. 
+
+Having said that, 99% of the logs are not useful. So how do you minimize the cost while maximizing the benefit?
 
 {{% children %}}
