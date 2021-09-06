@@ -59,7 +59,7 @@ The counters above are layered into 4, matching the layer used in performance tr
 
 We provide the threshold as they reflect Horizon best practice, which should work for most customers. Your situation may differ, which is why we provide the raw metrics too as the KPI metric cannot be modified.
 
-The CPU Queue Length is the total queue length. In future, we may convert it into per vCPU. Same with disk latency, as read and write can move independantly.
+The CPU Queue Length is the total queue length. In future, we may convert it into per vCPU. Same with disk latency, as read and write can move independently.
 
 We do not include CPU Context Switch and Disk Outstanding IO, as I'm not yet convinced on the threshold, based on the profiling data. The numbers vary too wide. Send me your profiling result so I can consider it too.
 
@@ -81,11 +81,11 @@ Using the above as the foundation, we can build the KPI at higher level object. 
 
 Each VDI session has 2 KPI: Network KPI and Data Center KPI.
 
-The VDI Pool Network KPI is simply the average of all its VDI Session Network KPI. While average is a lagging indicator, it best represents the entire reality, which is required for further roll up to the higher level object. We certainly will complement it with leading indicators.
+The VDI Pool Network KPI is simply the average of all its VDI Session Network KPI. While average is a lagging indicator, it best represents the entire reality, which is required for further roll up to the higher level object. We certainly will compliment it with leading indicators.
 
-The VDI Pool DC KPI is also the average of its session DC KPI. Because these 2 KPIs operate independantly, we do *not* combine them.
+The VDI Pool DC KPI is also the average of its session DC KPI. Because these 2 KPIs operate independently, we do *not* combine them.
 
-For RDS, the correponding object is RDS Farm, not RDS Host. It's more logical to monitor at this level, just like we monitor at vSphere cluster level and not the individual ESXi. Just like a VM moves within a cluster, a user does not always get the same RDS host in the next session. We take the network KPI from RDS sessions and DC KPI from RDS hosts.
+For RDS, the corresponding object is RDS Farm, not RDS Host. It's more logical to monitor at this level, just like we monitor at vSphere cluster level and not the individual ESXi. Just like a VM moves within a cluster, a user does not always get the same RDS host in the next session. We take the network KPI from RDS sessions and DC KPI from RDS hosts.
 
 We combine both the VDI and RDS KPI at the Pod level. Again, we simply take the average of both. If you have more VDI Pools than RDS Farms, then the Pod KPI value will be driven by the VDI part of your architecture.
 
@@ -167,7 +167,7 @@ While the following metrics only impact at the initial stage, they are important
 
 Once you determine there is a problem, the next step is to narrow down if it's CPU, Memory, Disk or Network
 
-One common reason behind contention is high utilization. Not all usage metrics are relevant to performance, so the the following only lists the relevant ones.
+One common reason behind contention is high utilization. Not all usage metrics are relevant to performance, so the following only lists the relevant ones.
 
 <table><colgroup><col style="width: 28%" /><col style="width: 71%" /></colgroup><tbody><tr class="odd"><td><p>CPU Usage (%)</p><p>Memory Usage (%)</p></td><td><p>These values are coming from Windows, not VM. They track the relative consumption of a session againts the RDS Host total capacity.</p><p>Make sure this number is below than expected average. For example, if you size for 20 concurrent users, then each session should be around 5%.</p></td></tr><tr class="even"><td>Disk IOPS</td><td>Unlike a server workload, users don't generally generate high IOPS or sustained IOPS. They open file, save file, but should not be sustaining for say 1 hour.</td></tr></tbody></table>
 
@@ -207,7 +207,7 @@ For Network, check the protocol metrics. Note they are implemented at RDS Farm l
 
 One common reason behind contention is high utilization. Not all usage metrics are relevant to performance, so the the following only lists the relevant ones.
 
-<table><colgroup><col style="width: 27%" /><col style="width: 72%" /></colgroup><tbody><tr class="odd"><td>Peak vCPU Usage (%)</td><td>Use the peak vCPU Usage instead of CPU Usage, as the later is the average of all vCPU</td></tr><tr class="even"><td>CPU Usage (%)</td><td><p>Note that at present this is coming from VM. In future we may change to Windows.</p><p>If this number hits &gt;95% repeatedly, that could explain contention.</p><p>On the other hand, if this number is much lower than expected, there is something amiss. When you have a lot of sessions trying to connect and the RDS Host utilization is low, that means there is a bottlenect that prevents the host from processing the load.</p></td></tr><tr class="odd"><td>Free Memory (MB)</td><td>Ensure this number is &gt; 128 MB</td></tr><tr class="even"><td>Memory Utilization</td><td>As covered in Part 2, this contains buffer. In future we may change this to Windows In Use counter. Let me know your thought.</td></tr></tbody></table>
+<table><colgroup><col style="width: 27%" /><col style="width: 72%" /></colgroup><tbody><tr class="odd"><td>Peak vCPU Usage (%)</td><td>Use the peak vCPU Usage instead of CPU Usage, as the later is the average of all vCPU</td></tr><tr class="even"><td>CPU Usage (%)</td><td><p>Note that at present this is coming from VM. In future we may change to Windows.</p><p>If this number hits &gt;95% repeatedly, that could explain contention.</p><p>On the other hand, if this number is much lower than expected, there is something amiss. When you have a lot of sessions trying to connect and the RDS Host utilization is low, that means there is a bottleneck that prevents the host from processing the load.</p></td></tr><tr class="odd"><td>Free Memory (MB)</td><td>Ensure this number is &gt; 128 MB</td></tr><tr class="even"><td>Memory Utilization</td><td>As covered in Part 2, this contains buffer. In future we may change this to Windows In Use counter. Let me know your thought.</td></tr></tbody></table>
 
 Disk utilization is less useful in performance troubleshooting as the limit is high. A very high utilization may in fact deliver a good experience to the user, albeit at the expense of other users.
 
@@ -257,7 +257,7 @@ If the Worst() metric-type show something is wrong, then you want to know many h
 
 ### Utilization Metrics
 
-One common reason behind contention is high utilization. Not all usage metrics are relevant to performance, so the the following only lists the relevant ones.
+One common reason behind contention is high utilization. Not all usage metrics are relevant to performance, so the following only lists the relevant ones.
 
 We take the same approach we did for contention metrics, which is start with Worst() then follow by Count(). The following are the Worst() metric type:
 
@@ -341,7 +341,7 @@ If there is a problem, check how broad the problem is.
 
 ### Utilization Metrics
 
-One common reason behind contention is high utilization. Not all usage metrics are relevant to performance, so the the following only lists the relevant ones.
+One common reason behind contention is high utilization. Not all usage metrics are relevant to performance, so the following only lists the relevant ones.
 
 <table><colgroup><col style="width: 46%" /><col style="width: 53%" /></colgroup><tbody><tr class="odd"><td>Peak CPU Utilization among VDI Sessions (%)</td><td><p>Note this metric is yet to be implemented.</p><p>If this metric hits &gt;95%, one or more users could be needing more CPU, and perhaps should be migrated to VDI Pool with larger VM.</p></td></tr><tr class="even"><td>Lowest Free Memory among VDI Sessions (MB)</td><td>If this metric hits &lt;1200 MB, one or more users could be needing more memory, and perhaps should be migrated to VDI Pool with larger VM.</td></tr></tbody></table>
 
