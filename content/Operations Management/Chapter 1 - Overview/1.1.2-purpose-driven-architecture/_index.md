@@ -4,7 +4,7 @@ date: 2021-06-11T11:31:22+10:00
 draft: false
 ---
 
-When you architect IaaS or Desktop as a Service ([DaaS](https://www.vmware.com/topics/glossary/content/desktop-as-a-service)), what goals do you have in mind? I don't mean the design considerations, such as availability and performance best practices. I mean the **business result** that your architecture has to deliver, viewed from the people who paid for the architecture.
+When you architect IaaS or Desktop as a Service ([DaaS](https://www.vmware.com/topics/glossary/content/desktop-as-a-service)), what goals do you have in mind? I don't mean the design considerations, such as availability and performance best practices. I mean the **business result** that your architecture has to deliver, viewed from the people who paid for the system, and by the people who will pay for the service.
 
 Logically, the answer depends on what is being sold. You can either sell application or infrastructure, broadly speaking.
 
@@ -25,13 +25,13 @@ Let's dive into the IaaS business. There are three variants of IaaS. Each sells 
 
 ![Table comparing VM, Resource Pool, and Cluster](1.1.2-fig-3.png?classes=shadow,border)
 
-The most popular variant of IaaS is VM as a Service. In this variant, the business goal is to ensure the application and VMs (VM) are running **well yet cost effective.**
+The most popular variant of IaaS is VM as a Service. In this variant, the business goal is to ensure the application and VMs are running **well yet cost effective.**
 
 ![Multiple aspects of VM as a Service](1.1.2-fig-4.png?width=50pc&classes=shadow,border)
 
 The cost part is easy to quantify. You know what you spend on hardware, software, services and salary. The "well" in _running well_ is the hard part as there is a big unknown.
 
-Let's use IaaS as the example. Say you are architecting for 10,000 VMs in 2 data centers. You envisage 2000 VMs in the first month, 5000 VMs in the first half year, and eventually to 10,000 within the first year. Do you know the basic information about each of these 10,000 VMs, so that you can architect an infrastructure to serve them well?
+Let's use IaaS as the example. Say you are architecting for 10,000 VMs in 2 data centers. You envisage 2,000 VMs in the first month, 5,000 VMs in the first half year, and eventually to 10,000 within the first year. Do you know the basic information about each of these 10,000 VMs, so that you can architect an infrastructure to serve them well?
 
 - How big are they? What are their vCPU, RAM, Disk configuration?
 - How intense are they? CPU utilization, RAM utilization, disk IOPS, network throughput?
