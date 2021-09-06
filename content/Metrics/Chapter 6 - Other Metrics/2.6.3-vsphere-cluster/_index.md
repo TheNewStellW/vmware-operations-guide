@@ -16,7 +16,7 @@ vRealize Operations sports a few leading indicators to help you detect problem e
 - Worst VM CPU Ready (%)
 - Worst VM CPU Overlap (ms)
 - Worst VM CPU Co-Stop (%)
-- Percentage of VMs facing CPU Ready (%) (CPU Ready > 1%)
+- Percentage of VMs facing CPU Ready (%). The threshold is CPU Ready > 1%.
 - Percentage of VMs facing CPU Co-Stop (%)
 
 #### Memory
@@ -55,7 +55,7 @@ The same approach has to be applied to IOPS. Cluster A should report IOPS that i
 ## Projection
 
 - **Usable Capacity** = Total Capacity - (vSphere HA reservation + capacity buffer).
-- **Total Capacity** = The sum of all the physical cores in MHz. It does not take into account Hyper-Threading, meaning turning in on does not increase the value. It does not take into account CPU Power Management.
+- **Total Capacity** = The sum of all the physical cores in MHz. It does not take into account Hyper-Threading, meaning turning it on does not increase the value. It does not take into account CPU Power Management.
 
 Capacity buffers defined in vRealize Operations policy (default 0%).
 
