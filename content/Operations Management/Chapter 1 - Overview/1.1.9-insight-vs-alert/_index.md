@@ -63,6 +63,13 @@ You don't typically set an alert here as inventory it's merely an account of wha
 
 Managing Alerts is not the same as minimizing Alerts. Managing is dealing with alerts that are already triggered. Minimizing takes us towards preventing alerts to begin with. Use insight to minimize alert definition, as alert should be reserved for urgent and important issue.
 
+Here are some examples to minimize alerts:
+
+- Trap soft errors. They are non-critical events that act as early warnings.
+- Proactive replacement before reaching the manufacturing limit. For example, the SSD disk has limit to the total number of writes it can service as each write introduces wear.
+- Have redundancy, so that unplanned downtime triggers non-critical alerts as long as it's within the allowance set in the design. If you design N+1 availability, then a single downtime is not a major or critical alert.
+- Separate formal SLA with internal KPI.
+
 In cases where you can't minimize the alert, you can reduce its severity. You do this not by lowering the threshold, but by monitoring early warning events. For example, CPU and network have early warning that something have gone wrong at hardware level. You track this soft errors and perform proactive replacement.
 
-In cases where you can't reduce the severity, you can reduce the occurance of the alert happening in production. You do this by proactive replacement, taken as part of scheduled downtime during green zone. For example, Solid State Drive (SSD) does not have infinite life span in terms of number of writes. The manufacturer has a number in mind for the endurance. If you have thousands of disks, you create a dashboard just to track this limit and schedule proactive replacement for those disks nearing their limit.
+In cases where you can't reduce the severity, you can reduce the occurence of the alert happening in production. You do this by proactive replacement, taken as part of scheduled downtime during green zone. For example, Solid State Drive (SSD) does not have infinite life span in terms of number of writes. The manufacturer has a number in mind for the endurance. If you have thousands of disks, you create a dashboard just to track this limit and schedule proactive replacement for those disks nearing their limit.
