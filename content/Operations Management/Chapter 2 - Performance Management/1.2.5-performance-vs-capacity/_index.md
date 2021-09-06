@@ -7,7 +7,7 @@ weight: 50
 
 The relationship between capacity and performance varies depending on the object. Consumer objects (e.g. VM, K8S Pod) have different natures than provider objects (e.g. vSphere Cluster, vSAN Cluster). For provider objects, performance is always bottom up. You start with the VM running inside in the provider object, and then aggregate the metrics. Capacity is always top down. You look at the big picture first, then drill down. For example, you start with the vSphere cluster, then drill down to ESXi.
 
-For an IaaS provider, the following tables explains how performance and capacity differ.
+For an IaaS provider, the following tables explains how performance and capacity differ. From the viewpoint of the customers (VM Owner, App Team), there is no such thing as IaaS Performance. There is only IaaS Capacity. The capacity is capable of handling a certain amount of workload demanded by the Consumers.
 
 ![IaaS performance to Capacity table](1.2.5-fig-1.png)
 
