@@ -104,7 +104,7 @@ Windows CPU queue excludes the running thread, Linux includes the threads being 
 
 ----
 
-Complicated stuff, isn't it? And we have not added AWS, Google, Azure, applications, network, etc. 
+Complicated stuff, isn't it? And we have not added NSX, vSAN, Kubernetes, AWS, Google, Azure, applications, network, etc. 
 
 Not all vSphere-specific characteristics are well understood by management tools that are not purpose-built for it. Partial understanding can lead to misunderstanding as wrong interpretation of counters can result in wrong action taken.
 
