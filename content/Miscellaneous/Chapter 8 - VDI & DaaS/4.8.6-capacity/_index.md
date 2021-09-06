@@ -6,7 +6,7 @@ weight: 60
 ---
 
 {{% notice info %}}
-This page is still in draft.
+This page is still in draft. If you would like to contribute, please check out our [Contributors](https://github.com/TheNewStellW/vmware-operations-guide/wiki) page.
 {{% /notice %}}
 
 Horizon consists of different components, each having their own capacity model. Not all components have capacity need, meaning you do not need to do capacity planning and adjustment.
