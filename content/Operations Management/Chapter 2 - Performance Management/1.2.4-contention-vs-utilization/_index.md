@@ -10,7 +10,7 @@ At the VM layer, we care whether a particular VM is being served well by the pla
 Most raw metrics can be categorized into 3 types:
 
 - They measure something **bad** (e.g. contention, latency)
-- They measure something **good** (e.g. utilization, consumption)
+- They measure something **good** (e.g. utilization, consumption, allocation, reservation). Good for the business.
 - They account for something (e.g. inventory, configuration)
 
 Consumption, better known as utilization, is hence a family of metrics. It comes in many different names (IOPS, throughput, usage, demand, active, etc.). Its opposite is the contention type of metrics. Utilization is the main source for the capacity family of counters (Capacity Remaining, Time Remaining, VM Remaining, Recommended Size).
