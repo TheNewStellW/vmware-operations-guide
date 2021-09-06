@@ -24,6 +24,6 @@ As a Business Architect, you not only know the cost of running the service, but 
 
 From my interactions with customers, I notice that Infrastructure Architects are not leading Day 0 phase. They provide input to the Planning stage, but are not the lead architects driving it. The Infrastructure Architect tends to focus on **technical** bits, something that CFO and CIO value less (hence they spend less time on it). They also do not architect the operations. I see many seasoned VMware Architects not extending their influence beyond architecture. I think that's a lost opportunity because Day 1 and Day 2 is actually part of the same side. Think of it as [Mobius strip](http://en.wikipedia.org/wiki/M%C3%B6bius_strip).
 
-Inspired by the VCDX program, perhaps the world of multi-cloud operations needs a VCOX program. We need to write the guidebook. That's why I open source this book, so all the Operations Expert out there can collaborate and produce the best practice of operations.
+Inspired by the VCDX program, perhaps the world of multi-cloud operations needs a VCOX program. We need to write the guidebook. That's why I open source this book, so all the Operations Expert out there can collaborate and produce the best practice of operations. Certification wise, it can start at VCP level, such as VCP Operations Management.
 
 Service Architect and Business Architect are the next steps for Infrastructure Architect. I shared a story of a chef and his cooking back in 2014 during one of the [VMUG session](https://www.vmug.com/).
