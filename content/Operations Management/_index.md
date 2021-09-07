@@ -5,6 +5,7 @@ draft: false
 chapter: false
 disabletoc: true
 weight: 30
+disableReadingTime: true
 ---
 
 The first part of the book explains the art of Operations Management in the context of VMware cloud architecture. It is a pre-requisite to Part 2.
