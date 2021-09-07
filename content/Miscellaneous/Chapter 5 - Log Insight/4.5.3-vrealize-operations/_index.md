@@ -2,7 +2,7 @@
 title: "3. vRealize Operations"
 date: 2021-06-16T21:11:15+10:00
 draft: false
-weight: 20
+weight: 30
 aliases: [/miscellaneous/chapter-5-log-insight/4.5.2-vrealize-operations/]
 ---
 

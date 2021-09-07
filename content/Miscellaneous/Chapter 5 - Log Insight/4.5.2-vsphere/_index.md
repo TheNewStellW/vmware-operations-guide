@@ -2,7 +2,7 @@
 title: "2. vSphere"
 date: 2021-06-16T20:55:25+10:00
 draft: false
-weight: 10
+weight: 20
 aliases: [/miscellaneous/chapter-5-log-insight/4.5.2-vsphere/]
 ---
 
