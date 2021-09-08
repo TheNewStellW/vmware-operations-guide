@@ -1030,3 +1030,8 @@ img {
 .sidenav * {
   text-align: left;
 }
+
+li > p {
+  margin-top: 0 !important;
+  display: inline;
+}
