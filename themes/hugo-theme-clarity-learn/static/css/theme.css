@@ -2,10 +2,7 @@
 
 /* Tags */
 @import "tags.css";
-* {
-  color: #666666;
-  font-size: 0.7rem;
-}
+
 #top-github-link,
 #body #breadcrumbs {
   position: relative;
@@ -293,7 +290,7 @@ th {
 h3 {
   font-family: "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
   font-weight: 300;
-  text-align: center;
+  text-align: left;
   color: #5e5e5e;
 }
 h1 {
@@ -998,11 +995,6 @@ th {
   vertical-align: middle;
 }
 
-th,
-td {
-  padding: 0.425rem 0;
-}
-
 th {
   text-align: left;
 }
@@ -1019,6 +1011,7 @@ th {
 
 #body ul {
   font-size: 0.7rem !important;
+  margin-left: 1em;
 }
 
 #body ol {
