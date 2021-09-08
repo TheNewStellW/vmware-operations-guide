@@ -29,16 +29,13 @@ disableLanguages = [""]
 
 [params]
   editURL = "https://github.com/TheNewStellW/vmware-operations-guide/tree/main/content/"
-<<<<<<< HEAD
   disableReadingTime = false
-=======
 
 [[menu.shortcuts]]
   name = "Iwan 'e1' Rahabok"
   identifier = "ds"
   url = "http://virtual-red-dot.info/iwan-rahabok/"
   weight = 10
->>>>>>> 782d05a (add clarity theme)
 
 [[menu.shortcuts]]
   name = "Hosted on FunkyCloudMedina"
@@ -46,25 +43,25 @@ disableLanguages = [""]
   url = "https://www.funkycloudmedina.com/"
   weight = 15
 
-[[menu.shortcuts]] 
+[[menu.shortcuts]]
   name = "Learn Code Stream"
   identifier = "lcm"
   url = "https://learncodestream.github.io/"
   weight = 30
 
-[[menu.shortcuts]] 
+[[menu.shortcuts]]
   name = "Learn Cloud Assembly"
   identifier = "lca"
   url = "https://learncloudassembly.github.io/"
   weight = 20
 
-[[menu.shortcuts]] 
+[[menu.shortcuts]]
   name = "Learn Service Broker"
   identifier = "lsb"
   url = "https://learnservicebroker.github.io/"
   weight = 25
 
-[[menu.shortcuts]] 
+[[menu.shortcuts]]
   name = "Learn Salt Stack"
   identifier = "lss"
   url = "https://learnsaltstackconfig.github.io/"
