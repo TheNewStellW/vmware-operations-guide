@@ -19,4 +19,26 @@
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
+    <script>
+      $(document).ready(function() {
+         $('a[href]').click(function() {
+            let href = $(this).attr('href');
+            if(href && href.length > 0 && href.charAt(0)=== '#') {
+               href = href.replace(':', '\\:');
+               let that = $(href);
+               if(that) {
+                  let offset = that.offset();
+                  if(offset){
+                     let scroll = offset.top - 10;
+                     if(top) {
+                        $('.content-area').animate({
+                           scrollTop: scroll
+                        }, 1000);
+                     }
+                  }
+               }
+            }
+         });
+      });
+    </script>
 {{ end }}
