@@ -2,7 +2,7 @@
 
 /* Table of contents */
 
-.progress ul {
+.toc-menu ul {
   list-style: none;
   margin: 0;
   padding: 0 15px;
@@ -45,7 +45,7 @@
 #body a.highlight:focus:after {
   width: 100%;
 }
-.progress {
+.toc-menu {
   position: absolute;
   background-color: rgba(246, 246, 246, 0.97);
   width: auto;
