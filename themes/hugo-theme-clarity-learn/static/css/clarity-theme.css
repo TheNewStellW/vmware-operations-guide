@@ -9,3 +9,14 @@
 .content-area {
   padding: 0 !important;
 }
+
+form.search {
+  max-width: unset;
+  width: 80%;
+}
+.search label {
+  width: 100%;
+}
+.search label input[type="text"] {
+  width: 100%;
+}
