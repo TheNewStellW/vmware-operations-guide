@@ -205,6 +205,9 @@ th {
 }
 #sidebar ul li > a {
   padding: 4px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 #sidebar ul li.visited > a .read-icon {
   display: inline;
