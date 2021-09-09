@@ -5,7 +5,6 @@
          <div class="content-area">
             <section id="body">
                <div class="padding highlightable">
-                  {{if not .IsHome}}
                   <div>
                      <div id="top-bar">
                         {{ if and (or .IsPage .IsSection) .Site.Params.editURL }}
@@ -47,7 +46,6 @@
                         {{ end }}
                      </div>
                   </div>
-                  {{end}}
                   <div id="head-tags">
                      {{ partial "tags.html" . }}
                   </div>
