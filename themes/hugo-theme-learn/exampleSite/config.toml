@@ -1,9 +1,9 @@
-baseURL = "/hugo-theme-clarity-learn/"
+baseURL = "/"
 languageCode = "en-US"
 defaultContentLanguage = "en"
 
 title = "Hugo Learn Documentation"
-theme = "hugo-theme-clarity-learn"
+theme = "hugo-theme-learn"
 themesdir = "../.."
 metaDataFormat = "yaml"
 defaultContentLanguageInSubdir= true
@@ -25,7 +25,7 @@ home = [ "HTML", "RSS", "JSON"]
 
 [Languages]
 [Languages.en]
-title = "Documentation for Hugo Clarity Learn Theme"
+title = "Documentation for Hugo Learn Theme"
 weight = 1
 languageName = "English"
 landingPageURL = "/en"
@@ -34,7 +34,7 @@ landingPageName = "<i class='fas fa-home'></i> Home"
 [[Languages.en.menu.shortcuts]]
 name = "<i class='fab fa-fw fa-github'></i> GitHub repo"
 identifier = "ds"
-url = "https://github.com/vinayvivekananda/hugo-theme-clarity-learn"
+url = "https://github.com/matcornic/hugo-theme-learn"
 weight = 10
 
 [[Languages.en.menu.shortcuts]]
@@ -54,7 +54,7 @@ url = "/credits"
 weight = 30
 
 [Languages.fr]
-title = "Documentation du thème Hugo Clarity Learn"
+title = "Documentation du thème Hugo Learn"
 weight = 2
 languageName = "Français"
 landingPageURL = "/fr"
@@ -63,7 +63,7 @@ landingPageName = "<i class='fas fa-home'></i> Accueil"
 [[Languages.fr.menu.shortcuts]]
 name = "<i class='fab fa-fw fa-github'></i> Repo GitHub"
 identifier = "ds"
-url = "https://github.com/vinayvivekananda/hugo-theme-clarity-learn"
+url = "https://github.com/matcornic/hugo-theme-learn"
 weight = 10
 
 [[Languages.fr.menu.shortcuts]]
@@ -92,7 +92,7 @@ landingPageName = "<i class='fas fa-home'></i> 家"
 [[Languages.zh.menu.shortcuts]]
 name = "<i class='fab fa-fw fa-github'></i> GitHub 仓库"
 identifier = "ds"
-url = "https://github.com/vinayvivekananda/hugo-theme-clarity-learn"
+url = "https://github.com/matcornic/hugo-theme-learn"
 weight = 10
 
 [[Languages.zh.menu.shortcuts]]
