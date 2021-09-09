@@ -26,10 +26,10 @@
             if(href && href.length > 0 && href.charAt(0)=== '#') {
                href = href.replace(':', '\\:');
                let that = $(href);
-               if(that) {
-                  let offset = that.offset();
+               if(that && that.length) {
+                  let offset = that[0].offsetTop;
                   if(offset){
-                     let scroll = offset.top - 10;
+                     let scroll = offset;
                      if(top) {
                         $('.content-area').animate({
                            scrollTop: scroll
