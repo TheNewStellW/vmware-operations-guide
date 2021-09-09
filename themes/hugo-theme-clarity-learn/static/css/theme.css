@@ -1011,11 +1011,12 @@ th {
 #body ul {
   font-size: 0.7rem !important;
   margin-left: 2em !important;
+  list-style-position: unset !important;
 }
 
 #body ol {
   font-size: 0.7rem !important;
-  list-style-position: unset;
+  list-style-position: unset !important;
   margin-left: 2em !important;
 }
 p {
