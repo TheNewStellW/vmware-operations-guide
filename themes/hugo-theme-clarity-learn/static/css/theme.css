@@ -285,7 +285,6 @@ th {
 }
 #chapter #body-inner {
   padding-bottom: 3rem;
-  max-width: 80%;
 }
 h3 {
   font-family: "Work Sans", "Helvetica", "Tahoma", "Geneva", "Arial", sans-serif;
@@ -1011,13 +1010,13 @@ th {
 
 #body ul {
   font-size: 0.7rem !important;
-  margin-left: 1em;
+  margin-left: 2em !important;
 }
 
 #body ol {
   font-size: 0.7rem !important;
   list-style-position: unset;
-  margin-left: 1em;
+  margin-left: 2em !important;
 }
 p {
   font-size: 0.7rem !important;
