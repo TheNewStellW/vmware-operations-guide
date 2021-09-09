@@ -20,3 +20,8 @@ form.search {
 .search label input[type="text"] {
   width: 100%;
 }
+
+li,
+ol {
+  list-style-position: outside;
+}
