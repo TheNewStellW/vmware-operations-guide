@@ -6,6 +6,12 @@
       </a>
    </div>
 
-   {{ partial "clarity-search.html" . }}
-   {{ partial "header-buttons.html" . }}
+   <div class="clr-row flex-grow">
+      <div class="header-search clr-col-9">
+         {{ partial "clarity-search.html" . }}
+      </div>
+      <div class="clr-col">
+         {{ partial "header-buttons.html" . }}
+      </div>
+   </div>
 </header>

@@ -76,42 +76,45 @@ function search(queryTerm) {
 // Let's get started
 initLunr();
 $(document).ready(function () {
-  var searchList = new autoComplete({
-    /* selector for the search box element */
-    selector: $("#search_input").get(0),
-    /* source is the callback to perform the search */
-    source: function (term, response) {
-      response(search(term));
-    },
-    /* renderItem displays individual search results */
-    renderItem: function (item, term) {
-      var numContextWords = 2;
-      var text = item.content.match(
-        "(?:\\s?(?:[\\w]+)\\s?){0," +
-          numContextWords +
-          "}" +
-          term +
+  const searchInputs = $(".search_input");
+  for (const searchInput of searchInputs) {
+   var searchList = new autoComplete({
+      /* selector for the search box element */
+      selector: searchInput,
+      /* source is the callback to perform the search */
+      source: function (term, response) {
+        response(search(term));
+      },
+      /* renderItem displays individual search results */
+      renderItem: function (item, term) {
+        var numContextWords = 2;
+        var text = item.content.match(
           "(?:\\s?(?:[\\w]+)\\s?){0," +
-          numContextWords +
-          "}"
-      );
-      item.context = text;
-      var divcontext = document.createElement("div");
-      divcontext.className = "context";
-      divcontext.innerText = item.context || "";
-      var divsuggestion = document.createElement("div");
-      divsuggestion.className = "autocomplete-suggestion";
-      divsuggestion.setAttribute("data-term", term);
-      divsuggestion.setAttribute("data-title", item.title);
-      divsuggestion.setAttribute("data-uri", item.uri);
-      divsuggestion.setAttribute("data-context", item.context);
-      divsuggestion.innerText = "» " + item.title;
-      divsuggestion.appendChild(divcontext);
-      return divsuggestion.outerHTML;
-    },
-    /* onSelect callback fires when a search suggestion is chosen */
-    onSelect: function (e, term, item) {
-      location.href = item.getAttribute("data-uri");
-    },
-  });
+            numContextWords +
+            "}" +
+            term +
+            "(?:\\s?(?:[\\w]+)\\s?){0," +
+            numContextWords +
+            "}"
+        );
+        item.context = text;
+        var divcontext = document.createElement("div");
+        divcontext.className = "context";
+        divcontext.innerText = item.context || "";
+        var divsuggestion = document.createElement("div");
+        divsuggestion.className = "autocomplete-suggestion";
+        divsuggestion.setAttribute("data-term", term);
+        divsuggestion.setAttribute("data-title", item.title);
+        divsuggestion.setAttribute("data-uri", item.uri);
+        divsuggestion.setAttribute("data-context", item.context);
+        divsuggestion.innerText = "» " + item.title;
+        divsuggestion.appendChild(divcontext);
+        return divsuggestion.outerHTML;
+      },
+      /* onSelect callback fires when a search suggestion is chosen */
+      onSelect: function (e, term, item) {
+        location.href = item.getAttribute("data-uri");
+      },
+    });
+  }
 });

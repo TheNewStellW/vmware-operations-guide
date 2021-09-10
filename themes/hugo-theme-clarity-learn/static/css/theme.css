@@ -112,10 +112,7 @@ th {
     display: none;
   }
   #body-search {
-    display: inline-block;
-  }
-  #clarity-search {
-    display: none;
+    display: flex;
   }
 }
 #sidebar {
@@ -1032,4 +1029,31 @@ img {
 li > p {
   margin-top: 0 !important;
   display: inline;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+.header-search {
+  display: flex;
+}
+
+.body-search {
+  padding-top: 1em;
+  display: none;
+}
+
+.body-search .search_input {
+  border: 1;
+  border-color: white;
+  color: rgb(102, 102, 102);
+}
+@media only all and (max-width: 67.5em) {
+  .body-search {
+    display: flex;
+  }
+  .header-search {
+    display: none;
+  }
 }

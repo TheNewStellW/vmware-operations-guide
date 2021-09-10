@@ -11,13 +11,13 @@
 }
 
 form.search {
-  max-width: 75em;
-  padding-right: 5em
+  max-width: 100%;
+  width: 100%;
 }
 .search label {
-  width: 80em;
+  width: 100%;
 }
 .search label input[type="text"] {
   width: 100%;
-  padding-left: 1em
+  padding-left: 1em;
 }

@@ -5,6 +5,9 @@
          <div class="content-area">
             <section id="body">
                <div class="padding highlightable">
+                  <div class="body-search">
+                     {{ partial "clarity-search.html" . }}
+                  </div>
                   <div>
                      <div id="top-bar">
                         {{ if and (or .IsPage .IsSection) .Site.Params.editURL }}
