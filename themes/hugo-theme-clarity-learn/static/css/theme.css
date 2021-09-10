@@ -1049,11 +1049,29 @@ li > p {
   border-color: white;
   color: rgb(102, 102, 102);
 }
-@media only all and (max-width: 67.5em) {
-  .body-search {
-    display: flex;
-  }
-  .header-search {
-    display: none;
-  }
+.navigation-buttons {
+  margin-top: 2em;
+  display: none;
 }
+.navigation-buttons div {
+  display: flex;
+}
+.navigation-buttons .nav-prev {
+  flex-direction: row;
+}
+.navigation-buttons .nav-next {
+  flex-direction: row-reverse;
+}
+
+
+@media only all and (max-width: 67.5em) {
+   .body-search {
+     display: flex;
+   }
+   .header-search {
+     display: none;
+   }
+   .navigation-buttons {
+      display: flex;
+   }
+ }
