@@ -29,16 +29,7 @@ disableLanguages = [""]
 
 [params]
   editURL = "https://github.com/TheNewStellW/vmware-operations-guide/tree/main/content/"
-<<<<<<< HEAD
   disableReadingTime = false
-=======
-
-[[menu.shortcuts]]
-  name = "Iwan 'e1' Rahabok"
-  identifier = "ds"
-  url = "http://virtual-red-dot.info/iwan-rahabok/"
-  weight = 10
->>>>>>> 782d05a (add clarity theme)
 
 [[menu.shortcuts]]
   name = "Hosted on FunkyCloudMedina"
