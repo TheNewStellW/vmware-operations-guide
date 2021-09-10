@@ -401,16 +401,13 @@ section.attachments {
 
 section.attachments label {
   font-weight: 400;
-  padding-left: 0.5em;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
+  padding: 0.2em 0.5em;
   margin: 0;
 }
 
 section.attachments .attachments-files {
   padding: 15px;
   display: block;
-  font-size: 1rem;
   margin-top: 0rem;
   margin-bottom: 0rem;
   color: #666;
