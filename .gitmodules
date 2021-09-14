@@ -1,3 +1,4 @@
 [submodule "themes/hugo-theme-clarity-learn"]
 	path = themes/hugo-theme-clarity-learn
 	url = https://github.com/vinayvivekananda/hugo-theme-clarity-learn
+	branch = main
