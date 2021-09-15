@@ -4,6 +4,7 @@ date: 2021-06-11T11:31:22+10:00
 disabletoc: true
 draft: false
 weight: 20
+pre: '<i class="fas fa-users"></i> '
 ---
 
 Behind an author, there are always many people involved to make a book possible. This is especially true for this 3rd edition, as five long years have passed since the 2nd edition. I am grateful for the feedback, help and encouragement provided by the following individuals. The book is a living document, so it will get regular updates over time. As IT professionals change title and companies, let's stick with just name and photo.
