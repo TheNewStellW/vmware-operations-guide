@@ -1,7 +1,7 @@
 baseURL = "/"
 languageCode = "en-us"
 title = "VMware Operations Guide"
-theme = "hugo-theme-learn"
+theme = "hugo-theme-clarity-learn"
 enableGitInfo = true
 
 # defaultContentLanguage = "en" # English is the default language
@@ -28,35 +28,34 @@ disableLanguages = [""]
   lastmod = [":git", "lastmod", "date", "publishDate"]
 
 [params]
-  themeVariant = "green" # Change default color scheme with a variant one. Can be "red", "blue", "green".
   editURL = "https://github.com/TheNewStellW/vmware-operations-guide/tree/main/content/"
   disableReadingTime = false
 
-[[menu.shortcuts]] 
+[[menu.shortcuts]]
   name = "Hosted on FunkyCloudMedina"
   identifier = "fcm"
   url = "https://www.funkycloudmedina.com/"
   weight = 15
 
-[[menu.shortcuts]] 
+[[menu.shortcuts]]
   name = "Learn Code Stream"
   identifier = "lcm"
   url = "https://learncodestream.github.io/"
   weight = 30
 
-[[menu.shortcuts]] 
+[[menu.shortcuts]]
   name = "Learn Cloud Assembly"
   identifier = "lca"
   url = "https://learncloudassembly.github.io/"
   weight = 20
 
-[[menu.shortcuts]] 
+[[menu.shortcuts]]
   name = "Learn Service Broker"
   identifier = "lsb"
   url = "https://learnservicebroker.github.io/"
   weight = 25
 
-[[menu.shortcuts]] 
+[[menu.shortcuts]]
   name = "Learn Salt Stack"
   identifier = "lss"
   url = "https://learnsaltstackconfig.github.io/"
@@ -67,7 +66,7 @@ disableLanguages = [""]
 
 [markup]
   defaultMarkdownHandler = "goldmark"
-	
+
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
