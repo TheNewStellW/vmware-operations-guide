@@ -30,6 +30,7 @@ disableLanguages = [""]
 [params]
   editURL = "https://github.com/TheNewStellW/vmware-operations-guide/tree/main/content/"
   disableReadingTime = false
+  googleAnalytics = "G-4E70Q7EBYT"
 
 [[menu.shortcuts]]
   name = "Hosted on FunkyCloudMedina"
