@@ -4,6 +4,7 @@ date: 2021-06-11T11:31:22+10:00
 disabletoc: true
 draft: false
 weight: 40
+pre: '<i class="fas fa-chart-line"></i> '
 ---
 
 Part 2 (Metrics) is a deep dive into the key metrics that you will most commonly use and should be considered a pre-requisite to Part 3.
