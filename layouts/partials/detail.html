@@ -1,0 +1,7 @@
+<div style="display: flex; justify-content: flex-end">
+    {{if and (not .IsHome) (not .Params.chapter) (not .Site.Params.disableReadingTime) }}
+    <div>
+        <i class="far fa-clock"></i> {{ .ReadingTime }} {{ if eq .ReadingTime 1 }} minute {{ else }} minutes {{ end }}
+    </div>
+    {{ end }}
+</div>
