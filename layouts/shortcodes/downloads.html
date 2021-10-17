@@ -1,5 +1,6 @@
 {{- $folder := .Get "folder" -}}
 {{- $boxTitle := .Get "boxTitle" -}}
+{{- $baseurl := .Site.BaseURL}}
 
 <section class="attachments blue">
 	<label>
@@ -9,7 +10,7 @@
 	<div class="attachments-files">
 	{{ range (readDir ( print "static/files/downloads/" $folder)) }}
 		<li>
-			<a href="{{ print "/files/downloads/" $folder "/" .Name }}">
+			<a href="{{ print $baseurl "files/downloads/" $folder "/" .Name }}">
 				{{.Name}}
 			</a>
 			({{div .Size 1024 }} {{T "BinaryPrefix-kilobyte"}})
