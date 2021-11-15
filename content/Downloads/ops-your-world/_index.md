@@ -1,9 +1,13 @@
 ---
 title: "Operationalize Your World"
 date: 2021-10-08
-disabletoc: true
+disabletoc: false
 draft: false
-slug: ['/oyw','/opsyourworld']
+aliases: [
+    "/oyw",
+    "/opsyourword",
+    "/operationalize-your-world"
+]
 ---
 
 ![](operationalize-your-world.png)
@@ -35,18 +39,19 @@ The difference between OYW and the OOTB vRealize Operations is summarized below.
 
 1. Login as admin account. It has to be the local admin account as that’s the ID that is used to create the original dashboard.
 1. Enable the 12 peak metrics. Go to your default policy, search for “collection cycle”. Enable them all, as shown below:
-![](./Policy.png)
+![](policy.png)
 1. Import the views. Make sure you choose to overwrite existing views. OYW modified 3 views.
 1. Import the dashboard. Make sure you choose to overwrite existing dashboard. OYW modifies the VM Performance dashboard.
 1. Get a cup of coffee. Wait ~10 minutes for the dashboards to settled. All the "Hour Glass" icons will disappear.
 
-Optional Step: disable the following dashboards as they are redundant
-VM Contention
-VM Utilization
-Cluster Contention
-Cluster Utilization
-ESXi Contention
-ESXi Utilization
-vSAN Contention
-vSAN Utilization
-ESXi Capacity
+Optional Step: disable the following dashboards as they are redundant:
+
+- VM Contention
+- VM Utilization
+- Cluster Contention
+- Cluster Utilization
+- ESXi Contention
+- ESXi Utilization
+- vSAN Contention
+- vSAN Utilization
+- ESXi Capacity
