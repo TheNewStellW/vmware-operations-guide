@@ -39,7 +39,7 @@ The difference between OYW and the OOTB vRealize Operations is summarized below.
 
 1. Login as admin account. It has to be the local admin account as that’s the ID that is used to create the original dashboard.
 1. Enable the 12 peak metrics. Go to your default policy, search for “collection cycle”. Enable them all, as shown below:
-![](policy.png)
+![](Policy.png)
 1. Import the views. Make sure you choose to overwrite existing views. OYW modified 3 views.
 1. Import the dashboard. Make sure you choose to overwrite existing dashboard. OYW modifies the VM Performance dashboard.
 1. Get a cup of coffee. Wait ~10 minutes for the dashboards to settled. All the "Hour Glass" icons will disappear.
