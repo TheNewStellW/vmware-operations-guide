@@ -2,8 +2,14 @@ name: S3 Deployment
 
 on:
   push:
-    branches:
-      - main  # Set a branch to deploy
+    paths: # Only updates the site if there are changes detected in the following directories.
+      - 'content/**'
+      - 'static/**'
+      - 'data/**'
+      - 'themes/**'
+      - 'resources/**'
+      - 'layouts/**'
+      - 'config.toml'
 
 jobs:
   deploy:
