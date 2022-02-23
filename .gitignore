@@ -23,6 +23,7 @@ creds.js
 
 # Hugo 
 public/
+.hugo_build.lock
  
 # Private Files
 #*.json
