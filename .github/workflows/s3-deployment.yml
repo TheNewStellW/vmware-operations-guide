@@ -2,6 +2,8 @@ name: S3 Deployment
 
 on:
   push:
+    branches:
+      - main
     paths: # Only updates the site if there are changes detected in the following directories.
       - 'content/**'
       - 'static/**'
