@@ -1,6 +1,6 @@
 # VMware Operations Guide
 
-![https://www.vmwareopsguide.com](readme/screenshot.png)
+![https://www.vmwareopsguide.com](readme/clarity-screenshot.png)
 
 The [VMware Operations Guide](https://www.vmwareopsguide.com), and the git repository that supports it, is the result of countless hours by VMware staff. It is given freely to the community both for consumption and contribution. It is a unique attempt to take deep tribal knowledge from inside VMware and out, and turning it into a detailed library for new and existing customers alike to reference and learn from.
 
