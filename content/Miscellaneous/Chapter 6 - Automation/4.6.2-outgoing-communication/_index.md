@@ -5,7 +5,7 @@ draft: false
 weight: 20
 ---
 
-This describes the available options to send information from vRealize Operations to another, so called north-bound, systems.
+This chapter describes the available options to send information from vRealize Operations to another, so called north-bound, systems.
 
 When speaking about north-bound systems we usually refer to services like mail servers or SNMP trap receivers. Since the advent of 8.x versions of vRealize Operations, the product supports more and more REST services like ServiceNow and Slack natively. Starting with the version 8.4, vRealize Operations provides a Webhook plugin as a generic way to integrate any REST API endpoints.
 
