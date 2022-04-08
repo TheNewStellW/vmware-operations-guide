@@ -11,7 +11,7 @@ When speaking about north-bound systems we usually refer to services like mail s
 
 ## Outbound Plugins
 
-Out of the box vRealize Operations provides a set of Outbound Plugins. These plugins are used to create Outbound Instances. The next picture shows the available plugins.
+Out of the box vRealize Operations provides a set of Outbound Plugins. These plugins are used to create Outbound Instances. Every Outbound Instance is basically a connection to an external endpoint. The next picture shows the available plugins.
 
 ![vRealize Operations Outbound Plugins](4.6.2-fig-1.png "vRealize Operations Outbound Plugins")
 
