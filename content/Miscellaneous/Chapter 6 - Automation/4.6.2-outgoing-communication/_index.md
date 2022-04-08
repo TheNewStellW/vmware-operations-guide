@@ -77,7 +77,7 @@ With an instance of the Webhook plugin pointing to a RabbitMQ endpoint and an ap
 
 ![Alert Notifications sending data to RabbitMQ queues](4.6.2-fig-12.png "Alert Notifications sending data to RabbitMQ queues")
 
-## vRealize Orchestrator Adapter
+## vRealize Operations Management Pack for vRealize Orchestrator
 
 The first version of the vRealize Operations Management Pack for vRealize Orchestrator was introduced back in 2018. It has undergone many enhancements and is available for free. It opens up possibilities to automate your SDDC by providing the following features:
 
