@@ -1,7 +1,8 @@
 ---
-title: "3. Mindset"
+title: "Mindset"
 date: 2021-08-03T11:31:22+10:00
 draft: false
+weight: 30
 ---
 
 Growth Mindset vs Fixed Mindset

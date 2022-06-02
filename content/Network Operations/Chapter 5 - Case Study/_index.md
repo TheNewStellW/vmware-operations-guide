@@ -1,9 +1,10 @@
 ---
-title: "5. Case Study"
+title: "Case Study"
 date: 2021-08-09T11:31:22+10:00
 draft: false
+weight: 50
 ---
 
-This chapter show you an example of implementing some of the guide lines we mentioned in this book. 
-
-Question to answer is can you show me an example of a network team successfully managing both a physical and virtual network?
+{{% notice info %}}
+This page has no content right now. Contributors are welcome! Use the "Edit this page" link.
+{{% /notice %}}

@@ -1,7 +1,8 @@
 ---
-title: "2.4. Key Performace Indicators(KPI)"
+title: "Key Performace Indicators (KPI)"
 date: 2021-08-21T11:31:22+10:00
 draft: false
+weight: 40
 ---
 
 If the KPI of the engineers are based on Uptime on the network they support, how would these engineers have the room to try out new technologies? Usually these KPIs are tie to their year end bonuses, therefore any new techologies introduced which might impact the service availiability of the network, anyone in their shoes would follow the mindset of not changing of the existing network. 
