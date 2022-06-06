@@ -3,6 +3,7 @@ title: "Architecture"
 date: 2021-10-11T11:31:22+10:00
 draft: false
 weight: 30
+pre: '<i class="fas fa-cubes"></i> '
 ---
 
 {{% notice info %}}
