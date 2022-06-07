@@ -4,7 +4,7 @@ date: 2021-06-11T11:31:22+10:00
 disabletoc: true
 draft: false
 weight: 50
-pre: '<i class="fas fa-tachometer-alt"></i> '
+pre: '<i class="fa-solid fa-gauge-high"></i> '
 aliases: ['/dashboards']
 ---
 
