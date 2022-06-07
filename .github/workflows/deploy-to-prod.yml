@@ -1,0 +1,47 @@
+name: Deploy to Prod
+
+on:
+  push:
+    branches:
+      - main
+    paths: # Only updates the site if there are changes detected in the following directories.
+      - 'content/**'
+      - 'static/**'
+      - 'data/**'
+      - 'themes/**'
+      - 'resources/**'
+      - 'layouts/**'
+      - 'config.toml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-20.04
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+      AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}/public
+
+      - name: Deploy static site to S3 bucket
+        run: |
+          cd public
+          aws s3 sync --delete . s3://www.vmwareopsguide.com
