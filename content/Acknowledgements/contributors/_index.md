@@ -7,6 +7,6 @@ weight: 20
 pre: '<i class="fas fa-code-branch"></i> '
 ---
 
-This site would be nothing without the great efforts by our contributors. In the spirit of healthy competition, a leaderboard is generated based on the top contributors from the repo.
+This site would be nothing without the incredible contributions from the community. In the spirit of healthy competition, a leaderboard is generated based on the top contributors from the repo.
 
 {{% gh-contributors %}}

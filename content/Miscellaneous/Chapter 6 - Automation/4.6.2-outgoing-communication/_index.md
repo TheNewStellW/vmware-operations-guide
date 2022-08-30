@@ -5,13 +5,13 @@ draft: false
 weight: 20
 ---
 
-This describes the available options to send information from vRealize Operations to another, so called north-bound, systems.
+This chapter describes the available options to send information from vRealize Operations to another, so called north-bound, systems.
 
 When speaking about north-bound systems we usually refer to services like mail servers or SNMP trap receivers. Since the advent of 8.x versions of vRealize Operations, the product supports more and more REST services like ServiceNow and Slack natively. Starting with the version 8.4, vRealize Operations provides a Webhook plugin as a generic way to integrate any REST API endpoints.
 
 ## Outbound Plugins
 
-Out of the box vRealize Operations provides a set of Outbound Plugins. These plugins are used to create Outbound Instances. The next picture shows the available plugins.
+Out of the box vRealize Operations provides a set of Outbound Plugins. These plugins are used to create Outbound Instances. Every Outbound Instance is basically a connection to an external endpoint. The next picture shows the available plugins.
 
 ![vRealize Operations Outbound Plugins](4.6.2-fig-1.png "vRealize Operations Outbound Plugins")
 
@@ -77,7 +77,7 @@ With an instance of the Webhook plugin pointing to a RabbitMQ endpoint and an ap
 
 ![Alert Notifications sending data to RabbitMQ queues](4.6.2-fig-12.png "Alert Notifications sending data to RabbitMQ queues")
 
-## vRealize Orchestrator Adapter
+## vRealize Operations Management Pack for vRealize Orchestrator
 
 The first version of the vRealize Operations Management Pack for vRealize Orchestrator was introduced back in 2018. It has undergone many enhancements and is available for free. It opens up possibilities to automate your SDDC by providing the following features:
 
