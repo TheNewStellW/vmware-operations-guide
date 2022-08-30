@@ -1,0 +1,673 @@
+<?xml version="1.0" encoding="UTF-8"?><alertContent>
+    <AlertDefinitions>
+        <AlertDefinition adapterKind="VMWARE" description="Virtual machine in a DRS cluster is demanding more CPU than its entitlement" id="AlertDefinition-VMWARE-VMDRSClusterDemandMoreCPUThanEntitlement" name="[Deprecated] Virtual machine in a DRS cluster is demanding more CPU than its entitlement" resourceKind="VirtualMachine" subType="19" type="16">
+            <State severity="automatic">
+                <SymptomSets operator="and">
+                    <SymptomSet aggregation="all" applyOn="ancestor" operator="and">
+                        <Symptom ref="SymptomDefinition-VMWARE-ClusterDRSFullyAutomated"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-ClusterDRSEnabled"/>
+                    </SymptomSet>
+                    <SymptomSet applyOn="self" operator="and">
+                        <Symptom ref="SymptomDefinition-VMWARE-VMIsInCluster"/>
+                        <Symptom negateCondition="true" ref="SymptomDefinition-VMWARE-VMPoweredOff"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-VMCPUDemandExceedsEntitlement"/>
+                        <Symptom negateCondition="true" ref="SymptomDefinition-VMWARE-CPULimitIsSet"/>
+                    </SymptomSet>
+                </SymptomSets>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="Recommendation-df-VMWARE-MoveVM"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="VMWARE" description="Virtual machine has disk I/O latency problem caused by snapshots" id="AlertDefinition-VMWARE-DiskLatencyDueToSnapshot" name="[Deprecated] Virtual machine has disk I/O latency problem caused by snapshots" resourceKind="VirtualMachine" subType="19" type="18">
+            <State severity="automatic">
+                <SymptomSets operator="and">
+                    <SymptomSet applyOn="self" operator="or">
+                        <Symptom ref="SymptomDefinition-VMWARE-VMIOWaitWarning"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-VMIOWaitCritical"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-VMIOWaitImmediate"/>
+                    </SymptomSet>
+                    <SymptomSet applyOn="self" operator="and" ref="SymptomDefinition-VMWARE-AtleastOneSnapshot"/>
+                    <SymptomSet aggregation="all" applyOn="child" negateCondition="true" operator="and" ref="SymptomDefinition-VMWARE-DiskCommandLatencyWarning"/>
+                </SymptomSets>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="Recommendation-df-VMWARE-DeleteOldSnapshotOfVm"/>
+                    <Recommendation priority="2" ref="Recommendation-df-VMWARE-ConsolidateToOneSnapshot"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="VMWARE" description="Virtual machine disk I/O write latency is high" id="AlertDefinition-VMWARE-VMWriteLatency" name="[Deprecated] Virtual machine disk I/O write latency is high" resourceKind="VirtualMachine" subType="19" type="18">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinition-VMWARE-VMWriteLatencyImmediate"/>
+                    <Symptom ref="SymptomDefinition-VMWARE-VMWriteLatencyCritical"/>
+                    <Symptom ref="SymptomDefinition-VMWARE-VMWriteLatencyWarning"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="Recommendation-df-VMWARE-CheckStorageIOControl"/>
+                    <Recommendation priority="2" ref="Recommendation-df-VMWARE-DeleteOldSnapshotOfVm"/>
+                    <Recommendation priority="3" ref="Recommendation-df-VMWARE-StorageVmotionVmIOPS"/>
+                    <Recommendation priority="4" ref="Recommendation-df-VMWARE-StorageVMotionVM"/>
+                    <Recommendation priority="5" ref="Recommendation-df-VMWARE-IncreaseIopsForDatastores"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="VMWARE" description="Virtual Machine running on a ESXi host with power management set to OS Controlled in the BIOS is facing CPU contention." id="AlertDefinition-VMWARE-VMCPUContentionOnHostWithBIOSPMOSCtrlWarning" name="[Deprecated] Virtual Machine on a host with BIOS power management set to OS controlled is facing CPU contention" resourceKind="VirtualMachine" subType="19" type="16">
+            <State severity="warning">
+                <SymptomSets operator="and">
+                    <SymptomSet applyOn="self" operator="and">
+                        <Symptom ref="SymptomDefinition-VMWARE-VMCPUContentionInfo"/>
+                        <Symptom negateCondition="true" ref="SymptomDefinition-VMWARE-VMCPUContentionWarning"/>
+                    </SymptomSet>
+                    <SymptomSet aggregation="all" applyOn="parent" negateCondition="true" operator="and" ref="SymptomDefinition-VMWARE-HostPMNotOSCtrl"/>
+                </SymptomSets>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="3" ref="Recommendation-df-VMWARE-RightSizeLargeVMs"/>
+                    <Recommendation priority="2" ref="Recommendation-df-VMWARE-FreeCPUResources"/>
+                    <Recommendation priority="1" ref="Recommendation-df-VMWARE-MonitorUnderlyingClHostCapacity"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="VMWARE" description="Virtual machine is experiencing high co-stop. Co-stop represents the amount of time that a virtual machine is ready to run, but is experiencing delay because of co-vCPU scheduling contention. High Co-stop occurs when too many vCPUs are configured for the virtual machine, and not enough physical CPUs are available to manage the co-vCPU scheduling" id="AlertDefinition-VMWARE-CPUContentionDueToCostop" name="[Deprecated] Virtual machine has CPU contention due to multi-vCPU scheduling issues (co-stop) caused by too many vCPUs" resourceKind="VirtualMachine" subType="19" type="16">
+            <State severity="automatic">
+                <SymptomSets operator="and">
+                    <SymptomSet applyOn="self" negateCondition="true" operator="and" ref="SymptomDefinition-VMWARE-VMPoweredOff"/>
+                    <SymptomSet applyOn="self" operator="or">
+                        <Symptom ref="SymptomDefinition-VMWARE-VMCpuCostopCritical"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-VMCpuCostopImmediate"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-VMCpuCostopWarning"/>
+                    </SymptomSet>
+                </SymptomSets>
+                <Impact key="risk" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="Recommendation-df-VMWARE-RemoveRecommendedCPUs"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="VMWARE" description="[Deprecated] Virtual machine has memory contention due to swap wait and high disk read latency" id="AlertDefinition-VMWARE-VMReadLatencySwapping" name="[Deprecated] Virtual machine has memory contention caused by swap wait and high disk read latency" resourceKind="VirtualMachine" subType="19" type="16">
+            <State severity="automatic">
+                <SymptomSets operator="and">
+                    <SymptomSet applyOn="self" operator="or">
+                        <Symptom ref="SymptomDefinition-VMWARE-VMSwapWaitWarning"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-VMSwapWaitImmediate"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-VMSwapWaitCritical"/>
+                    </SymptomSet>
+                    <SymptomSet applyOn="self" operator="and">
+                        <Symptom ref="SymptomDefinition-VMWARE-VMReadLatencyWarning"/>
+                        <Symptom negateCondition="true" ref="SymptomDefinition-VMWARE-VMToolsRunning"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-VMBalloonZero"/>
+                    </SymptomSet>
+                </SymptomSets>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="Recommendation-df-VMWARE-AddMoreMemoryForVm"/>
+                    <Recommendation priority="2" ref="Recommendation-df-VMWARE-InstallRunVMTools"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="VMWARE" description="Virtual machine disk I/O read latency is high. &#10;&#10;Enhancement made:&#10;Add a new condition" id="AlertDefinition-VMWARE-VMReadLatency" name="[Deprecated] Virtual machine disk I/O read latency is high" resourceKind="VirtualMachine" subType="19" type="18">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinition-VMWARE-VMReadLatencyImmediate"/>
+                    <Symptom ref="SymptomDefinition-VMWARE-VMReadLatencyCritical"/>
+                    <Symptom ref="SymptomDefinition-VMWARE-VMReadLatencyWarning"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="Recommendation-df-VMWARE-CheckStorageIOControl"/>
+                    <Recommendation priority="2" ref="Recommendation-df-VMWARE-DeleteOldSnapshotOfVm"/>
+                    <Recommendation priority="3" ref="Recommendation-df-VMWARE-StorageVmotionVmIOPS"/>
+                    <Recommendation priority="4" ref="Recommendation-df-VMWARE-StorageVMotionVM"/>
+                    <Recommendation priority="5" ref="Recommendation-df-VMWARE-IncreaseIopsForDatastores"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="VMWARE" description="Virtual machine is demanding more CPU than the configured limit, indicating that it is undersized" id="AlertDefinition-VMWARE-VMCPUHigherDemandThanLimit" name="[Deprecated] Virtual machine is demanding more CPU than the configured limit" resourceKind="VirtualMachine" subType="19" type="16">
+            <State severity="warning">
+                <SymptomSet applyOn="self" operator="and">
+                    <Symptom ref="SymptomDefinition-VMWARE-VMCPUDemandIsGreaterThanConfiguredLimit"/>
+                    <Symptom ref="SymptomDefinition-VMWARE-CPULimitIsSet"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="Recommendation-df-VMWARE-Increase-Remove-CpuLimits-Vm"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="VMWARE" description="Virtual machine in a cluster is demanding more CPU than its entitlement" id="AlertDefinition-VMWARE-VMClusterDemandMoreCPUThanEntitlement" name="[Deprecated] Virtual machine in a cluster is demanding more CPU than its entitlement" resourceKind="VirtualMachine" subType="19" type="16">
+            <State severity="automatic">
+                <SymptomSets operator="and">
+                    <SymptomSet aggregation="all" applyOn="ancestor" operator="or">
+                        <Symptom negateCondition="true" ref="SymptomDefinition-VMWARE-ClusterDRSFullyAutomated"/>
+                        <Symptom negateCondition="true" ref="SymptomDefinition-VMWARE-ClusterDRSEnabled"/>
+                    </SymptomSet>
+                    <SymptomSet applyOn="self" operator="and">
+                        <Symptom ref="SymptomDefinition-VMWARE-VMIsInCluster"/>
+                        <Symptom negateCondition="true" ref="SymptomDefinition-VMWARE-VMPoweredOff"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-VMCPUDemandExceedsEntitlement"/>
+                        <Symptom negateCondition="true" ref="SymptomDefinition-VMWARE-CPULimitIsSet"/>
+                    </SymptomSet>
+                </SymptomSets>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="Recommendation-df-VMWARE-TurnOnDRS"/>
+                    <Recommendation priority="2" ref="Recommendation-df-VMWARE-MoveVM"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="VMWARE" description="Virtual machine has a limit set on the memory consumption, but is demanding memory beyond the limit. This demand is leading to memory compression, ballooning, or swapping, which is adversely affecting the performance of the virtual machine" id="AlertDefinition-VMWARE-VMSwappingDueToLimit" name="[Deprecated] Virtual machine is experiencing memory compression, ballooning, or swapping due to memory limit" resourceKind="VirtualMachine" subType="19" type="16">
+            <State severity="automatic">
+                <SymptomSets operator="and">
+                    <SymptomSet applyOn="self" operator="and">
+                        <Symptom ref="SymptomDefinition-VMWARE-VMMemDemandOverLimit"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-MemLimitIsSet"/>
+                    </SymptomSet>
+                    <SymptomSet applyOn="self" operator="or">
+                        <Symptom ref="SymptomDefinition-VMWARE-VMBalloonImmediate"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-VMMemoryZipped"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-VMBalloonCritical"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-VMBalloonWarning"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-VMHighSwapped"/>
+                    </SymptomSet>
+                </SymptomSets>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="Recommendation-df-VMWARE-RemoveMemLimitVMRec"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="VMWARE" description="Virtual machine is experiencing high swap wait. Swap wait represents the amount of time that a virtual machine is waiting while the host is swapping in memory pages. The host is overcommitted on memory and has resorted to swapping, which is degrading the performance of the virtual machine" id="AlertDefinition-VMWARE-VMContentionDuetoSwap" name="[Deprecated] Virtual machine has CPU contention due to memory page swapping in the host" resourceKind="VirtualMachine" subType="19" type="16">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinition-VMWARE-VMSwapWaitCritical"/>
+                    <Symptom ref="SymptomDefinition-VMWARE-VMSwapWaitImmediate"/>
+                    <Symptom ref="SymptomDefinition-VMWARE-VMSwapWaitWarning"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="2" ref="Recommendation-df-VMWARE-CheckToolsAndBalloonDriver"/>
+                    <Recommendation priority="1" ref="Recommendation-df-VMWARE-SetMemReservation"/>
+                    <Recommendation priority="3" ref="Recommendation-df-VMWARE-VmotionVm"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="VMWARE" description="Virtual machine is experiencing high I/O wait. I/O wait represents the amount of time that a virtual machine is waiting for completion of I/O events. Disk and network I/O operations are common causes of I/O wait because they are the slowest operations in the system.&#10;&#10;High I/O wait can be due to a poorly performing storage device on which the virtual machine resides. A device in the virtual machine configuration that stops functioning or responding can also trigger high I/O wait. These devices can include but are not limited to serial pass-through, parallel pass-through and USB devices. For example, high I/O wait can occur when an ISO file that is left mounted in the virtual machine is accidentally deleted or moved to an alternate location" id="AlertDefinition-VMWARE-CPUContentionDueToIOWait" name="[Deprecated] Virtual machine has CPU contention due to long wait for I/O events" resourceKind="VirtualMachine" subType="19" type="16">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinition-VMWARE-VMIOWaitCritical"/>
+                    <Symptom ref="SymptomDefinition-VMWARE-VMIOWaitImmediate"/>
+                    <Symptom ref="SymptomDefinition-VMWARE-VMIOWaitWarning"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="Recommendation-df-VMWARE-IncreaseDatastoreIOCapacity"/>
+                    <Recommendation priority="2" ref="Recommendation-df-VMWARE-DisconnectISO"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="VMWARE" description="Virtual Machine running on a ESXi host with power management set to OS Controlled in the BIOS is facing CPU contention." id="AlertDefinition-VMWARE-VMCPUContentionOnHostWithBIOSPMOSCtrlCritical" name="[Deprecated] Virtual Machine on a host with BIOS power management set to OS controlled is facing CPU contention" resourceKind="VirtualMachine" subType="19" type="16">
+            <State severity="critical">
+                <SymptomSets operator="and">
+                    <SymptomSet applyOn="self" operator="or">
+                        <Symptom ref="SymptomDefinition-VMWARE-VMCPUContentionWarning"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-VMCPUContentionImmediate"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-VMCPUContentionCritical"/>
+                    </SymptomSet>
+                    <SymptomSet aggregation="all" applyOn="parent" negateCondition="true" operator="and" ref="SymptomDefinition-VMWARE-HostPMNotOSCtrl"/>
+                </SymptomSets>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="3" ref="Recommendation-df-VMWARE-RightSizeLargeVMs"/>
+                    <Recommendation priority="2" ref="Recommendation-df-VMWARE-FreeCPUResources"/>
+                    <Recommendation priority="1" ref="Recommendation-df-VMWARE-MonitorUnderlyingClHostCapacity"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="VMWARE" description="[Deprecated] Virtual machine has memory contention due to memory compression, ballooning, or swapping. This is usually caused by overpopulation of virtual machines on the host" id="AlertDefinition-VMWARE-VMMemContention" name="[Deprecated] Virtual machine has memory contention due to memory compression, ballooning, or swapping" resourceKind="VirtualMachine" subType="19" type="16">
+            <State severity="automatic">
+                <SymptomSets operator="and">
+                    <SymptomSet applyOn="self" negateCondition="true" ref="SymptomDefinition-VMWARE-MemLimitIsSet"/>
+                    <SymptomSet applyOn="self" operator="or">
+                        <Symptom ref="SymptomDefinition-VMWARE-VMMemContentionCritical"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-VMMemContentionImmediate"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-VMMemContentionWarning"/>
+                    </SymptomSet>
+                    <SymptomSet applyOn="self" operator="or">
+                        <Symptom ref="SymptomDefinition-VMWARE-VMMemoryZipped"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-VMBalloonWarning"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-VMBalloonImmediate"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-VMBalloonCritical"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-VMHighSwapped"/>
+                    </SymptomSet>
+                </SymptomSets>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="Recommendation-df-VMWARE-AddVMMemReservation"/>
+                    <Recommendation priority="2" ref="Recommendation-df-VMWARE-VmotionVm"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="VMWARE" description="Virtual Machine running on a ESXi host with power management not set to OS Controlled in the BIOS is facing CPU contention." id="AlertDefinition-VMWARE-VMCPUContentionOnHostWithBIOSPMNotOSCtrlWarning" name="[Deprecated] Virtual Machine on a host with BIOS power management not set to OS controlled is facing CPU contention" resourceKind="VirtualMachine" subType="19" type="16">
+            <State severity="warning">
+                <SymptomSets operator="and">
+                    <SymptomSet applyOn="self" operator="and">
+                        <Symptom ref="SymptomDefinition-VMWARE-VMCPUContentionImmediate"/>
+                        <Symptom negateCondition="true" ref="SymptomDefinition-VMWARE-VMCPUContentionCritical"/>
+                    </SymptomSet>
+                    <SymptomSet aggregation="all" applyOn="parent" operator="and" ref="SymptomDefinition-VMWARE-HostPMNotOSCtrl"/>
+                </SymptomSets>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="4" ref="Recommendation-df-VMWARE-RightSizeLargeVMs"/>
+                    <Recommendation priority="3" ref="Recommendation-df-VMWARE-FreeCPUResources"/>
+                    <Recommendation priority="2" ref="Recommendation-df-VMWARE-MonitorUnderlyingClHostCapacity"/>
+                    <Recommendation priority="1" ref="Recommendation-df-VMWARE-SetESXIPMToHighPerfAndHWBIOSPMToOSCtrl"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="VMWARE" description="Virtual machine has large disk snapshots that are consuming disk space" id="AlertDefinition-VMWARE-VMRunningOnSnapshotsForMoreThan2Days" name="[Deprecated] Virtual machine is running on snapshots for more than 2 days" resourceKind="VirtualMachine" subType="22" type="16">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="and">
+                    <Symptom ref="SymptomDefinition-VMWARE-VMHasLongLiveSnapshots"/>
+                    <Symptom ref="SymptomDefinition-VMWARE-VMHasFairSizedSnapshots"/>
+                </SymptomSet>
+                <Impact key="risk" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="Recommendation-df-VMWARE-DeleteOldSnapshotOfVm"/>
+                    <Recommendation priority="2" ref="Recommendation-df-VMWARE-DontUseSnapshotForMoreThan72Hours"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="VMWARE" description="Virtual machine is running an unsupported version of VMware Tools. It is unsupported for one the following reasons: &#10;- It is too old.&#10;- It is too new to work correctly with this virtual machine.&#10;- It contains a serious issue and should be immediately upgraded." id="AlertDefinition-VMWARE-VMToolsNotSupported" name="[Deprecated] Virtual machine has unsupported VMware Tools" resourceKind="VirtualMachine" subType="22" type="16">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinition-VMWARE-VMToolsTooNew"/>
+                    <Symptom ref="SymptomDefinition-VMWARE-VMToolsNeedUpgrade"/>
+                    <Symptom ref="SymptomDefinition-VMWARE-VMToolsTooOld"/>
+                    <Symptom ref="SymptomDefinition-VMWARE-VMToolsBlackListed"/>
+                </SymptomSet>
+                <Impact key="risk" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="Recommendation-df-VMWARE-UpgradeVMTools"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="VMWARE" description="Virtual machine is demanding more CPU than its entitlement" id="AlertDefinition-VMWARE-VMOnHostDemandMoreCPUThanEntitlement" name="[Deprecated] Virtual machine is demanding more CPU than its entitlement" resourceKind="VirtualMachine" subType="19" type="16">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="and">
+                    <Symptom negateCondition="true" ref="SymptomDefinition-VMWARE-VMIsInCluster"/>
+                    <Symptom negateCondition="true" ref="SymptomDefinition-VMWARE-VMPoweredOff"/>
+                    <Symptom ref="SymptomDefinition-VMWARE-VMCPUDemandExceedsEntitlement"/>
+                    <Symptom negateCondition="true" ref="SymptomDefinition-VMWARE-CPULimitIsSet"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="Recommendation-df-VMWARE-MoveVM"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="VMWARE" description="Virtual machine is experiencing high co-stop due to the presence of snapshots. Co-stop represents the amount of time that a virtual machine is ready to run, but is experiencing delay because of co-vCPU scheduling contention.&#10;&#10;Snapshots introduce complexity to storage I/O. Due to the nature of snapshots, every read operation must traverse every snapshot disk and then the base disk to verify the appropriate disk block to return. Because these extended read operations are required, snapshots are the most performance-intensive disk format for virtual disks (as opposed to thin-provisioned, thick-provisioned, or eager-zeroed thick-provisioned virtual disks).&#10;&#10;As storage I/O for snapshots grows, co-stop values can increase because the vCPUs must wait for I/O completion" id="AlertDefinition-VMWARE-HighCostopSnapshots" name="[Deprecated] Virtual machine has CPU contention due to multi-vCPU scheduling issues (co-stop) caused by snapshots" resourceKind="VirtualMachine" subType="19" type="16">
+            <State severity="automatic">
+                <SymptomSets operator="and">
+                    <SymptomSet applyOn="self" operator="or">
+                        <Symptom ref="SymptomDefinition-VMWARE-VMCpuCostopWarning"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-VMCpuCostopImmediate"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-VMCpuCostopCritical"/>
+                    </SymptomSet>
+                    <SymptomSet applyOn="self" operator="and">
+                        <Symptom negateCondition="true" ref="SymptomDefinition-VMWARE-VMPoweredOff"/>
+                        <Symptom ref="SymptomDefinition-VMWARE-AtleastOneSnapshot"/>
+                    </SymptomSet>
+                </SymptomSets>
+                <Impact key="risk" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="Recommendation-df-VMWARE-SnapshotCostopRec"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="VMWARE" description="[Deprecated] Virtual Machine running on a ESXi host with power management not set to OS Controlled in the BIOS is facing CPU contention." id="AlertDefinition-VMWARE-VMCPUContentionOnHostWithBIOSPMNotOSCtrlCritical" name="[Deprecated] Virtual Machine on a host with BIOS power management not set to OS controlled is facing CPU contention" resourceKind="VirtualMachine" subType="19" type="16">
+            <State severity="critical">
+                <SymptomSets operator="and">
+                    <SymptomSet applyOn="self" operator="or" ref="SymptomDefinition-VMWARE-VMCPUContentionCritical"/>
+                    <SymptomSet aggregation="all" applyOn="parent" operator="and" ref="SymptomDefinition-VMWARE-HostPMNotOSCtrl"/>
+                </SymptomSets>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="4" ref="Recommendation-df-VMWARE-RightSizeLargeVMs"/>
+                    <Recommendation priority="3" ref="Recommendation-df-VMWARE-FreeCPUResources"/>
+                    <Recommendation priority="2" ref="Recommendation-df-VMWARE-MonitorUnderlyingClHostCapacity"/>
+                    <Recommendation priority="1" ref="Recommendation-df-VMWARE-SetESXIPMToHighPerfAndHWBIOSPMToOSCtrl"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+    </AlertDefinitions>
+    <SymptomDefinitions>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMIOWaitCritical" name="Virtual machine CPU I/O wait is at Critical level" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="critical">
+                <Condition key="cpu|iowaitPct" operator="&gt;" thresholdType="static" type="metric" value="15.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMReadLatencyWarning" name="[Deprecated]  VM disk read latency at Warning level" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="warning">
+                <Condition key="virtualDisk:Aggregate of all instances|totalReadLatency_average" operator="&gt;" thresholdType="static" type="metric" value="15.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMCpuCostopCritical" name="Virtual machine CPU co-stop is at Critical level" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="critical">
+                <Condition key="cpu|costopPct" operator="&gt;" thresholdType="static" type="metric" value="15.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" id="SymptomDefinition-VMWARE-VMPoweredOff" name="Virtual machine is powered off" resourceKind="VirtualMachine">
+            <State severity="info">
+                <Condition key="sys|poweredOn" operator="=" thresholdType="static" type="metric" value="0.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMCpuCostopWarning" name="Virtual machine CPU co-stop is at Warning level" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="warning">
+                <Condition key="cpu|costopPct" operator="&gt;" thresholdType="static" type="metric" value="5.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-DiskCommandLatencyWarning" name="Disk command latency at Warning level" resourceKind="Datastore" waitCycle="3">
+            <State severity="warning">
+                <Condition key="datastore|totalLatency_average" operator="&gt;" thresholdType="static" type="metric" value="15.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" id="SymptomDefinition-VMWARE-VMToolsRunning" name="VMware Tools is running" resourceKind="VirtualMachine">
+            <State severity="info">
+                <Condition key="summary|guest|toolsRunningStatus" operator="contains" thresholdType="static" type="property" value="Guest Tools Running" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMBalloonWarning" name="Virtual machine memory ballooning is at Warning level" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="warning">
+                <Condition key="mem|balloonPct" operator="&gt;" thresholdType="static" type="metric" value="1.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMMemContentionWarning" name="Virtual machine memory contention is at warning level" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="warning">
+                <Condition key="mem|host_contentionPct" operator="&gt;" thresholdType="static" type="metric" value="1.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" id="SymptomDefinition-VMWARE-CPULimitIsSet" name="Virtual machine CPU limit is set" resourceKind="VirtualMachine">
+            <State severity="info">
+                <Condition key="cpu|limit" operator="!=" thresholdType="static" type="property" value="-1.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMWriteLatencyCritical" name="OYW VM disk write latency at Critical level" resourceKind="VirtualMachine">
+            <State severity="critical">
+                <Condition key="virtualDisk:Aggregate of all instances|totalWriteLatency_average" operator="&gt;" thresholdType="static" type="metric" value="40.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMReadLatencyImmediate" name="Virtual machine disk read latency at Immediate level" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="immediate">
+                <Condition key="virtualDisk:Aggregate of all instances|totalReadLatency_average" operator="&gt;" thresholdType="static" type="metric" value="25.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMMemContentionCritical" name="Virtual machine memory contention is at Critical level" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="critical">
+                <Condition key="mem|host_contentionPct" operator="&gt;" thresholdType="static" type="metric" value="10.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMBalloonCritical" name="Virtual machine memory ballooning is at Critical level" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="critical">
+                <Condition key="mem|balloonPct" operator="&gt;" thresholdType="static" type="metric" value="10.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" id="SymptomDefinition-VMWARE-HostPMNotOSCtrl" name="Host power management technology is not set to OS Controlled" resourceKind="HostSystem">
+            <State severity="info">
+                <Condition key="hardware|powerManagementTechnoloy" operator="!=" thresholdType="static" type="property" value="ACPI P-states, ACPI C-states" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMCPUContentionInfo" name="Virtual machine CPU contention is elevated" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="info">
+                <Condition key="cpu|capacity_contentionPct" operator="&gt;" thresholdType="static" type="metric" value="5.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMSwapWaitCritical" name="Virtual machine CPU swap wait is at Critical level" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="critical">
+                <Condition key="cpu|swapwaitPct" operator="&gt;" thresholdType="static" type="metric" value="15.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMCPUContentionImmediate" name="Virtual machine CPU contention is elevated" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="immediate">
+                <Condition key="cpu|capacity_contentionPct" operator="&gt;" thresholdType="static" type="metric" value="20.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" id="SymptomDefinition-VMWARE-MemLimitIsSet" name="Virtual machine memory limit is set" resourceKind="VirtualMachine">
+            <State severity="info">
+                <Condition key="mem|host_limit" operator="&gt;" thresholdType="static" type="property" value="0.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMIOWaitWarning" name="Virtual machine CPU I/O wait is at Warning level" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="warning">
+                <Condition key="cpu|iowaitPct" operator="&gt;" thresholdType="static" type="metric" value="5.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMSwapWaitWarning" name="Virtual machine CPU swap wait is at Warning level" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="warning">
+                <Condition key="cpu|swapwaitPct" operator="&gt;" thresholdType="static" type="metric" value="5.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMMemoryZipped" name="Virtual machine memory is compressed" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="info">
+                <Condition key="mem|compressed_average" operator="&gt;" thresholdType="static" type="metric" value="1024.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" id="SymptomDefinition-VMWARE-VMToolsNeedUpgrade" name="VMware Tools requires upgrade" resourceKind="VirtualMachine">
+            <State severity="immediate">
+                <Condition key="summary|guest|toolsVersionStatus2" operator="contains" thresholdType="static" type="property" value="Guest Tools Need Upgrade" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMMemContentionImmediate" name="Virtual machine memory contention is at Immediate level" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="immediate">
+                <Condition key="mem|host_contentionPct" operator="&gt;" thresholdType="static" type="metric" value="5.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMIOWaitImmediate" name="Virtual machine CPU I/O wait is at Immediate level" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="immediate">
+                <Condition key="cpu|iowaitPct" operator="&gt;" thresholdType="static" type="metric" value="10.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMBalloonImmediate" name="Virtual machine memory ballooning is at Immediate level" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="immediate">
+                <Condition key="mem|balloonPct" operator="&gt;" thresholdType="static" type="metric" value="5.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMWriteLatencyWarning" name="[Deprecated] VM disk write latency at Warning level" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="warning">
+                <Condition key="virtualDisk:Aggregate of all instances|totalWriteLatency_average" operator="&gt;" thresholdType="static" type="metric" value="15.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMBalloonZero" name="Virtual machine does not have memory ballooning" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="info">
+                <Condition key="mem|balloonPct" operator="=" thresholdType="static" type="metric" value="0.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMCPUContentionCritical" name="Virtual machine CPU contention at critical level" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="critical">
+                <Condition key="cpu|capacity_contentionPct" operator="&gt;" thresholdType="static" type="metric" value="30.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" id="SymptomDefinition-VMWARE-VMHasFairSizedSnapshots" name="Virtual machine has a snapshot sized more than 1 GB" resourceKind="VirtualMachine">
+            <State severity="warning">
+                <Condition key="diskspace|snapshot" operator="&gt;" thresholdType="static" type="metric" value="1.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" id="SymptomDefinition-VMWARE-ClusterDRSFullyAutomated" name="DRS fully automated" resourceKind="ClusterComputeResource">
+            <State severity="info">
+                <Condition key="configuration|drsConfig|defaultVmBehavior" operator="=" thresholdType="static" type="property" value="fullyAutomated" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" id="SymptomDefinition-VMWARE-VMHasLongLiveSnapshots" name="Virtual machine has disk snapshots for a long time" resourceKind="VirtualMachine">
+            <State severity="warning">
+                <Condition key="diskspace|snapshot|snapshotAge" operator="&gt;=" thresholdType="static" type="property" value="2.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" id="SymptomDefinition-VMWARE-VMIsInCluster" name="Virtual machine is in a cluster" resourceKind="VirtualMachine">
+            <State severity="info">
+                <Condition key="summary|parentCluster" operator="regex" thresholdType="static" type="property" value=".+" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMMemDemandOverLimit" name="Virtual machine memory demand exceeds configured memory limit" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="critical">
+                <Condition key="mem|guest_demand" operator="&gt;" targetKey="mem|host_limit" thresholdType="property" type="metric" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" id="SymptomDefinition-VMWARE-VMToolsBlackListed" name="VMware Tools is blacklisted" resourceKind="VirtualMachine">
+            <State severity="critical">
+                <Condition key="summary|guest|toolsVersionStatus2" operator="contains" thresholdType="static" type="property" value="Guest Tools BlackListed" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMCpuCostopImmediate" name="Virtual machine CPU co-stop is at Immediate level" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="immediate">
+                <Condition key="cpu|costopPct" operator="&gt;" thresholdType="static" type="metric" value="10.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMReadLatencyCritical" name="OYW VM disk read latency at Critical level" resourceKind="VirtualMachine">
+            <State severity="critical">
+                <Condition key="virtualDisk:Aggregate of all instances|totalReadLatency_average" operator="&gt;" thresholdType="static" type="metric" value="40.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" id="SymptomDefinition-VMWARE-VMToolsTooNew" name="VMware Tools is too new" resourceKind="VirtualMachine">
+            <State severity="warning">
+                <Condition key="summary|guest|toolsVersionStatus2" operator="contains" thresholdType="static" type="property" value="Guest Tools Too New" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" id="SymptomDefinition-VMWARE-AtleastOneSnapshot" name="Virtual machine has at least one snapshot" resourceKind="VirtualMachine">
+            <State severity="info">
+                <Condition key="diskspace|snapshot|used" operator="&gt;" thresholdType="static" type="metric" value="0.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" id="SymptomDefinition-VMWARE-VMToolsTooOld" name="Virtual machine has too old VMware Tools" resourceKind="VirtualMachine">
+            <State severity="immediate">
+                <Condition key="summary|guest|toolsVersionStatus2" operator="contains" thresholdType="static" type="property" value="Guest Tools Too Old" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMCPUDemandExceedsEntitlement" name="Virtual machine CPU Demand exceeds its entitlement" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="immediate">
+                <Condition key="cpu|demandmhz" operator="&gt;" targetKey="cpu|dynamic_entitlement" thresholdType="metric" type="metric" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMSwapWaitImmediate" name="Virtual machine CPU swap wait is at Immediate level" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="immediate">
+                <Condition key="cpu|swapwaitPct" operator="&gt;" thresholdType="static" type="metric" value="10.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMHighSwapped" name="Virtual machine is using swap" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="info">
+                <Condition key="mem|swapped_average" operator="&gt;" thresholdType="static" type="metric" value="1024.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMWriteLatencyImmediate" name="Virtual machine disk write latency at Immediate level" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="immediate">
+                <Condition key="virtualDisk:Aggregate of all instances|totalWriteLatency_average" operator="&gt;" thresholdType="static" type="metric" value="25.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMCPUDemandIsGreaterThanConfiguredLimit" name="CPU Demand is greater than configured limit" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="warning">
+                <Condition key="cpu|demandmhz" operator="&gt;" targetKey="cpu|limit" thresholdType="property" type="metric" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="3" id="SymptomDefinition-VMWARE-VMCPUContentionWarning" name="Virtual machine CPU contention is elevated" resourceKind="VirtualMachine" waitCycle="3">
+            <State severity="warning">
+                <Condition key="cpu|capacity_contentionPct" operator="&gt;" thresholdType="static" type="metric" value="15.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" id="SymptomDefinition-VMWARE-ClusterDRSEnabled" name="DRS enabled" resourceKind="ClusterComputeResource">
+            <State severity="info">
+                <Condition key="configuration|drsConfig|enabled" operator="=" thresholdType="static" type="property" value="true" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+    </SymptomDefinitions>
+    <Recommendations>
+        <Recommendation key="Recommendation-df-VMWARE-SetESXIPMToHighPerfAndHWBIOSPMToOSCtrl">
+            <Description>For best CPU performance set the ESXi power management policy to "High Performance" using the vSphere Client and set the hardware BIOS power management to "OS Controlled". This will allow ESXi to provide the highest level of CPU performance to the Virtual Machines by reducing CPU latency caused by changing power states.&lt;br/&gt;&lt;br/&gt;See the following KB article for more information &lt;a href="https://kb.vmware.com/kb/1018206" target="_blank"&gt;https://kb.vmware.com/kb/1018206&lt;/a&gt;</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-InstallRunVMTools">
+            <Description>Ensure that VMware Tools is running in the virtual machine.</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-MonitorUnderlyingClHostCapacity">
+            <Description>Monitor the underlying cluster/host capacity to ensure that you have enough CPU resources. If not, add more CPU resources to the cluster or move some VMs to a different cluster.</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-IncreaseIopsForDatastores">
+            <Description>Increase IOPS for the datastores connected to the virtual machine</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-MoveVM">
+            <Description>Move this virtual machine to a different host or cluster.</Description>
+            <Action actionAdapterKey="VMWARE" actionKey="Move VM for Workload" targetAdapterKey="VMWARE" targetResourceKind="VirtualMachine"/>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-UpgradeVMTools">
+            <Description>If the VMware tools version is too new, downgrade it to a supported version. Otherwise, upgrade VMware Tools to the latest version. Select this virtual machine in the vSphere Client or Web Client, then right-click and select "Upgrade VMware Tools".</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-ConsolidateToOneSnapshot">
+            <Description>Reduce the number of snapshots by consolidating the snapshots into 1 snapshot. Use the vSphere Client to perform this operation. Select the virtual machine, then right-click, and select 'Snapshot -&gt; Consolidate'.</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-VmotionVm">
+            <Description>Use vMotion to migrate this virtual machine to a different host or cluster</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-AddMoreMemoryForVm">
+            <Description>Add more memory for this virtual machine</Description>
+            <Action actionAdapterKey="VMWARE" actionKey="Set Memory For VM" targetAdapterKey="VMWARE" targetResourceKind="VirtualMachine"/>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-RemoveMemLimitVMRec">
+            <Description>Increase the memory limit for the virtual machine so that it matches the recommended memory size. Alternatively, remove memory limit for the virtual machine.</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-DontUseSnapshotForMoreThan72Hours">
+            <Description>Do not use a snapshot for more than 24-72 hours.&lt;br/&gt;&lt;br/&gt;The snapshot file continues to grow in size when it is retained for a longer period. This can cause the snapshot storage location to run out of space and impact the system performance. &lt;br/&gt;&lt;br/&gt;Refer to the following KB Article:&lt;br/&gt;Best practices for using snapshots in the vSphere environment &lt;a href="https://kb.vmware.com/kb/1025279" target="_blank"&gt;https://kb.vmware.com/kb/1025279&lt;/a&gt;</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-RemoveRecommendedCPUs">
+            <Description>Review the symptoms listed and remove the number of vCPUs from the virtual machine as recommended by the symptom.</Description>
+            <Action actionAdapterKey="VMWARE" actionKey="Set CPU Count For VM" targetAdapterKey="VMWARE" targetResourceKind="VirtualMachine"/>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-TurnOnDRS">
+            <Description>Turn on DRS on the cluster. Manually approve the DRS recommendations or set DRS to fully automated.</Description>
+            <Action actionAdapterKey="VMWARE" actionKey="Set DRS Automation" targetAdapterKey="VMWARE" targetResourceKind="ClusterComputeResource"/>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-CheckToolsAndBalloonDriver">
+            <Description>Verify that VMware Tools is installed and running, and that the balloon driver is enabled in the guest. Memory ballooning helps the host reclaim unused memory from the guest more effectively, and might avoid swapping.</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-StorageVmotionVmIOPS">
+            <Description>Use Storage vMotion to migrate this virtual machine to a different datastore with higher IOPS</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-RightSizeLargeVMs">
+            <Description>Right-size large virtual machines as it helps in reducing overall resource contention. Use the Reclaimable Capacity feature within vRealize Operations for recommended rightsizing of VMs.</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-FreeCPUResources">
+            <Description>Reduce the contention faced by the affected virtual machine by freeing up CPU resources on the parent host using vMotion.</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-AddVMMemReservation">
+            <Description>Add memory reservations to this virtual machine to prevent ballooning and swapping.</Description>
+            <Action actionAdapterKey="VMWARE" actionKey="Set Memory Resources For VM" targetAdapterKey="VMWARE" targetResourceKind="VirtualMachine"/>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-CheckStorageIOControl">
+            <Description>Check whether you have enabled Storage IO Control on the datastores connected to the virtual machine</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-StorageVMotionVM">
+            <Description>Use Storage vMotion to migrate some virtual machines to a different datastore</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-DeleteOldSnapshotOfVm">
+            <Description>If the virtual machine has multiple snapshots, delete the older snapshots</Description>
+            <Action actionAdapterKey="VMWARE" actionKey="Delete Unused Snapshots For VM" targetAdapterKey="VMWARE" targetResourceKind="VirtualMachine"/>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-SnapshotCostopRec">
+            <Description>To reduce the high co-stop values and improve virtual machine performance, consolidate any snapshots into the main virtual disk. Open the vSphere Client, select the virtual machine, then right-click, and select 'Snapshot -&gt; Consolidate'.&lt;br/&gt;&lt;br/&gt;After consolidation, the co-stop value is reduced or eliminated and virtual machine performance improves. If performance does not improve enough, continue to research other potential virtual machine performance issues.&lt;br/&gt;See VMware &lt;a href="http://kb.vmware.com/kb/2000058" target="_blank"&gt;KB 2000058&lt;/a&gt;.</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-DisconnectISO">
+            <Description>Check whether the virtual machine has an ISO file attached to its CD/DVD drive, and whether the file was deleted or moved. If so, follow the instructions in VMware &lt;a href="http://kb.vmware.com/kb/1015791" target="_blank"&gt;KB 1015791&lt;/a&gt; to disconnect the ISO.</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-IncreaseDatastoreIOCapacity">
+            <Description>Increase the datastore I/O capacity for the connected datastores to reduce CPU I/O wait on the virtual machine.</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-Increase-Remove-CpuLimits-Vm">
+            <Description>Increase or remove the CPU limits on this virtual machine</Description>
+            <Action actionAdapterKey="VMWARE" actionKey="Set CPU Resources For VM" targetAdapterKey="VMWARE" targetResourceKind="ClusterComputeResource"/>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-SetMemReservation">
+            <Description>Set memory reservations for the virtual machine to prevent its memory from being swapped.</Description>
+            <Action actionAdapterKey="VMWARE" actionKey="Set Memory Resources For VM" targetAdapterKey="VMWARE" targetResourceKind="VirtualMachine"/>
+        </Recommendation>
+    </Recommendations>
+</alertContent>

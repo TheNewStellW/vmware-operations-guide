@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8"?><alertContent>
+    <AlertDefinitions>
+        <AlertDefinition adapterKind="VMWARE" description="The memory latency metric have reached the red level. &#10;&#10;Enhancements over previous version: &#10;Reduce waiting time from 3 cycles (read: 15 minutes) to 1 for faster reaction. Add 20-second metric to reduce false positive. Remove yellow and orange. Use VM Performance dashboard and Datastore Performance dashboard daily to proactively address storage issue. Rename the alert. Remove the word high as its unclear if it maps to red or orange or yellow.&#10;Suppress for low utilization, as likely the impact is not felt at the application level." disableInBasePolicy="true" id="AlertDefinition-1c02f0c9-b651-4f6f-9496-7020f459f904" name="OYW VM memory contention reaches critical level" resourceKind="VirtualMachine" subType="19" type="16">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="and">
+                    <Symptom ref="SymptomDefinition-56ab0eb5-dde1-4fb1-80e0-1d196e57ceef"/>
+                    <Symptom ref="SymptomDefinition-edc1f264-7284-4ff8-b0ae-399cb8fbecf2"/>
+                    <Symptom ref="SymptomDefinition-d034dd53-19ce-4323-9b24-880e33df31ea"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="Recommendation-df-VMWARE-AddVMMemReservation"/>
+                    <Recommendation priority="2" ref="Recommendation-df-VMWARE-VmotionVm"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="VMWARE" description="The average CPU contention among the VM vCPU have reached the orange or red level. &#10;&#10;Associated alerts:&#10;VM memory contention alert.&#10;&#10;Enhancements over previous version: &#10;Consolidates 12 alerts into 1 to see the overall picture. Also, their remediation is largely the same.&#10;Reduce waiting time from 3 cycles (read: 15 minutes) to 1 for faster reaction. &#10;Add 20-second metric to reduce false positive. Remove yellow for less noise. Use VM Performance dashboard and Datastore Performance dashboard daily to proactively address issue. &#10;Suppress for low utilization, as likely the impact is not felt at the application level." disableInBasePolicy="true" id="AlertDefinition-249bf02b-a7c6-47cc-a745-6a626a1071aa" name="OYW VM experiences CPU Contention" resourceKind="VirtualMachine" subType="19" type="16">
+            <State severity="automatic">
+                <SymptomSets operator="or">
+                    <SymptomSet applyOn="self" operator="and">
+                        <Symptom ref="SymptomDefinition-b04e73ef-eceb-436b-b484-c2d6353212eb"/>
+                        <Symptom ref="SymptomDefinition-6c379060-4a59-4ab5-8c7f-ff04eb33799d"/>
+                        <Symptom ref="SymptomDefinition-6d21931a-cba8-4603-8067-30a5014ee4c5"/>
+                    </SymptomSet>
+                    <SymptomSet applyOn="self" operator="and">
+                        <Symptom ref="SymptomDefinition-00d94169-ab9a-4327-88eb-8726c19714e6"/>
+                        <Symptom ref="SymptomDefinition-2f324bce-d6a6-4bf4-ab2d-5f937de672ef"/>
+                        <Symptom ref="SymptomDefinition-9695b968-7edd-4fd4-ae9c-7a3d9918781e"/>
+                    </SymptomSet>
+                </SymptomSets>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="Recommendation-df-VMWARE-IncreaseDatastoreIOCapacity"/>
+                    <Recommendation priority="2" ref="Recommendation-df-VMWARE-DisconnectISO"/>
+                    <Recommendation priority="3" ref="Recommendation-df-VMWARE-SnapshotCostopRec"/>
+                    <Recommendation priority="4" ref="Recommendation-df-VMWARE-RemoveRecommendedCPUs"/>
+                    <Recommendation priority="5" ref="Recommendation-df-VMWARE-MonitorUnderlyingClHostCapacity"/>
+                    <Recommendation priority="6" ref="Recommendation-df-VMWARE-RightSizeLargeVMs"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="VMWARE" description="The average write latency among the VM virtual disks have reached the red level.&#10;&lt;/p&gt;&#10;Associated alerts:&#10;VM disk write latency reach critical level&#10;&#10;Enhancements over previous version:&#10;Reduce waiting time from 3 cycles (read: 15 minutes) to 1 for faster reaction.&#10;Add 20-second metric to reduce false positive.&#10;Remove yellow and orange. Use VM Performance dashboard and Datastore Performance dashboard daily to proactively address storage issue.&#10;Rename the alert. Remove the word high as its unclear if it maps to red or orange or yellow.&#10;Suppress for low utilization, as likely the impact is not felt at the application level." disableInBasePolicy="true" id="AlertDefinition-546e4a72-7099-4e34-90c1-a2c465d7c835" name="OYW VM disk write latency reaches critical level" resourceKind="VirtualMachine" subType="19" type="18">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="and">
+                    <Symptom ref="SymptomDefinition-222a0130-1add-4091-95f8-3664b3cb45fc"/>
+                    <Symptom ref="SymptomDefinition-0134cd51-02cd-418b-ac74-711bc0d0b3f3"/>
+                    <Symptom ref="SymptomDefinition-f4b6f770-5cbb-4a6c-9824-ec482af5ce99"/>
+                    <Symptom ref="SymptomDefinition-8c092cb9-72d7-4a06-853e-7aa145096e0f"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="Recommendation-df-VMWARE-CheckStorageIOControl"/>
+                    <Recommendation priority="2" ref="Recommendation-df-VMWARE-DeleteOldSnapshotOfVm"/>
+                    <Recommendation priority="3" ref="Recommendation-df-VMWARE-StorageVmotionVmIOPS"/>
+                    <Recommendation priority="4" ref="Recommendation-df-VMWARE-StorageVMotionVM"/>
+                    <Recommendation priority="5" ref="Recommendation-df-VMWARE-IncreaseIopsForDatastores"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="VMWARE" description="Virtual machine CPU Run is at 100% for an extended period of time. The CPU Run is a better counter than Usage or Demand as its value is not affected by power management and hyper threading.&#10;&#10;Enhancement&#10;Lengthen from 1 wait cycle to 2. " id="AlertDefinition-VMWARE-VMCPUUsageAt100PctForLongTime" name="OYW VM CPU Run is at 100% for an extended period of time" resourceKind="VirtualMachine" subType="19" type="16" waitCycle="2">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="and" ref="SymptomDefinition-VMWARE-VMCPUUsage100Pct"/>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="Recommendation-df-VMWARE-AddMoreCapacityForVm"/>
+                    <Recommendation priority="2" ref="Recommendation-ud-7147add1-f796-4245-946e-37581cedb7a2"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+        <AlertDefinition adapterKind="VMWARE" description="The average read latency among the VM virtual disks have reached the red level.&#10;&#10;Associated alerts:&#10;VM disk write latency reach critical level&#10;&#10;Enhancements over previous version:&#10;Reduce waiting time from 3 cycles (read: 15 minutes) to 1 for faster reaction.&#10;Add 20-second metric to reduce false positive.&#10;Remove yellow and orange. Use VM Performance dashboard and Datastore Performance dashboard daily to proactively address storage issue.&#10;Rename the alert. Remove the word high as its unclear if it maps to red or orange or yellow.&#10;Suppress for low utilization, as likely the impact is not felt at the application level. Threshold used is Total IOPS &gt; 5 (this means 1500 IO in 5 minutes)" disableInBasePolicy="true" id="AlertDefinition-1429c051-895a-41cd-b4f8-c7a0f760e0e9" name="OYW VM disk read latency reach critical level" resourceKind="VirtualMachine" subType="19" type="18">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="and">
+                    <Symptom ref="SymptomDefinition-ddf5427a-4213-403f-9b06-e5fb29510996"/>
+                    <Symptom ref="SymptomDefinition-f988dca3-6d65-4f41-a82d-3fb7dc6182e4"/>
+                    <Symptom ref="SymptomDefinition-806e9a36-a3b6-4da9-8f84-d558cb0403e2"/>
+                    <Symptom ref="SymptomDefinition-ec8ca78d-bd63-414e-983e-9694132a6c82"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+                <Recommendations>
+                    <Recommendation priority="1" ref="Recommendation-df-VMWARE-CheckStorageIOControl"/>
+                    <Recommendation priority="2" ref="Recommendation-df-VMWARE-DeleteOldSnapshotOfVm"/>
+                    <Recommendation priority="3" ref="Recommendation-df-VMWARE-StorageVmotionVmIOPS"/>
+                    <Recommendation priority="4" ref="Recommendation-df-VMWARE-StorageVMotionVM"/>
+                    <Recommendation priority="5" ref="Recommendation-df-VMWARE-IncreaseIopsForDatastores"/>
+                </Recommendations>
+            </State>
+        </AlertDefinition>
+    </AlertDefinitions>
+    <SymptomDefinitions>
+        <SymptomDefinition adapterKind="VMWARE" disableInBasePolicy="true" id="SymptomDefinition-6c379060-4a59-4ab5-8c7f-ff04eb33799d" name="Condition_7d8917e8-0bdc-4a83-84ff-0c56529dcbe6" resourceKind="VirtualMachine" symptomDefType="condition_self">
+            <State severity="immediate">
+                <Condition key="Super Metric|sm_a59123c3-1ddf-4b61-b0ff-3fdf9a3b0da9" operator="&gt;" thresholdType="static" type="metric" value="4.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" disableInBasePolicy="true" id="SymptomDefinition-ec8ca78d-bd63-414e-983e-9694132a6c82" name="Condition_3592e7d1-a10a-440f-b995-b73bb5ee7d06" resourceKind="VirtualMachine" symptomDefType="condition_self">
+            <State severity="info">
+                <Condition key="cpu|usage_average" operator="&gt;" thresholdType="static" type="metric" value="2.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" disableInBasePolicy="true" id="SymptomDefinition-2f324bce-d6a6-4bf4-ab2d-5f937de672ef" name="Condition_3a20389e-0f35-41c6-a63c-c56f10106aec" resourceKind="VirtualMachine" symptomDefType="condition_self">
+            <State severity="critical">
+                <Condition key="Super Metric|sm_a59123c3-1ddf-4b61-b0ff-3fdf9a3b0da9" operator="&gt;" thresholdType="static" type="metric" value="8.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" disableInBasePolicy="true" id="SymptomDefinition-9695b968-7edd-4fd4-ae9c-7a3d9918781e" name="Condition_5f41fba6-9e72-4589-8e0b-87b994e4ad56" resourceKind="VirtualMachine" symptomDefType="condition_self">
+            <State severity="info">
+                <Condition key="cpu|usage_average" operator="&gt;" thresholdType="static" type="metric" value="5.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" disableInBasePolicy="true" id="SymptomDefinition-d034dd53-19ce-4323-9b24-880e33df31ea" name="Condition_b916caa0-d386-41cb-8a75-80e060023fbf" resourceKind="VirtualMachine" symptomDefType="condition_self">
+            <State severity="critical">
+                <Condition key="mem|host_contentionPct" operator="&gt;" thresholdType="static" type="metric" value="4.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" disableInBasePolicy="true" id="SymptomDefinition-edc1f264-7284-4ff8-b0ae-399cb8fbecf2" name="Condition_a7f6a0a9-b447-46c7-ac53-83de0d211d00" resourceKind="VirtualMachine" symptomDefType="condition_self">
+            <State severity="critical">
+                <Condition key="mem|20_sec_peak_host_contentionPct" operator="&gt;" thresholdType="static" type="metric" value="16.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" disableInBasePolicy="true" id="SymptomDefinition-806e9a36-a3b6-4da9-8f84-d558cb0403e2" name="Condition_99f3b6fa-ddb8-40f4-8ca0-4ebeb4a40545" resourceKind="VirtualMachine" symptomDefType="condition_self">
+            <State severity="critical">
+                <Condition key="virtualDisk:Aggregate of all instances|totalReadLatency_average" operator="&gt;" thresholdType="static" type="metric" value="40.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" disableInBasePolicy="true" id="SymptomDefinition-222a0130-1add-4091-95f8-3664b3cb45fc" name="Condition_56445fac-9c0d-4653-be6d-5bcf54ffd74b" resourceKind="VirtualMachine" symptomDefType="condition_self">
+            <State severity="critical">
+                <Condition key="virtualDisk:Aggregate of all instances|totalWriteLatency_average" operator="&gt;" thresholdType="static" type="metric" value="40.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" cancelCycle="6" id="SymptomDefinition-VMWARE-VMCPUUsage100Pct" name="Virtual machine sustained CPU usage is 100%" resourceKind="VirtualMachine" waitCycle="6">
+            <State severity="critical">
+                <Condition key="cpu|usage_average" operator="&gt;=" thresholdType="static" type="metric" value="100.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" disableInBasePolicy="true" id="SymptomDefinition-f4b6f770-5cbb-4a6c-9824-ec482af5ce99" name="Condition_b6cf1138-ae8f-4ad3-a40f-afa46ba78578" resourceKind="VirtualMachine" symptomDefType="condition_self">
+            <State severity="critical">
+                <Condition key="virtualDisk|20_sec_peak_totalLatency_average" operator="&gt;" thresholdType="static" type="metric" value="160.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" disableInBasePolicy="true" id="SymptomDefinition-00d94169-ab9a-4327-88eb-8726c19714e6" name="Condition_5a12f652-226d-4187-9c3b-cf79b042bd6d" resourceKind="VirtualMachine" symptomDefType="condition_self">
+            <State severity="critical">
+                <Condition key="cpu|20_sec_peak_readyPct" operator="&gt;" thresholdType="static" type="metric" value="32.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" disableInBasePolicy="true" id="SymptomDefinition-6d21931a-cba8-4603-8067-30a5014ee4c5" name="Condition_dae52a99-4867-472f-9789-f46d61f86ab7" resourceKind="VirtualMachine" symptomDefType="condition_self">
+            <State severity="info">
+                <Condition key="cpu|usage_average" operator="&gt;" thresholdType="static" type="metric" value="5.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" disableInBasePolicy="true" id="SymptomDefinition-8c092cb9-72d7-4a06-853e-7aa145096e0f" name="Condition_66002a92-b0f7-4d5a-b91a-62be0ea80c06" resourceKind="VirtualMachine" symptomDefType="condition_self">
+            <State severity="info">
+                <Condition key="cpu|usage_average" operator="&gt;" thresholdType="static" type="metric" value="2.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" disableInBasePolicy="true" id="SymptomDefinition-b04e73ef-eceb-436b-b484-c2d6353212eb" name="Condition_2ac04ed4-43ee-4cca-97fc-58ed73e80600" resourceKind="VirtualMachine" symptomDefType="condition_self">
+            <State severity="immediate">
+                <Condition key="cpu|20_sec_peak_readyPct" operator="&gt;" thresholdType="static" type="metric" value="16.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" disableInBasePolicy="true" id="SymptomDefinition-56ab0eb5-dde1-4fb1-80e0-1d196e57ceef" name="Condition_541b33bb-9367-4a1b-b428-3c0b72dbe20f" resourceKind="VirtualMachine" symptomDefType="condition_self">
+            <State severity="info">
+                <Condition key="cpu|usage_average" operator="&gt;" thresholdType="static" type="metric" value="2.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" disableInBasePolicy="true" id="SymptomDefinition-0134cd51-02cd-418b-ac74-711bc0d0b3f3" name="Condition_d9cfc6ae-fc4c-4332-afa8-f4040d6c7710" resourceKind="VirtualMachine" symptomDefType="condition_self">
+            <State severity="info">
+                <Condition key="virtualDisk:Aggregate of all instances|numberWriteAveraged_average" operator="&gt;" thresholdType="static" type="metric" value="3.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" disableInBasePolicy="true" id="SymptomDefinition-f988dca3-6d65-4f41-a82d-3fb7dc6182e4" name="Condition_7c4f9324-a86d-46f8-bdc5-d1c6826f84c2" resourceKind="VirtualMachine" symptomDefType="condition_self">
+            <State severity="info">
+                <Condition key="virtualDisk:Aggregate of all instances|numberReadAveraged_average" operator="&gt;" thresholdType="static" type="metric" value="3.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+        <SymptomDefinition adapterKind="VMWARE" disableInBasePolicy="true" id="SymptomDefinition-ddf5427a-4213-403f-9b06-e5fb29510996" name="Condition_a2ef5ac0-2790-4ca0-9ae0-5a89da53018f" resourceKind="VirtualMachine" symptomDefType="condition_self">
+            <State severity="critical">
+                <Condition key="virtualDisk|20_sec_peak_totalLatency_average" operator="&gt;" thresholdType="static" type="metric" value="160.0" valueType="numeric"/>
+            </State>
+        </SymptomDefinition>
+    </SymptomDefinitions>
+    <Recommendations>
+        <Recommendation key="Recommendation-df-VMWARE-RightSizeLargeVMs">
+            <Description>Right-size large virtual machines as it helps in reducing overall resource contention. Use the Reclaimable Capacity feature within vRealize Operations for recommended rightsizing of VMs.</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-StorageVmotionVmIOPS">
+            <Description>Use Storage vMotion to migrate this virtual machine to a different datastore with higher IOPS</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-IncreaseIopsForDatastores">
+            <Description>Increase IOPS for the datastores connected to the virtual machine</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-MonitorUnderlyingClHostCapacity">
+            <Description>Monitor the underlying cluster/host capacity to ensure that you have enough CPU resources. If not, add more CPU resources to the cluster or move some VMs to a different cluster.</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-AddVMMemReservation">
+            <Description>Add memory reservations to this virtual machine to prevent ballooning and swapping.</Description>
+            <Action actionAdapterKey="VMWARE" actionKey="Set Memory Resources For VM" targetAdapterKey="VMWARE" targetResourceKind="VirtualMachine"/>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-CheckStorageIOControl">
+            <Description>Check whether you have enabled Storage IO Control on the datastores connected to the virtual machine</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-StorageVMotionVM">
+            <Description>Use Storage vMotion to migrate some virtual machines to a different datastore</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-SnapshotCostopRec">
+            <Description>To reduce the high co-stop values and improve virtual machine performance, consolidate any snapshots into the main virtual disk. Open the vSphere Client, select the virtual machine, then right-click, and select 'Snapshot -&gt; Consolidate'.&lt;br/&gt;&lt;br/&gt;After consolidation, the co-stop value is reduced or eliminated and virtual machine performance improves. If performance does not improve enough, continue to research other potential virtual machine performance issues.&lt;br/&gt;See VMware &lt;a href="http://kb.vmware.com/kb/2000058" target="_blank"&gt;KB 2000058&lt;/a&gt;.</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-DeleteOldSnapshotOfVm">
+            <Description>If the virtual machine has multiple snapshots, delete the older snapshots</Description>
+            <Action actionAdapterKey="VMWARE" actionKey="Delete Unused Snapshots For VM" targetAdapterKey="VMWARE" targetResourceKind="VirtualMachine"/>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-IncreaseDatastoreIOCapacity">
+            <Description>Increase the datastore I/O capacity for the connected datastores to reduce CPU I/O wait on the virtual machine.</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-DisconnectISO">
+            <Description>Check whether the virtual machine has an ISO file attached to its CD/DVD drive, and whether the file was deleted or moved. If so, follow the instructions in VMware &lt;a href="http://kb.vmware.com/kb/1015791" target="_blank"&gt;KB 1015791&lt;/a&gt; to disconnect the ISO.</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-VmotionVm">
+            <Description>Use vMotion to migrate this virtual machine to a different host or cluster</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-AddMoreCapacityForVm">
+            <Description>Add more CPU Capacity for this virtual machine</Description>
+            <Action actionAdapterKey="VMWARE" actionKey="Set CPU Count For VM" targetAdapterKey="VMWARE" targetResourceKind="VirtualMachine"/>
+        </Recommendation>
+        <Recommendation key="Recommendation-ud-7147add1-f796-4245-946e-37581cedb7a2">
+            <Description>If the disk IOPS is low, network throughput is low​ and Guest OS memory page in and page are low, this could be process runaway within Windows or Linux.</Description>
+        </Recommendation>
+        <Recommendation key="Recommendation-df-VMWARE-RemoveRecommendedCPUs">
+            <Description>Review the symptoms listed and remove the number of vCPUs from the virtual machine as recommended by the symptom.</Description>
+            <Action actionAdapterKey="VMWARE" actionKey="Set CPU Count For VM" targetAdapterKey="VMWARE" targetResourceKind="VirtualMachine"/>
+        </Recommendation>
+    </Recommendations>
+</alertContent>
