@@ -1,0 +1,212 @@
+{
+   "4f1c7523-163f-4b81-bd54-fd6924cc16d9": {
+      "resourceKinds": [{
+         "resourceKindKey": "ClusterComputeResource",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1661486416734,
+      "name": "Cluster Worst VM CPU Co-Stop",
+      "formula": "max(${adaptertype=VMWARE, objecttype=VirtualMachine, attribute=cpu|20_sec_peak_costopPct, depth=3})",
+      "description": "Part of Operationalize Your World.\n\nThe highest CPU Co-Stop of all VMs in the cluster. This is using 20 second average instead of 5 minute average to give a leading indicator.",
+      "unitId": "percent",
+      "modifiedBy": "63e1d4d1-af7b-4675-b508-547ffc07de6c"
+   },
+   "ca2bb2f8-9536-40bf-863e-c9b4e36b6952": {
+      "resourceKinds": [{
+         "resourceKindKey": "BusinessService",
+         "adapterKindKey": "Container"
+      }],
+      "modificationTime": 1661429246412,
+      "name": "Business Application KPI",
+      "formula": "min(${adaptertype=Container, objecttype=Manual Application, attribute=Super Metric|sm_ad345475-262c-4f2e-8fa5-dbef75e09810, depth=1})",
+      "description": "Part of Operationalize Your World.\n\nKey Performance Indicator (%) of a business application. A business application is made up of tiers, which in turn have VMs.\n\n",
+      "unitId": "percent",
+      "modifiedBy": "63e1d4d1-af7b-4675-b508-547ffc07de6c"
+   },
+   "c0c98494-1147-4ec1-affd-fcaf54334563": {
+      "resourceKinds": [{
+         "resourceKindKey": "HostSystem",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1661429246419,
+      "name": "ESXi Bad Network Packets",
+      "formula": "(${this, metric=net|errorsRx_summation_sum} + ${this, metric=net|errorsTx_summation_sum} + ${this, metric=net|droppedRx_summation_sum} + ${this, metric=net|droppedTx_summation_sum}) / (${this, metric=net|packetsRx_summation_sum} + ${this, metric=net|packetsTx_summation_sum}) * 100",
+      "description": "Part of Operationalize Your World.\n\nPercentage of dropped packets and error packets. This should be near 0%",
+      "unitId": "percent",
+      "modifiedBy": "63e1d4d1-af7b-4675-b508-547ffc07de6c"
+   },
+   "9cfb6d0c-7099-400c-99da-f70077ad96d4": {
+      "resourceKinds": [{
+         "resourceKindKey": "ClusterComputeResource",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1661486416890,
+      "name": "Cluster CPU Ready",
+      "formula": "avg(${adaptertype=VMWARE, objecttype=VirtualMachine, attribute=cpu|20_sec_peak_readyPct, depth=3})",
+      "description": "Part of Operationalize Your World.\n\nA simple average is used instead of normalized average that consider the size of the VM (number of vCPU). ",
+      "unitId": "percent",
+      "modifiedBy": "63e1d4d1-af7b-4675-b508-547ffc07de6c"
+   },
+   "dda97f70-65e0-4c5a-b6f0-7acec936a0bd": {
+      "resourceKinds": [{
+         "resourceKindKey": "vSphere World",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1661492896391,
+      "name": "vSphere Clusters Red KPI",
+      "formula": "count(${adaptertype=VMWARE, objecttype=ClusterComputeResource, attribute=Super Metric|sm_a1b7d29a-c6b8-4137-a4dc-d983e882eb60, depth=4,\nwhere=\"<25\" })",
+      "description": "Part of Operationalize Your World.\n\nCount of vSphere Clusters with KPI values in the red (less than 25%). Expect this to be 0.\n\n",
+      "unitId": "",
+      "modifiedBy": "63e1d4d1-af7b-4675-b508-547ffc07de6c"
+   },
+   "a1b7d29a-c6b8-4137-a4dc-d983e882eb60": {
+      "resourceKinds": [{
+         "resourceKindKey": "ClusterComputeResource",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1661488630477,
+      "name": "Cluster KPI",
+      "formula": "sum ([ (${this, metric=Super Metric|sm_9cfb6d0c-7099-400c-99da-f70077ad96d4} as Ready     < 1  ? (100 - ( (Ready     - 0)/1  * 25 ) ) * 1 : Ready     < 2   ? (75 - ((Ready     - 1 )/1  * 25))*2 : Ready     < 4   ? (50-((Ready     - 2  ) /2   * 25))*4 : (25 - (min([Ready     -4,4    ])/4  *25))*8), (${this, metric=Super Metric|sm_7574a50d-f9bd-4143-a8d7-d1e496dc8659} as coStop    < 1 ? (100 - ( (coStop    - 0)/1 * 25 ) ) * 1 : coStop    < 2 ? (75 - ((coStop    - 1)/1 * 25))*2 : coStop    < 4   ? (50-((coStop    - 2) /2 * 25))*4 : (25 - (min([coStop    -4,4    ])/4  *25))*8), (${this, metric=Super Metric|sm_82177821-b70b-4ece-a423-d89227070a26} as MemLatc   < 0.5 ? (100 - ( (MemLatc   - 0)/0.5 * 25 ) ) * 1 : MemLatc   < 1 ? (75 - ((MemLatc   - 0.5)/0.5 * 25))*2 : MemLatc   < 2   ? (50-((MemLatc   - 1) /1 * 25))*4 : (25 - (min([MemLatc   -2,2    ])/1  *25))*8),(${this, metric=Super Metric|sm_0c704ccf-1016-4d83-9d8c-649e18e2dc68}                                    as mReady    < 4    ? (100 - ( (mReady    - 0)/4    * 25 ) ) * 1 : mReady    < 8   ? (75 - ((mReady    - 4   )/4    * 25))*2 : mReady    < 16   ? (50-((mReady    - 8  ) /8   * 25))*4 : (25 - (min([mReady    -16,16    ])/16  *25))*8), (${this, metric=Super Metric|sm_4f1c7523-163f-4b81-bd54-fd6924cc16d9} as mCoStop   < 2    ? (100 - ( (mCoStop   - 0)/2    * 25 ) ) * 1 : mCoStop   < 4   ? (75 - ((mCoStop   - 2   )/2    * 25))*2 : mCoStop   < 8   ? (50-((mCoStop   - 4  ) /4   * 25))*4 : (25 - (min([mCoStop   -8,8    ])/8  *25))*8), (${this, metric=Super Metric|sm_514831e0-a441-4084-906a-1d69d7c05506}                            as mMemLatc  < 1    ? (100 - ( (mMemLatc  - 0)/1    * 25 ) ) * 1 : mMemLatc  < 2   ? (75 - ((mMemLatc  - 1   )/1    * 25))*2 : mMemLatc  < 4   ? (50-((mMemLatc  - 2  ) /2   * 25))*4 : (25 - (min([mMemLatc  -4,4    ])/4  *25))*8), (${this, metric=Super Metric|sm_48f81e75-bbc4-45f2-860f-4f0683d2a56d} as BadNet    < 0.2  ? (100 - ( (BadNet    - 0)/0.2  * 25 ) ) * 1 : BadNet    < 0.4 ? (75 - ((BadNet    - 0.2 )/0.2  * 25))*2 : BadNet    < 0.8 ? (50-((BadNet    - 0.4) /0.4 * 25))*4 : (25 - (min([BadNet    -0.8,0.8])/0.8*25))*8),\n   (${this, metric=Super Metric|sm_bbd24970-a49d-405b-9d28-0f4165c4f258} as vMotion   < 1    ? (100 - ( (vMotion   - 0)/1    * 25 ) ) * 1 : vMotion   < 2   ? (75 - ((vMotion   - 1   )/1    * 25))*2 : vMotion   < 4   ? (50-((vMotion   - 2  ) /2   * 25))*4 : (25 - (min([vMotion   -4,4    ])/4  *25))*8),\n   (${this, metric=Super Metric|sm_a23eedec-b64d-4d89-8a12-f6c92d8cc561} as MemStress < 0.25 ? (100 - ( (MemStress - 0)/0.25 * 25 ) ) * 1 : MemStress < 0.5 ? (75 - ((MemStress - 0.25)/0.25 * 25))*2 : MemStress < 1   ? (50-((MemStress - 0.5) /0.5 * 25))*4 : (25 - (min([MemStress -1,1    ])/1  *25))*8)\n   ]) / sum([ (Ready     < 1  ? 1 : (Ready     < 2   ? 2 : (Ready     < 4  ? 4 : 8))) , (coStop    < 1 ? 1 : (coStop    < 2 ? 2 : (coStop    < 4  ? 4 : 8))) , (MemLatc   < 0.5 ? 1 : (MemLatc   < 1 ? 2 : (MemLatc   < 2  ? 4 : 8))) , (mReady    < 4    ? 1 : (mReady    < 8   ? 2 : (mReady    < 16  ? 4 : 8))) , (mCoStop   < 2    ? 1 : (mCoStop   < 4   ? 2 : (mCoStop   < 8  ? 4 : 8))) , (mMemLatc  < 1    ? 1 : (mMemLatc  < 2   ? 2 : (mMemLatc  < 4  ? 4 : 8))) ,\n     (BadNet    < 0.2  ? 1 : (BadNet    < 0.4 ? 2 : (BadNet    < 0.8? 4 : 8))) ,\n     (vMotion   < 1    ? 1 : (vMotion   < 2   ? 2 : (vMotion   < 4  ? 4 : 8))) ,\n     (MemStress < 0.25 ? 1 : (MemStress < 0.5 ? 2 : (MemStress < 1  ? 4 : 8)))\n     ])",
+      "description": "Part of Operationalize Your World.\n\nKey Performance Indicator (%) of a vSphere Cluster. This is the primary metric to determine cluster performance over time. \n\nFor details, see VMware Operations Transformation book.\n",
+      "unitId": "percent",
+      "modifiedBy": "63e1d4d1-af7b-4675-b508-547ffc07de6c"
+   },
+   "ad345475-262c-4f2e-8fa5-dbef75e09810": {
+      "resourceKinds": [
+         {
+            "resourceKindKey": "Environment",
+            "adapterKindKey": "Container"
+         },
+         {
+            "resourceKindKey": "Manual Application",
+            "adapterKindKey": "Container"
+         }
+      ],
+      "modificationTime": 1661429246504,
+      "name": "Business Application Tier KPI",
+      "formula": "avg(${adaptertype=VMWARE, objecttype=VirtualMachine, attribute=Super Metric|sm_9ee466de-616a-41a9-b573-e8513e646ea3, depth=1})",
+      "description": "Part of Operationalize Your World.\n\nKey Performance Indicator (%) of a Tier. A business application is made up of tiers, which in turn have VMs.\n",
+      "unitId": "percent",
+      "modifiedBy": "63e1d4d1-af7b-4675-b508-547ffc07de6c"
+   },
+   "a59123c3-1ddf-4b61-b0ff-3fdf9a3b0da9": {
+      "resourceKinds": [{
+         "resourceKindKey": "VirtualMachine",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1661429246609,
+      "name": "VM CPU Contention",
+      "formula": "(  ${this, metric=cpu|overlap_summation}  / ${this, metric=cpu|corecount_provisioned} / 200) + (${this, metric=cpu|readyPct}  + ${this, metric=cpu|costopPct} + ${this, metric=cpu|iowaitPct})",
+      "description": "Part of Operationalize Your World.\n\nSee VMware Operations Transformation on why a different formula is used.\n\nFuture: Is it possible to exclude Other Wait when ESXi is 7.0 U2 or higher? Or do we ignore it altogether\ndivided by 20000 x 100%, so it's shortcut to divided by 200",
+      "unitId": "percent",
+      "modifiedBy": "63e1d4d1-af7b-4675-b508-547ffc07de6c"
+   },
+   "7574a50d-f9bd-4143-a8d7-d1e496dc8659": {
+      "resourceKinds": [{
+         "resourceKindKey": "ClusterComputeResource",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1661486416759,
+      "name": "Cluster CPU Co-Stop",
+      "formula": "avg(${adaptertype=VMWARE, objecttype=VirtualMachine, attribute=cpu|20_sec_peak_costopPct, depth=3})",
+      "description": "Part of Operationalize Your World.\n\nA simple average is used instead of normalized average that consider the size of the VM (number of vCPU). ",
+      "unitId": "percent",
+      "modifiedBy": "63e1d4d1-af7b-4675-b508-547ffc07de6c"
+   },
+   "514831e0-a441-4084-906a-1d69d7c05506": {
+      "resourceKinds": [{
+         "resourceKindKey": "ClusterComputeResource",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1661486416763,
+      "name": "Cluster Worst VM Memory Contention",
+      "formula": "max( ${adaptertype=VMWARE, objecttype=VirtualMachine, attribute=mem|20_sec_peak_host_contentionPct, depth=3})",
+      "description": "Part of Operationalize Your World.\n\nThe highest CPU Memory Contention (latency) of all VMs in the cluster. This is using 20 second average instead of 5 minute average to give a leading indicator.",
+      "unitId": "percent",
+      "modifiedBy": "63e1d4d1-af7b-4675-b508-547ffc07de6c"
+   },
+   "bbd24970-a49d-405b-9d28-0f4165c4f258": {
+      "resourceKinds": [{
+         "resourceKindKey": "ClusterComputeResource",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1661429246465,
+      "name": "Cluster vMotion Percentage",
+      "formula": "(${this, metric=summary|number_vmotion} / ${this, metric=summary|number_running_vms}) * 100",
+      "description": "Part of Operationalize Your World.\n\nAdded as a leading indicator. High number of vMotion indicates clusters struggle to juggle the VMs. ",
+      "unitId": "percent",
+      "modifiedBy": "63e1d4d1-af7b-4675-b508-547ffc07de6c"
+   },
+   "82177821-b70b-4ece-a423-d89227070a26": {
+      "resourceKinds": [{
+         "resourceKindKey": "ClusterComputeResource",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1661486416839,
+      "name": "Cluster Memory Contention",
+      "formula": "avg( ${adaptertype=VMWARE, objecttype=VirtualMachine, attribute=mem|20_sec_peak_host_contentionPct, depth=3})",
+      "description": "Part of Operationalize Your World.\n\nThe average CPU Memory Contention (latency) of all VMs in the cluster. This is using 20 second average instead of 5 minute average to give a leading indicator.",
+      "unitId": "percent",
+      "modifiedBy": "63e1d4d1-af7b-4675-b508-547ffc07de6c"
+   },
+   "eb874adf-1884-4576-91fd-0cc0fb54e58b": {
+      "resourceKinds": [{
+         "resourceKindKey": "vSphere World",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1661492896401,
+      "name": "vSphere Clusters KPI",
+      "formula": "avg(${adaptertype=VMWARE, objecttype=ClusterComputeResource, attribute=Super Metric|sm_a1b7d29a-c6b8-4137-a4dc-d983e882eb60, depth=4})",
+      "description": "Part of Operationalize Your World.\n\nAverage of all cluster KPI from all clusters. This number should be stable, or its pattern follows your expectation, in a large environment. A large sudden drop is abnormal.\n",
+      "unitId": "percent",
+      "modifiedBy": "63e1d4d1-af7b-4675-b508-547ffc07de6c"
+   },
+   "0c704ccf-1016-4d83-9d8c-649e18e2dc68": {
+      "resourceKinds": [{
+         "resourceKindKey": "ClusterComputeResource",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1661486416981,
+      "name": "Cluster Worst VM CPU Ready",
+      "formula": "max(${adaptertype=VMWARE, objecttype=VirtualMachine, attribute=cpu|20_sec_peak_readyPct, depth=2})",
+      "description": "Part of Operationalize Your World.\n\nThe highest CPU Ready of all VMs in the cluster. This is using 20 second average instead of 5 minute average to give a leading indicator.",
+      "unitId": "percent",
+      "modifiedBy": "63e1d4d1-af7b-4675-b508-547ffc07de6c"
+   },
+   "a23eedec-b64d-4d89-8a12-f6c92d8cc561": {
+      "resourceKinds": [{
+         "resourceKindKey": "ClusterComputeResource",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1661429246555,
+      "name": "Cluster Memory Stressed",
+      "formula": "(${this, metric=mem|compressed_average}+${this, metric=mem|swapout_average}) / ${this, metric=mem|memory_allocated_on_all_powered_on_vms} * 100",
+      "description": "Part of Operationalize Your World\n\nPercentage of memory swapped and compressed. We exclude the memory consumed by VMkernel for greater accuracy. Balloon is not included as that's unlikely to cause performance as it's idle pages. ",
+      "unitId": "percent",
+      "modifiedBy": "63e1d4d1-af7b-4675-b508-547ffc07de6c"
+   },
+   "9ee466de-616a-41a9-b573-e8513e646ea3": {
+      "resourceKinds": [{
+         "resourceKindKey": "VirtualMachine",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1661486416995,
+      "name": "VM KPI",
+      "formula": "sum([(${this, metric=guest|mem.free_latest}as mFree /1024 > 512 ? min([mFree/1024 - 512,512])/512 * 25 + 75 : mFree/1024> 256 ? ((mFree/1024- 256)/256 *\n 25 + 50)*2 : mFree/1024> 128 ? ((mFree/1024- 128) /128 *25 + 25)*4 : mFree/1024/128*25*8), (${this, metric=guest|20_sec_peak_cpu_queue} as cpuQ/${this, metric=cpu|corecount_provisioned} as cpuC < 1 ? (100 - ( (cpuQ/cpuC    - 0)/1 * 25 ) ) * 1 : cpuQ/cpuC < 2 ? (75 - ((cpuQ/cpuC- 1)/1 * 25))*2 : cpuQ/cpuC< 4 ? (50-((cpuQ/cpuC- 2) /2 * 25))*4 : (25 - (min([cpuQ/cpuC -4,4])/4*25))*8),(${this, metric=cpu|20_sec_peak_readyPct} as Ready < 2 ? (100 - ( (Ready    - 0)/2 * 25 ) ) * 1 : Ready < 4 ? (75 - ((Ready - 2)/2\n * 25))*2 : Ready < 8 ? (50-((Ready - 4) /4 * 25))*4 : (25 - (min([Ready -8,8])/8*25))*8),(${this, metric=cpu|20_sec_peak_costopPct} as coStop < 1 ? (100 - ( (coStop - 0)/1 * 25 ) ) * 1 : coStop < 2 ? (75 - ((coStop - 1)/1\n * 25))*2 : coStop < 4 ? (50-((coStop - 2) /2 * 25))*4 : (25 - (min([coStop -4,4])/4*25))*8),(${this, metric=cpu|20_sec_peak_iowaitPct}as ioWait < 1 ? (100 - ( (ioWait - 0)/1 * 25 ) ) * 1 : ioWait < 2 ? (75 - ((ioWait - 1)/1\n * 25))*2 : ioWait < 4 ? (50-((ioWait - 2) /2 * 25))*4 : (25 - (min([ioWait -4,4])/4*25))*8),(${this, metric=cpu|20_sec_peak_overlap_summation}as Overlap /200 < 0.5 ? (100 - ( (Overlap/200  - 0)/0.5 * 25 ) ) * 1 : Overlap/200  < 1 ? (75 - ((Overlap/200  - 0.5)/0.5\n * 25))*2 : Overlap/200  < 2 ? (50-((Overlap/200  - 1) /1 * 25))*4 : (25 - (min([Overlap/200  -2,2])/2*25))*8),(${this, metric=guest|page.outRate_latest}as PageO < 1000 ? (100 - ( (PageO - 0)/1000 * 25 ) ) * 1 : PageO < 2000 ? (75 - ((PageO - 1000)/1000\n * 25))*2 : PageO < 4000 ? (50-((PageO - 2000) /2000 * 25))*4 : (25 - (min([PageO -4000,4000])/4000*25))*8),(${this, metric=mem|balloonPct}as Balloon < 2 ? (100 - ( (Balloon - 0)/2 * 25 ) ) * 1 : Balloon < 4 ? (75 - ((Balloon - 2)/2\n * 25))*2 : Balloon < 8 ? (50-((Balloon - 4) /4 * 25))*4 : (25 - (min([Balloon -8,8])/8*25))*8),(${this, metric=mem|20_sec_peak_host_contentionPct} as mLatc < 0.5 ? (100 - ( (mLatc - 0)/0.5 * 25 ) ) * 1 : mLatc < 1 ? (75 - ((mLatc - 0.5)/0.5\n * 25))*2 : mLatc < 2 ? (50-((mLatc - 1) /1 * 25))*4 : (25 - (min([mLatc -2,2])/2*25))*8),(${this, metric=guest|20_sec_peak_disk_queue}as DiskQ < 20 ? (100 - ( (DiskQ - 0)/20 * 25 ) ) * 1 : DiskQ < 40 ? (75 - ((DiskQ - 20)/20\n * 25))*2 : DiskQ < 80 ? (50-((DiskQ - 40) /40 * 25))*4 : (25 - (min([DiskQ -80,80])/80*25))*8),(${this, metric=virtualDisk|20_sec_peak_totalLatency_average} as dLatc < 10 ? (100 - ( (dLatc - 0)/10 * 25 ) ) * 1 : dLatc < 20 ? (75 - ((dLatc - 10)/10\n * 25))*2 : dLatc < 40 ? (50-((dLatc - 20) /20 * 25))*4 : (25 - (min([dLatc -40,40])/40*25))*8),(${this, metric=virtualDisk:Aggregate of all instances|vDiskOIO} as dOIO < 20 ? (100 - ( (dOIO - 0)/20 * 25 ) ) * 1 : dOIO < 40 ? (75 - ((dOIO - 20)/20\n * 25))*2 : dOIO < 80 ? (50-((dOIO - 40) /40 * 25))*4 : (25 - (min([dOIO -80,80])/80*25))*8)   ]) / sum([(mFree  < 128  ? 8 : (mFree  < 256 ? 4 : (mFree  <  512 ?\n 2 : 1))) ,(cpuQ   < 1    ? 1 : (cpuQ   < 2 ? 2 : (cpuQ   < 4 ?\n 4 : 8))) ,(Ready  < 2    ? 1 : (Ready  < 4 ? 2 : (Ready  < 8 ?\n 4 : 8))) ,(coStop < 1    ? 1 : (coStop <   2 ? 2 : (coStop < 4\n ? 4 : 8))) ,(ioWait < 1    ? 1 : (ioWait <   2 ? 2 : (ioWait <\n    4 ? 4 : 8))) ,(Overlap < 0.5    ? 1 : (Overlap < 1 ? 2 : \n(Overlap < 2 ? 4 : 8))) ,(PageO  < 1000 ? 1 : (PageO  < 2000? 2\n : (PageO  < 4000 ? 4 : 8))),(Balloon < 2? 1 : (Balloon < 4? 2 :\n (Balloon < 8? 4 : 8))),(mLatc < 0.5  ? 1 : (mLatc  <   1 ? 2 :\n (mLatc  <    2 ? 4 : 8))) ,(diskQ  < 20   ? 1 : (diskQ  <  40 ?\n 2 : (diskQ  <   80 ? 4 : 8))),(dOIO < 20   ? 1 : (dOIO <  40 ?\n 2 : (dOIO <   80 ? 4 : 8))),(dLatc  < 10   ? 1 : (dLatc  <  20\n ? 2 : (dLatc  <   40 ? 4 : 8))) ])",
+      "description": "Part of Operationalize Your World.\n\nKey Performance Indicator (%) of a virtual machine and its Guest OS. This is the primary metric to determine VM performance over time. 20 second average metrics are used instead of 5-minute average as this metric is a leading indicator.\n\nFor details, see VMware Operations Transformation book.\n",
+      "unitId": "percent",
+      "modifiedBy": "63e1d4d1-af7b-4675-b508-547ffc07de6c"
+   },
+   "48f81e75-bbc4-45f2-860f-4f0683d2a56d": {
+      "resourceKinds": [{
+         "resourceKindKey": "ClusterComputeResource",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1661429246605,
+      "name": "Max ESXi Bad Network Packets",
+      "formula": "max(${adaptertype=VMWARE, objecttype=HostSystem, metric=Super Metric|sm_c0c98494-1147-4ec1-affd-fcaf54334563, depth=1})",
+      "description": "Part of Operationalize Your World.\n\nThe highest bad packets among ESXi hosts in the cluster. This should be near 0%. We use max() instead of average for early warning (leading indicator) as this number tends to be 0% most of the time. ",
+      "unitId": "percent",
+      "modifiedBy": "63e1d4d1-af7b-4675-b508-547ffc07de6c"
+   }
+}
