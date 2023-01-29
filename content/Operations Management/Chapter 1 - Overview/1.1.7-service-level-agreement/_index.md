@@ -17,7 +17,7 @@ The business of IaaS should provide three SLAs, as customers want complete cover
 | Availability | This is the most basic SLA. It is the eldest and most well-known. In reality, it is largely a given. It does not matter what the agreed number is in reality. If the darn thing is down, you better hurry to bring it up before there is a complaint or things get worse! |
 | Performance | Just because something is up, does not mean it is fast. A VM can be up, but if it is too slow to serve, it is as good as down. Performance SLA covers this and addresses the [complaint-based operations](/operations-management/chapter-1-overview/1.1.1-complaint-based-operations/) by defining what exactly is fast. It covers CPU, Memory, Disk and Network, hence there are four metrics used. |
 | Compliance | This provides security compliance to industry regulation or certification. |
-| Service | The above three SLA is provided by technology. They need to be complemented by service provided by human. This should cover proactive and reactive services. The two popular examples are response time and resolution time. |
+| Service | The above three SLAs are provided by technology. They need to be complemented by service provided by human. This should cover proactive and reactive services. The two popular examples are response time and resolution time. |
 
 ## KPI vs. SLA
 
