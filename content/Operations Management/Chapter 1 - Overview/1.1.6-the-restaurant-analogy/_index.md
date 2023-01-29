@@ -24,7 +24,7 @@ We use the analogy to drive the message that you need to focus on the customers 
 - The "dining area" is the Consumer layer. Look at the diagram below. It is where your customers' VMs live.
 - The "kitchen" is the Provider Layer. This is your infrastructure layer, where VMware and the hardware reside.
 
-Public cloud is part of the kitchen. Just because you no longer owns the infrastructure does not mean you can't take management responsibility. The structure of enterprise IT means the infrastructure team end up being held accountable.
+Public cloud is part of the kitchen. Just because you no longer own the infrastructure does not mean you can't take management responsibility. The structure of enterprise IT means the infrastructure team end up being held accountable.
 
 ![consumer vs provider layer demarcation](1.1.6-fig-1.png)
 
