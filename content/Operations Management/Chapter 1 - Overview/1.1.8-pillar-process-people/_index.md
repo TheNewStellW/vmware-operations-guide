@@ -4,7 +4,7 @@ date: 2021-06-11T11:31:22+10:00
 draft: false
 ---
 
-What do you manage, actually? What does your customers want you to take care? How do you manage what you need to manage?
+What do you manage, actually? What do your customers want you to take care? How do you manage what you need to manage?
 
 The most basic is you need to have visibility into the environment. There are thousands of objects (e.g. VM, application, firewall) with complex relationships and interdependance. Inventory gives you this. That's why it's the first box in the diagram below. I had a large telco telling me that their entire DC can go down (say for scheduled DR exercise) but not vRealize Operations as that's how they monitor the downtime.
 
