@@ -1,0 +1,74 @@
+{
+   "4f1c7523-163f-4b81-bd54-fd6924cc16d9": {
+      "resourceKinds": [{
+         "resourceKindKey": "ClusterComputeResource",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1677664075469,
+      "name": "Cluster Worst VM CPU Co-Stop",
+      "formula": "max(${adaptertype=VMWARE, objecttype=VirtualMachine, attribute=cpu|20_sec_peak_costopPct, depth=3})",
+      "description": "Part of Operationalize Your World.\n\nThe highest CPU Co-Stop of all VMs in the cluster. This is using 20 second average instead of 5 minute average to give a leading indicator.",
+      "unitId": "percent",
+      "modifiedBy": "6d48c8b0-69c1-450a-ab0a-bcf14e952cb1"
+   },
+   "c0c98494-1147-4ec1-affd-fcaf54334563": {
+      "resourceKinds": [{
+         "resourceKindKey": "HostSystem",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1677664075474,
+      "name": "ESXi Bad Network Packets",
+      "formula": "(${this, metric=net|errorsRx_summation_sum} + ${this, metric=net|errorsTx_summation_sum} + ${this, metric=net|droppedRx_summation_sum} + ${this, metric=net|droppedTx_summation_sum}) / (${this, metric=net|packetsRx_summation_sum} + ${this, metric=net|packetsTx_summation_sum}) * 100",
+      "description": "Part of Operationalize Your World.\n\nPercentage of dropped packets and error packets. This should be near 0%",
+      "unitId": "percent",
+      "modifiedBy": "6d48c8b0-69c1-450a-ab0a-bcf14e952cb1"
+   },
+   "400106ec-879f-46d7-a03b-d3781072cfa2": {
+      "resourceKinds": [{
+         "resourceKindKey": "vSphere World",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1677664075476,
+      "name": "Count of Unavailable ESXi Hosts",
+      "formula": "count(${adaptertype=VMWARE, objecttype=HostSystem, metric=sys|poweredOn, depth=4,where=($value < 1)})",
+      "description": "Part of Operationalize Your World.\n\nCount of vSphere ESXi hosts that are not available. The number should match your expectation, based on what's happening in actual operations.",
+      "unitId": "",
+      "modifiedBy": "6d48c8b0-69c1-450a-ab0a-bcf14e952cb1"
+   },
+   "ea021c6e-6d2b-4665-abf3-1d81a3232e40": {
+      "resourceKinds": [{
+         "resourceKindKey": "ClusterComputeResource",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1677657204709,
+      "name": "OYW Cluster Service Level Indicator",
+      "formula": "( ${this, metric=summary|number_running_vms} - count(${adaptertype=VMWARE, objecttype=VirtualMachine, attribute=performance|number_of_kpis_breached, depth=2,where=($value>0)\n})) / ${this, metric=summary|number_running_vms} * 100",
+      "description": "Part of Operationalize Your World.\n\nService Level Indicator (%) of a vSphere Cluster. This metric is required as cluster is the unit of management. It's a leading indicator as SLA is a 1-month counter. Note that you can't derive cluster SLA from Cluster SLI. You derive it from VM SLA.\n\nFor details, see VMware Operations Transformation book.\n",
+      "unitId": "percent",
+      "modifiedBy": "6d48c8b0-69c1-450a-ab0a-bcf14e952cb1"
+   },
+   "eb874adf-1884-4576-91fd-0cc0fb54e58b": {
+      "resourceKinds": [{
+         "resourceKindKey": "vSphere World",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1677657970849,
+      "name": "OYW vSphere Clusters Performance",
+      "formula": "avg(${adaptertype=VMWARE, objecttype=ClusterComputeResource, attribute=Super Metric|sm_a1b7d29a-c6b8-4137-a4dc-d983e882eb60, depth=4})",
+      "description": "Part of Operationalize Your World.\n\nAverage of all cluster KPI from all clusters. This number should be stable, or its pattern follows your expectation, in a large environment. A large sudden drop is abnormal.\n",
+      "unitId": "percent",
+      "modifiedBy": "6d48c8b0-69c1-450a-ab0a-bcf14e952cb1"
+   },
+   "d6accc61-3d70-4fa9-bd92-47b7a9f0f7bd": {
+      "resourceKinds": [{
+         "resourceKindKey": "VirtualMachine",
+         "adapterKindKey": "VMWARE"
+      }],
+      "modificationTime": 1677657217166,
+      "name": "OYW VM Service Level Indicator",
+      "formula": "100 - ( ${this, metric=performance|number_of_kpis_breached} * 25 )",
+      "description": "Part of Operationalize Your World.\n\nService Level Indicator (%) of a virtual machine. The IaaS platform provides 4 services (CPU, Memory, Disk, Network). This metric tracks how many of them passes the promised threshold\n\nFor details, see VMware Operations Transformation book.\n",
+      "unitId": "percent",
+      "modifiedBy": "6d48c8b0-69c1-450a-ab0a-bcf14e952cb1"
+   }
+}
