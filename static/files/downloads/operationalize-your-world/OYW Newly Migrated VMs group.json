@@ -1,0 +1,56 @@
+{
+   "customGroups": [{
+      "resourceKind": "Location",
+      "membershipDefinition": {"ruleGroups": [{
+         "resourceKind": "VirtualMachine",
+         "adapterKind": "VMWARE",
+         "rules": [{
+            "ruleType": "ResourceNameRule",
+            "ruleStringOperator": "CONTAINS",
+            "ruleStringValue": "hori"
+         }]
+      }]},
+      "adapterKind": "Container",
+      "autoResolveMembership": true,
+      "name": "OYW Newly Migrated VMs",
+      "description": "Part of Operationalize Your World.\n\nOnce a VM obtains a sign off, remove it from this group. This group should be kept small to prevent a single VM being buried. It\u2019s easy to overlook when the group has many members.",
+      "started": true
+   }],
+   "customGroupTypes": [{
+      "resourceKind": "Location",
+      "localization": [
+         {
+            "resourceKindName": "Standort",
+            "locale": "de"
+         },
+         {
+            "resourceKindName": "位置",
+            "locale": "zh_TW"
+         },
+         {
+            "resourceKindName": "위치",
+            "locale": "ko"
+         },
+         {
+            "resourceKindName": "場所",
+            "locale": "ja"
+         },
+         {
+            "resourceKindName": "Location",
+            "locale": "en"
+         },
+         {
+            "resourceKindName": "位置",
+            "locale": "zh_CN"
+         },
+         {
+            "resourceKindName": "Emplacement",
+            "locale": "fr"
+         },
+         {
+            "resourceKindName": "Ubicación",
+            "locale": "es"
+         }
+      ]
+   }]
+}
